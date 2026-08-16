@@ -1,0 +1,9 @@
+name: f1_racing
+description: "F1 Racing dataset — 55 questions over prose race documents"
+
+evidence_type: prose_docs  # routes to ProseEvidenceBuilder
+eval_strategy: exact_match  # routes to ExactMatchEvaluator
+
+evidence_path: evidence/f1_racing/
+questions_file: evidence/f1_racing/questions.json
+ground_truth_dir: ground_truth/f1_racing/

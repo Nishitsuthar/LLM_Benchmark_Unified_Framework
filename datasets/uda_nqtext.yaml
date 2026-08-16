@@ -1,0 +1,12 @@
+name: uda_nqtext
+description: "UDA Benchmark — NQ-text sub-dataset, PDF evidence via RAG"
+
+evidence_type: pdf_rag  # routes to RagEvidenceBuilder
+eval_strategy: span_f1  # routes to SpanF1Evaluator
+
+evidence_path: evidence/uda/
+questions_file: evidence/uda/questions.json
+ground_truth_dir: ground_truth/uda/
+
+# Number of chunks retrieved from ChromaDB per question
+rag_top_k: 10
