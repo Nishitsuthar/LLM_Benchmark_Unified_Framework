@@ -1,0 +1,263 @@
+[
+  {
+    "id": "Q0001",
+    "text": "What was the change in Accumulated amortization from 2018 to 2019?",
+    "original_id": "S3_TATHYBRID_cf649b7b26933abd29572697283fbf67",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0001.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0002",
+    "text": "What was the amount in escrow as restricted cash at 2019 and 2018 respectively?",
+    "original_id": "S3_TATHYBRID_f14766d60aaa9fc5ad134af01d563db4",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0002.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0003",
+    "text": "What was the Compensation and related benefits in 2019 and 2018 respectively?",
+    "original_id": "S3_TATHYBRID_4a97a3a079b9d171bb3e3c05a5d558fa",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0003.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0004",
+    "text": "What is the value of real estate taxes in 2018?",
+    "original_id": "S3_TATHYBRID_f3f36466e3595177dee05fd432122387",
+    "category": "Others",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0004.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0005",
+    "text": "What is the average real estate taxes for 2018 and 2019?",
+    "original_id": "S3_TATHYBRID_75006d911eb541bafc8bfdfe43399b83",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0005.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0006",
+    "text": "What is the change in payroll and incentive compensation between 2018 and 2019?",
+    "original_id": "S3_TATHYBRID_4b33b977256836fc6c3fbda16ba5844d",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0006.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0007",
+    "text": "What is the percentage constitution of net sales from Frozen Kefir among the total net sales in 2019?",
+    "original_id": "S3_TATHYBRID_5b53e0ca06203f7703b6c4f8057e3c87",
+    "category": "Conditional filtering / Statistical outlier handling",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0007.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0008",
+    "text": "What is the percentage change in ingredients between 2018 and 2019?",
+    "original_id": "S3_TATHYBRID_077fac86dd9c8cd78b834fbdbe0885be",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0008.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0009",
+    "text": "What is the value of recipes in 2018 and 2019 respectively?",
+    "original_id": "S3_TATHYBRID_4cb79dfe572f814f50c02a61639f2094",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0009.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0010",
+    "text": "What is the change in the value of customer relationships between 2018 and 2019?",
+    "original_id": "S3_TATHYBRID_7622984778061cb2468425d5534a99e6",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0010.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0011",
+    "text": "What is the average value of trade names for both 2018 and 2019?",
+    "original_id": "S3_TATHYBRID_3ead03b4712e86e15034c9fabc0f1b9b",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0011.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0012",
+    "text": "What is the value of vehicles in 2018 and 2019 respectively?",
+    "original_id": "S3_TATHYBRID_30e01bc5c375a0ca44ab4c0dd14e5e1e",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0012.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0013",
+    "text": "What is the average value of vehicles for 2018 and 2019?",
+    "original_id": "S3_TATHYBRID_fe59aeaff2948f598d69f262c6464889",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0013.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0014",
+    "text": "What was the low sale price per share for each quarters in 2018 in chronological order?",
+    "original_id": "S3_TATHYBRID_f4c8e2d0155ac338249d0fe6feba49ac",
+    "category": "Grouping / Multi-step reasoning",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0014.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0015",
+    "text": "What is the value of customer relationships in 2018 and 2019 respectively?",
+    "original_id": "S3_TATHYBRID_719ef48aead1f283a692fedbeae4622a",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0015.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0016",
+    "text": "What is the value of buildings and improvements in 2018 and 2019 respectively?",
+    "original_id": "S3_TATHYBRID_83cb95ba9efedd8346b5f66758f4ab85",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0016.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0017",
+    "text": "What is the amount of net sales from ProBugs Kelir in 2018 and 2019 respectively?",
+    "original_id": "S3_TATHYBRID_0022a9993b61830a838d232e2e840b27",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0017.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0018",
+    "text": "What is net sales from cream and other in 2018 and 2019 respectively?",
+    "original_id": "S3_TATHYBRID_05d6f0b7266caa424d82675ec4d0ca2e",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0018.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0019",
+    "text": "What is the deferred provision (benefit) for income tax for 2018 and 2019 respectively?",
+    "original_id": "S3_TATHYBRID_1098c97fef920d0f4107fa3be6f84e3a",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0019.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0020",
+    "text": "What is the provision (benefit) for total current income taxes for 2018 and 2019 respectively?",
+    "original_id": "S3_TATHYBRID_4b7153cbb854c224d6bb0fb509fe74fe",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "medium",
+    "ground_truth_file": "Q0020.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0021",
+    "text": "In which year was Operating Leases greater than 100,000?",
+    "original_id": "S3_TATHYBRID_ccc7a9080e0fea2e3181976dc634e30f",
+    "category": "Ranking / Year-wise top-1",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0021.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0022",
+    "text": "In which year was Increases for positions taken in prior years less than 1,000?",
+    "original_id": "S3_TATHYBRID_70b9c20fdab23a9cd16c8474c2be6d9c",
+    "category": "Ranking / Year-wise top-1",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0022.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0023",
+    "text": "What was the Rate change in 2019 and 2018 respectively?",
+    "original_id": "S3_TATHYBRID_918d6fb907a4ff383e5d8e9da7db2728",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0023.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0024",
+    "text": "What is the change in Liabilities: Deferred income taxes from Balance at December 31, 2017 to January 1, 2018?",
+    "original_id": "S3_TATHYBRID_65dac64cb09b645dd52cc8f4a696544e",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0024.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0025",
+    "text": "In which year was Prepaid expenditures less than 6,000?",
+    "original_id": "S3_TATHYBRID_6122b1882bcd7b0a238a04bce284e40e",
+    "category": "Ranking / Year-wise top-1",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0025.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0026",
+    "text": "What was the Prepaid expenditures in 2019 and 2018 respectively?",
+    "original_id": "S3_TATHYBRID_f0a1bd31aa64c790c41e42920619040b",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0026.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0027",
+    "text": "What was the Contracts of affreightment revenues in 2019 and 2018 respectively?",
+    "original_id": "S3_TATHYBRID_0edf2f7aeed2b8ca6a2e0ed95641bf15",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0027.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0028",
+    "text": "What was the value of Vessels, net in 2019 and 2018 respectively?",
+    "original_id": "S3_TATHYBRID_ff06d83c2832cd8f43f1a6c350b5b7ae",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0028.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0029",
+    "text": "What was the Time and bareboat charter revenues revenues in 2019 and 2018 respectively?",
+    "original_id": "S3_TATHYBRID_f7af7aebbd48ae1684ba8f8d7402c3fa",
+    "category": "Set operations / Decade comparison",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0029.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  }
+]

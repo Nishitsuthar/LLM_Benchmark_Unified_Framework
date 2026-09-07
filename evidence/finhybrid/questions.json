@@ -1,0 +1,281 @@
+[
+  {
+    "id": "Q0001",
+    "text": "during the 2012 year , did the equity awards in which the prescribed performance milestones were achieved exceed the equity award compensation expense for equity granted during the year?",
+    "original_id": "S3_FINHYBRID_ABMD/2012/page_75.pdf-1",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0001.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0002",
+    "text": "for equity awards where the performance criteria has been met in 2012 , what is the average compensation expense per year over which the cost will be expensed?",
+    "original_id": "S3_FINHYBRID_ABMD/2012/page_75.pdf-2",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0002.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0003",
+    "text": "did abiomed outperform the nasdaq medical equipment index?",
+    "original_id": "S3_FINHYBRID_ABMD/2012/page_41.pdf-2",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0003.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0004",
+    "text": "did abiomed outperform the nasdaq composite index?",
+    "original_id": "S3_FINHYBRID_ABMD/2012/page_41.pdf-1",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0004.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0005",
+    "text": "how much of total future minimum lease payments are due currently?",
+    "original_id": "S3_FINHYBRID_ABMD/2012/page_79.pdf-2",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0005.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0006",
+    "text": "what is the roi of an investment in abiomed inc from march 2007 to march 2010?",
+    "original_id": "S3_FINHYBRID_ABMD/2012/page_41.pdf-3",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0006.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0007",
+    "text": "what is the roi of an investment in nasdaq composite index from march 2007 to march 2010?",
+    "original_id": "S3_FINHYBRID_ABMD/2012/page_41.pdf-4",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0007.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0008",
+    "text": "what is the the interest expense in 2009?",
+    "original_id": "S3_FINHYBRID_ADI/2009/page_49.pdf-1",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0008.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0009",
+    "text": "what is the expected growth rate in amortization expense in 2010?",
+    "original_id": "S3_FINHYBRID_ADI/2009/page_59.pdf-2",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0009.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0010",
+    "text": "what is the percentage increase in interest expanse and penalties in 2009?",
+    "original_id": "S3_FINHYBRID_ADI/2009/page_90.pdf-1",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0010.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0011",
+    "text": "what is the lobor rate as of october 31 , 2009?",
+    "original_id": "S3_FINHYBRID_ADI/2009/page_49.pdf-2",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0011.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0012",
+    "text": "what percentage did the balance increase from 2007 to 2009?",
+    "original_id": "S3_FINHYBRID_ADI/2009/page_90.pdf-3",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0012.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0013",
+    "text": "what would be the balance if the company suffered the potential total tax liability of the 2006 and 2007 irs examination?",
+    "original_id": "S3_FINHYBRID_ADI/2009/page_90.pdf-4",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0013.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0014",
+    "text": "in millions , for 2016 , 2015 , and 2014 what was the total amount of common share repurchases?",
+    "original_id": "S3_FINHYBRID_GS/2016/page_186.pdf-2",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0014.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0015",
+    "text": "of the total aus net inflows/ ( outflows ) for 2014 were fixed income asset inflows in connection with our acquisition of deutsche asset & wealth management 2019s stable value business greater than the liquidity products inflows in connection with our acquisition of rbs asset management 2019s money market funds?",
+    "original_id": "S3_FINHYBRID_GS/2016/page_79.pdf-4",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0015.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0016",
+    "text": "in billions , for 2016 , 2015 , and 2014 , what are total alternative investments?",
+    "original_id": "S3_FINHYBRID_GS/2016/page_79.pdf-2",
+    "category": "Aggregation",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0016.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0017",
+    "text": "what was the difference in millions between the total cost of common shares repurchases from 2015 to 2016?",
+    "original_id": "S3_FINHYBRID_GS/2016/page_186.pdf-1",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0017.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0018",
+    "text": "what were total investment commitments in billions for 2016 and 2015 related to commitments to invest in funds managed by the firm?",
+    "original_id": "S3_FINHYBRID_GS/2016/page_183.pdf-1",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0018.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0019",
+    "text": "what was the difference in millions between the total cost of common shares repurchases from 2015 to 2016?",
+    "original_id": "S3_FINHYBRID_GS/2016/page_186.pdf-3",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0019.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0020",
+    "text": "what was total shareholders 2019 equity common equity dividends declared per common share in 2016 , 2015 and 2014?",
+    "original_id": "S3_FINHYBRID_GS/2016/page_186.pdf-4",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0020.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0021",
+    "text": "what is the debt-to-total asset ratio in 2015?",
+    "original_id": "S3_FINHYBRID_GS/2016/page_81.pdf-2",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0021.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0022",
+    "text": "for december 2016 and december 2015 , what was total fair value of loans receivable in billions?",
+    "original_id": "S3_FINHYBRID_GS/2016/page_161.pdf-3",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0022.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0023",
+    "text": "what was total rent charged to operating expense in millions for 2016 , 2015 and 2014?",
+    "original_id": "S3_FINHYBRID_GS/2016/page_183.pdf-2",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0023.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0024",
+    "text": "what is the debt-to-total asset ratio in 2016?",
+    "original_id": "S3_FINHYBRID_GS/2016/page_81.pdf-1",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0024.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0025",
+    "text": "what is the net change in the number of staff in 2016?",
+    "original_id": "S3_FINHYBRID_GS/2016/page_70.pdf-1",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0025.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0026",
+    "text": "what is the net change in the number of staff in 2015?",
+    "original_id": "S3_FINHYBRID_GS/2016/page_70.pdf-2",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0026.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0027",
+    "text": "in millions for 2016 2015 , and 2014 , what are total equity securities?",
+    "original_id": "S3_FINHYBRID_GS/2016/page_77.pdf-2",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0027.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0028",
+    "text": "operating expenses were what multiple of pre-tax earnings in 2015?",
+    "original_id": "S3_FINHYBRID_GS/2016/page_77.pdf-3",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0028.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0029",
+    "text": "what was the percentage change in the 5 year annual performance of the peer group stock from 2010 to 2011",
+    "original_id": "S3_FINHYBRID_JKHY/2015/page_20.pdf-2",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0029.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0030",
+    "text": "in 2010 , what was the cumulative total return of the s&p 500?",
+    "original_id": "S3_FINHYBRID_JKHY/2015/page_20.pdf-3",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0030.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  },
+  {
+    "id": "Q0031",
+    "text": "for the 2010 , what was the cumulative total return on jkhy?",
+    "original_id": "S3_FINHYBRID_JKHY/2015/page_20.pdf-1",
+    "category": "Financial",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0031.txt",
+    "answer_format": "short answer (number, name, or short phrase)"
+  }
+]
