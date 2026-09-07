@@ -8,6 +8,8 @@ When a question carries a `source_pdf` field, only that PDF is indexed
 and searched — prevents cross-company context bleed in multi-PDF folders.
 """
 
+from __future__ import annotations
+
 import hashlib
 import re
 from pathlib import Path

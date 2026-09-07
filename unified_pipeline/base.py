@@ -4,6 +4,8 @@ Nobody modifies this file once agreed upon. Every evidence builder and
 evaluator inherits from the abstract classes defined here.
 """
 
+from __future__ import annotations
+
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
 
