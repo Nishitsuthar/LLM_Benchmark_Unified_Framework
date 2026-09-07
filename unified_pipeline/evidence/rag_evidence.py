@@ -3,8 +3,12 @@
 Chunks PDFs, embeds them with MiniLM, stores in ChromaDB, and retrieves
 the top-k most relevant chunks for the question. Ported from Nishit's
 Sprint 3 RAG pipeline.
+
+When a question carries a `source_pdf` field, only that PDF is indexed
+and searched — prevents cross-company context bleed in multi-PDF folders.
 """
 
+import hashlib
 import re
 from pathlib import Path
 
@@ -21,12 +25,22 @@ class RagEvidenceBuilder(BaseEvidenceBuilder):
         from sentence_transformers import SentenceTransformer
 
         self.model = SentenceTransformer("all-MiniLM-L6-v2")
-        self.client = chromadb.Client()
+        self.client = chromadb.PersistentClient(path=".chroma_cache")
         self._collections: dict = {}
 
     def build(self, question: str, config: dict) -> EvidenceResult:
         top_k = config.get("rag_top_k", 10)
-        collection = self._get_or_index(config["evidence_path"], config)
+
+        # If the question names a specific PDF, index only that file.
+        # Otherwise fall back to the whole folder (e.g. single-PDF datasets).
+        source_pdf = config.get("_source_pdf")
+        if source_pdf:
+            pdf_path = Path(config["evidence_path"]) / source_pdf
+            if not pdf_path.exists():
+                raise FileNotFoundError(f"source_pdf not found: {pdf_path}")
+            collection = self._get_or_index_file(pdf_path)
+        else:
+            collection = self._get_or_index_folder(config["evidence_path"])
 
         # Cap n_results to actual collection size to avoid ChromaDB errors
         n_results = min(top_k, collection.count())
@@ -44,25 +58,45 @@ class RagEvidenceBuilder(BaseEvidenceBuilder):
             metadata={"chunks_retrieved": len(chunks), "top_k": top_k},
         )
 
-    def _get_or_index(self, pdf_folder: str, config: dict):
-        """Index PDFs into ChromaDB on first call; reuse on subsequent calls."""
+    def _collection_name(self, key: str) -> str:
+        """Stable, safe ChromaDB collection name from an arbitrary path string."""
+        h = hashlib.md5(key.encode()).hexdigest()[:12]
+        slug = re.sub(r"[^a-zA-Z0-9\-]", "-", Path(key).name)[:50]
+        return f"{slug}-{h}"
+
+    def _get_or_index_file(self, pdf_path: Path):
+        """Index a single PDF; reuse collection on subsequent calls."""
+        key = str(pdf_path.resolve())
+        if key in self._collections:
+            return self._collections[key]
+
+        collection = self.client.get_or_create_collection(self._collection_name(key))
+        if collection.count() == 0:
+            self._index_pdfs([pdf_path], collection)
+
+        self._collections[key] = collection
+        return collection
+
+    def _get_or_index_folder(self, pdf_folder: str):
+        """Index all PDFs in a folder; reuse collection on subsequent calls."""
         if pdf_folder in self._collections:
             return self._collections[pdf_folder]
 
+        collection = self.client.get_or_create_collection(
+            self._collection_name(pdf_folder)
+        )
+        if collection.count() == 0:
+            pdf_files = sorted(Path(pdf_folder).glob("**/*.pdf"))
+            if not pdf_files:
+                raise FileNotFoundError(f"No PDF files found in: {pdf_folder}")
+            self._index_pdfs(pdf_files, collection)
+
+        self._collections[pdf_folder] = collection
+        return collection
+
+    def _index_pdfs(self, pdf_files: list, collection) -> None:
+        """Chunk, embed, and upsert a list of PDF paths into a collection."""
         import fitz  # PyMuPDF
-
-        # Collection name must be alphanumeric + hyphens, max 63 chars
-        collection_name = re.sub(r"[^a-zA-Z0-9\-]", "-", pdf_folder)[-63:]
-        collection = self.client.get_or_create_collection(collection_name)
-
-        # Skip re-indexing if already populated (e.g. persistent client reuse)
-        if collection.count() > 0:
-            self._collections[pdf_folder] = collection
-            return collection
-
-        pdf_files = sorted(Path(pdf_folder).glob("**/*.pdf"))
-        if not pdf_files:
-            raise FileNotFoundError(f"No PDF files found in: {pdf_folder}")
 
         all_chunks: list[str] = []
         all_ids: list[str] = []
@@ -80,10 +114,8 @@ class RagEvidenceBuilder(BaseEvidenceBuilder):
                 all_ids.append(f"{pdf_path.stem}_c{i}")
 
         if not all_chunks:
-            self._collections[pdf_folder] = collection
-            return collection
+            return
 
-        # Embed and upsert in batches of 256 to stay within ChromaDB limits
         embeddings = self.model.encode(all_chunks, show_progress_bar=False).tolist()
         batch = 256
         for start in range(0, len(all_chunks), batch):
@@ -92,9 +124,6 @@ class RagEvidenceBuilder(BaseEvidenceBuilder):
                 documents=all_chunks[start : start + batch],
                 embeddings=embeddings[start : start + batch],
             )
-
-        self._collections[pdf_folder] = collection
-        return collection
 
 
 def _sliding_window(words: list[str], size: int, overlap: int) -> list[str]:

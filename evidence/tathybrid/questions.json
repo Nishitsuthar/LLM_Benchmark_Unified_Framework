@@ -6,7 +6,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0001.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "inpixon_2019.pdf"
   },
   {
     "id": "Q0002",
@@ -15,7 +16,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0002.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "inpixon_2019.pdf"
   },
   {
     "id": "Q0003",
@@ -24,7 +26,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0003.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "inpixon_2019.pdf"
   },
   {
     "id": "Q0004",
@@ -33,7 +36,8 @@
     "category": "Others",
     "difficulty": "hard",
     "ground_truth_file": "Q0004.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "lifeway-foods-inc_2019.pdf"
   },
   {
     "id": "Q0005",
@@ -42,7 +46,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0005.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "lifeway-foods-inc_2019.pdf"
   },
   {
     "id": "Q0006",
@@ -51,7 +56,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0006.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "lifeway-foods-inc_2019.pdf"
   },
   {
     "id": "Q0007",
@@ -60,7 +66,8 @@
     "category": "Conditional filtering / Statistical outlier handling",
     "difficulty": "hard",
     "ground_truth_file": "Q0007.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "lifeway-foods-inc_2019.pdf"
   },
   {
     "id": "Q0008",
@@ -69,7 +76,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0008.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "lifeway-foods-inc_2019.pdf"
   },
   {
     "id": "Q0009",
@@ -78,7 +86,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0009.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "lifeway-foods-inc_2019.pdf"
   },
   {
     "id": "Q0010",
@@ -87,7 +96,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0010.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "lifeway-foods-inc_2019.pdf"
   },
   {
     "id": "Q0011",
@@ -96,7 +106,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0011.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "lifeway-foods-inc_2019.pdf"
   },
   {
     "id": "Q0012",
@@ -105,7 +116,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0012.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "lifeway-foods-inc_2019.pdf"
   },
   {
     "id": "Q0013",
@@ -114,7 +126,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0013.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "lifeway-foods-inc_2019.pdf"
   },
   {
     "id": "Q0014",
@@ -123,7 +136,8 @@
     "category": "Grouping / Multi-step reasoning",
     "difficulty": "hard",
     "ground_truth_file": "Q0014.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "lifeway-foods-inc_2019.pdf"
   },
   {
     "id": "Q0015",
@@ -132,7 +146,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0015.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "lifeway-foods-inc_2019.pdf"
   },
   {
     "id": "Q0016",
@@ -141,7 +156,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0016.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "lifeway-foods-inc_2019.pdf"
   },
   {
     "id": "Q0017",
@@ -150,7 +166,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0017.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "lifeway-foods-inc_2019.pdf"
   },
   {
     "id": "Q0018",
@@ -159,7 +176,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0018.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "lifeway-foods-inc_2019.pdf"
   },
   {
     "id": "Q0019",
@@ -168,7 +186,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0019.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "lifeway-foods-inc_2019.pdf"
   },
   {
     "id": "Q0020",
@@ -177,7 +196,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "medium",
     "ground_truth_file": "Q0020.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "lifeway-foods-inc_2019.pdf"
   },
   {
     "id": "Q0021",
@@ -186,7 +206,8 @@
     "category": "Ranking / Year-wise top-1",
     "difficulty": "hard",
     "ground_truth_file": "Q0021.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "overseas-shipholding-group-inc_2019.pdf"
   },
   {
     "id": "Q0022",
@@ -195,7 +216,8 @@
     "category": "Ranking / Year-wise top-1",
     "difficulty": "hard",
     "ground_truth_file": "Q0022.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "overseas-shipholding-group-inc_2019.pdf"
   },
   {
     "id": "Q0023",
@@ -204,7 +226,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0023.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "overseas-shipholding-group-inc_2019.pdf"
   },
   {
     "id": "Q0024",
@@ -213,7 +236,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0024.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "overseas-shipholding-group-inc_2019.pdf"
   },
   {
     "id": "Q0025",
@@ -222,7 +246,8 @@
     "category": "Ranking / Year-wise top-1",
     "difficulty": "hard",
     "ground_truth_file": "Q0025.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "overseas-shipholding-group-inc_2019.pdf"
   },
   {
     "id": "Q0026",
@@ -231,7 +256,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0026.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "overseas-shipholding-group-inc_2019.pdf"
   },
   {
     "id": "Q0027",
@@ -240,7 +266,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0027.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "overseas-shipholding-group-inc_2019.pdf"
   },
   {
     "id": "Q0028",
@@ -249,7 +276,8 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0028.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "overseas-shipholding-group-inc_2019.pdf"
   },
   {
     "id": "Q0029",
@@ -258,6 +286,7 @@
     "category": "Set operations / Decade comparison",
     "difficulty": "hard",
     "ground_truth_file": "Q0029.txt",
-    "answer_format": "short answer (number, name, or short phrase)"
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "overseas-shipholding-group-inc_2019.pdf"
   }
 ]
