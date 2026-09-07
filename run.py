@@ -124,62 +124,86 @@ def main() -> None:
 
     run_start = time.time()
     f1_scores = []
+    failed = []
 
     for i, question in enumerate(questions, 1):
         q_id = question.get("id", "unknown")
 
-        # Step 1 — build evidence
-        _progress(i, len(questions), q_id, "building evidence...")
-        question_config = {**config, "_source_pdf": question.get("source_pdf")}
-        evidence = builder.build(question["text"], question_config)
+        try:
+            # Step 1 — build evidence
+            _progress(i, len(questions), q_id, "building evidence...")
+            question_config = {**config, "_source_pdf": question.get("source_pdf")}
+            evidence = builder.build(question["text"], question_config)
 
-        # Step 2 — build prompt and call model
-        _progress(i, len(questions), q_id, "calling model...    ")
-        prompt_text = build_prompt(template, question, evidence.text)
-        response = router.call(prompt_text)
+            # Step 2 — build prompt and call model
+            _progress(i, len(questions), q_id, "calling model...    ")
+            prompt_text = build_prompt(template, question, evidence.text)
+            response = router.call(prompt_text)
 
-        # Step 3 — evaluate
-        _progress(i, len(questions), q_id, "evaluating...       ")
-        result = evaluator.evaluate(
-            response.final_text,
-            str(Path(config["ground_truth_dir"]) / question["ground_truth_file"]),
-            question.get("expected_columns", []),
-        )
+            # Step 3 — evaluate
+            _progress(i, len(questions), q_id, "evaluating...       ")
+            result = evaluator.evaluate(
+                response.final_text,
+                str(Path(config["ground_truth_dir"]) / question["ground_truth_file"]),
+                question.get("expected_columns", []),
+            )
 
-        # Step 4 — write row immediately (crash safe)
-        reporter.write_row({
-            "dataset":         args.dataset,
-            "model":           args.model,
-            "mode":            args.mode,
-            "prompt_style":    args.prompt,
-            "question_id":     q_id,
-            "exact_match":     result.content_exact_match,
-            "row_f1":          result.row_f1,
-            "precision":       result.precision,
-            "recall":          result.recall,
-            "eval_status":     result.evaluation_status,
-            "latency_seconds": response.latency_seconds,
-            "input_tokens":    response.input_tokens,
-            "output_tokens":   response.output_tokens,
-        })
+            # Step 4 — write row immediately (crash safe)
+            reporter.write_row({
+                "dataset":         args.dataset,
+                "model":           args.model,
+                "mode":            args.mode,
+                "prompt_style":    args.prompt,
+                "question_id":     q_id,
+                "exact_match":     result.content_exact_match,
+                "row_f1":          result.row_f1,
+                "precision":       result.precision,
+                "recall":          result.recall,
+                "eval_status":     result.evaluation_status,
+                "latency_seconds": response.latency_seconds,
+                "input_tokens":    response.input_tokens,
+                "output_tokens":   response.output_tokens,
+            })
 
-        f1 = result.row_f1 if result.row_f1 is not None else 0.0
-        f1_scores.append(f1)
-        f1_str   = f"{f1:.3f}"
-        lat_str  = f"{response.latency_seconds:.1f}s"
-        exact    = "✓" if result.content_exact_match else "✗"
-        _progress(i, len(questions), q_id, f"done  f1={f1_str} {exact} {lat_str}")
-        print()  # newline after each completed question
+            f1 = result.row_f1 if result.row_f1 is not None else 0.0
+            f1_scores.append(f1)
+            f1_str  = f"{f1:.3f}"
+            lat_str = f"{response.latency_seconds:.1f}s"
+            exact   = "✓" if result.content_exact_match else "✗"
+            _progress(i, len(questions), q_id, f"done  f1={f1_str} {exact} {lat_str}")
+            print()
+
+        except Exception as exc:
+            failed.append(q_id)
+            reporter.write_row({
+                "dataset":         args.dataset,
+                "model":           args.model,
+                "mode":            args.mode,
+                "prompt_style":    args.prompt,
+                "question_id":     q_id,
+                "exact_match":     0,
+                "row_f1":          None,
+                "precision":       None,
+                "recall":          None,
+                "eval_status":     f"error: {type(exc).__name__}",
+                "latency_seconds": None,
+                "input_tokens":    None,
+                "output_tokens":   None,
+            })
+            _progress(i, len(questions), q_id, f"FAILED: {type(exc).__name__}")
+            print(f"\n  ! {q_id} error: {exc}")
 
     elapsed = time.time() - run_start
     avg_f1  = sum(f1_scores) / len(f1_scores) if f1_scores else 0.0
-    exact_n = sum(1 for q in f1_scores if q == 1.0)
+    exact_n = sum(1 for f in f1_scores if f == 1.0)
 
     print()
     print("  ─" * 25)
     print(f"  Finished {len(questions)} questions in {elapsed:.1f}s")
     print(f"  Avg F1   : {avg_f1:.3f}")
     print(f"  Exact    : {exact_n}/{len(questions)}")
+    if failed:
+        print(f"  Failed   : {len(failed)} — {', '.join(failed)}")
     print(f"  Results  : results/{args.model}/{args.dataset}_{args.mode}_{args.prompt}_metrics.csv")
     print()
 
