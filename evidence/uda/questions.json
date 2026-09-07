@@ -1,0 +1,458 @@
+[
+  {
+    "id": "Q0001",
+    "text": "who came second in tour de france 2018",
+    "doc_name": "2018 Tour de France",
+    "original_id": "S3_NQTEXT_4373755116203252946",
+    "ground_truth_file": "Q0001.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0002",
+    "text": "how many states share a border with oklahoma",
+    "doc_name": "Oklahoma",
+    "original_id": "S3_NQTEXT_3749925031204735637",
+    "ground_truth_file": "Q0002.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0003",
+    "text": "what is the age of supreme court justices",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_6861377689727785410",
+    "ground_truth_file": "Q0003.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0004",
+    "text": "who is the supreme court made up of",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_-8295623681645206109",
+    "ground_truth_file": "Q0004.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0005",
+    "text": "what is the makeup of the supreme court",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_4271086757818628997",
+    "ground_truth_file": "Q0005.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0006",
+    "text": "how old are the u.s. supreme court justices",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_7781842997827267551",
+    "ground_truth_file": "Q0006.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0007",
+    "text": "when were the current supreme court justices appointed",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_7593720238967084586",
+    "ground_truth_file": "Q0007.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0008",
+    "text": "what is the term for the supreme court",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_1920975387925916537",
+    "ground_truth_file": "Q0008.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0009",
+    "text": "how old are each of the supreme court justices",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_2606671969689594205",
+    "ground_truth_file": "Q0009.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0010",
+    "text": "list of current supreme court justices and their ages",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_2451661517328217275",
+    "ground_truth_file": "Q0010.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0011",
+    "text": "when did oklahoma become a state in the us",
+    "doc_name": "Oklahoma",
+    "original_id": "S3_NQTEXT_6534456092518679771",
+    "ground_truth_file": "Q0011.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0012",
+    "text": "where is the tour de france starting this year",
+    "doc_name": "2018 Tour de France",
+    "original_id": "S3_NQTEXT_7061938366566979302",
+    "ground_truth_file": "Q0012.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0013",
+    "text": "what is the grand prize for the tour de france",
+    "doc_name": "2018 Tour de France",
+    "original_id": "S3_NQTEXT_3140972739012711701",
+    "ground_truth_file": "Q0013.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0014",
+    "text": "ages of the judges on the supreme court",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_2538907278819984497",
+    "ground_truth_file": "Q0014.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0015",
+    "text": "who appointed the justices of the supreme court",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_-4093939767332236344",
+    "ground_truth_file": "Q0015.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0016",
+    "text": "who are the current supreme court justices 2017",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_-3286674585604525369",
+    "ground_truth_file": "Q0016.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0017",
+    "text": "when does the 2018 tour de france start",
+    "doc_name": "2018 Tour de France",
+    "original_id": "S3_NQTEXT_708037729197446651",
+    "ground_truth_file": "Q0017.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0018",
+    "text": "how many riders per team in the tour de france 2018",
+    "doc_name": "2018 Tour de France",
+    "original_id": "S3_NQTEXT_7074262590789713570",
+    "ground_truth_file": "Q0018.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0019",
+    "text": "much of the authority of the us supreme court is based on its power to",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_-988869416948042968",
+    "ground_truth_file": "Q0019.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0020",
+    "text": "who appointed the current justices of the supreme court",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_8790951508500658794",
+    "ground_truth_file": "Q0020.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0021",
+    "text": "where does the tour de france start 2018",
+    "doc_name": "2018 Tour de France",
+    "original_id": "S3_NQTEXT_329176110017141587",
+    "ground_truth_file": "Q0021.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0022",
+    "text": "retirement age of supreme court judges in usa",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_735733759692996096",
+    "ground_truth_file": "Q0022.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0023",
+    "text": "where did le tour de france start 2018",
+    "doc_name": "2018 Tour de France",
+    "original_id": "S3_NQTEXT_6736627038987537998",
+    "ground_truth_file": "Q0023.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0024",
+    "text": "how many judges are there in the united states supreme court",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_4543417054170639917",
+    "ground_truth_file": "Q0024.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0025",
+    "text": "where is the first stage of the tour de france",
+    "doc_name": "2018 Tour de France",
+    "original_id": "S3_NQTEXT_-7126877452951153761",
+    "ground_truth_file": "Q0025.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0026",
+    "text": "how long is a term in office for a supreme court justice",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_1455193810716383078",
+    "ground_truth_file": "Q0026.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0027",
+    "text": "what are the dates for the tour de france 2018",
+    "doc_name": "2018 Tour de France",
+    "original_id": "S3_NQTEXT_-713612749072568800",
+    "ground_truth_file": "Q0027.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0028",
+    "text": "where did le tour de france start this year",
+    "doc_name": "2018 Tour de France",
+    "original_id": "S3_NQTEXT_-7438581239387654701",
+    "ground_truth_file": "Q0028.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0029",
+    "text": "when can the supreme court justices be removed",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_2698192755634040121",
+    "ground_truth_file": "Q0029.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0030",
+    "text": "what episode of black mirror was hannah john kamen in",
+    "doc_name": "Hannah John-Kamen",
+    "original_id": "S3_NQTEXT_-6718102858366318183",
+    "ground_truth_file": "Q0030.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0031",
+    "text": "how can you remove a supreme court justice",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_-2961670855418829569",
+    "ground_truth_file": "Q0031.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0032",
+    "text": "what is the maximum number of supreme court justices allowed",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_1610567325806532817",
+    "ground_truth_file": "Q0032.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0033",
+    "text": "how many supreme court justices were there originally",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_8207159288020095204",
+    "ground_truth_file": "Q0033.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0034",
+    "text": "when will tour de france teams be announced",
+    "doc_name": "2018 Tour de France",
+    "original_id": "S3_NQTEXT_-5514927031084251120",
+    "ground_truth_file": "Q0034.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0035",
+    "text": "when did oklahoma become a state what does the word oklahoma mean",
+    "doc_name": "Oklahoma",
+    "original_id": "S3_NQTEXT_-3485714005907152096",
+    "ground_truth_file": "Q0035.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0036",
+    "text": "how many members does the us supreme court have",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_609213267714876351",
+    "ground_truth_file": "Q0036.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0037",
+    "text": "where is oklahoma located in the united states",
+    "doc_name": "Oklahoma",
+    "original_id": "S3_NQTEXT_3340122335577060793",
+    "ground_truth_file": "Q0037.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0038",
+    "text": "how long do supreme court justices hold their jobs",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_-2639600741664337298",
+    "ground_truth_file": "Q0038.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0039",
+    "text": "who decides the size and number of federal courts",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_1112304613959778600",
+    "ground_truth_file": "Q0039.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0040",
+    "text": "is there a constitutional limit on the number of supreme court justices",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_-2724342520407536212",
+    "ground_truth_file": "Q0040.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0041",
+    "text": "what is a supreme court justices term of office",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_-548329466383357895",
+    "ground_truth_file": "Q0041.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0042",
+    "text": "can a member of the supreme court be removed",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_2414953926000691150",
+    "ground_truth_file": "Q0042.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0043",
+    "text": "how many supreme court judges are there in usa",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_7798718635369108427",
+    "ground_truth_file": "Q0043.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0044",
+    "text": "how long has the supreme court has 9 justices",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_-824653642806880036",
+    "ground_truth_file": "Q0044.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0045",
+    "text": "what is the length of term of office for a supreme court justice",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_-5069407596860940950",
+    "ground_truth_file": "Q0045.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0046",
+    "text": "where do a majority of supreme court cases come from",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_-8398551791510887037",
+    "ground_truth_file": "Q0046.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0047",
+    "text": "who determines the size of the supreme court",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_-8377155967940203923",
+    "ground_truth_file": "Q0047.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0048",
+    "text": "when did the us supreme court have 9 justices",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_1025571073910974662",
+    "ground_truth_file": "Q0048.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0049",
+    "text": "the number of justices serving on the supreme court is determined by",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_-4733085843277341798",
+    "ground_truth_file": "Q0049.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0050",
+    "text": "who won the first stage of the 2018 tour de france",
+    "doc_name": "2018 Tour de France",
+    "original_id": "S3_NQTEXT_-8394929068646973254",
+    "ground_truth_file": "Q0050.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0051",
+    "text": "currently how many supreme court justices are there",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_7425154493384697205",
+    "ground_truth_file": "Q0051.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0052",
+    "text": "how many judges currently serve on the supreme court",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_2525993732159637135",
+    "ground_truth_file": "Q0052.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0053",
+    "text": "how many members are there of the supreme court",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_7514836964275799080",
+    "ground_truth_file": "Q0053.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0054",
+    "text": "when was the courts size fixed at nine justices",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_-2072028062443731968",
+    "ground_truth_file": "Q0054.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0055",
+    "text": "when did the supreme court get nine justices",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_3789661245903804501",
+    "ground_truth_file": "Q0055.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0056",
+    "text": "where is the united states supreme court located",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_-8476741213124230747",
+    "ground_truth_file": "Q0056.txt",
+    "answer_format": "short text answer"
+  },
+  {
+    "id": "Q0057",
+    "text": "what are the qualifications for being a us supreme court justice",
+    "doc_name": "Supreme Court of the United States",
+    "original_id": "S3_NQTEXT_4163474915705102559",
+    "ground_truth_file": "Q0057.txt",
+    "answer_format": "short text answer"
+  }
+]
