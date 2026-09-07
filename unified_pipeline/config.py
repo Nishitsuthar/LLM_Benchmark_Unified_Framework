@@ -33,7 +33,7 @@ EVALUATORS = {
 # If --model is not found here, it is used as-is (passthrough).
 MODEL_ALIASES = {
     "llama_70b":     "meta-llama/llama-3.3-70b-instruct",
-    "gemini_flash":  "google/gemini-flash-1.5",
+    "gemini_flash":  "google/gemini-3.1-flash-lite",
     "deepseek_r1":   "deepseek/deepseek-r1",
     "qwen_72b":      "qwen/qwen-2.5-72b-instruct",
 }
