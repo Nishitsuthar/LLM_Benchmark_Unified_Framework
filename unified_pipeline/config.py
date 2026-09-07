@@ -5,26 +5,26 @@ run.py never changes — it only reads these dictionaries.
 """
 
 from unified_pipeline.evidence.csv_evidence import CsvEvidenceBuilder
-# from unified_pipeline.evidence.prose_evidence import ProseEvidenceBuilder       # Satwik adds
+from unified_pipeline.evidence.prose_evidence import ProseEvidenceBuilder
 # from unified_pipeline.evidence.rag_evidence import RagEvidenceBuilder            # Nishit adds
 # from unified_pipeline.evidence.visual_pdf_evidence import VisualPdfEvidenceBuilder  # Arpitha adds
 
 from unified_pipeline.evaluators.row_f1_evaluator import RowF1Evaluator
-# from unified_pipeline.evaluators.exact_match_evaluator import ExactMatchEvaluator   # Satwik adds
+from unified_pipeline.evaluators.exact_match_evaluator import ExactMatchEvaluator
 # from unified_pipeline.evaluators.span_f1_evaluator import SpanF1Evaluator           # Nishit adds
 # from unified_pipeline.evaluators.partial_credit_evaluator import PartialCreditEvaluator  # Arpitha adds
 
 
 EVIDENCE_BUILDERS = {
     "csv":        CsvEvidenceBuilder,
-    # "prose_docs": ProseEvidenceBuilder,
+    "prose_docs": ProseEvidenceBuilder,
     # "pdf_rag":    RagEvidenceBuilder,
     # "pdf_visual": VisualPdfEvidenceBuilder,
 }
 
 EVALUATORS = {
     "row_f1":         RowF1Evaluator,
-    # "exact_match":    ExactMatchEvaluator,
+    "exact_match":    ExactMatchEvaluator,
     # "span_f1":        SpanF1Evaluator,
     # "partial_credit": PartialCreditEvaluator,
 }
