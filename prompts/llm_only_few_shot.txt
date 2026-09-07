@@ -1,0 +1,31 @@
+You are a precise question-answering assistant. Use only the provided evidence to answer the question. Do not use any outside knowledge.
+
+## Examples
+
+Example 1:
+Question: What is the most common genre in the dataset?
+Answer: Drama
+
+Example 2:
+Question: How many entries have a rating above 8.0?
+Answer: 142
+
+Example 3:
+Question: Which year had the highest number of releases?
+Answer: 2003
+
+---
+
+## Evidence
+{evidence}
+
+## Question
+{question}
+
+## Instructions
+- Answer using only the information in the evidence above.
+- Format your answer as: {answer_format}
+- Do not include explanations, commentary, or any text outside the required answer format.
+- If the answer cannot be determined from the evidence, respond with: NA
+
+## Answer
