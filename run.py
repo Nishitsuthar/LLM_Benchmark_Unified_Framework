@@ -149,12 +149,16 @@ def main() -> None:
             )
 
             # Step 4 — write row immediately (crash safe)
+            ground_truth = Path(config["ground_truth_dir"]) / question["ground_truth_file"]
             reporter.write_row({
                 "dataset":         args.dataset,
                 "model":           args.model,
                 "mode":            args.mode,
                 "prompt_style":    args.prompt,
                 "question_id":     q_id,
+                "question":        question.get("text", ""),
+                "ground_truth":    ground_truth.read_text(encoding="utf-8").strip(),
+                "model_response":  response.final_text,
                 "exact_match":     result.content_exact_match,
                 "row_f1":          result.row_f1,
                 "precision":       result.precision,
@@ -181,6 +185,9 @@ def main() -> None:
                 "mode":            args.mode,
                 "prompt_style":    args.prompt,
                 "question_id":     q_id,
+                "question":        question.get("text", ""),
+                "ground_truth":    None,
+                "model_response":  None,
                 "exact_match":     0,
                 "row_f1":          None,
                 "precision":       None,
