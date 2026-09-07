@@ -5,6 +5,8 @@ computes precision, recall, and F1 over the token overlap.
 Ported from Nishit's my_eval.py in Sprint 3.
 """
 
+from collections import Counter
+
 from unified_pipeline.base import BaseEvaluator, EvalResult
 
 
@@ -23,9 +25,9 @@ class SpanF1Evaluator(BaseEvaluator):
         if not predicted or not expected:
             return EvalResult(0, 0.0, 0.0, 0.0, "evaluated")
 
-        common    = set(predicted) & set(expected)
-        precision = len(common) / len(predicted)
-        recall    = len(common) / len(expected)
+        common    = sum((Counter(predicted) & Counter(expected)).values())
+        precision = common / len(predicted)
+        recall    = common / len(expected)
         f1 = 2 * precision * recall / (precision + recall) if precision + recall else 0.0
         exact = int(predicted == expected)
 

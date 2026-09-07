@@ -117,7 +117,9 @@ def main() -> None:
         q_id = question.get("id", "unknown")
 
         # Step 1 — build evidence
-        evidence = builder.build(question["text"], config)
+        # Merge per-question source_pdf (if present) so RAG can scope to one PDF
+        question_config = {**config, "_source_pdf": question.get("source_pdf")}
+        evidence = builder.build(question["text"], question_config)
 
         # Step 2 — build prompt and call model
         prompt_text = build_prompt(template, question, evidence.text)

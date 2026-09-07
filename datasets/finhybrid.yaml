@@ -1,0 +1,11 @@
+name: finhybrid
+description: "FIN-Hybrid — 31 Sprint 4 hard-case questions over 4 financial report PDFs"
+
+evidence_type: pdf_rag
+eval_strategy: span_f1
+
+evidence_path: evidence/finhybrid/
+questions_file: evidence/finhybrid/questions.json
+ground_truth_dir: ground_truth/finhybrid/
+
+rag_top_k: 10
