@@ -38,7 +38,8 @@ results/*
 !results/gemini_flash/
 !results/nemotron/
 
-# Context handoff notes for Claude Code session continuity
+# Local reference and session continuity files (Claude Code)
+PROJECT_REFERENCE.md
 claude_code_history_chaining/
 chroma_db/
 .chroma_cache/
