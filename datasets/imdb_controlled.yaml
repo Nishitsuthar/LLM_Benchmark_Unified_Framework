@@ -1,0 +1,9 @@
+name: imdb_controlled
+description: "IMDb 878-movie controlled experiments — 30 hard structured-data tasks (Krittika)"
+
+evidence_type: csv_full    # routes to CsvFullEvidenceBuilder — full CSV in prompt
+eval_strategy: table_f1    # routes to TableF1Evaluator — row-level F1 on CSV tables
+
+data_file: evidence/imdb_controlled/imdb_structured_subset.csv
+questions_file: evidence/imdb_controlled/questions.json
+ground_truth_dir: evidence/imdb_controlled/

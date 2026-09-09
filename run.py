@@ -124,11 +124,14 @@ def main() -> None:
         response = router.call(prompt_text)
 
         # Step 3 — evaluate
+        gt_path = str(Path(config["ground_truth_dir"]) / question["ground_truth_file"])
         result = evaluator.evaluate(
             response.final_text,
-            str(Path(config["ground_truth_dir"]) / question["ground_truth_file"]),
+            gt_path,
             question.get("expected_columns", []),
         )
+
+        ground_truth_text = Path(gt_path).read_text(encoding="utf-8").strip()
 
         # Step 4 — write row immediately (crash safe)
         reporter.write_row({
@@ -137,6 +140,9 @@ def main() -> None:
             "mode":           args.mode,
             "prompt_style":   args.prompt,
             "question_id":    q_id,
+            "question":       question.get("text", ""),
+            "model_response": response.final_text,
+            "ground_truth":   ground_truth_text,
             "exact_match":    result.content_exact_match,
             "row_f1":         result.row_f1,
             "precision":      result.precision,

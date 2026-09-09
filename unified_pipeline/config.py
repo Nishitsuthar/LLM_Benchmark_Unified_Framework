@@ -5,11 +5,13 @@ run.py never changes — it only reads these dictionaries.
 """
 
 from unified_pipeline.evidence.csv_evidence import CsvEvidenceBuilder
+from unified_pipeline.evidence.csv_full_evidence import CsvFullEvidenceBuilder  # Krittika
 # from unified_pipeline.evidence.prose_evidence import ProseEvidenceBuilder       # Satwik adds
 # from unified_pipeline.evidence.rag_evidence import RagEvidenceBuilder            # Nishit adds
 # from unified_pipeline.evidence.visual_pdf_evidence import VisualPdfEvidenceBuilder  # Arpitha adds
 
 from unified_pipeline.evaluators.row_f1_evaluator import RowF1Evaluator
+from unified_pipeline.evaluators.table_f1_evaluator import TableF1Evaluator    # Krittika
 # from unified_pipeline.evaluators.exact_match_evaluator import ExactMatchEvaluator   # Satwik adds
 # from unified_pipeline.evaluators.span_f1_evaluator import SpanF1Evaluator           # Nishit adds
 # from unified_pipeline.evaluators.partial_credit_evaluator import PartialCreditEvaluator  # Arpitha adds
@@ -17,6 +19,7 @@ from unified_pipeline.evaluators.row_f1_evaluator import RowF1Evaluator
 
 EVIDENCE_BUILDERS = {
     "csv":        CsvEvidenceBuilder,
+    "csv_full":   CsvFullEvidenceBuilder,
     # "prose_docs": ProseEvidenceBuilder,
     # "pdf_rag":    RagEvidenceBuilder,
     # "pdf_visual": VisualPdfEvidenceBuilder,
@@ -24,6 +27,7 @@ EVIDENCE_BUILDERS = {
 
 EVALUATORS = {
     "row_f1":         RowF1Evaluator,
+    "table_f1":       TableF1Evaluator,
     # "exact_match":    ExactMatchEvaluator,
     # "span_f1":        SpanF1Evaluator,
     # "partial_credit": PartialCreditEvaluator,
@@ -36,4 +40,5 @@ MODEL_ALIASES = {
     "gemini_flash":  "google/gemini-flash-1.5",
     "deepseek_r1":   "deepseek-ai/DeepSeek-R1",
     "qwen_72b":      "Qwen/Qwen2.5-72B-Instruct-Turbo",
+    "mistral_small": "mistralai/mistral-small-2603",
 }
