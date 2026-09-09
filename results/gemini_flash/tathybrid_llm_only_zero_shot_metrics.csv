@@ -1,0 +1,30 @@
+dataset,model,mode,prompt_style,question_id,question,ground_truth,model_response,exact_match,row_f1,precision,recall,eval_status,latency_seconds,input_tokens,output_tokens
+tathybrid,gemini_flash,llm_only,zero_shot,Q0001,What was the change in Accumulated amortization from 2018 to 2019?,-1073,"$3,633,000",0,0.0,0.0,0.0,evaluated,1.327,8433,10
+tathybrid,gemini_flash,llm_only,zero_shot,Q0002,What was the amount in escrow as restricted cash at 2019 and 2018 respectively?,"72,000, 140,000",NA,0,0.0,0.0,0.0,evaluated,1.143,7696,1
+tathybrid,gemini_flash,llm_only,zero_shot,Q0003,What was the Compensation and related benefits in 2019 and 2018 respectively?,"$3,247, $949","2019: $3,347,648; 2018: $1,526,177",0,0.0,0.0,0.0,evaluated,2.014,8281,32
+tathybrid,gemini_flash,llm_only,zero_shot,Q0004,What is the value of real estate taxes in 2018?,398,$398,1,1.0,1.0,1.0,evaluated,1.633,8746,4
+tathybrid,gemini_flash,llm_only,zero_shot,Q0005,What is the average real estate taxes for 2018 and 2019?,398,$398,1,1.0,1.0,1.0,evaluated,0.893,9290,4
+tathybrid,gemini_flash,llm_only,zero_shot,Q0006,What is the change in payroll and incentive compensation between 2018 and 2019?,1072,NA,0,0.0,0.0,0.0,evaluated,0.831,9190,1
+tathybrid,gemini_flash,llm_only,zero_shot,Q0007,What is the percentage constitution of net sales from Frozen Kefir among the total net sales in 2019?,1.73,2%,0,0.0,0.0,0.0,evaluated,1.09,7564,2
+tathybrid,gemini_flash,llm_only,zero_shot,Q0008,What is the percentage change in ingredients between 2018 and 2019?,22.91,NA,0,0.0,0.0,0.0,evaluated,0.783,8222,1
+tathybrid,gemini_flash,llm_only,zero_shot,Q0009,What is the value of recipes in 2018 and 2019 respectively?,"$ 44, $ 44",NA,0,0.0,0.0,0.0,evaluated,0.58,9136,1
+tathybrid,gemini_flash,llm_only,zero_shot,Q0010,What is the change in the value of customer relationships between 2018 and 2019?,0,NA,0,0.0,0.0,0.0,evaluated,0.499,7951,1
+tathybrid,gemini_flash,llm_only,zero_shot,Q0011,What is the average value of trade names for both 2018 and 2019?,2248,"$3,700",0,0.0,0.0,0.0,evaluated,0.681,9502,6
+tathybrid,gemini_flash,llm_only,zero_shot,Q0012,What is the value of vehicles in 2018 and 2019 respectively?,"937, 778",2018: $937; 2019: $778,1,1.0,1.0,1.0,evaluated,0.877,9182,20
+tathybrid,gemini_flash,llm_only,zero_shot,Q0013,What is the average value of vehicles for 2018 and 2019?,857.5,$857.50,1,1.0,1.0,1.0,evaluated,0.646,9028,7
+tathybrid,gemini_flash,llm_only,zero_shot,Q0014,What was the low sale price per share for each quarters in 2018 in chronological order?,"$ 5.99, $ 4.79, $ 2.66, $ 1.88","First Quarter: $5.99, Second Quarter: $4.79, Third Quarter: $2.66, Fourth Quarter: $1.88",1,1.0,1.0,1.0,evaluated,1.006,9817,35
+tathybrid,gemini_flash,llm_only,zero_shot,Q0015,What is the value of customer relationships in 2018 and 2019 respectively?,"985, 985",NA,0,0.0,0.0,0.0,evaluated,0.559,8401,1
+tathybrid,gemini_flash,llm_only,zero_shot,Q0016,What is the value of buildings and improvements in 2018 and 2019 respectively?,"17,520, 17,332","2018: $17,520; 2019: $17,332",1,1.0,1.0,1.0,evaluated,1.178,8310,26
+tathybrid,gemini_flash,llm_only,zero_shot,Q0017,What is the amount of net sales from ProBugs Kelir in 2018 and 2019 respectively?,"2,795, 2,780","2019: $2,780; 2018: $2,795",1,1.0,1.0,1.0,evaluated,0.629,8156,24
+tathybrid,gemini_flash,llm_only,zero_shot,Q0018,What is net sales from cream and other in 2018 and 2019 respectively?,"5,276, 4,228","2018: $5,276; 2019: $4,228",1,1.0,1.0,1.0,evaluated,0.784,7075,24
+tathybrid,gemini_flash,llm_only,zero_shot,Q0019,What is the deferred provision (benefit) for income tax for 2018 and 2019 respectively?,"(461), 533",2019: $533; 2018: $(451),0,0.0,0.0,0.0,evaluated,0.75,8407,21
+tathybrid,gemini_flash,llm_only,zero_shot,Q0020,What is the provision (benefit) for total current income taxes for 2018 and 2019 respectively?,"236, 249",2019: $782; 2018: $(225),0,0.0,0.0,0.0,evaluated,1.099,8720,21
+tathybrid,gemini_flash,llm_only,zero_shot,Q0021,"In which year was Operating Leases greater than 100,000?",2022,2022,1,1.0,1.0,1.0,evaluated,0.823,7095,4
+tathybrid,gemini_flash,llm_only,zero_shot,Q0022,"In which year was Increases for positions taken in prior years less than 1,000?",2018,NA,0,0.0,0.0,0.0,evaluated,0.606,8769,1
+tathybrid,gemini_flash,llm_only,zero_shot,Q0023,What was the Rate change in 2019 and 2018 respectively?,"(84), 0",NA,0,0.0,0.0,0.0,evaluated,0.558,8628,1
+tathybrid,gemini_flash,llm_only,zero_shot,Q0024,"What is the change in Liabilities: Deferred income taxes from Balance at December 31, 2017 to January 1, 2018?",-108,NA,0,0.0,0.0,0.0,evaluated,0.69,8810,1
+tathybrid,gemini_flash,llm_only,zero_shot,Q0025,"In which year was Prepaid expenditures less than 6,000?",2019,2019,1,1.0,1.0,1.0,evaluated,0.848,8321,4
+tathybrid,gemini_flash,llm_only,zero_shot,Q0026,What was the Prepaid expenditures in 2019 and 2018 respectively?,"5,621, 7,108","2019: $1,292; 2018: $9,886",0,0.0,0.0,0.0,evaluated,0.762,9154,24
+tathybrid,gemini_flash,llm_only,zero_shot,Q0027,What was the Contracts of affreightment revenues in 2019 and 2018 respectively?,"58,589, 68,698","2019: $58,589; 2018: $68,698",1,1.0,1.0,1.0,evaluated,1.1,8508,26
+tathybrid,gemini_flash,llm_only,zero_shot,Q0028,"What was the value of Vessels, net in 2019 and 2018 respectively?","644,312, 596,929","2019: $737,212; 2018: $597,659",0,0.0,0.0,0.0,evaluated,0.987,8036,28
+tathybrid,gemini_flash,llm_only,zero_shot,Q0029,What was the Time and bareboat charter revenues revenues in 2019 and 2018 respectively?,"$263,683, $213,923","2019: $263,683; 2018: $213,923",1,1.0,1.0,1.0,evaluated,0.755,8323,28
