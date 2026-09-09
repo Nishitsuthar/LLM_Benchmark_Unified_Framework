@@ -1,15 +1,16 @@
 """Unified pipeline entry point.
 
 Usage:
-    python run.py --dataset imdb_878 --model llama_70b --prompt zero_shot
-    python run.py --dataset music    --model gemini_flash --prompt one_shot
-    python run.py --dataset uda_nqtext --model deepseek_r1 --prompt zero_shot
-
-    # Omit --prompt to get an interactive menu of available prompts:
     python run.py --dataset imdb_controlled --model mistral_small
+    python run.py --dataset music           --model gemini_flash
+    python run.py --dataset uda_nqtext      --model deepseek_r1
+
+An interactive menu always appears to choose the prompt. Only prompts
+relevant to the selected dataset are shown (dataset-specific first,
+then generic fallbacks).
 
 --model accepts either a short alias from config.MODEL_ALIASES or a raw
-provider model ID (e.g. meta-llama/Llama-3.3-70B-Instruct-Turbo).
+provider model ID (e.g. meta-llama/llama-3.3-70b-instruct).
 """
 
 from __future__ import annotations
@@ -35,9 +36,6 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run the unified benchmark pipeline.")
     parser.add_argument("--dataset", required=True, help="Dataset name matching a file in datasets/")
     parser.add_argument("--model",   required=True, help="Model alias or raw provider model ID")
-    parser.add_argument("--prompt",  default=None,
-                        choices=["zero_shot", "one_shot", "few_shot"],
-                        help="Prompt style. Omit to choose interactively from available prompts.")
     parser.add_argument("--mode",    default="llm_only",
                         choices=["llm_only", "sql_detour"],
                         help="Experiment mode")
@@ -84,23 +82,6 @@ def select_prompt_interactive(options: list[tuple[str, Path]]) -> tuple[str, str
         print(f"  Please enter a number between 1 and {len(options)}.")
 
 
-def load_prompt_template(mode: str, prompt_style: str, dataset: str = "") -> tuple[str, str]:
-    """Return (label, template_text). Dataset-specific file takes priority over generic."""
-    stem = f"{mode}_{prompt_style}"
-    candidates: list[tuple[str, Path]] = []
-    if dataset:
-        candidates.append((f"{dataset}_{stem}  [dataset-specific]", PROMPTS_DIR / f"{dataset}_{stem}.txt"))
-    candidates.append((f"{stem}  [generic]", PROMPTS_DIR / f"{stem}.txt"))
-    for label, path in candidates:
-        if path.exists():
-            return label, path.read_text(encoding="utf-8")
-    tried = [str(p) for _, p in candidates]
-    raise FileNotFoundError(
-        f"No prompt template found for mode={mode}, prompt_style={prompt_style}, dataset={dataset}. "
-        f"Tried: {tried}"
-    )
-
-
 def build_prompt(template: str, question: dict, evidence_text: str) -> str:
     return template.format(
         question=question.get("text", ""),
@@ -139,19 +120,15 @@ def main() -> None:
     evaluator = EVALUATORS[eval_strategy]()
     router    = ModelRouter(args.model)
 
-    # Resolve prompt (interactive or direct)
-    if args.prompt is None:
-        options = discover_prompts(args.dataset, args.mode)
-        if not options:
-            raise FileNotFoundError(
-                f"No prompt files found in {PROMPTS_DIR}/ for dataset={args.dataset}, mode={args.mode}. "
-                "Add a file named {dataset}_{mode}_{style}.txt or {mode}_{style}.txt."
-            )
-        prompt_label, template = select_prompt_interactive(options)
-        prompt_style_for_output = prompt_label.split("  ")[0]  # strip the [tag] for filenames
-    else:
-        prompt_label, template = load_prompt_template(args.mode, args.prompt, dataset=args.dataset)
-        prompt_style_for_output = args.prompt
+    # Resolve prompt interactively
+    options = discover_prompts(args.dataset, args.mode)
+    if not options:
+        raise FileNotFoundError(
+            f"No prompt files found in {PROMPTS_DIR}/ for dataset={args.dataset}, mode={args.mode}. "
+            "Add a file named {dataset}_{mode}_{style}.txt or {mode}_{style}.txt."
+        )
+    prompt_label, template = select_prompt_interactive(options)
+    prompt_style_for_output = prompt_label.split("  ")[0]
 
     reporter  = Reporter(f"results/{args.model}/{args.dataset}_{args.mode}_{prompt_style_for_output}_metrics.csv")
 
