@@ -1,0 +1,19 @@
+dataset,model,mode,prompt_style,question_id,question,ground_truth,model_response,exact_match,row_f1,precision,recall,eval_status,latency_seconds,input_tokens,output_tokens
+tathybrid,nemotron,llm_only,llm_only_zero_shot,Q0001,What was the change in Accumulated amortization from 2018 to 2019?,-1073,"$3,633 thousand",0,0.0,0.0,0.0,evaluated,76.268,8776,458
+tathybrid,nemotron,llm_only,llm_only_zero_shot,Q0002,What was the amount in escrow as restricted cash at 2019 and 2018 respectively?,"72,000, 140,000",NA,0,0.0,0.0,0.0,evaluated,75.235,8037,688
+tathybrid,nemotron,llm_only,llm_only_zero_shot,Q0003,What was the Compensation and related benefits in 2019 and 2018 respectively?,"$3,247, $949",NA,0,0.0,0.0,0.0,evaluated,96.391,8532,1095
+tathybrid,nemotron,llm_only,llm_only_zero_shot,Q0004,What is the value of real estate taxes in 2018?,398,398,1,1.0,1.0,1.0,evaluated,113.698,9077,174
+tathybrid,nemotron,llm_only,llm_only_zero_shot,Q0005,What is the average real estate taxes for 2018 and 2019?,398,,0,0.0,0.0,0.0,evaluated,79.899,,
+tathybrid,nemotron,llm_only,llm_only_zero_shot,Q0006,What is the change in payroll and incentive compensation between 2018 and 2019?,1072,NA,0,0.0,0.0,0.0,evaluated,140.889,9533,432
+tathybrid,nemotron,llm_only,llm_only_zero_shot,Q0007,What is the percentage constitution of net sales from Frozen Kefir among the total net sales in 2019?,1.73,,0,0.0,0.0,0.0,evaluated,63.898,,
+tathybrid,nemotron,llm_only,llm_only_zero_shot,Q0008,What is the percentage change in ingredients between 2018 and 2019?,22.91,NA,0,0.0,0.0,0.0,evaluated,64.444,8560,197
+tathybrid,nemotron,llm_only,llm_only_zero_shot,Q0009,What is the value of recipes in 2018 and 2019 respectively?,"$ 44, $ 44",NA,0,0.0,0.0,0.0,evaluated,65.156,9547,257
+tathybrid,nemotron,llm_only,llm_only_zero_shot,Q0010,What is the change in the value of customer relationships between 2018 and 2019?,0,NA,0,0.0,0.0,0.0,evaluated,82.299,8261,572
+tathybrid,nemotron,llm_only,llm_only_zero_shot,Q0011,What is the average value of trade names for both 2018 and 2019?,2248,NA,0,0.0,0.0,0.0,evaluated,69.997,9827,302
+tathybrid,nemotron,llm_only,llm_only_zero_shot,Q0012,What is the value of vehicles in 2018 and 2019 respectively?,"937, 778",,0,0.0,0.0,0.0,evaluated,74.096,,
+tathybrid,nemotron,llm_only,llm_only_zero_shot,Q0013,What is the average value of vehicles for 2018 and 2019?,857.5,857.5,1,1.0,1.0,1.0,evaluated,94.85,9354,761
+tathybrid,nemotron,llm_only,llm_only_zero_shot,Q0014,What was the low sale price per share for each quarters in 2018 in chronological order?,"$ 5.99, $ 4.79, $ 2.66, $ 1.88","$5.99, $4.79, $2.66, $1.88",0,0.0,0.0,0.0,evaluated,97.191,10182,254
+tathybrid,nemotron,llm_only,llm_only_zero_shot,Q0015,What is the value of customer relationships in 2018 and 2019 respectively?,"985, 985",,0,0.0,0.0,0.0,evaluated,62.24,,
+tathybrid,nemotron,llm_only,llm_only_zero_shot,Q0016,What is the value of buildings and improvements in 2018 and 2019 respectively?,"17,520, 17,332","2019: $17,332, 2018: $17,520",0,0.0,0.0,0.0,evaluated,61.793,8572,212
+tathybrid,nemotron,llm_only,llm_only_zero_shot,Q0017,What is the amount of net sales from ProBugs Kelir in 2018 and 2019 respectively?,"2,795, 2,780","2019: $2,780 thousand; 2018: $2,795 thousand",0,0.0,0.0,0.0,evaluated,82.209,8510,237
+tathybrid,nemotron,llm_only,llm_only_zero_shot,Q0018,What is net sales from cream and other in 2018 and 2019 respectively?,"5,276, 4,228",,0,0.0,0.0,0.0,evaluated,54.531,,

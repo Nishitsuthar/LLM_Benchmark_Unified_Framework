@@ -1,0 +1,28 @@
+dataset,model,mode,prompt_style,question_id,question,ground_truth,model_response,exact_match,row_f1,precision,recall,eval_status,latency_seconds,input_tokens,output_tokens
+music_structured,gemini_flash,llm_only,zero_shot,Q0001,Which artist has the highest popularity score and how many albums have they released?,The Ortegas 1.0 10 albums,"0.149, James Parks",0,0.0,0.0,0.0,evaluated,5.593,16288,8
+music_structured,gemini_flash,llm_only,zero_shot,Q0002,What is the average track duration in minutes across all tracks?,4.74 minutes,3.55 minutes,0,0.5,0.5,0.5,evaluated,0.998,16604,5
+music_structured,gemini_flash,llm_only,zero_shot,Q0003,Which music genre has the most artists and how many?,Hip-Hop 42 artists,"Country, 24",0,0.0,0.0,0.0,evaluated,0.81,16284,5
+music_structured,gemini_flash,llm_only,zero_shot,Q0004,What percentage of artists are currently active?,84.69%,72.11%,0,0.0,0.0,0.0,evaluated,0.851,16281,6
+music_structured,gemini_flash,llm_only,zero_shot,Q0005,How many tracks have explicit content?,6 tracks,0,0,0.0,0.0,0.0,evaluated,0.714,16547,1
+music_structured,gemini_flash,llm_only,zero_shot,Q0006,Which record label has signed the most artists?,Gray-Mayo Entertainment 10,LBL_0037,0,0.0,0.0,0.0,evaluated,0.845,16282,7
+music_structured,gemini_flash,llm_only,zero_shot,Q0007,What is the average number of tracks per album for each genre?,Jazz 2.0,NA,0,0.0,0.0,0.0,evaluated,0.922,16605,1
+music_structured,gemini_flash,llm_only,zero_shot,Q0008,Which artists have won at least one award and how many awards have they won in total?,6 artists Ortegas=12,"ART_0437: 5
+ART_0147: 1
+ART_0041: 1
+ART_0476: 1
+ART_0034: 1",0,0.0,0.0,0.0,evaluated,1.025,16291,49
+music_structured,gemini_flash,llm_only,zero_shot,Q0009,"What is the distribution of album types (Single, EP, Album) by record label type (Major, Independent)?",10 combinations,NA,0,0.0,0.0,0.0,evaluated,0.735,16296,1
+music_structured,gemini_flash,llm_only,zero_shot,Q0010,Which artists have tracks in multiple albums and how many albums do they have?,3 artists,"- ART_0437 (The Gonzalezs): 7 albums
+- ART_0010 (Alex Spencer): 2 albums
+- ART_0185 (The Gonzalezs): 2 albums
+- ART_0242 (Jack King): 2 albums
+- ART_0289 (The Williamss): 2 albums
+- ART_0438 (William Jones): 2 albums
+- ART_0581 (The Bryants): 2 albums
+- ART_0651 (Thunder Industry): 2 albums",0,0.0,0.0,0.0,evaluated,1.991,16288,123
+music_structured,gemini_flash,llm_only,zero_shot,Q0011,What is the average speechiness score for explicit vs non-explicit tracks?,Explicit 0.103 Non 0.161,Explicit: 0.111; Non-explicit: 0.086,0,0.0,0.0,0.0,evaluated,0.825,17158,19
+music_structured,gemini_flash,llm_only,zero_shot,Q0012,"Calculate the ""musical diversity score"" for each artist based on the variance of their track features (energy, danceability, valence). Which artist has the highest diversity?",David Davis 0.126,NA,0,0.0,0.0,0.0,evaluated,0.655,16306,1
+music_structured,gemini_flash,llm_only,zero_shot,Q0013,"Identify ""overperforming"" artists: those whose award count is disproportionately high relative to their album count and popularity score.",Ortegas 12.00 awards/album,ART_0437,0,0.0,0.0,0.0,evaluated,1.452,16297,6
+music_structured,gemini_flash,llm_only,zero_shot,Q0014,"Calculate the ""genre dominance score"" for each genre based on artist count, album count, and average popularity. Which genre is most dominant?",Rock 0.9127,NA,0,0.0,0.0,0.0,evaluated,0.778,16301,1
+music_structured,gemini_flash,llm_only,zero_shot,Q0015,"Identify ""prolific years"" for the music industry by counting albums released per year and calculating the year-over-year growth rate.",2011 400% 2008 300% 2000 200%,NA,0,0.0,0.0,0.0,evaluated,0.756,16301,1
+music_structured,gemini_flash,llm_only,zero_shot,Q0016,"Identify ""hidden gem"" tracks: high audio quality features (low speechiness, high instrumentalness) from less popular artists (popularity < 0.5) that have not been heavily streamed.",NO RESULTS,"TRK_01457, TRK_01492, TRK_04137",0,0.0,0.0,0.0,evaluated,0.954,16579,26

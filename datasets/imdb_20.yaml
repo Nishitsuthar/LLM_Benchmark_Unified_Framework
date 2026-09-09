@@ -1,9 +1,0 @@
-name: imdb_20
-description: "IMDb 20-movie subset — 10 questions, visual PDF evidence"
-
-evidence_type: pdf_visual     # routes to VisualPdfEvidenceBuilder
-eval_strategy: partial_credit  # routes to PartialCreditEvaluator
-
-evidence_path: evidence/imdb_20/report.pdf
-questions_file: evidence/imdb_20/questions.json
-ground_truth_dir: ground_truth/imdb_20/

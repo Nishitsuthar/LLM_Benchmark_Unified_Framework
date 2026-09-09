@@ -32,16 +32,20 @@ ENV/
 .ipynb_checkpoints/
 *.ipynb
 
-# Results and large data — ignored by default; each team member commits their own dataset
-results/
+# Results — commit each team member's results
+results/*
+!results/mistral_small/
+!results/gemini_flash/
+!results/nemotron/
 
-# Ignore all evidence subdirs except Nishit's 3 datasets
+# Ignore all evidence subdirs except committed datasets
 /evidence/*
 !/evidence/tathybrid/
 !/evidence/finhybrid/
 !/evidence/music_structured/
+!/evidence/imdb_controlled/
 
-# Ignore all ground_truth subdirs except Nishit's 3 datasets
+# Ignore all ground_truth subdirs except committed datasets
 ground_truth/*
 !ground_truth/tathybrid/
 !ground_truth/finhybrid/
