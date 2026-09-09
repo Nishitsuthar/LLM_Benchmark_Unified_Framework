@@ -56,16 +56,11 @@ def load_questions(questions_file: str) -> list[dict]:
 
 def discover_prompts(dataset: str, mode: str) -> list[tuple[str, Path]]:
     """Return (label, path) pairs — dataset-specific first, then generic."""
-    styles = ["zero_shot", "one_shot", "few_shot"]
     found = []
-    for style in styles:
-        p = PROMPTS_DIR / f"{dataset}_{mode}_{style}.txt"
-        if p.exists():
-            found.append((f"{dataset}_{mode}_{style}  [dataset-specific]", p))
-    for style in styles:
-        p = PROMPTS_DIR / f"{mode}_{style}.txt"
-        if p.exists():
-            found.append((f"{mode}_{style}  [generic]", p))
+    for p in sorted(PROMPTS_DIR.glob(f"{dataset}_{mode}_*.txt")):
+        found.append((f"{p.stem}  [dataset-specific]", p))
+    for p in sorted(PROMPTS_DIR.glob(f"{mode}_*.txt")):
+        found.append((f"{p.stem}  [generic]", p))
     return found
 
 
