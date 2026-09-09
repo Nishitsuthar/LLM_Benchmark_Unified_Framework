@@ -5,6 +5,8 @@ computes precision, recall, and F1 over the token overlap.
 Ported from Nishit's my_eval.py in Sprint 3.
 """
 
+from __future__ import annotations
+
 from collections import Counter
 
 from unified_pipeline.base import BaseEvaluator, EvalResult

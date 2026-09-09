@@ -1,0 +1,16 @@
+# Core pipeline
+openai>=1.0.0
+python-dotenv>=1.0.0
+pyyaml>=6.0
+pandas>=2.0.0
+
+# RAG evidence builder (Nishit)
+# torch must be pinned — sentence-transformers 3.x+ requires torch>=2.0
+# and transformers 4.50+ requires torch>=2.1 (register_pytree_node moved in 2.0)
+torch>=2.1.0
+pymupdf>=1.23.0
+chromadb>=0.5.0
+sentence-transformers>=3.0.0
+
+# Prose / visual evidence builders (Satwik, Arpitha)
+Pillow>=10.0.0
