@@ -7,8 +7,3 @@ eval_strategy: exact_match  # routes to ExactMatchEvaluator
 evidence_path: evidence/music/
 questions_file: evidence/music/questions.json
 ground_truth_dir: ground_truth/music/
-
-# Optional: prefix used to find dataset-specific prompt files in prompts/.
-# Defaults to the dataset name. Set this to share prompts across datasets
-# or if your prompt files use a different naming prefix.
-# prompt_prefix: music
