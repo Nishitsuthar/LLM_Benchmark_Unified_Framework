@@ -4,13 +4,11 @@ Nishit updates this file as each team member finishes their module.
 run.py never changes — it only reads these dictionaries.
 """
 
-from unified_pipeline.evidence.csv_evidence import CsvEvidenceBuilder
 from unified_pipeline.evidence.csv_full_evidence import CsvFullEvidenceBuilder  # Krittika
 # from unified_pipeline.evidence.prose_evidence import ProseEvidenceBuilder       # Satwik adds
 from unified_pipeline.evidence.rag_evidence import RagEvidenceBuilder            # Nishit adds
 # from unified_pipeline.evidence.visual_pdf_evidence import VisualPdfEvidenceBuilder  # Arpitha adds
 
-from unified_pipeline.evaluators.row_f1_evaluator import RowF1Evaluator
 from unified_pipeline.evaluators.table_f1_evaluator import TableF1Evaluator    # Krittika
 # from unified_pipeline.evaluators.exact_match_evaluator import ExactMatchEvaluator   # Satwik adds
 from unified_pipeline.evaluators.span_f1_evaluator import SpanF1Evaluator           # Nishit adds
@@ -18,7 +16,6 @@ from unified_pipeline.evaluators.span_f1_evaluator import SpanF1Evaluator       
 
 
 EVIDENCE_BUILDERS = {
-    "csv":        CsvEvidenceBuilder,
     "csv_full":   CsvFullEvidenceBuilder,
     # "prose_docs": ProseEvidenceBuilder,
     "pdf_rag":    RagEvidenceBuilder,
@@ -26,7 +23,6 @@ EVIDENCE_BUILDERS = {
 }
 
 EVALUATORS = {
-    "row_f1":         RowF1Evaluator,
     "table_f1":       TableF1Evaluator,
     # "exact_match":    ExactMatchEvaluator,
     "span_f1":        SpanF1Evaluator,

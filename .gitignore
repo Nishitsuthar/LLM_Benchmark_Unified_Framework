@@ -32,26 +32,14 @@ ENV/
 .ipynb_checkpoints/
 *.ipynb
 
-# Results — commit each team member's results
+# Results — each team member's results are committed; ignore new model dirs until added
 results/*
 !results/mistral_small/
 !results/gemini_flash/
 !results/nemotron/
 
-# Ignore all evidence subdirs except committed datasets
-/evidence/*
-!/evidence/tathybrid/
-!/evidence/finhybrid/
-!/evidence/music_structured/
-!/evidence/imdb_controlled/
-
-# Ignore all ground_truth subdirs except committed datasets
-ground_truth/*
-!ground_truth/tathybrid/
-!ground_truth/finhybrid/
-!ground_truth/music_structured/
-
-# Context handoff notes for Claude Code session continuity
+# Local reference and session continuity files (Claude Code)
+PROJECT_REFERENCE.md
 claude_code_history_chaining/
 chroma_db/
 .chroma_cache/
