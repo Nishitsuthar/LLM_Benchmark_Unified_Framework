@@ -4,6 +4,8 @@ Writes one row to metrics.csv immediately after every question.
 If the run crashes at question 17, questions 1-16 are already saved.
 """
 
+from __future__ import annotations
+
 import csv
 from pathlib import Path
 

@@ -1,0 +1,119 @@
+You are generating an executable SQL query for a controlled IMDb benchmark.
+
+Purpose:
+This is an LLM + SQL detour setting. The model should not manually compute the answer from the CSV. Instead, it should translate the natural-language task into a structured SQL query that can be executed by a database backend. The SQL result table will be used as the final answer.
+
+SQL dialect:
+{sql_dialect}
+
+Data rules:
+- Use only the structured IMDb subset table described in the schema below.
+- Treat this table as the complete dataset for the task.
+- Do not use raw IMDb TSV files.
+- Do not use external IMDb knowledge.
+- Do not use web search, APIs, or outside sources.
+
+Output rules:
+- Return only one executable SQL query.
+- Do not include explanations, comments, markdown fences, JSON, or alternative queries.
+- Do not include prose before or after the SQL.
+- The final SELECT must match the requested answer format exactly.
+- Do not return extra helper columns such as row numbers, ranks, tconst, intermediate counts, or debug fields unless the answer format explicitly asks for them.
+- Use clear aliases so the output column names exactly match the requested columns.
+
+Data-grain planning rules:
+- Preserve one row per movie, identified by tconst, for every movie-level calculation.
+- Compute global movie statistics from a movie-level CTE before expanding genres or Cast_and_Crew.
+- Expand genres only when the requested calculation is explicitly per genre.
+- Expand Cast_and_Crew only when the requested calculation explicitly involves people or roles.
+- After any expansion, state the intended grain through DISTINCT keys. For example, use one row per primaryName and tconst before counting movies or summing movie-level values.
+- Never allow a one-to-many expansion to multiply numVotes, movie counts, ratings, runtimes, or other movie-level measures.
+
+Query construction rules:
+- Generate SQL for the configured SQL dialect only.
+- The configured dialect is SQLite. Use SQLite syntax and SQLite-supported functions only.
+- Do not use LATERAL, CROSS APPLY, OUTER APPLY, UNNEST, STRING_SPLIT, SPLIT_PART, or PostgreSQL-specific syntax.
+- Use common table expressions when they make the logic clearer.
+- Begin a CTE query directly with `WITH cte_name AS (`. Do not place a comment or explanation between `WITH` and the first CTE name.
+- Prefer deterministic ordering when ranking or selecting top-k rows. Break ties using stable fields such as primaryTitle, tconst, or primaryName when available.
+- If the task asks for top-k per group, use window functions such as ROW_NUMBER(), RANK(), or DENSE_RANK() as appropriate.
+- If the task asks for one row per group, ensure the query returns only one row for each group unless ties are explicitly requested.
+- If the task asks for medians, trimmed means, z-scores, set differences, or grouped rankings, compute them in SQL rather than approximating manually.
+- Do not nest one window function inside another window or aggregate function. Compute intermediate statistics in separate CTEs and join or cross join them back to the data.
+- For population variance, use `AVG(x * x) - AVG(x) * AVG(x)` in an aggregate CTE; take `SQRT` only after those aggregates have been computed.
+- For four equal-sized quartiles, prefer `NTILE(4) OVER (ORDER BY runtimeMinutes, tconst)` so ties are handled deterministically.
+- Every column referenced by a later CTE, window function, JOIN, WHERE clause, or ORDER BY clause must be selected and carried through all necessary intermediate CTEs.
+- Before returning the query, verify that every referenced column exists in the CTE or table alias from which it is referenced.
+- The final ORDER BY must reference only columns available from the final SELECT source. Do not reference helper columns that were removed in an earlier CTE.
+- For UNION or UNION ALL queries, the final ORDER BY may reference only columns returned by the compound result.
+- Helper columns may be retained inside intermediate CTEs for ranking and deterministic tie-breaking, but the final SELECT must expose only the requested columns.
+- Compute global movie-level statistics before splitting genres or Cast_and_Crew. Genre expansion must not change global movie counts, averages, percentiles, variances, or standard deviations.
+- Never sum movie-level values such as numVotes after expanding a movie into multiple genre rows. For actor vote totals, first create distinct rows containing primaryName, tconst, and numVotes, aggregate votes there, and calculate genre breadth separately.
+- When actor statistics require both genre breadth and total votes, calculate them in separate CTEs and join the results by primaryName.
+- When a later CTE needs genres, Cast_and_Crew, numVotes, tconst, or another source column, retain that column in every preceding CTE.
+- When combining AND and OR conditions, always use parentheses so role filters are applied correctly.
+- Remove role suffixes such as (actor) and (actress) before returning or comparing primaryName values.
+
+SQLite function and statistical rules:
+- The execution environment provides SQLite built-ins, window functions, json_each, and a registered scalar SQRT function.
+- Do not use STDDEV, STDDEV_POP, STDDEV_SAMP, VARIANCE, PERCENTILE_CONT, PERCENTILE_DISC, MEDIAN, or other unavailable aggregate functions.
+- Compute population standard deviation as `SQRT(AVG(x * x) - AVG(x) * AVG(x))` in a separate aggregate CTE.
+- Guard against tiny negative floating-point variance by applying `MAX(variance_expression, 0.0)` before SQRT when needed.
+- Compute medians and percentile thresholds with ordered ROW_NUMBER and COUNT values in separate CTEs.
+- For percentile or quantile calculations, use a deterministic ordering that includes a stable tie-breaker such as tconst.
+
+SQLite field-splitting rules:
+- SQLite's `json_each` is a table-valued function and does not require `LATERAL`.
+- To split genres, use this pattern and read the token from `g.value`:
+  `FROM imdb_structured_subset AS m CROSS JOIN json_each('["' || REPLACE(m.genres, ',', '","') || '"]') AS g`
+- To split Cast_and_Crew, use this pattern and read the entry from `p.value`:
+  `FROM imdb_structured_subset AS m CROSS JOIN json_each('["' || REPLACE(m.Cast_and_Crew, ', ', '","') || '"]') AS p`
+- Filter null or empty source fields before relying on split values.
+- Apply `TRIM` to `g.value` or `p.value` before grouping, filtering, or extracting a name.
+- Do not place `LATERAL` or a nested `SELECT` around json_each.
+
+IMDb-specific transformation rules:
+- The table name is imdb_structured_subset.
+- The genres column may contain comma-separated genres such as 'Action,Drama,History'. Split genres when the task asks for per-genre analysis, genre counts, genre rankings, or genre-level aggregation.
+- Do not treat the full comma-separated genres string as one genre unless the task explicitly asks for the original genre combination.
+- The Cast_and_Crew column contains comma-separated people with roles in parentheses, for example: 'Actor Name (actor), Director Name (director)'.
+- For actor/cast tasks, extract only people whose role is actor or actress.
+- Exclude directors, writers, producers, composers, cinematographers, editors, self, archive_footage, casting_directors, and production_designer roles unless the task explicitly asks for them.
+- Match actor roles with `(p.value LIKE '% (actor)' OR p.value LIKE '% (actress)')` and keep the parentheses around the OR condition.
+- For other role-specific tasks, match the exact requested suffix, such as `p.value LIKE '% (writer)'`, `'% (director)'`, or `'% (producer)'`.
+- Extract a clean person name with `TRIM(SUBSTR(p.value, 1, INSTR(p.value, ' (') - 1))` before grouping, joining, comparing sets, or returning primaryName.
+- Do not return or compare values such as `Name (actor)` as primaryName.
+- Deduplicate repeated credits with `SELECT DISTINCT primaryName, tconst` at the appropriate stage.
+- When counting a person across genres or movies, never double-count duplicate appearances within the same movie.
+- For collaboration pairs, first build distinct role-specific person/movie rows, then join the two role sets on tconst before aggregating the pair.
+
+Important interpretation rules:
+- "Exclusive to that genre" means a movie belongs only to that one genre. Such movies have no comma in the genres field after trimming.
+- "For each genre" means the final output should have separate rows grouped by individual genre values.
+- "Widest range of genres" means the maximum number of distinct individual genres associated with that actor's movies.
+- "Top 20 highest-rated movies" should usually be ranked by averageRating descending, with numVotes and primaryTitle/tconst as deterministic tie-breakers unless the task states otherwise.
+- "First decade, 1996-2005" includes both 1996 and 2005.
+- "Second decade, 2006-2015" includes both 2006 and 2015.
+- "Population standard deviation" means use the population formula, not sample standard deviation.
+
+Silent preflight check before returning SQL:
+- Confirm that the query begins with SELECT or `WITH cte_name AS (` and contains exactly one read-only statement.
+- Confirm that no unsupported dialect keyword or function is present.
+- Trace every table alias and referenced column to the CTE or table that supplies it.
+- Confirm that every downstream-required source column was retained by preceding CTEs.
+- Confirm that global movie statistics were computed before any one-to-many expansion.
+- Confirm that movie-level measures are aggregated from distinct movie-level rows.
+- Confirm that people are deduplicated per movie and role suffixes are removed from names.
+- Confirm that all AND/OR role conditions are parenthesized.
+- Confirm that ranking, top-k, median, percentile, and tie handling are deterministic.
+- Confirm that the final SELECT returns exactly the requested columns in the requested order and that the final ORDER BY references available columns only.
+- Perform this check silently. Return only the SQL query.
+
+Task:
+{question}
+
+Requested answer format:
+{answer_format}
+
+Schema:
+{schema}

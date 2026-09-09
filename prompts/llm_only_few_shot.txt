@@ -1,88 +1,31 @@
-You are solving a controlled IMDb benchmark task using only the provided IMDb subset CSV.
+You are a precise question-answering assistant. Use only the provided evidence to answer the question. Do not use any outside knowledge.
 
-Data access rules:
-- Use only the IMDb subset CSV content provided in this prompt.
-- Treat the provided CSV as the complete dataset for this task.
-- Do not use the raw IMDb TSV files.
-- Do not use the full IMDb dataset.
-- Do not use external IMDb knowledge.
-- Do not use web search, APIs, tools, or outside sources.
+## Examples
 
-Computation rules:
-- Do not use SQL.
-- Do not write SQL.
-- Do not use backend database queries.
-- Do not use Python, pandas, or code execution to compute the answer.
-- Do the reasoning manually from the CSV content shown in the prompt.
+Example 1:
+Question: What is the most common genre in the dataset?
+Answer: Drama
 
-Output rules:
-- Return only the final answer.
-- Use the requested answer format exactly.
-- Do not include explanations, reasoning steps, SQL, code, or markdown fences.
-- If the answer cannot be derived from the provided CSV, return: Cannot be determined from the provided subset.
+Example 2:
+Question: How many entries have a rating above 8.0?
+Answer: 142
 
+Example 3:
+Question: Which year had the highest number of releases?
+Answer: 2003
 
-Example 1: Filtering and ranking
+---
 
-Example task:
-Find the highest-rated movie for each genre, but only include movies that belong to exactly one genre.
-
-Example CSV:
-tconst,primaryTitle,startYear,runtimeMinutes,genres,averageRating,numVotes,Cast_and_Crew
-tt001,Alpha,2000,100,Drama,8.1,100,"Actor A (actor), Director X (director)"
-tt002,Beta,2000,110,"Drama,Comedy",9.0,200,"Actor B (actor), Director Y (director)"
-tt003,Gamma,2001,95,Comedy,7.9,150,"Actor C (actor), Director Z (director)"
-tt004,Delta,2001,120,Drama,8.5,300,"Actor A (actor), Director X (director)"
-
-Example final answer:
-genre,primaryTitle,averageRating
-Comedy,Gamma,7.9
-Drama,Delta,8.5
-
-Example 2: Aggregation after filtering
-
-Example task:
-For each year, find movies whose runtime is above the average runtime of that year, then calculate the median runtime among those movies.
-
-Example CSV:
-primaryTitle,startYear,runtimeMinutes
-A,2000,100
-B,2000,120
-C,2000,140
-D,2001,90
-E,2001,110
-F,2001,130
-
-Example final answer:
-startYear,medianRuntime
-2000,140
-2001,130
-
-Example 3: Grouping and counting distinct genres
-
-Example task:
-Find actors who appeared across the widest range of genres and calculate their total number of votes across those movies.
-
-Example CSV:
-primaryTitle,genres,numVotes,Cast_and_Crew
-Film A,Drama,1000,"Actor A (actor), Actor B (actor)"
-Film B,Comedy,500,"Actor A (actor)"
-Film C,"Action,Drama",1200,"Actor A (actor), Actor C (actor)"
-Film D,Comedy,700,"Actor B (actor)"
-
-Example final answer:
-primaryName,genre_count,total_votes
-Actor A,3,2700
-Actor B,2,1700
-Actor C,2,1200
-
-Now solve the actual benchmark task.
-
-Task:
-{question}
-
-IMDb subset CSV:
+## Evidence
 {evidence}
 
-Return only the final answer in this format:
-{answer_format}
+## Question
+{question}
+
+## Instructions
+- Answer using only the information in the evidence above.
+- Format your answer as: {answer_format}
+- Do not include explanations, commentary, or any text outside the required answer format.
+- If the answer cannot be determined from the evidence, respond with: NA
+
+## Answer

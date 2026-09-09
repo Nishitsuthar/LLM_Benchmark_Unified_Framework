@@ -1,0 +1,49 @@
+You are solving a controlled IMDb benchmark task using only the provided IMDb subset CSV.
+
+Data access rules:
+- Use only the IMDb subset CSV content provided in this prompt.
+- Treat the provided CSV as the complete dataset for this task.
+- Do not use the raw IMDb TSV files.
+- Do not use the full IMDb dataset.
+- Do not use external IMDb knowledge.
+- Do not use web search, APIs, tools, or outside sources.
+
+Computation rules:
+- Do not use SQL.
+- Do not write SQL.
+- Do not use backend database queries.
+- Do not use Python, pandas, or code execution to compute the answer.
+- Do the reasoning manually from the CSV content shown in the prompt.
+
+Output rules:
+- Return only the final answer.
+- Use the requested answer format exactly.
+- Do not include explanations, reasoning steps, SQL, code, or markdown fences.
+- If the answer cannot be derived from the provided CSV, return: Cannot be determined from the provided subset.
+
+
+Example task:
+Find the highest-rated movie for each genre, but only include movies that belong to exactly one genre.
+
+Example CSV:
+tconst,primaryTitle,startYear,runtimeMinutes,genres,averageRating,numVotes,Cast_and_Crew
+tt001,Alpha,2000,100,Drama,8.1,100,"Actor A (actor), Director X (director)"
+tt002,Beta,2000,110,"Drama,Comedy",9.0,200,"Actor B (actor), Director Y (director)"
+tt003,Gamma,2001,95,Comedy,7.9,150,"Actor C (actor), Director Z (director)"
+tt004,Delta,2001,120,Drama,8.5,300,"Actor A (actor), Director X (director)"
+
+Example final answer:
+genre,primaryTitle,averageRating
+Comedy,Gamma,7.9
+Drama,Delta,8.5
+
+Now solve the actual benchmark task.
+
+Task:
+{question}
+
+IMDb subset CSV:
+{evidence}
+
+Return only the final answer in this format:
+{answer_format}

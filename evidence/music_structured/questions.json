@@ -1,0 +1,162 @@
+[
+  {
+    "id": "Q0001",
+    "text": "Which artist has the highest popularity score and how many albums have they released?",
+    "original_id": "S2_Q001",
+    "category": "Ranking / Top-k",
+    "difficulty": "medium",
+    "ground_truth_file": "Q0001.txt",
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "music_dataset.pdf"
+  },
+  {
+    "id": "Q0002",
+    "text": "What is the average track duration in minutes across all tracks?",
+    "original_id": "S2_Q002",
+    "category": "Aggregation",
+    "difficulty": "medium",
+    "ground_truth_file": "Q0002.txt",
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "music_dataset.pdf"
+  },
+  {
+    "id": "Q0003",
+    "text": "Which music genre has the most artists and how many?",
+    "original_id": "S2_Q003",
+    "category": "Ranking / Top-k",
+    "difficulty": "medium",
+    "ground_truth_file": "Q0003.txt",
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "music_dataset.pdf"
+  },
+  {
+    "id": "Q0004",
+    "text": "What percentage of artists are currently active?",
+    "original_id": "S2_Q004",
+    "category": "Conditional filtering / Statistical outlier handling",
+    "difficulty": "medium",
+    "ground_truth_file": "Q0004.txt",
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "music_dataset.pdf"
+  },
+  {
+    "id": "Q0005",
+    "text": "How many tracks have explicit content?",
+    "original_id": "S2_Q005",
+    "category": "Others",
+    "difficulty": "medium",
+    "ground_truth_file": "Q0005.txt",
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "music_dataset.pdf"
+  },
+  {
+    "id": "Q0006",
+    "text": "Which record label has signed the most artists?",
+    "original_id": "S2_Q006",
+    "category": "Ranking / Top-k",
+    "difficulty": "medium",
+    "ground_truth_file": "Q0006.txt",
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "music_dataset.pdf"
+  },
+  {
+    "id": "Q0007",
+    "text": "What is the average number of tracks per album for each genre?",
+    "original_id": "S2_Q007",
+    "category": "Aggregation / Genre-level summary",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0007.txt",
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "music_dataset.pdf"
+  },
+  {
+    "id": "Q0008",
+    "text": "Which artists have won at least one award and how many awards have they won in total?",
+    "original_id": "S2_Q008",
+    "category": "Ranking / Top-k",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0008.txt",
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "music_dataset.pdf"
+  },
+  {
+    "id": "Q0009",
+    "text": "What is the distribution of album types (Single, EP, Album) by record label type (Major, Independent)?",
+    "original_id": "S2_Q009",
+    "category": "Filtering / Multi-condition filtering",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0009.txt",
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "music_dataset.pdf"
+  },
+  {
+    "id": "Q0010",
+    "text": "Which artists have tracks in multiple albums and how many albums do they have?",
+    "original_id": "S2_Q012",
+    "category": "Filtering / Multi-condition filtering",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0010.txt",
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "music_dataset.pdf"
+  },
+  {
+    "id": "Q0011",
+    "text": "What is the average speechiness score for explicit vs non-explicit tracks?",
+    "original_id": "S2_Q013",
+    "category": "Aggregation",
+    "difficulty": "hard",
+    "ground_truth_file": "Q0011.txt",
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "music_dataset.pdf"
+  },
+  {
+    "id": "Q0012",
+    "text": "Calculate the \"musical diversity score\" for each artist based on the variance of their track features (energy, danceability, valence). Which artist has the highest diversity?",
+    "original_id": "S2_Q014",
+    "category": "Ranking / Top-k",
+    "difficulty": "extremely hard",
+    "ground_truth_file": "Q0012.txt",
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "music_dataset.pdf"
+  },
+  {
+    "id": "Q0013",
+    "text": "Identify \"overperforming\" artists: those whose award count is disproportionately high relative to their album count and popularity score.",
+    "original_id": "S2_Q015",
+    "category": "Conditional filtering / Statistical outlier handling",
+    "difficulty": "extremely hard",
+    "ground_truth_file": "Q0013.txt",
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "music_dataset.pdf"
+  },
+  {
+    "id": "Q0014",
+    "text": "Calculate the \"genre dominance score\" for each genre based on artist count, album count, and average popularity. Which genre is most dominant?",
+    "original_id": "S2_Q017",
+    "category": "Ranking / Top-k",
+    "difficulty": "extremely hard",
+    "ground_truth_file": "Q0014.txt",
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "music_dataset.pdf"
+  },
+  {
+    "id": "Q0015",
+    "text": "Identify \"prolific years\" for the music industry by counting albums released per year and calculating the year-over-year growth rate.",
+    "original_id": "S2_Q018",
+    "category": "Multi-hop filtering / Subquery aggregation",
+    "difficulty": "extremely hard",
+    "ground_truth_file": "Q0015.txt",
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "music_dataset.pdf"
+  },
+  {
+    "id": "Q0016",
+    "text": "Identify \"hidden gem\" tracks: high audio quality features (low speechiness, high instrumentalness) from less popular artists (popularity < 0.5) that have not been heavily streamed.",
+    "original_id": "S2_Q020",
+    "category": "Multi-hop filtering / Subquery aggregation",
+    "difficulty": "extremely hard",
+    "ground_truth_file": "Q0016.txt",
+    "answer_format": "short answer (number, name, or short phrase)",
+    "source_pdf": "music_dataset.pdf"
+  }
+]
