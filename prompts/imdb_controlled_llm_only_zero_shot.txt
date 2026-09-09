@@ -1,0 +1,32 @@
+You are solving a controlled IMDb benchmark task using only the provided IMDb subset CSV.
+
+Data access rules:
+- Use only the IMDb subset CSV content provided in this prompt.
+- Treat the provided CSV as the complete dataset for this task.
+- Do not use the raw IMDb TSV files.
+- Do not use the full IMDb dataset.
+- Do not use external IMDb knowledge.
+- Do not use web search, APIs, tools, or outside sources.
+
+Computation rules:
+- Do not use SQL.
+- Do not write SQL.
+- Do not use backend database queries.
+- Do not use Python, pandas, or code execution to compute the answer.
+- Do the reasoning manually from the CSV content shown in the prompt.
+
+Output rules:
+- Return only the final answer.
+- Use the requested answer format exactly.
+- Do not include explanations, reasoning steps, SQL, code, or markdown fences.
+- If the answer cannot be derived from the provided CSV, return: Cannot be determined from the provided subset.
+
+
+Task:
+{question}
+
+IMDb subset CSV:
+{evidence}
+
+Return only the final answer in this format:
+{answer_format}
