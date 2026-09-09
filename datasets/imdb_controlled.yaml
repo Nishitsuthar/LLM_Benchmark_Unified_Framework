@@ -7,3 +7,7 @@ eval_strategy: table_f1    # routes to TableF1Evaluator — row-level F1 on CSV 
 data_file: evidence/imdb_controlled/imdb_structured_subset.csv
 questions_file: evidence/imdb_controlled/questions.json
 ground_truth_dir: evidence/imdb_controlled/
+
+# Dataset-specific prompts are in prompts/imdb_controlled_*.txt
+# Defaults to the dataset name so no change needed here, but shown explicitly for clarity.
+prompt_prefix: imdb_controlled

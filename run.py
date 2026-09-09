@@ -116,11 +116,12 @@ def main() -> None:
     router    = ModelRouter(args.model)
 
     # Resolve prompt interactively
-    options = discover_prompts(args.dataset, args.mode)
+    prompt_prefix = config.get("prompt_prefix", args.dataset)
+    options = discover_prompts(prompt_prefix, args.mode)
     if not options:
         raise FileNotFoundError(
-            f"No prompt files found in {PROMPTS_DIR}/ for dataset={args.dataset}, mode={args.mode}. "
-            "Add a file named {dataset}_{mode}_{style}.txt or {mode}_{style}.txt."
+            f"No prompt files found in {PROMPTS_DIR}/ for prompt_prefix={prompt_prefix}, mode={args.mode}. "
+            f"Add a file named {prompt_prefix}_{{mode}}_{{style}}.txt or {{mode}}_{{style}}.txt."
         )
     prompt_label, template = select_prompt_interactive(options)
     prompt_style_for_output = prompt_label.split("  ")[0]
