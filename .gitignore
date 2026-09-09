@@ -38,18 +38,6 @@ results/*
 !results/gemini_flash/
 !results/nemotron/
 
-# Evidence — large data files; only committed dataset dirs are tracked
-/evidence/imdb_878/
-/evidence/imdb_20/
-/evidence/f1_racing/
-/evidence/music/
-
-# Ground truth — same pattern; only committed dataset dirs are tracked
-/ground_truth/imdb_878/
-/ground_truth/imdb_20/
-/ground_truth/f1_racing/
-/ground_truth/music/
-
 # Context handoff notes for Claude Code session continuity
 claude_code_history_chaining/
 chroma_db/
