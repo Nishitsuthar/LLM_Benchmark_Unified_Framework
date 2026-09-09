@@ -4,7 +4,6 @@ Nishit updates this file as each team member finishes their module.
 run.py never changes — it only reads these dictionaries.
 """
 
-from unified_pipeline.evidence.csv_evidence import CsvEvidenceBuilder
 from unified_pipeline.evidence.csv_full_evidence import CsvFullEvidenceBuilder  # Krittika
 # from unified_pipeline.evidence.prose_evidence import ProseEvidenceBuilder       # Satwik adds
 from unified_pipeline.evidence.rag_evidence import RagEvidenceBuilder            # Nishit adds
@@ -18,7 +17,6 @@ from unified_pipeline.evaluators.span_f1_evaluator import SpanF1Evaluator       
 
 
 EVIDENCE_BUILDERS = {
-    "csv":        CsvEvidenceBuilder,
     "csv_full":   CsvFullEvidenceBuilder,
     # "prose_docs": ProseEvidenceBuilder,
     "pdf_rag":    RagEvidenceBuilder,

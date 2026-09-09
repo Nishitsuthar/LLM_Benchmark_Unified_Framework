@@ -1,9 +1,0 @@
-name: music
-description: "Music dataset — 30 questions over prose text documents"
-
-evidence_type: prose_docs  # routes to ProseEvidenceBuilder
-eval_strategy: exact_match  # routes to ExactMatchEvaluator
-
-evidence_path: evidence/music/
-questions_file: evidence/music/questions.json
-ground_truth_dir: ground_truth/music/
