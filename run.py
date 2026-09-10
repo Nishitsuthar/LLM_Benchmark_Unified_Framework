@@ -3,11 +3,11 @@
 Usage:
     python run.py --dataset imdb_controlled --model mistral_small
     python run.py --dataset music           --model gemini_flash
-    python run.py --dataset uda_nqtext      --model deepseek_r1
+    python run.py --dataset tathybrid       --model deepseek_r1
 
-An interactive menu always appears to choose the prompt. Only prompts
-relevant to the selected dataset are shown (dataset-specific first,
-then generic fallbacks).
+An interactive menu always appears to choose the prompt. All prompts for
+the dataset are shown (dataset-specific first, then generic). The mode
+(llm_only or sql_detour) is derived automatically from the chosen prompt name.
 
 --model accepts either a short alias from config.MODEL_ALIASES or a raw
 provider model ID (e.g. meta-llama/llama-3.3-70b-instruct).
@@ -36,9 +36,6 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run the unified benchmark pipeline.")
     parser.add_argument("--dataset", required=True, help="Dataset name matching a file in datasets/")
     parser.add_argument("--model",   required=True, help="Model alias or raw provider model ID")
-    parser.add_argument("--mode",    default="llm_only",
-                        choices=["llm_only", "sql_detour"],
-                        help="Experiment mode")
     parser.add_argument("--task_ids", nargs="*", default=None,
                         help="Optional subset of task IDs to run, e.g. --task_ids T01 T05")
     return parser.parse_args()
@@ -54,13 +51,14 @@ def load_questions(questions_file: str) -> list[dict]:
     return data if isinstance(data, list) else data["questions"]
 
 
-def discover_prompts(dataset: str, mode: str) -> list[tuple[str, Path]]:
+def discover_prompts(dataset: str) -> list[tuple[str, Path]]:
     """Return (label, path) pairs — dataset-specific first, then generic."""
     found = []
-    for p in sorted(PROMPTS_DIR.glob(f"{dataset}_{mode}_*.txt")):
+    for p in sorted(PROMPTS_DIR.glob(f"{dataset}_*.txt")):
         found.append((f"{p.stem}  [dataset-specific]", p))
-    for p in sorted(PROMPTS_DIR.glob(f"{mode}_*.txt")):
-        found.append((f"{p.stem}  [generic]", p))
+    for p in sorted(PROMPTS_DIR.glob("*.txt")):
+        if not p.stem.startswith(dataset):
+            found.append((f"{p.stem}  [generic]", p))
     return found
 
 
@@ -116,16 +114,19 @@ def main() -> None:
     router    = ModelRouter(args.model)
 
     # Resolve prompt interactively
-    options = discover_prompts(args.dataset, args.mode)
+    options = discover_prompts(args.dataset)
     if not options:
         raise FileNotFoundError(
-            f"No prompt files found in {PROMPTS_DIR}/ for dataset={args.dataset}, mode={args.mode}. "
+            f"No prompt files found in {PROMPTS_DIR}/ for dataset={args.dataset}. "
             "Add a file named {dataset}_{mode}_{style}.txt or {mode}_{style}.txt."
         )
     prompt_label, template = select_prompt_interactive(options)
     prompt_style_for_output = prompt_label.split("  ")[0]
 
-    reporter  = Reporter(f"results/{args.model}/{args.dataset}_{args.mode}_{prompt_style_for_output}_metrics.csv")
+    # Derive mode from the chosen prompt filename
+    mode = "sql_detour" if "sql_detour" in prompt_style_for_output else "llm_only"
+
+    reporter  = Reporter(f"results/{args.model}/{args.dataset}_{mode}_{prompt_style_for_output}_metrics.csv")
 
     # Load questions
     questions = load_questions(config["questions_file"])
@@ -135,7 +136,7 @@ def main() -> None:
 
     print(f"\n  Dataset  : {args.dataset}")
     print(f"  Model    : {args.model}")
-    print(f"  Mode     : {args.mode}  |  Prompt: {prompt_label}")
+    print(f"  Mode     : {mode}  |  Prompt: {prompt_label}")
     print(f"  Questions: {len(questions)}")
     print()
 
@@ -170,11 +171,7 @@ def main() -> None:
             reporter.write_row({
                 "dataset":         args.dataset,
                 "model":           args.model,
-                "mode":            args.mode,
-                "prompt_style":    prompt_style_for_output,
-                "question_id":     q_id,
-                "question":        question.get("text", ""),
-                "ground_truth":    ground_truth.read_text(encoding="utf-8").strip(),
+                "mode":            mode,
                 "model_response":  response.final_text,
                 "exact_match":     result.content_exact_match,
                 "row_f1":          result.row_f1,
@@ -199,11 +196,7 @@ def main() -> None:
             reporter.write_row({
                 "dataset":         args.dataset,
                 "model":           args.model,
-                "mode":            args.mode,
-                "prompt_style":    prompt_style_for_output,
-                "question_id":     q_id,
-                "question":        question.get("text", ""),
-                "ground_truth":    None,
+                "mode":            mode,
                 "model_response":  None,
                 "exact_match":     0,
                 "row_f1":          None,
@@ -228,7 +221,7 @@ def main() -> None:
     print(f"  Exact    : {exact_n}/{len(questions)}")
     if failed:
         print(f"  Failed   : {len(failed)} — {', '.join(failed)}")
-    print(f"  Results  : results/{args.model}/{args.dataset}_{args.mode}_{prompt_style_for_output}_metrics.csv")
+    print(f"  Results  : results/{args.model}/{args.dataset}_{mode}_{prompt_style_for_output}_metrics.csv")
     print()
 
 
