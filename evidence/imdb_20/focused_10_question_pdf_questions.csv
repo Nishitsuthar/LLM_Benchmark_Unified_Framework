@@ -1,0 +1,11 @@
+question_id,batch,category,question,expected_answer
+F1,metadata,arithmetic_aggregation,"Among movies released in or after 2010, what is the average IMDb rating? Round the answer to two decimal places.",8.01
+F2,metadata,genre_level_aggregation,"Among genres appearing in at least 4 movies, which genre has the lowest average IMDb rating? Round the average to two decimal places.",Sci-Fi - 8.08
+F3,metadata,statistical_outlier_detection,"Among movies released in or after 2000, use the rule runtime > subset mean runtime + 1 population standard deviation. Which movies are runtime outliers?",The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; The Wolf of Wall Street; Interstellar
+F4,metadata,arithmetic_aggregation,What is the total runtime of all Adventure movies released in or after 2010?,621 minutes
+F5,metadata,genre_level_aggregation,"Among genres appearing in at least 3 movies, which genre has the largest IMDb rating range, calculated as maximum rating minus minimum rating?",Action - 2.2 rating points
+F6,metadata,arithmetic_aggregation,Consider only directors who directed more than one movie in the dataset. What is the average runtime of all movies directed by those repeated directors? Round to two decimal places.,157.29 minutes
+F7,metadata,statistical_outlier_detection,"Using the 1.5 × IQR rule for IMDb ratings, with Q1 and Q3 calculated as the medians of the lower and upper halves, which movie is a rating outlier?",Jurassic World - 6.9
+F8,metadata,arithmetic_aggregation,What is the difference between the average IMDb rating of movies released before 2000 and movies released in or after 2000? Report both averages and the difference.,Before 2000: 8.44; 2000 or after: 8.26; Difference: 0.18
+F9,metadata,genre_level_aggregation,"Among genres appearing in at least 3 movies, which genre has the highest total runtime across all its movies?",Drama - 1608 minutes
+F10,metadata,arithmetic_aggregation,First calculate the overall mean runtime of all 20 movies. Then calculate the average IMDb rating of movies whose runtime is above that mean. Round the final rating to two decimal places.,8.53

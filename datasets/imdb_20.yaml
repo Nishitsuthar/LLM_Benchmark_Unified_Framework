@@ -1,0 +1,13 @@
+name: imdb_20
+description: "IMDb 20-movie focused benchmark with 10 zero-shot visual-PDF questions"
+
+evidence_type: pdf_visual
+eval_strategy: partial_credit
+
+evidence_path: evidence/imdb_20/imdb_20_movies_screenshot_evidence.pdf
+questions_file: evidence/imdb_20/questions.json
+ground_truth_dir: ground_truth/imdb_20/
+
+pdf_page_count: 40
+render_scale: 1.0
+jpeg_quality: 75
