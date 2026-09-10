@@ -149,7 +149,7 @@ def main() -> None:
         try:
             # Step 1 — build evidence
             _progress(i, len(questions), q_id, "building evidence...")
-            question_config = {**config, "_source_pdf": question.get("source_pdf")}
+            question_config = {**config, "_source_pdf": question.get("source_pdf"), "question_doc_file": question.get("doc_file", "")}
             evidence = builder.build(question["text"], question_config)
 
             # Step 2 — build prompt and call model

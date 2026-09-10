@@ -5,26 +5,26 @@ run.py never changes — it only reads these dictionaries.
 """
 
 from unified_pipeline.evidence.csv_full_evidence import CsvFullEvidenceBuilder  # Krittika
-# from unified_pipeline.evidence.prose_evidence import ProseEvidenceBuilder       # Satwik adds
-from unified_pipeline.evidence.rag_evidence import RagEvidenceBuilder            # Nishit adds
+from unified_pipeline.evidence.prose_evidence import ProseEvidenceBuilder        # Satwik
+from unified_pipeline.evidence.rag_evidence import RagEvidenceBuilder            # Nishit
 # from unified_pipeline.evidence.visual_pdf_evidence import VisualPdfEvidenceBuilder  # Arpitha adds
 
 from unified_pipeline.evaluators.table_f1_evaluator import TableF1Evaluator    # Krittika
-# from unified_pipeline.evaluators.exact_match_evaluator import ExactMatchEvaluator   # Satwik adds
-from unified_pipeline.evaluators.span_f1_evaluator import SpanF1Evaluator           # Nishit adds
+from unified_pipeline.evaluators.exact_match_evaluator import ExactMatchEvaluator  # Satwik
+from unified_pipeline.evaluators.span_f1_evaluator import SpanF1Evaluator      # Nishit
 # from unified_pipeline.evaluators.partial_credit_evaluator import PartialCreditEvaluator  # Arpitha adds
 
 
 EVIDENCE_BUILDERS = {
     "csv_full":   CsvFullEvidenceBuilder,
-    # "prose_docs": ProseEvidenceBuilder,
+    "prose_docs": ProseEvidenceBuilder,
     "pdf_rag":    RagEvidenceBuilder,
     # "pdf_visual": VisualPdfEvidenceBuilder,
 }
 
 EVALUATORS = {
     "table_f1":       TableF1Evaluator,
-    # "exact_match":    ExactMatchEvaluator,
+    "exact_match":    ExactMatchEvaluator,
     "span_f1":        SpanF1Evaluator,
     # "partial_credit": PartialCreditEvaluator,
 }
