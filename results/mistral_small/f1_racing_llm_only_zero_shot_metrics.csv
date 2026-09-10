@@ -1,7 +1,0 @@
-dataset,model,mode,prompt_style,question_id,question,ground_truth,model_response,exact_match,row_f1,precision,recall,eval_status,latency_seconds,input_tokens,output_tokens
-f1_racing,mistral_small,llm_only,llm_only_zero_shot,T01,What is the total number of championship points awarded to all drivers combined in the Australian Grand Prix 2009?,39,18,0,0.0,0.0,0.0,evaluated,4.864,23665,3
-f1_racing,mistral_small,llm_only,llm_only_zero_shot,T02,How many drivers were officially classified as finishers (completed the race or were lapped) in the Australian Grand Prix 2009?,12,13,0,0.0,0.0,0.0,evaluated,1.478,23670,3
-f1_racing,mistral_small,llm_only,llm_only_zero_shot,T03,What is the combined total number of laps completed by all drivers in the Australian Grand Prix 2009?,1005,58 laps,0,0.0,0.0,0.0,evaluated,1.247,23664,4
-f1_racing,mistral_small,llm_only,llm_only_zero_shot,T04,How many drivers scored at least one championship point in the Australian Grand Prix 2009?,8,8,1,1.0,1.0,1.0,evaluated,0.968,23661,2
-f1_racing,mistral_small,llm_only,llm_only_zero_shot,T05,What is the average number of championship points scored per driver in the Australian Grand Prix 2009? Give your answer rounded to 2 decimal places.,1.95,1.00,0,0.0,0.0,0.0,evaluated,0.646,23673,5
-f1_racing,mistral_small,llm_only,llm_only_zero_shot,T06,Which driver gained the most positions from their starting grid slot to their final finishing position in the Australian Grand Prix 2009?,Jarno Trulli,Jarno Trulli,1,1.0,1.0,1.0,evaluated,1.107,23668,5
