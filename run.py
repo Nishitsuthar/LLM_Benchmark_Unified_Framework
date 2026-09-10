@@ -85,13 +85,15 @@ def discover_prompts(
 ) -> list[tuple[str, Path]]:
     """Return (label, path) pairs — dataset-specific first, then generic."""
 
+    all_datasets = {p.stem for p in Path("datasets").glob("*.yaml")}
+
     found = []
 
     for p in sorted(PROMPTS_DIR.glob(f"{dataset}_*.txt")):
         found.append((f"{p.stem}  [dataset-specific]", p))
 
     for p in sorted(PROMPTS_DIR.glob("*.txt")):
-        if not p.stem.startswith(dataset):
+        if not any(p.stem.startswith(ds) for ds in all_datasets):
             found.append((f"{p.stem}  [generic]", p))
 
     return found
