@@ -13,9 +13,14 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
+import time
 from pathlib import Path
 
+from dotenv import load_dotenv
 import yaml
+
+load_dotenv()
 
 from unified_pipeline.config import EVIDENCE_BUILDERS, EVALUATORS
 from unified_pipeline.model_router import ModelRouter
@@ -113,11 +118,16 @@ def main() -> None:
     print(f"Questions: {len(questions)}")
     print("-" * 40)
 
+    request_delay = float(os.getenv("MODEL_REQUEST_DELAY", "0"))
+
     for question in questions:
         q_id = question.get("id", "unknown")
 
-        # Step 1 — build evidence
-        evidence = builder.build(question["text"], config)
+        # Step 1 — build evidence (inject per-question doc_file into config if present)
+        question_config = dict(config)
+        if question.get("doc_file"):
+            question_config["question_doc_file"] = question["doc_file"]
+        evidence = builder.build(question["text"], question_config)
 
         # Step 2 — build prompt and call model
         prompt_text = build_prompt(template, question, evidence.text)
@@ -145,10 +155,14 @@ def main() -> None:
             "latency_seconds": response.latency_seconds,
             "input_tokens":   response.input_tokens,
             "output_tokens":  response.output_tokens,
+            "model_response": response.final_text,
         })
 
         f1_str = f"{result.row_f1:.3f}" if result.row_f1 is not None else "n/a"
         print(f"{q_id}: exact={result.content_exact_match}  f1={f1_str}  ({response.latency_seconds}s)")
+
+        if request_delay > 0:
+            time.sleep(request_delay)
 
     print("-" * 40)
     print("Done.")

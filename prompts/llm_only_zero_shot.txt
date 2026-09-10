@@ -1,0 +1,18 @@
+You are a factual assistant. Answer the question below using only the evidence provided. Do not use any prior knowledge.
+
+---
+
+EVIDENCE:
+{evidence}
+
+---
+
+QUESTION:
+{question}
+
+ANSWER FORMAT:
+{answer_format}
+
+---
+
+Provide only the answer value. No labels, no units, no explanation, no extra words. Match the answer format exactly.

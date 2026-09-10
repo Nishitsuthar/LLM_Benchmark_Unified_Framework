@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Unified LLM Benchmark Pipeline — Architecture</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #0f1117;
+    color: #e2e8f0;
+    line-height: 1.6;
+    padding: 40px 20px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin-bottom: 50px;
+  }
+  /* ── Section headings ─────────────────────────────────────────── */
+  h2 {
+    font-size: 1.25rem;
+    color: #7dd3fc;
+    border-bottom: 1px solid #1e3a5f;
+    padding-bottom: 8px;
+    margin: 50px 0 20px;
+  }
+  h3 { color: #93c5fd; font-size: 1rem; margin-bottom: 8px; }
+
+  /* ── Pipeline diagram ─────────────────────────────────────────── */
+  .pipeline-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .stage {
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px 28px;
+    position: relative;
+  }
+  .stage-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+  .stage-number {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .stage-title { font-size: 1.1rem; font-weight: 700; }
+  .stage-file  { font-size: 0.8rem; opacity: 0.65; font-family: monospace; }
+
+  /* Stage colours */
+  .s1 { background: #1a1f2e; border: 1.5px solid #3b5998; }
+  .s1 .stage-number { background: #3b5998; color: #fff; }
+  .s1 .stage-title  { color: #79a8ff; }
+
+  .s2 { background: #1a2e1f; border: 1.5px solid #3d9142; }
+  .s2 .stage-number { background: #3d9142; color: #fff; }
+  .s2 .stage-title  { color: #86efac; }
+
+  .s3 { background: #2a1f10; border: 1.5px solid #c2731a; }
+  .s3 .stage-number { background: #c2731a; color: #fff; }
+  .s3 .stage-title  { color: #fdba74; }
+
+  .s4 { background: #1e1a2e; border: 1.5px solid #7c3aed; }
+  .s4 .stage-number { background: #7c3aed; color: #fff; }
+  .s4 .stage-title  { color: #c4b5fd; }
+
+  .s5 { background: #1f1a1a; border: 1.5px solid #c2394a; }
+  .s5 .stage-number { background: #c2394a; color: #fff; }
+  .s5 .stage-title  { color: #fca5a5; }
+
+  .s6 { background: #1a1f1a; border: 1.5px solid #2d7a4f; }
+  .s6 .stage-number { background: #2d7a4f; color: #fff; }
+  .s6 .stage-title  { color: #6ee7b7; }
+
+  /* Arrow */
+  .arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+  .arrow-line {
+    width: 2px;
+    height: 28px;
+    background: #334155;
+  }
+  .arrow-head {
+    width: 0; height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 12px solid #334155;
+  }
+  .arrow-label {
+    font-size: 0.72rem;
+    font-family: monospace;
+    color: #64748b;
+    margin: 2px 0;
+  }
+
+  /* Properties grid inside each stage */
+  .props {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 24px;
+    margin-top: 10px;
+  }
+  @media (max-width: 640px) { .props { grid-template-columns: 1fr; } }
+  .prop-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #94a3b8;
+    margin-bottom: 2px;
+  }
+  .prop-value {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #e2e8f0;
+    background: rgba(0,0,0,0.25);
+    padding: 6px 10px;
+    border-radius: 4px;
+    white-space: pre-wrap;
+  }
+
+  /* ── Data contracts ────────────────────────────────────────────── */
+  .contracts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .contract-box {
+    background: #151921;
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .contract-box h3 {
+    font-family: monospace;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+  }
+  .contract-box pre {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    white-space: pre-wrap;
+  }
+  .contract-box .kw  { color: #c4b5fd; }
+  .contract-box .tp  { color: #67e8f9; }
+  .contract-box .cm  { color: #475569; }
+  .contract-box .nm  { color: #86efac; }
+
+  /* ── Tables ────────────────────────────────────────────────────── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.87rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  th {
+    background: #1e293b;
+    color: #93c5fd;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  td {
+    padding: 9px 14px;
+    border-bottom: 1px solid #1e293b;
+    vertical-align: top;
+  }
+  tr:hover td { background: #1a2235; }
+  td code {
+    font-family: monospace;
+    font-size: 0.82rem;
+    background: #0d1117;
+    padding: 2px 6px;
+    border-radius: 3px;
+    color: #fdba74;
+  }
+
+  /* ── File tree ─────────────────────────────────────────────────── */
+  .file-tree {
+    font-family: monospace;
+    font-size: 0.85rem;
+    background: #0d1117;
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+    padding: 20px 24px;
+    max-width: 960px;
+    margin: 0 auto;
+    line-height: 1.9;
+  }
+  .dir   { color: #7dd3fc; }
+  .file  { color: #e2e8f0; }
+  .note  { color: #64748b; font-style: italic; }
+  .owned { color: #86efac; font-weight: 600; }
+
+  /* ── Command blocks ────────────────────────────────────────────── */
+  .cmd-block {
+    background: #0d1117;
+    border: 1px solid #1e293b;
+    border-left: 3px solid #7c3aed;
+    border-radius: 4px;
+    padding: 14px 18px;
+    font-family: monospace;
+    font-size: 0.88rem;
+    color: #c4b5fd;
+    max-width: 960px;
+    margin: 12px auto;
+    white-space: pre;
+  }
+
+  /* ── Callout boxes ─────────────────────────────────────────────── */
+  .callout {
+    border-radius: 6px;
+    padding: 14px 18px;
+    max-width: 960px;
+    margin: 14px auto;
+    font-size: 0.88rem;
+  }
+  .callout-blue  { background: #0c1f40; border-left: 3px solid #3b82f6; }
+  .callout-green { background: #0c2b14; border-left: 3px solid #22c55e; }
+  .callout-amber { background: #2b1c08; border-left: 3px solid #f59e0b; }
+  .callout-red   { background: #2b0a0c; border-left: 3px solid #ef4444; }
+  .callout strong { color: #fff; }
+
+  .footer {
+    text-align: center;
+    color: #334155;
+    font-size: 0.8rem;
+    margin-top: 60px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .tag-satwik { background: #164e63; color: #7dd3fc; }
+  .tag-shared { background: #1e3a5f; color: #93c5fd; }
+  .tag-krittika { background: #1c1c3a; color: #a5b4fc; }
+</style>
+</head>
+<body>
+
+<h1>Unified LLM Benchmark Pipeline</h1>
+<div class="subtitle">Architecture Reference &mdash; Sprint 5 &mdash; Team Project FSS 2026<br>
+Author: Satwik Kumar Lohani (2167219)</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     PIPELINE DIAGRAM
+     ══════════════════════════════════════════════════════════════════ -->
+<div style="max-width:900px;margin:0 auto;">
+<h2>Pipeline Diagram</h2>
+</div>
+
+<div class="pipeline-wrapper">
+
+  <!-- STAGE 0 — Data Setup -->
+  <div class="stage s1">
+    <div class="stage-header">
+      <div class="stage-number">0</div>
+      <div>
+        <div class="stage-title">Data Setup (one-time) <span class="tag tag-satwik">Satwik</span></div>
+        <div class="stage-file">sprint5_data_setup.py  (run once from Team Project root)</div>
+      </div>
+    </div>
+    <div class="props">
+      <div>
+        <div class="prop-label">Input — Music</div>
+        <div class="prop-value">Music/benchmark_qa/questions.json
+Music/benchmark/documents/*.txt
+Music/benchmark/documents.json  (artist_id → txt_file map)</div>
+      </div>
+      <div>
+        <div class="prop-label">Input — F1 Racing</div>
+        <div class="prop-value">F1 Dataset/unstructured_benchmark/questions.json
+F1 Dataset/unstructured_benchmark/*.txt</div>
+      </div>
+      <div>
+        <div class="prop-label">Output — Evidence docs</div>
+        <div class="prop-value">evidence/music/*.txt          (250 artist profiles)
+evidence/f1_racing/*.txt      (17 race documents)</div>
+      </div>
+      <div>
+        <div class="prop-label">Output — Questions + GT</div>
+        <div class="prop-value">evidence/music/questions.json      (118 Qs)
+evidence/f1_racing/questions.json  (255 Qs)
+ground_truth/{dataset}/T01.txt … TN.txt</div>
+      </div>
+    </div>
+    <div style="margin-top:12px;">
+      <div class="prop-label">Key conversion — questions.json format</div>
+      <div class="prop-value">{"id": "T01",  "text": "What is the total streams…",  "answer_format": "a concise answer",
+ "ground_truth_file": "T01.txt",  "expected_columns": [],  "doc_file": "artist_028_kaven_sornwick.txt"}</div>
+    </div>
+    <div style="margin-top:10px;font-size:0.83rem;color:#64748b;">
+      <strong style="color:#94a3b8;">doc_file</strong> — maps each question to its specific source document.
+      Multi-artist questions have doc_file="" and fall back to loading all documents.
+      artist_id "MULTIPLE" is handled gracefully (returns empty string).
+    </div>
+  </div>
+
+  <div class="arrow"><div class="arrow-line"></div><div class="arrow-label">questions.json + .txt docs + GT files on disk</div><div class="arrow-head"></div></div>
+
+  <!-- STAGE 1 — Dataset Config -->
+  <div class="stage s1">
+    <div class="stage-header">
+      <div class="stage-number">1</div>
+      <div>
+        <div class="stage-title">Dataset Config Loader <span class="tag tag-shared">Shared</span></div>
+        <div class="stage-file">run.py  →  datasets/{dataset}.yaml</div>
+      </div>
+    </div>
+    <div class="props">
+      <div>
+        <div class="prop-label">music.yaml</div>
+        <div class="prop-value">name: music
+evidence_type:  prose_docs
+eval_strategy:  exact_match
+evidence_path:  evidence/music/
+questions_file: evidence/music/questions.json
+ground_truth_dir: ground_truth/music/</div>
+      </div>
+      <div>
+        <div class="prop-label">f1_racing.yaml</div>
+        <div class="prop-value">name: f1_racing
+evidence_type:  prose_docs
+eval_strategy:  exact_match
+evidence_path:  evidence/f1_racing/
+questions_file: evidence/f1_racing/questions.json
+ground_truth_dir: ground_truth/f1_racing/</div>
+      </div>
+    </div>
+    <div style="margin-top:10px;font-size:0.83rem;color:#64748b;">
+      The YAML keys <code style="color:#fdba74;">evidence_type</code> and <code style="color:#fdba74;">eval_strategy</code>
+      are looked up in <strong style="color:#94a3b8;">config.py</strong> registries to select concrete implementations.
+      No code changes needed to add a new dataset — just a new YAML file.
+    </div>
+  </div>
+
+  <div class="arrow"><div class="arrow-line"></div><div class="arrow-label">config dict + loaded questions list</div><div class="arrow-head"></div></div>
+
+  <!-- STAGE 2 — Evidence Builder -->
+  <div class="stage s2">
+    <div class="stage-header">
+      <div class="stage-number">2</div>
+      <div>
+        <div class="stage-title">Evidence Builder <span class="tag tag-satwik">Satwik</span></div>
+        <div class="stage-file">unified_pipeline/evidence/prose_evidence.py  →  ProseEvidenceBuilder</div>
+      </div>
+    </div>
+    <div class="props">
+      <div>
+        <div class="prop-label">Input</div>
+        <div class="prop-value">question text (str)
+config dict  (evidence_path, question_doc_file)</div>
+      </div>
+      <div>
+        <div class="prop-label">Output — EvidenceResult</div>
+        <div class="prop-value">EvidenceResult(
+  text     = "Kaven Sornwick: Classical Artist…",
+  metadata = {"file_count": 1, "files": ["artist_028…"]}
+)</div>
+      </div>
+    </div>
+    <div style="margin-top:12px;">
+      <div class="prop-label">Logic (two-path)</div>
+      <div class="prop-value">Path A — Single-doc mode  (preferred):
+  If question_doc_file is set AND the file exists:
+    → read only that one .txt file (~500 tokens)
+    → used for all single-artist questions
+
+Path B — All-docs fallback:
+  If question_doc_file is "" (multi-artist / cross-doc questions):
+    → glob all *.txt in evidence_path
+    → join with "\n\n---\n\n" separator
+    → used for CROSS-Qxx questions requiring all artist data</div>
+    </div>
+    <div style="margin-top:10px;font-size:0.83rem;color:#64748b;">
+      <strong style="color:#94a3b8;">Why single-doc matters:</strong> Loading all 250 music documents = ~175,000 tokens per
+      request, which exceeds NVIDIA NIM's context limit and causes connection errors.
+      Single-doc mode keeps input to ~500–600 tokens per request.
+    </div>
+  </div>
+
+  <div class="arrow"><div class="arrow-line"></div><div class="arrow-label">EvidenceResult.text (raw document text)</div><div class="arrow-head"></div></div>
+
+  <!-- STAGE 3 — Prompt Engine -->
+  <div class="stage s3">
+    <div class="stage-header">
+      <div class="stage-number">3</div>
+      <div>
+        <div class="stage-title">Prompt Engine <span class="tag tag-satwik">Satwik</span></div>
+        <div class="stage-file">run.py  build_prompt()  +  prompts/*.txt  templates</div>
+      </div>
+    </div>
+    <div class="props">
+      <div>
+        <div class="prop-label">Template — llm_only_zero_shot.txt</div>
+        <div class="prop-value">You are a factual assistant. Answer the question
+below using only the evidence provided.
+---
+EVIDENCE:
+{evidence}
+---
+QUESTION:
+{question}
+ANSWER FORMAT:
+{answer_format}
+---
+Provide only the answer value. No labels, no
+units, no explanation, no extra words.</div>
+      </div>
+      <div>
+        <div class="prop-label">Template — sql_detour_zero_shot.txt</div>
+        <div class="prop-value">You are a SQL expert. Write a single SQLite
+SELECT query that answers the question.
+DATABASE CONTEXT:
+{evidence}
+QUESTION:
+{question}
+ANSWER FORMAT:
+{answer_format}
+Rules: Write only the SQL. SELECT only.
+End with semicolon.
+
+Note: Only applicable to CSV/IMDB datasets,
+NOT music/F1 prose datasets.</div>
+      </div>
+    </div>
+    <div style="margin-top:10px;font-size:0.83rem;color:#64748b;">
+      Template slots filled via Python <code style="color:#fdba74;">str.format()</code>.
+      Mode × prompt_style pair selects the template file:
+      <code style="color:#fdba74;">(llm_only, zero_shot) → llm_only_zero_shot.txt</code> |
+      <code style="color:#fdba74;">(sql_detour, zero_shot) → sql_detour_zero_shot.txt</code>
+    </div>
+  </div>
+
+  <div class="arrow"><div class="arrow-line"></div><div class="arrow-label">formatted prompt string (plain text)</div><div class="arrow-head"></div></div>
+
+  <!-- STAGE 4 — Model Router / API -->
+  <div class="stage s4">
+    <div class="stage-header">
+      <div class="stage-number">4</div>
+      <div>
+        <div class="stage-title">Model Router &amp; API Call <span class="tag tag-shared">Shared</span></div>
+        <div class="stage-file">unified_pipeline/model_router.py  →  ModelRouter</div>
+      </div>
+    </div>
+    <div class="props">
+      <div>
+        <div class="prop-label">Provider (configured in .env)</div>
+        <div class="prop-value">MODEL_PROVIDER=nvidia
+MODEL_BASE_URL=https://integrate.api.nvidia.com/v1
+MODEL_API_KEY=nvapi-RfoO-…
+MODEL_TEMPERATURE=0.0
+MODEL_MAX_OUTPUT_TOKENS=512
+MODEL_REQUEST_TIMEOUT=600
+MODEL_MAX_RETRIES=3
+MODEL_RETRY_SLEEP_SECONDS=10
+MODEL_REQUEST_DELAY=2.0   ← seconds between questions</div>
+      </div>
+      <div>
+        <div class="prop-label">Model Aliases (config.py)</div>
+        <div class="prop-value">nemotron_ultra → nvidia/nemotron-3-ultra-550b-a55b
+llama_70b      → meta-llama/Llama-3.3-70B-Instruct-Turbo
+gemini_flash   → google/gemini-flash-1.5  (needs Google key)
+deepseek_r1    → deepseek-ai/DeepSeek-R1
+qwen_72b       → Qwen/Qwen2.5-72B-Instruct-Turbo</div>
+      </div>
+      <div>
+        <div class="prop-label">Retry Logic</div>
+        <div class="prop-value">• Up to 3 attempts per question
+• Exponential back-off: sleep × attempt
+• Non-retryable: 400/401/403/404 errors,
+  bad request, invalid key, context length
+• Raises ModelCallError after all attempts</div>
+      </div>
+      <div>
+        <div class="prop-label">Response Normalisation</div>
+        <div class="prop-value">• Strips &lt;think&gt;…&lt;/think&gt; reasoning blocks
+• Extracts reasoning_content / reasoning fields
+• Deduplicates reasoning text
+• Extracts SQL (if sql_detour mode)
+• Validates SQL (SELECT only, no DDL)</div>
+      </div>
+    </div>
+    <div style="margin-top:10px;font-size:0.83rem;color:#64748b;">
+      <strong style="color:#94a3b8;">Physical execution:</strong> The pipeline runs locally on your Windows machine.
+      The prompt text is sent as an HTTP POST to NVIDIA's cloud servers.
+      The model (Nemotron Ultra 550B) runs on NVIDIA infrastructure.
+      Response travels back over the internet.
+      Average latency: <strong style="color:#c4b5fd;">4–15 seconds</strong> per question with 512 max tokens.
+    </div>
+  </div>
+
+  <div class="arrow"><div class="arrow-line"></div><div class="arrow-label">ModelResponse (final_text, tokens, latency)</div><div class="arrow-head"></div></div>
+
+  <!-- STAGE 5 — Evaluator -->
+  <div class="stage s5">
+    <div class="stage-header">
+      <div class="stage-number">5</div>
+      <div>
+        <div class="stage-title">Evaluator <span class="tag tag-satwik">Satwik</span></div>
+        <div class="stage-file">unified_pipeline/evaluators/exact_match_evaluator.py  →  ExactMatchEvaluator</div>
+      </div>
+    </div>
+    <div class="props">
+      <div>
+        <div class="prop-label">Normalisation Steps</div>
+        <div class="prop-value">1. strip()  + lower()
+2. remove  $ % ,  (between digits only for comma)
+3. collapse multiple whitespace → single space</div>
+      </div>
+      <div>
+        <div class="prop-label">Comparison</div>
+        <div class="prop-value">normalise(model_response) == normalise(ground_truth)
+→ returns 1 (match) or 0 (no match)</div>
+      </div>
+      <div>
+        <div class="prop-label">EvalResult fields</div>
+        <div class="prop-value">content_exact_match : 1 or 0
+row_f1             : same as exact_match (0.0 or 1.0)
+precision          : same
+recall             : same
+evaluation_status  : "evaluated"</div>
+      </div>
+      <div>
+        <div class="prop-label">Other evaluators (registered)</div>
+        <div class="prop-value">RowF1Evaluator        (CSV row matching)
+SpanF1Evaluator       (NLP span overlap)
+PartialCreditEvaluator (fuzzy scoring)
+→ selected via eval_strategy in YAML</div>
+      </div>
+    </div>
+    <div style="margin-top:10px;font-size:0.83rem;color:#64748b;">
+      <strong style="color:#94a3b8;">Known limitation:</strong> ExactMatchEvaluator requires the model to return only the
+      bare answer value. Extra words (e.g. "522,249,071 <em>streams</em>") cause a mismatch.
+      The zero_shot prompt is tuned to suppress this with
+      <em>"No labels, no units, no explanation, no extra words."</em>
+    </div>
+  </div>
+
+  <div class="arrow"><div class="arrow-line"></div><div class="arrow-label">EvalResult (exact_match, f1, precision, recall)</div><div class="arrow-head"></div></div>
+
+  <!-- STAGE 6 — Reporter -->
+  <div class="stage s6">
+    <div class="stage-header">
+      <div class="stage-number">6</div>
+      <div>
+        <div class="stage-title">Reporter — Crash-Safe CSV Writer <span class="tag tag-shared">Shared</span></div>
+        <div class="stage-file">unified_pipeline/reporter.py  →  Reporter</div>
+      </div>
+    </div>
+    <div class="props">
+      <div>
+        <div class="prop-label">Output path pattern</div>
+        <div class="prop-value">results/{model}/{dataset}_{mode}_{prompt}_metrics.csv
+e.g.
+results/nemotron_ultra/music_llm_only_zero_shot_metrics.csv</div>
+      </div>
+      <div>
+        <div class="prop-label">CSV columns written per row</div>
+        <div class="prop-value">dataset, model, mode, prompt_style, question_id,
+exact_match, row_f1, precision, recall,
+eval_status, latency_seconds, input_tokens,
+output_tokens, model_response</div>
+      </div>
+    </div>
+    <div style="margin-top:10px;font-size:0.83rem;color:#64748b;">
+      Each row is appended immediately after the question is answered — if the run crashes at
+      question 50, questions 1–49 are already saved. The pipeline can be re-run with
+      <code style="color:#fdba74;">--task_ids</code> to resume only failed questions.
+    </div>
+  </div>
+
+</div><!-- pipeline-wrapper -->
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     DATA CONTRACTS
+     ══════════════════════════════════════════════════════════════════ -->
+<div style="max-width:960px;margin:0 auto;">
+<h2>Data Contracts — base.py</h2>
+<div class="callout callout-blue">
+  <strong>Rule:</strong> Nobody modifies <code>base.py</code> once agreed upon.
+  Every evidence builder and evaluator inherits from the abstract classes defined here.
+  run.py never imports concrete classes directly — it always goes through the registry in config.py.
+</div>
+</div>
+
+<div class="contracts">
+  <div class="contract-box">
+    <h3 style="color:#86efac;">@dataclass EvidenceResult</h3>
+    <pre><span class="kw">@dataclass</span>
+<span class="kw">class</span> <span class="nm">EvidenceResult</span>:
+    text    : <span class="tp">str</span>   <span class="cm"># prompt-ready evidence string</span>
+    metadata: <span class="tp">dict</span>  <span class="cm"># file_count, files, etc.</span></pre>
+    <div style="margin-top:10px;font-size:0.8rem;color:#64748b;">
+      <em>Produced by:</em> ProseEvidenceBuilder, CsvEvidenceBuilder (Krittika), RagEvidenceBuilder (Nishit)
+    </div>
+  </div>
+  <div class="contract-box">
+    <h3 style="color:#c4b5fd;">@dataclass ModelResponse</h3>
+    <pre><span class="kw">@dataclass</span>
+<span class="kw">class</span> <span class="nm">ModelResponse</span>:
+    final_text     : <span class="tp">str</span>        <span class="cm"># the answer text</span>
+    reasoning_text : <span class="tp">str</span>        <span class="cm"># &lt;think&gt; content</span>
+    finish_reason  : <span class="tp">str</span>
+    input_tokens   : <span class="tp">int | None</span>
+    output_tokens  : <span class="tp">int | None</span>
+    latency_seconds: <span class="tp">float</span></pre>
+    <div style="margin-top:10px;font-size:0.8rem;color:#64748b;">
+      <em>Produced by:</em> ModelRouter.call()
+    </div>
+  </div>
+  <div class="contract-box">
+    <h3 style="color:#fca5a5;">@dataclass EvalResult</h3>
+    <pre><span class="kw">@dataclass</span>
+<span class="kw">class</span> <span class="nm">EvalResult</span>:
+    content_exact_match: <span class="tp">int</span>         <span class="cm"># 1 or 0</span>
+    row_f1             : <span class="tp">float | None</span>
+    precision          : <span class="tp">float | None</span>
+    recall             : <span class="tp">float | None</span>
+    evaluation_status  : <span class="tp">str</span>         <span class="cm"># "evaluated" etc.</span></pre>
+    <div style="margin-top:10px;font-size:0.8rem;color:#64748b;">
+      <em>Produced by:</em> ExactMatchEvaluator, RowF1Evaluator, etc.
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     REGISTRY
+     ══════════════════════════════════════════════════════════════════ -->
+<div style="max-width:960px;margin:0 auto;">
+<h2>Registry — config.py</h2>
+<div class="callout callout-blue">
+  <strong>Plugin pattern:</strong> To add a new evidence builder or evaluator,
+  a team member creates the class and adds ONE line to config.py.
+  run.py never changes — it reads these dictionaries at runtime.
+</div>
+</div>
+
+<table>
+  <tr><th>Registry</th><th>Key (used in YAML)</th><th>Class</th><th>Owner</th><th>Status</th></tr>
+  <tr>
+    <td>EVIDENCE_BUILDERS</td>
+    <td><code>prose_docs</code></td>
+    <td><code>ProseEvidenceBuilder</code></td>
+    <td>Satwik</td>
+    <td style="color:#4ade80;">Active</td>
+  </tr>
+  <tr>
+    <td>EVIDENCE_BUILDERS</td>
+    <td><code>csv</code></td>
+    <td><code>CsvEvidenceBuilder</code></td>
+    <td>Krittika</td>
+    <td style="color:#fb923c;">Not merged yet (commented out)</td>
+  </tr>
+  <tr>
+    <td>EVIDENCE_BUILDERS</td>
+    <td><code>pdf_rag</code></td>
+    <td><code>RagEvidenceBuilder</code></td>
+    <td>Nishit</td>
+    <td style="color:#fb923c;">Planned</td>
+  </tr>
+  <tr>
+    <td>EVIDENCE_BUILDERS</td>
+    <td><code>pdf_visual</code></td>
+    <td><code>VisualPdfEvidenceBuilder</code></td>
+    <td>Arpitha</td>
+    <td style="color:#fb923c;">Planned</td>
+  </tr>
+  <tr>
+    <td>EVALUATORS</td>
+    <td><code>exact_match</code></td>
+    <td><code>ExactMatchEvaluator</code></td>
+    <td>Satwik</td>
+    <td style="color:#4ade80;">Active</td>
+  </tr>
+  <tr>
+    <td>EVALUATORS</td>
+    <td><code>row_f1</code></td>
+    <td><code>RowF1Evaluator</code></td>
+    <td>Shared</td>
+    <td style="color:#4ade80;">Active</td>
+  </tr>
+  <tr>
+    <td>EVALUATORS</td>
+    <td><code>span_f1</code></td>
+    <td><code>SpanF1Evaluator</code></td>
+    <td>Nishit</td>
+    <td style="color:#fb923c;">Planned</td>
+  </tr>
+  <tr>
+    <td>EVALUATORS</td>
+    <td><code>partial_credit</code></td>
+    <td><code>PartialCreditEvaluator</code></td>
+    <td>Arpitha</td>
+    <td style="color:#fb923c;">Planned</td>
+  </tr>
+  <tr>
+    <td>MODEL_ALIASES</td>
+    <td><code>nemotron_ultra</code></td>
+    <td><code>nvidia/nemotron-3-ultra-550b-a55b</code></td>
+    <td>–</td>
+    <td style="color:#4ade80;">Active (NVIDIA NIM)</td>
+  </tr>
+  <tr>
+    <td>MODEL_ALIASES</td>
+    <td><code>llama_70b</code></td>
+    <td><code>meta-llama/Llama-3.3-70B-Instruct-Turbo</code></td>
+    <td>–</td>
+    <td style="color:#4ade80;">Active (NVIDIA NIM)</td>
+  </tr>
+  <tr>
+    <td>MODEL_ALIASES</td>
+    <td><code>gemini_flash</code></td>
+    <td><code>google/gemini-flash-1.5</code></td>
+    <td>–</td>
+    <td style="color:#fb923c;">Needs Google AI Studio key</td>
+  </tr>
+</table>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     FILE STRUCTURE
+     ══════════════════════════════════════════════════════════════════ -->
+<div style="max-width:960px;margin:0 auto;">
+<h2>File Structure</h2>
+</div>
+
+<div class="file-tree">
+<span class="dir">LLM_Benchmark_Unified_Framework/</span>
+├── <span class="owned">run.py</span>                          <span class="note">← pipeline entry point (Satwik modified)</span>
+├── <span class="file">.env</span>                             <span class="note">← API keys + settings (NEVER committed)</span>
+├── <span class="file">.env.example</span>                    <span class="note">← template without real keys</span>
+│
+├── <span class="dir">datasets/</span>
+│   ├── <span class="owned">music.yaml</span>                   <span class="note">← Music benchmark config</span>
+│   ├── <span class="owned">f1_racing.yaml</span>               <span class="note">← F1 Racing benchmark config</span>
+│   ├── <span class="file">imdb_878.yaml</span>                <span class="note">← Krittika's dataset</span>
+│   └── <span class="file">uda_nqtext.yaml</span>              <span class="note">← Nishit's dataset</span>
+│
+├── <span class="dir">prompts/</span>
+│   ├── <span class="owned">llm_only_zero_shot.txt</span>       <span class="note">← zero-shot prose prompt (Satwik)</span>
+│   └── <span class="owned">sql_detour_zero_shot.txt</span>     <span class="note">← SQL generation prompt (Satwik)</span>
+│
+├── <span class="dir">evidence/</span>
+│   ├── <span class="dir">music/</span>
+│   │   ├── <span class="note">artist_001_…txt … artist_250_….txt   (250 artist profiles)</span>
+│   │   └── <span class="owned">questions.json</span>               <span class="note">← 118 Qs with doc_file field (Satwik)</span>
+│   └── <span class="dir">f1_racing/</span>
+│       ├── <span class="note">race_*.txt  (17 race documents)</span>
+│       └── <span class="file">questions.json</span>               <span class="note">← 255 Qs with doc_file field</span>
+│
+├── <span class="dir">ground_truth/</span>
+│   ├── <span class="dir">music/</span>     <span class="note">T01.txt … T118.txt (one expected answer per file)</span>
+│   └── <span class="dir">f1_racing/</span> <span class="note">T01.txt … T255.txt</span>
+│
+├── <span class="dir">results/</span>
+│   └── <span class="dir">{model}/</span>
+│       └── <span class="note">{dataset}_{mode}_{prompt}_metrics.csv</span>
+│
+└── <span class="dir">unified_pipeline/</span>          <span class="note">← the package</span>
+    ├── <span class="file">base.py</span>                  <span class="note">← dataclass contracts (shared, immutable)</span>
+    ├── <span class="file">config.py</span>                <span class="note">← EVIDENCE_BUILDERS, EVALUATORS, MODEL_ALIASES</span>
+    ├── <span class="file">model_router.py</span>          <span class="note">← OpenAI-compatible HTTP client + retry</span>
+    ├── <span class="file">reporter.py</span>              <span class="note">← crash-safe CSV appender</span>
+    ├── <span class="dir">evidence/</span>
+    │   └── <span class="owned">prose_evidence.py</span>        <span class="note">← ProseEvidenceBuilder (Satwik)</span>
+    └── <span class="dir">evaluators/</span>
+        ├── <span class="owned">exact_match_evaluator.py</span> <span class="note">← ExactMatchEvaluator (Satwik)</span>
+        ├── <span class="file">row_f1_evaluator.py</span>      <span class="note">← RowF1Evaluator</span>
+        ├── <span class="file">span_f1_evaluator.py</span>     <span class="note">← SpanF1Evaluator (planned)</span>
+        └── <span class="file">partial_credit_evaluator.py</span> <span class="note">← PartialCreditEvaluator (planned)</span>
+</div>
+
+<div style="max-width:960px;margin:12px auto;font-size:0.82rem;color:#64748b;text-align:center;">
+  <span style="color:#86efac;font-weight:700;">Green bold</span> = files owned/modified by Satwik &nbsp;|&nbsp;
+  <span style="color:#e2e8f0;">White</span> = shared / other team members
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     HOW TO RUN
+     ══════════════════════════════════════════════════════════════════ -->
+<div style="max-width:960px;margin:0 auto;">
+<h2>How to Run</h2>
+
+<h3 style="margin-top:16px;">Step 1 — One-time data setup (run from Team Project root)</h3>
+</div>
+<div class="cmd-block">python sprint5_data_setup.py</div>
+
+<div style="max-width:960px;margin:0 auto;">
+<h3 style="margin-top:20px;">Step 2 — Configure API credentials</h3>
+</div>
+<div class="cmd-block">cd LLM_Benchmark_Unified_Framework
+copy .env.example .env         # then open .env and fill in MODEL_API_KEY</div>
+
+<div style="max-width:960px;margin:0 auto;">
+<h3 style="margin-top:20px;">Step 3 — Run the benchmark</h3>
+</div>
+<div class="cmd-block"># Full music run — all 118 questions
+python run.py --dataset music --model nemotron_ultra --prompt zero_shot
+
+# Full F1 run — all 255 questions
+python run.py --dataset f1_racing --model nemotron_ultra --prompt zero_shot
+
+# Test a subset first
+python run.py --dataset music --model nemotron_ultra --prompt zero_shot --task_ids T01 T02 T03
+
+# SQL detour mode (IMDB only)
+python run.py --dataset imdb_20 --model nemotron_ultra --mode sql_detour --prompt zero_shot</div>
+
+<div style="max-width:960px;margin:0 auto;">
+<h3 style="margin-top:20px;">Step 4 — Read results</h3>
+</div>
+<div class="cmd-block">results/nemotron_ultra/music_llm_only_zero_shot_metrics.csv
+→ columns: dataset, model, mode, prompt_style, question_id,
+           exact_match, row_f1, precision, recall, eval_status,
+           latency_seconds, input_tokens, output_tokens, model_response</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     KNOWN ISSUES
+     ══════════════════════════════════════════════════════════════════ -->
+<div style="max-width:960px;margin:0 auto;">
+<h2>Known Issues &amp; Limitations</h2>
+</div>
+
+<table>
+  <tr><th>Issue</th><th>Impact</th><th>Root Cause</th><th>Status</th></tr>
+  <tr>
+    <td>Track-level exact counts missing from TXT docs</td>
+    <td>Questions asking "how many streams did track X get?" score 0</td>
+    <td>TXT documents store abbreviated figures (490.8M) but ground truth expects exact numbers (490,780,198)</td>
+    <td style="color:#fb923c;">Data quality — needs document regeneration</td>
+  </tr>
+  <tr>
+    <td>Gemini Flash 3.1 / Mistral Small 4 unavailable on NVIDIA NIM</td>
+    <td>Cannot run these models with current .env</td>
+    <td>These models are not on NVIDIA NIM; need Google AI Studio / Mistral API keys</td>
+    <td style="color:#fb923c;">Pending — separate API keys required</td>
+  </tr>
+  <tr>
+    <td>CsvEvidenceBuilder not merged</td>
+    <td>sql_detour mode with CSV evidence cannot run</td>
+    <td>Krittika's branch not yet merged into dev</td>
+    <td style="color:#fb923c;">Commented out in config.py — awaiting merge</td>
+  </tr>
+  <tr>
+    <td>Multi-artist questions load all 250 docs</td>
+    <td>CROSS-Qxx questions consume ~175k tokens per request</td>
+    <td>By design — cross-doc questions require all artist data</td>
+    <td style="color:#64748b;">Accepted — these questions are rare and slow</td>
+  </tr>
+</table>
+
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     SATWIK'S CONTRIBUTION SUMMARY
+     ══════════════════════════════════════════════════════════════════ -->
+<div style="max-width:960px;margin:0 auto;">
+<h2>Satwik's Sprint 5 Contributions</h2>
+</div>
+
+<table>
+  <tr><th>Deliverable</th><th>File</th><th>What it does</th></tr>
+  <tr>
+    <td>Prose Evidence Builder</td>
+    <td><code>unified_pipeline/evidence/prose_evidence.py</code></td>
+    <td>Loads TXT documents for music/F1 datasets. Single-doc mode prevents context overflow.</td>
+  </tr>
+  <tr>
+    <td>Exact Match Evaluator</td>
+    <td><code>unified_pipeline/evaluators/exact_match_evaluator.py</code></td>
+    <td>Normalises and compares model answers. Strips $, %, thousands separators.</td>
+  </tr>
+  <tr>
+    <td>Zero-Shot Prompt Template</td>
+    <td><code>prompts/llm_only_zero_shot.txt</code></td>
+    <td>Instructs model to return bare answer only. Tuned to suppress extra words.</td>
+  </tr>
+  <tr>
+    <td>SQL Detour Prompt Template</td>
+    <td><code>prompts/sql_detour_zero_shot.txt</code></td>
+    <td>Generates SQLite SELECT query from question + CSV context.</td>
+  </tr>
+  <tr>
+    <td>Dataset YAML files</td>
+    <td><code>datasets/music.yaml</code>, <code>datasets/f1_racing.yaml</code></td>
+    <td>Configuration wiring evidence builder, evaluator, and file paths for both datasets.</td>
+  </tr>
+  <tr>
+    <td>Data Setup Script</td>
+    <td><code>sprint5_data_setup.py</code></td>
+    <td>Converts Sprint 2 benchmark data into pipeline format. Maps artist_id → doc_file per question.</td>
+  </tr>
+  <tr>
+    <td>Per-question doc injection</td>
+    <td><code>run.py</code> (lines ~119–123)</td>
+    <td>Injects doc_file from questions.json into config before each evidence build call.</td>
+  </tr>
+  <tr>
+    <td>Inter-question delay + response logging</td>
+    <td><code>run.py</code>, <code>.env</code></td>
+    <td>2-second delay prevents NVIDIA rate limiting. model_response column logs raw output for debugging.</td>
+  </tr>
+</table>
+
+<div class="footer">
+  LLM Benchmark Unified Framework — Sprint 5 &mdash; Mannheim FSS 2026<br>
+  Generated: September 2026
+</div>
+
+</body>
+</html>

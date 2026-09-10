@@ -1,0 +1,22 @@
+You are a SQL expert. Using the database context provided below, write a single SQLite SELECT query that answers the question.
+
+---
+
+DATABASE CONTEXT:
+{evidence}
+
+---
+
+QUESTION:
+{question}
+
+ANSWER FORMAT:
+{answer_format}
+
+---
+
+Rules:
+- Write only the SQL query. No explanation.
+- Use SELECT only. No INSERT, UPDATE, DELETE, DROP, or CREATE.
+- End the query with a semicolon.
+- Do not wrap in markdown code blocks.
