@@ -67,12 +67,16 @@ def select_prompt_interactive(options: list[tuple[str, Path]]) -> tuple[str, str
     print("\n  Available prompts:")
     for i, (label, _) in enumerate(options, 1):
         print(f"    {i}. {label}")
+    print(f"    0. Exit")
     while True:
         raw = input("  Select prompt [1]: ").strip() or "1"
+        if raw == "0":
+            print("  Exiting.")
+            sys.exit(0)
         if raw.isdigit() and 1 <= int(raw) <= len(options):
             label, path = options[int(raw) - 1]
             return label, path.read_text(encoding="utf-8")
-        print(f"  Please enter a number between 1 and {len(options)}.")
+        print(f"  Please enter 0 to exit or a number between 1 and {len(options)}.")
 
 
 def build_prompt(template: str, question: dict, evidence_text: str) -> str:
