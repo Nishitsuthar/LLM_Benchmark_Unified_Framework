@@ -261,12 +261,20 @@ def main() -> None:
     # Derive mode from the chosen prompt filename
     mode = "sql_detour" if "sql_detour" in prompt_style_for_output else "llm_only"
 
+    # Build output stem — dataset-specific prompts already contain the dataset
+    # name; generic prompts need it prepended so files don't collide across datasets
+    output_stem = (
+        prompt_style_for_output
+        if prompt_style_for_output.startswith(args.dataset)
+        else f"{args.dataset}_{prompt_style_for_output}"
+    )
+
     # For sql_detour: swap in SQL evaluator if dataset has a db file
     if mode == "sql_detour" and config.get("sql_db_file"):
         evaluator = SqlTableF1Evaluator()
 
     reporter = Reporter(
-        f"results/{args.model}/{args.dataset}_{mode}_{prompt_style_for_output}_metrics.csv"
+        f"results/{args.model}/{output_stem}_metrics.csv"
     )
 
     # --------------------------------------------------------------
@@ -620,7 +628,7 @@ def main() -> None:
 
     print(
         f"  Results  : "
-        f"results/{args.model}/{args.dataset}_{mode}_{prompt_style_for_output}_metrics.csv"
+        f"results/{args.model}/{output_stem}_metrics.csv"
     )
 
     print()
