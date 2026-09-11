@@ -155,8 +155,8 @@ def _progress(
     )
 
     bar = (
-        "█" * filled
-        + "░" * (30 - filled)
+        "#" * filled
+        + "." * (30 - filled)
     )
 
     pct = int(
@@ -167,7 +167,7 @@ def _progress(
         f"\r  [{bar}] "
         f"{pct:3d}%  "
         f"{current}/{total}  "
-        f"{q_id} — "
+        f"{q_id} - "
         f"{stage:<25}"
     )
 
@@ -340,7 +340,7 @@ def main() -> None:
 
         try:
             # ------------------------------------------------------
-            # Step 1 — build evidence
+            # Step 1 -- build evidence
             # ------------------------------------------------------
 
             _progress(
@@ -355,6 +355,7 @@ def main() -> None:
                 "_source_pdf": question.get(
                     "source_pdf"
                 ),
+                "_question_id": question.get("id"),
             }
 
             evidence = builder.build(
@@ -506,9 +507,9 @@ def main() -> None:
             )
 
             exact = (
-                "✓"
+                "Y"
                 if result.content_exact_match
-                else "✗"
+                else "N"
             )
 
             _progress(
@@ -598,9 +599,7 @@ def main() -> None:
 
     print()
 
-    print(
-        "  ─" * 25
-    )
+    print("  -" * 25)
 
     print(
         f"  Finished "
@@ -622,7 +621,7 @@ def main() -> None:
     if failed:
         print(
             f"  Failed   : "
-            f"{len(failed)} — "
+            f"{len(failed)} - "
             f"{', '.join(failed)}"
         )
 

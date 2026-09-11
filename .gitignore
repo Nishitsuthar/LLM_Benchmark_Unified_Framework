@@ -38,6 +38,11 @@ results/*
 !results/gemini_flash/
 !results/nemotron/
 
+# HotpotQA raw dataset — large file (~51MB), download with:
+#   python ../hotpot-structured-benchmark/scripts/download_distractor.py
+#   cp ../hotpot-structured-benchmark/data/hotpot_validation_distractor.json evidence/hotpot/
+evidence/hotpot/hotpot_validation_distractor.json
+
 # Local reference and session continuity files (Claude Code)
 PROJECT_REFERENCE.md
 claude_code_history_chaining/

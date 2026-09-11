@@ -1,0 +1,14 @@
+name: hotpot
+description: "HotpotQA hard benchmark — 93 multi-hop questions (Sushma Sprint 3/4)"
+
+evidence_type: hotpot_context
+eval_strategy: hotpot_f1
+
+# Path to the downloaded HotpotQA validation distractor JSON.
+# Download once with:
+#   python ../hotpot-structured-benchmark/scripts/download_distractor.py
+# then copy or symlink the file here.
+hotpot_data_file: evidence/hotpot/hotpot_validation_distractor.json
+
+questions_file: evidence/hotpot/questions.json
+ground_truth_dir: ground_truth/hotpot/
