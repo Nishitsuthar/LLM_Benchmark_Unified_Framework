@@ -24,6 +24,7 @@ from pathlib import Path
 import yaml
 
 from unified_pipeline.config import EVIDENCE_BUILDERS, EVALUATORS
+from unified_pipeline.evaluators.sql_evaluator import SqlTableF1Evaluator
 from unified_pipeline.model_router import ModelRouter
 from unified_pipeline.reporter import Reporter
 
@@ -260,6 +261,10 @@ def main() -> None:
     # Derive mode from the chosen prompt filename
     mode = "sql_detour" if "sql_detour" in prompt_style_for_output else "llm_only"
 
+    # For sql_detour: swap in SQL evaluator if dataset has a db file
+    if mode == "sql_detour" and config.get("sql_db_file"):
+        evaluator = SqlTableF1Evaluator()
+
     reporter = Reporter(
         f"results/{args.model}/{args.dataset}_{mode}_{prompt_style_for_output}_metrics.csv"
     )
@@ -405,6 +410,9 @@ def main() -> None:
                     "expected_columns",
                     [],
                 ),
+                **( {"db_path": config["sql_db_file"]}
+                    if mode == "sql_detour" and config.get("sql_db_file")
+                    else {} ),
             )
 
             # ------------------------------------------------------
