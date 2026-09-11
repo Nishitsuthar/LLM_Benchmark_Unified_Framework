@@ -352,10 +352,10 @@ def main() -> None:
 
             question_config = {
                 **config,
-                "_source_pdf": question.get(
-                    "source_pdf"
-                ),
+                "_source_pdf": question.get("source_pdf"),
             }
+            if question.get("doc_file"):
+                question_config["question_doc_file"] = question["doc_file"]
 
             evidence = builder.build(
                 question["text"],

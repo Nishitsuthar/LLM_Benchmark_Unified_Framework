@@ -40,6 +40,6 @@ MODEL_ALIASES = {
     "gemini_flash": "google/gemini-3.1-flash-lite",
     "deepseek_r1": "deepseek/deepseek-r1",
     "qwen_72b": "qwen/qwen-2.5-72b-instruct",
-    "nemotron": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "nemotron": "nvidia/nemotron-3-ultra-550b-a55b",
     "mistral_small": "mistralai/mistral-small-2603",
 }
