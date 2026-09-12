@@ -25,7 +25,6 @@ import pandas as pd
 import yaml
 
 from unified_pipeline.config import EVIDENCE_BUILDERS, EVALUATORS
-from unified_pipeline.evaluators.sql_evaluator import SqlTableF1Evaluator
 from unified_pipeline.model_router import ModelRouter
 from unified_pipeline.reporter import Reporter
 
@@ -266,7 +265,6 @@ def main() -> None:
     # Derive mode from the chosen prompt filename
     mode = "sql_detour" if "sql_detour" in prompt_style_for_output else "llm_only"
 
-<<<<<<< HEAD
     # Build output stem — dataset-specific prompts already contain the dataset
     # name; generic prompts need it prepended so files don't collide across datasets
     output_stem = (
@@ -275,10 +273,6 @@ def main() -> None:
         else f"{args.dataset}_{prompt_style_for_output}"
     )
 
-    # For sql_detour: swap in SQL evaluator if dataset has a db file
-    if mode == "sql_detour" and config.get("sql_db_file"):
-        evaluator = SqlTableF1Evaluator()
-=======
     # Prepare SQL data only for SQL-detour mode
     subset_df = None
     schema = ""
@@ -286,7 +280,6 @@ def main() -> None:
     if mode == "sql_detour":
         subset_df = pd.read_csv(config["data_file"])
         schema = router.build_sql_schema(subset_df)
->>>>>>> bbb40d7 (Added IMDb controlled experiment results and pipeline updates)
 
     reporter = Reporter(
         f"results/{args.model}/{output_stem}_metrics.csv"
@@ -456,9 +449,6 @@ def main() -> None:
                     "expected_columns",
                     [],
                 ),
-                **( {"db_path": config["sql_db_file"]}
-                    if mode == "sql_detour" and config.get("sql_db_file")
-                    else {} ),
             )
 
             # ------------------------------------------------------
