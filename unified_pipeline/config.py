@@ -13,7 +13,6 @@ from unified_pipeline.evaluators.table_f1_evaluator import TableF1Evaluator     
 from unified_pipeline.evaluators.exact_match_evaluator import ExactMatchEvaluator  # Satwik
 from unified_pipeline.evaluators.span_f1_evaluator import SpanF1Evaluator        # Nishit adds
 from unified_pipeline.evaluators.partial_credit_evaluator import PartialCreditEvaluator  # Arpitha adds
-from unified_pipeline.evaluators.sql_evaluator import SqlTableF1Evaluator               # sql_detour
 
 
 EVIDENCE_BUILDERS = {
@@ -29,7 +28,6 @@ EVALUATORS = {
     "exact_match":    ExactMatchEvaluator,
     "span_f1": SpanF1Evaluator,
     "partial_credit": PartialCreditEvaluator,
-    "sql_table_f1": SqlTableF1Evaluator,
 }
 
 
