@@ -20,11 +20,11 @@ import json
 import sys
 import time
 from pathlib import Path
+import pandas as pd
 
 import yaml
 
 from unified_pipeline.config import EVIDENCE_BUILDERS, EVALUATORS
-from unified_pipeline.evaluators.sql_evaluator import SqlTableF1Evaluator
 from unified_pipeline.model_router import ModelRouter
 from unified_pipeline.reporter import Reporter
 
@@ -130,6 +130,8 @@ def build_prompt(
     template: str,
     question: dict,
     evidence_text: str,
+    sql_dialect: str = "sqlite",
+    schema: str = "",
 ) -> str:
     return template.format(
         question=question.get(
@@ -141,6 +143,8 @@ def build_prompt(
             "answer_format",
             "CSV table",
         ),
+        sql_dialect=sql_dialect,
+        schema=schema,
     )
 
 
@@ -269,9 +273,13 @@ def main() -> None:
         else f"{args.dataset}_{prompt_style_for_output}"
     )
 
-    # For sql_detour: swap in SQL evaluator if dataset has a db file
-    if mode == "sql_detour" and config.get("sql_db_file"):
-        evaluator = SqlTableF1Evaluator()
+    # Prepare SQL data only for SQL-detour mode
+    subset_df = None
+    schema = ""
+
+    if mode == "sql_detour":
+        subset_df = pd.read_csv(config["data_file"])
+        schema = router.build_sql_schema(subset_df)
 
     reporter = Reporter(
         f"results/{args.model}/{output_stem}_metrics.csv"
@@ -378,6 +386,8 @@ def main() -> None:
                 template,
                 question,
                 evidence.text,
+                sql_dialect=config.get("sql_dialect", "sqlite"),
+                schema=schema,
             )
 
             # Visual evidence builders can provide base64 image
@@ -392,6 +402,27 @@ def main() -> None:
                 images=images,
             )
 
+            evaluation_text = response.final_text
+            
+            if mode == "sql_detour":
+                generated_sql = router.extract_sql(
+                    response.final_text
+                    )
+                
+                sql_result_csv, sql_error, actual_columns, row_count = (
+                    router.execute_sql(
+                        generated_sql,
+                        subset_df,
+                        )
+                    )
+
+                if sql_error:
+                    raise RuntimeError(
+                        f"SQL execution failed: {sql_error}"
+                    )
+
+                evaluation_text = sql_result_csv
+
             # ------------------------------------------------------
             # Step 3 — evaluate
             # ------------------------------------------------------
@@ -404,7 +435,7 @@ def main() -> None:
             )
 
             result = evaluator.evaluate(
-                response.final_text,
+                evaluation_text,
                 str(
                     Path(
                         config[
@@ -419,9 +450,6 @@ def main() -> None:
                     "expected_columns",
                     [],
                 ),
-                **( {"db_path": config["sql_db_file"]}
-                    if mode == "sql_detour" and config.get("sql_db_file")
-                    else {} ),
             )
 
             # ------------------------------------------------------
@@ -458,7 +486,7 @@ def main() -> None:
                         ).strip()
                     ),
                     "model_response": (
-                        response.final_text
+                        evaluation_text
                     ),
                     "exact_match": (
                         result.content_exact_match
