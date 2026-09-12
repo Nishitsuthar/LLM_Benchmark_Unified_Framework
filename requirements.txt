@@ -3,6 +3,7 @@ openai>=1.0.0
 python-dotenv>=1.0.0
 pyyaml>=6.0
 pandas>=2.0.0
+together
 
 # RAG evidence builder (Nishit)
 # torch must be pinned — sentence-transformers 3.x+ requires torch>=2.0

@@ -8,3 +8,5 @@ data_file: evidence/imdb_controlled/imdb_structured_subset.csv
 sql_db_file: evidence/imdb_controlled/imdb_controlled.db
 questions_file: evidence/imdb_controlled/questions.json
 ground_truth_dir: ground_truth/imdb_controlled/
+
+sql_dialect: sqlite
