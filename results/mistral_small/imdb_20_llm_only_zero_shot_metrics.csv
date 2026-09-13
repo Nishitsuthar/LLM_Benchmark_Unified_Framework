@@ -1,23 +1,23 @@
 dataset,model,mode,prompt_style,question_id,question,ground_truth,model_response,exact_match,row_f1,precision,recall,eval_status,latency_seconds,input_tokens,output_tokens
 imdb_20,mistral_small,llm_only,imdb_20_llm_only_zero_shot,F1,"Among movies released in or after 2010, what is the average IMDb rating? Round the answer to two decimal places.","answer_text
-8.01",8.30,0,,,,evaluated_incorrect,8.679,22097,5
+8.01",8.30,0,0.0,0.0,0.0,evaluated,8.679,22097,5
 imdb_20,mistral_small,llm_only,imdb_20_llm_only_zero_shot,F2,"Among genres appearing in at least 4 movies, which genre has the lowest average IMDb rating? Round the average to two decimal places.","answer_text
-Sci-Fi - 8.08",Drama - 7.70,0,,,,evaluated_incorrect,7.119,22097,9
+Sci-Fi - 8.08",Drama - 7.70,0,0.0,0.0,0.0,evaluated,7.119,22097,9
 imdb_20,mistral_small,llm_only,imdb_20_llm_only_zero_shot,F3,"Among movies released in or after 2000, use the rule runtime > subset mean runtime + 1 population standard deviation. Which movies are runtime outliers?","answer_text
-The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; The Wolf of Wall Street; Interstellar","Saving Private Ryan, The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, The Lord of the Rings: The Return of the King",0,,,,evaluated_incorrect,7.77,22102,38
+The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; The Wolf of Wall Street; Interstellar","Saving Private Ryan, The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, The Lord of the Rings: The Return of the King",0,0.5,0.5,0.5,evaluated,7.77,22102,38
 imdb_20,mistral_small,llm_only,imdb_20_llm_only_zero_shot,F4,What is the total runtime of all Adventure movies released in or after 2010?,"answer_text
-621 minutes",Insufficient evidence,0,,,,evaluated_incorrect,6.835,22088,5
+621 minutes",Insufficient evidence,0,0.0,0.0,0.0,evaluated,6.835,22088,5
 imdb_20,mistral_small,llm_only,imdb_20_llm_only_zero_shot,F5,"Among genres appearing in at least 3 movies, which genre has the largest IMDb rating range, calculated as maximum rating minus minimum rating?","answer_text
-Action - 2.2 rating points",Drama,0,,,,evaluated_incorrect,6.375,22097,3
+Action - 2.2 rating points",Drama,0,0.0,0.0,0.0,evaluated,6.375,22097,3
 imdb_20,mistral_small,llm_only,imdb_20_llm_only_zero_shot,F6,Consider only directors who directed more than one movie in the dataset. What is the average runtime of all movies directed by those repeated directors? Round to two decimal places.,"answer_text
-157.29 minutes",119.00,0,,,,evaluated_incorrect,7.134,22102,7
+157.29 minutes",119.00,0,0.0,0.0,0.0,evaluated,7.134,22102,7
 imdb_20,mistral_small,llm_only,imdb_20_llm_only_zero_shot,F7,"Using the 1.5 × IQR rule for IMDb ratings, with Q1 and Q3 calculated as the medians of the lower and upper halves, which movie is a rating outlier?","answer_text
-Jurassic World - 6.9",American History X,0,,,,evaluated_incorrect,6.391,22110,4
+Jurassic World - 6.9",American History X,0,0.0,0.0,0.0,evaluated,6.391,22110,4
 imdb_20,mistral_small,llm_only,imdb_20_llm_only_zero_shot,F8,What is the difference between the average IMDb rating of movies released before 2000 and movies released in or after 2000? Report both averages and the difference.,"answer_text
 Before 2000: 8.44; 2000 or after: 8.26; Difference: 0.18","Average IMDb rating before 2000: 8.6
 Average IMDb rating in or after 2000: 8.1
-Difference: 0.5",0,,,,evaluated_incorrect,6.205,22107,41
+Difference: 0.5",0,0.4,0.4,0.4,evaluated,6.205,22107,41
 imdb_20,mistral_small,llm_only,imdb_20_llm_only_zero_shot,F9,"Among genres appearing in at least 3 movies, which genre has the highest total runtime across all its movies?","answer_text
-Drama - 1608 minutes",Drama,0,,,,evaluated_incorrect,6.034,22091,3
+Drama - 1608 minutes",Drama,0,0.5,0.5,0.5,evaluated,6.034,22091,3
 imdb_20,mistral_small,llm_only,imdb_20_llm_only_zero_shot,F10,First calculate the overall mean runtime of all 20 movies. Then calculate the average IMDb rating of movies whose runtime is above that mean. Round the final rating to two decimal places.,"answer_text
-8.53",8.15,0,,,,evaluated_incorrect,8.264,22107,5
+8.53",8.15,0,0.0,0.0,0.0,evaluated,8.264,22107,5

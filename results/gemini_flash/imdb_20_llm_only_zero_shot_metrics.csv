@@ -1,23 +1,23 @@
 dataset,model,mode,prompt_style,question_id,question,ground_truth,model_response,exact_match,row_f1,precision,recall,eval_status,latency_seconds,input_tokens,output_tokens
 imdb_20,gemini_flash,llm_only,imdb_20_llm_only_zero_shot,F1,"Among movies released in or after 2010, what is the average IMDb rating? Round the answer to two decimal places.","answer_text
-8.01",8.05,0,,,,evaluated_incorrect,2.09,11288,4
+8.01",8.05,1,1.0,1.0,1.0,evaluated,2.09,11288,4
 imdb_20,gemini_flash,llm_only,imdb_20_llm_only_zero_shot,F2,"Among genres appearing in at least 4 movies, which genre has the lowest average IMDb rating? Round the average to two decimal places.","answer_text
-Sci-Fi - 8.08",6.90,0,,,,evaluated_incorrect,1.918,11288,4
+Sci-Fi - 8.08",6.90,0,0.0,0.0,0.0,evaluated,1.918,11288,4
 imdb_20,gemini_flash,llm_only,imdb_20_llm_only_zero_shot,F3,"Among movies released in or after 2000, use the rule runtime > subset mean runtime + 1 population standard deviation. Which movies are runtime outliers?","answer_text
-The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; The Wolf of Wall Street; Interstellar","The Lord of the Rings: The Fellowship of the Ring, The Wolf of Wall Street, Interstellar",0,,,,evaluated_incorrect,2.016,11294,20
+The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; The Wolf of Wall Street; Interstellar","The Lord of the Rings: The Fellowship of the Ring, The Wolf of Wall Street, Interstellar",0,0.75,0.75,0.75,evaluated,2.016,11294,20
 imdb_20,gemini_flash,llm_only,imdb_20_llm_only_zero_shot,F4,What is the total runtime of all Adventure movies released in or after 2010?,"answer_text
-621 minutes",8 hours 57 minutes,0,,,,evaluated_incorrect,1.603,11280,6
+621 minutes",8 hours 57 minutes,0,0.0,0.0,0.0,evaluated,1.603,11280,6
 imdb_20,gemini_flash,llm_only,imdb_20_llm_only_zero_shot,F5,"Among genres appearing in at least 3 movies, which genre has the largest IMDb rating range, calculated as maximum rating minus minimum rating?","answer_text
-Action - 2.2 rating points",Drama,0,,,,evaluated_incorrect,2.554,11288,1
+Action - 2.2 rating points",Drama,0,0.0,0.0,0.0,evaluated,2.554,11288,1
 imdb_20,gemini_flash,llm_only,imdb_20_llm_only_zero_shot,F6,Consider only directors who directed more than one movie in the dataset. What is the average runtime of all movies directed by those repeated directors? Round to two decimal places.,"answer_text
-157.29 minutes",153.50,0,,,,evaluated_incorrect,1.655,11294,6
+157.29 minutes",153.50,0,0.0,0.0,0.0,evaluated,1.655,11294,6
 imdb_20,gemini_flash,llm_only,imdb_20_llm_only_zero_shot,F7,"Using the 1.5 × IQR rule for IMDb ratings, with Q1 and Q3 calculated as the medians of the lower and upper halves, which movie is a rating outlier?","answer_text
-Jurassic World - 6.9",Jurassic World,0,,,,evaluated_incorrect,2.144,11299,2
+Jurassic World - 6.9",Jurassic World,1,1.0,1.0,1.0,evaluated,2.144,11299,2
 imdb_20,gemini_flash,llm_only,imdb_20_llm_only_zero_shot,F8,What is the difference between the average IMDb rating of movies released before 2000 and movies released in or after 2000? Report both averages and the difference.,"answer_text
 Before 2000: 8.44; 2000 or after: 8.26; Difference: 0.18","Average IMDb rating of movies released before 2000: 8.4
 Average IMDb rating of movies released in or after 2000: 8.1
-Difference: 0.3",0,,,,evaluated_incorrect,1.808,11298,44
+Difference: 0.3",0,0.6,0.6,0.6,evaluated,1.808,11298,44
 imdb_20,gemini_flash,llm_only,imdb_20_llm_only_zero_shot,F9,"Among genres appearing in at least 3 movies, which genre has the highest total runtime across all its movies?","answer_text
-Drama - 1608 minutes",Adventure,0,,,,evaluated_incorrect,1.756,11283,1
+Drama - 1608 minutes",Adventure,0,0.0,0.0,0.0,evaluated,1.756,11283,1
 imdb_20,gemini_flash,llm_only,imdb_20_llm_only_zero_shot,F10,First calculate the overall mean runtime of all 20 movies. Then calculate the average IMDb rating of movies whose runtime is above that mean. Round the final rating to two decimal places.,"answer_text
-8.53",8.45,0,,,,evaluated_incorrect,2.033,11298,4
+8.53",8.45,0,0.0,0.0,0.0,evaluated,2.033,11298,4
