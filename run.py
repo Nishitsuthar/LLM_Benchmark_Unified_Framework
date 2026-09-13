@@ -273,13 +273,22 @@ def main() -> None:
         else f"{args.dataset}_{prompt_style_for_output}"
     )
 
-    # Prepare SQL data only for SQL-detour mode
+    # Prepare SQL data only for SQL-detour mode on CSV-backed datasets
     subset_df = None
     schema = ""
 
     if mode == "sql_detour":
-        subset_df = pd.read_csv(config["data_file"])
-        schema = router.build_sql_schema(subset_df)
+        if config.get("data_file"):
+            subset_df = pd.read_csv(config["data_file"])
+        elif config.get("sql_db_file"):
+            import sqlite3
+            con = sqlite3.connect(config["sql_db_file"])
+            tables = con.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
+            table_name = tables[0][0]
+            subset_df = pd.read_sql_query(f"SELECT * FROM {table_name}", con)
+            con.close()
+        if subset_df is not None:
+            schema = router.build_sql_schema(subset_df)
 
     reporter = Reporter(
         f"results/{args.model}/{output_stem}_metrics.csv"
