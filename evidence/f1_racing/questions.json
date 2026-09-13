@@ -1,0 +1,242 @@
+[
+  {
+    "id": "T01",
+    "text": "What is the total number of championship points awarded to all drivers combined in the Australian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T01.txt",
+    "expected_columns": [],
+    "doc_file": "race_01_australian_grand_prix.txt"
+  },
+  {
+    "id": "T02",
+    "text": "How many drivers were officially classified as finishers (completed the race or were lapped) in the Australian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T02.txt",
+    "expected_columns": [],
+    "doc_file": "race_01_australian_grand_prix.txt"
+  },
+  {
+    "id": "T03",
+    "text": "What is the combined total number of laps completed by all drivers in the Australian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T03.txt",
+    "expected_columns": [],
+    "doc_file": "race_01_australian_grand_prix.txt"
+  },
+  {
+    "id": "T04",
+    "text": "How many drivers scored at least one championship point in the Australian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T04.txt",
+    "expected_columns": [],
+    "doc_file": "race_01_australian_grand_prix.txt"
+  },
+  {
+    "id": "T05",
+    "text": "What is the average number of championship points scored per driver in the Australian Grand Prix 2009? Give your answer rounded to 2 decimal places.",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T05.txt",
+    "expected_columns": [],
+    "doc_file": "race_01_australian_grand_prix.txt"
+  },
+  {
+    "id": "T06",
+    "text": "Which driver gained the most positions from their starting grid slot to their final finishing position in the Australian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T06.txt",
+    "expected_columns": [],
+    "doc_file": "race_01_australian_grand_prix.txt"
+  },
+  {
+    "id": "T07",
+    "text": "Which driver lost the most positions from their starting grid slot to their final finishing position in the Australian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T07.txt",
+    "expected_columns": [],
+    "doc_file": "race_01_australian_grand_prix.txt"
+  },
+  {
+    "id": "T08",
+    "text": "Which constructor scored the most combined points across both their drivers in the Australian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T08.txt",
+    "expected_columns": [],
+    "doc_file": "race_01_australian_grand_prix.txt"
+  },
+  {
+    "id": "T09",
+    "text": "How many total points did Brawn score across both drivers in the Australian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T09.txt",
+    "expected_columns": [],
+    "doc_file": "race_01_australian_grand_prix.txt"
+  },
+  {
+    "id": "T10",
+    "text": "Which driver set the single fastest individual lap time during the Australian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T10.txt",
+    "expected_columns": [],
+    "doc_file": "race_01_australian_grand_prix.txt"
+  },
+  {
+    "id": "T11",
+    "text": "Among drivers classified as 'Finished' in the Australian Grand Prix 2009, which driver had the slowest average lap time over the course of the race?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T11.txt",
+    "expected_columns": [],
+    "doc_file": "race_01_australian_grand_prix.txt"
+  },
+  {
+    "id": "T12",
+    "text": "How many individual laps did the race winner lead (i.e. held first position on the timing sheet) during the Australian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T12.txt",
+    "expected_columns": [],
+    "doc_file": "race_01_australian_grand_prix.txt"
+  },
+  {
+    "id": "T13",
+    "text": "After the Australian Grand Prix 2009, what is the points gap between the championship leader and the driver in second place in the Drivers' Championship?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T13.txt",
+    "expected_columns": [],
+    "doc_file": "race_01_australian_grand_prix.txt"
+  },
+  {
+    "id": "T14",
+    "text": "After the Australian Grand Prix 2009, how many drivers have accumulated more than 5 points in the Drivers' Championship standings?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T14.txt",
+    "expected_columns": [],
+    "doc_file": "race_01_australian_grand_prix.txt"
+  },
+  {
+    "id": "T15",
+    "text": "Which constructor leads the Constructors' Championship after the Australian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T15.txt",
+    "expected_columns": [],
+    "doc_file": "race_01_australian_grand_prix.txt"
+  },
+  {
+    "id": "T16",
+    "text": "What is the total number of championship points awarded to all drivers combined in the Malaysian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T16.txt",
+    "expected_columns": [],
+    "doc_file": "race_02_malaysian_grand_prix.txt"
+  },
+  {
+    "id": "T17",
+    "text": "How many drivers were officially classified as finishers (completed the race or were lapped) in the Malaysian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T17.txt",
+    "expected_columns": [],
+    "doc_file": "race_02_malaysian_grand_prix.txt"
+  },
+  {
+    "id": "T18",
+    "text": "What is the combined total number of laps completed by all drivers in the Malaysian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T18.txt",
+    "expected_columns": [],
+    "doc_file": "race_02_malaysian_grand_prix.txt"
+  },
+  {
+    "id": "T19",
+    "text": "How many drivers scored at least one championship point in the Malaysian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T19.txt",
+    "expected_columns": [],
+    "doc_file": "race_02_malaysian_grand_prix.txt"
+  },
+  {
+    "id": "T20",
+    "text": "What is the average number of championship points scored per driver in the Malaysian Grand Prix 2009? Give your answer rounded to 2 decimal places.",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T20.txt",
+    "expected_columns": [],
+    "doc_file": "race_02_malaysian_grand_prix.txt"
+  },
+  {
+    "id": "T21",
+    "text": "Which driver gained the most positions from their starting grid slot to their final finishing position in the Malaysian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T21.txt",
+    "expected_columns": [],
+    "doc_file": "race_02_malaysian_grand_prix.txt"
+  },
+  {
+    "id": "T22",
+    "text": "Which driver lost the most positions from their starting grid slot to their final finishing position in the Malaysian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T22.txt",
+    "expected_columns": [],
+    "doc_file": "race_02_malaysian_grand_prix.txt"
+  },
+  {
+    "id": "T23",
+    "text": "Which constructor scored the most combined points across both their drivers in the Malaysian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T23.txt",
+    "expected_columns": [],
+    "doc_file": "race_02_malaysian_grand_prix.txt"
+  },
+  {
+    "id": "T24",
+    "text": "How many total points did Brawn score across both drivers in the Malaysian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T24.txt",
+    "expected_columns": [],
+    "doc_file": "race_02_malaysian_grand_prix.txt"
+  },
+  {
+    "id": "T25",
+    "text": "Which driver set the single fastest individual lap time during the Malaysian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T25.txt",
+    "expected_columns": [],
+    "doc_file": "race_02_malaysian_grand_prix.txt"
+  },
+  {
+    "id": "T26",
+    "text": "Among drivers classified as 'Finished' in the Malaysian Grand Prix 2009, which driver had the slowest average lap time over the course of the race?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T26.txt",
+    "expected_columns": [],
+    "doc_file": "race_02_malaysian_grand_prix.txt"
+  },
+  {
+    "id": "T27",
+    "text": "How many individual laps did the race winner lead (i.e. held first position on the timing sheet) during the Malaysian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T27.txt",
+    "expected_columns": [],
+    "doc_file": "race_02_malaysian_grand_prix.txt"
+  },
+  {
+    "id": "T28",
+    "text": "After the Malaysian Grand Prix 2009, what is the points gap between the championship leader and the driver in second place in the Drivers' Championship?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T28.txt",
+    "expected_columns": [],
+    "doc_file": "race_02_malaysian_grand_prix.txt"
+  },
+  {
+    "id": "T29",
+    "text": "After the Malaysian Grand Prix 2009, how many drivers have accumulated more than 5 points in the Drivers' Championship standings?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T29.txt",
+    "expected_columns": [],
+    "doc_file": "race_02_malaysian_grand_prix.txt"
+  },
+  {
+    "id": "T30",
+    "text": "Which constructor leads the Constructors' Championship after the Malaysian Grand Prix 2009?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T30.txt",
+    "expected_columns": [],
+    "doc_file": "race_02_malaysian_grand_prix.txt"
+  }
+]

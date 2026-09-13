@@ -7,3 +7,4 @@ eval_strategy: exact_match  # routes to ExactMatchEvaluator
 evidence_path: evidence/f1_racing/
 questions_file: evidence/f1_racing/questions.json
 ground_truth_dir: ground_truth/f1_racing/
+sql_db_file: evidence/f1_racing/f1_racing.db
