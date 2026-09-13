@@ -43,8 +43,14 @@ class SqlScalarEvaluator(BaseEvaluator):
         if len(values) == 1:
             match = self._compare(self._normalize(values[0]), gt_norm)
         else:
-            # Multi-column: all SQL values must appear somewhere in GT
-            match = all(self._normalize(v) in gt_norm for v in values)
+            # Multi-column: first try matching only the primary (first) column —
+            # handles cases like (driver_name, positions_gained) where GT is just
+            # a name.  Fall back to "all values appear in GT" for compound answers
+            # like "Melodex with 365,185,307 streams" where SQL returns
+            # (platform_name, stream_count).
+            first_match = self._compare(self._normalize(values[0]), gt_norm)
+            all_match = all(self._normalize(v) in gt_norm for v in values)
+            match = first_match or all_match
 
         score = float(match)
         return EvalResult(int(match), score, score, score, "evaluated")

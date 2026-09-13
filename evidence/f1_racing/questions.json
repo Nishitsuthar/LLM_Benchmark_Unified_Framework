@@ -9,7 +9,7 @@
   },
   {
     "id": "T02",
-    "text": "How many drivers were officially classified as finishers (completed the race or were lapped) in the Australian Grand Prix 2009?",
+    "text": "How many drivers are recorded with a 'Finished' status in the Australian Grand Prix 2009?",
     "answer_format": "a concise answer",
     "ground_truth_file": "T02.txt",
     "expected_columns": [],
@@ -89,7 +89,7 @@
   },
   {
     "id": "T12",
-    "text": "How many individual laps did the race winner lead (i.e. held first position on the timing sheet) during the Australian Grand Prix 2009?",
+    "text": "How many drivers retired (did not finish the race) in the Australian Grand Prix 2009?",
     "answer_format": "a concise answer",
     "ground_truth_file": "T12.txt",
     "expected_columns": [],
@@ -129,7 +129,7 @@
   },
   {
     "id": "T17",
-    "text": "How many drivers were officially classified as finishers (completed the race or were lapped) in the Malaysian Grand Prix 2009?",
+    "text": "How many drivers are recorded with a 'Finished' status in the Malaysian Grand Prix 2009?",
     "answer_format": "a concise answer",
     "ground_truth_file": "T17.txt",
     "expected_columns": [],
@@ -209,7 +209,7 @@
   },
   {
     "id": "T27",
-    "text": "How many individual laps did the race winner lead (i.e. held first position on the timing sheet) during the Malaysian Grand Prix 2009?",
+    "text": "How many drivers retired (did not finish the race) in the Malaysian Grand Prix 2009?",
     "answer_format": "a concise answer",
     "ground_truth_file": "T27.txt",
     "expected_columns": [],

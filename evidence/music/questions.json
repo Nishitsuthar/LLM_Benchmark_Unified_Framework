@@ -57,7 +57,7 @@
   },
   {
     "id": "T08",
-    "text": "What is the median energy score across all 58 tracks by Kaven Sornwick?",
+    "text": "Which platform generated the most streams for Kaven Sornwick, and what was the total stream count on that platform?",
     "answer_format": "a concise answer",
     "ground_truth_file": "T08.txt",
     "expected_columns": [],
@@ -65,7 +65,7 @@
   },
   {
     "id": "T09",
-    "text": "How many of Kaven Sornwick's tracks have a total stream count above the artist's own average stream count per track?",
+    "text": "By the end of which quarter did Kaven Sornwick's cumulative royalty earnings first exceed $5,000?",
     "answer_format": "a concise answer",
     "ground_truth_file": "T09.txt",
     "expected_columns": [],
@@ -137,7 +137,7 @@
   },
   {
     "id": "T18",
-    "text": "What is the median energy score across all 60 tracks by Zindra Quelfield?",
+    "text": "Which platform generated the most streams for Zindra Quelfield, and what was the total stream count on that platform?",
     "answer_format": "a concise answer",
     "ground_truth_file": "T18.txt",
     "expected_columns": [],
@@ -145,7 +145,7 @@
   },
   {
     "id": "T19",
-    "text": "How many of Zindra Quelfield's tracks have a total stream count above the artist's own average stream count per track?",
+    "text": "By the end of which quarter did Zindra Quelfield's cumulative royalty earnings first exceed $10,000?",
     "answer_format": "a concise answer",
     "ground_truth_file": "T19.txt",
     "expected_columns": [],
@@ -217,7 +217,7 @@
   },
   {
     "id": "T28",
-    "text": "What is the median energy score across all 42 tracks by Quelvin Bresken?",
+    "text": "Which platform generated the most streams for Quelvin Bresken, and what was the total stream count on that platform?",
     "answer_format": "a concise answer",
     "ground_truth_file": "T28.txt",
     "expected_columns": [],
@@ -225,7 +225,7 @@
   },
   {
     "id": "T29",
-    "text": "How many of Quelvin Bresken's tracks have a total stream count above the artist's own average stream count per track?",
+    "text": "By the end of which quarter did Quelvin Bresken's cumulative royalty earnings first exceed $25,000?",
     "answer_format": "a concise answer",
     "ground_truth_file": "T29.txt",
     "expected_columns": [],
