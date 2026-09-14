@@ -835,5 +835,165 @@
     "source_id": "5ab8179f5542990e739ec817",
     "type": "bridge",
     "level": "hard"
+  },
+  {
+    "id": "CQ001",
+    "source_id": "5a7b4d765542995eb53be8fe",
+    "ground_truth_file": "CQ001.txt",
+    "type": "bridge",
+    "level": "hard",
+    "category": "arithmetic_chain",
+    "text": "For how many years did a player, who woke up on March 28, 1996 without vision in his right eye, play for the Minnesota Twins?",
+    "answer_format": "short answer"
+  },
+  {
+    "id": "CQ002",
+    "source_id": "5adde5155542997dc7907092",
+    "ground_truth_file": "CQ002.txt",
+    "type": "bridge",
+    "level": "hard",
+    "category": "arithmetic_chain",
+    "text": "How old was Virginia Bruce when she starred in Let Freedom Ring?",
+    "answer_format": "short answer"
+  },
+  {
+    "id": "CQ003",
+    "source_id": "5ae74fc45542997b22f6a6b4",
+    "ground_truth_file": "CQ003.txt",
+    "type": "bridge",
+    "level": "hard",
+    "category": "formal_full_name",
+    "text": "What is the full name of the viral respiratory disease in which Yi Guan's research helped to prevent the outbreak of?",
+    "answer_format": "short answer"
+  },
+  {
+    "id": "CQ004",
+    "source_id": "5adfa1f9554299025d62a308",
+    "ground_truth_file": "CQ004.txt",
+    "type": "bridge",
+    "level": "hard",
+    "category": "formal_full_name",
+    "text": "What is the full name of the captain of the Australian team that won the 1930 Ashes series?",
+    "answer_format": "short answer"
+  },
+  {
+    "id": "CQ005",
+    "source_id": "5ae4c2b95542995dadf243ef",
+    "ground_truth_file": "CQ005.txt",
+    "type": "bridge",
+    "level": "hard",
+    "category": "exact_position_title",
+    "text": "One of the coaches of Southern Methodist University also played what role at the Arizona State Sun Devils?",
+    "answer_format": "short answer"
+  },
+  {
+    "id": "CQ006",
+    "source_id": "5a79c8fa5542994bb94570a1",
+    "ground_truth_file": "CQ006.txt",
+    "type": "bridge",
+    "level": "hard",
+    "category": "exact_position_title",
+    "text": "What role did Veda Hlubinka-Cook have in the making of this 1997 video game that takes place on the Orient Express, days before the start of World War I?",
+    "answer_format": "short answer"
+  },
+  {
+    "id": "CQ007",
+    "source_id": "5a7da3a95542990b8f5039e6",
+    "ground_truth_file": "CQ007.txt",
+    "type": "bridge",
+    "level": "hard",
+    "category": "exact_position_title",
+    "text": "What position did the former Major League Baseball player play who worked on the same broadcast team as Kim Kelch?",
+    "answer_format": "short answer"
+  },
+  {
+    "id": "CQ008",
+    "source_id": "5abb1e1b5542992ccd8e7f19",
+    "ground_truth_file": "CQ008.txt",
+    "type": "comparison",
+    "level": "hard",
+    "category": "exact_award_name",
+    "text": "José Saramago and Ivo Andrić were recipients of what award in Literature?",
+    "answer_format": "short answer"
+  },
+  {
+    "id": "CQ009",
+    "source_id": "5ab474135542991751b4d77b",
+    "ground_truth_file": "CQ009.txt",
+    "type": "bridge",
+    "level": "hard",
+    "category": "exact_award_name",
+    "text": "At the 46th Grammy Awards, which award did the album by The White Stripes, which included the song Seven Nation Army, win?",
+    "answer_format": "short answer"
+  },
+  {
+    "id": "CQ010",
+    "source_id": "5abae3205542996cc5e49edc",
+    "ground_truth_file": "CQ010.txt",
+    "type": "bridge",
+    "level": "hard",
+    "category": "exact_award_name",
+    "text": "What award did the writer of Never Let Me Go novel win in 1989?",
+    "answer_format": "short answer"
+  },
+  {
+    "id": "CQ011",
+    "source_id": "5ae2dfd155429928c423951b",
+    "ground_truth_file": "CQ011.txt",
+    "type": "bridge",
+    "level": "hard",
+    "category": "cardinal_direction",
+    "text": "Which of the city at the south of Shelly Beach, New South Wales is a local government area in the Hunter region of New South Wales, Australia?",
+    "answer_format": "short answer"
+  },
+  {
+    "id": "CQ012",
+    "source_id": "5a7363ec5542991f29ee2dd7",
+    "ground_truth_file": "CQ012.txt",
+    "type": "bridge",
+    "level": "hard",
+    "category": "cardinal_direction",
+    "text": "The USS Tortuga was named after the Dry Tortugas, a group of desert coral islets 60 miles west of which city with the motto \"One Human Family\"?",
+    "answer_format": "short answer"
+  },
+  {
+    "id": "CQ013",
+    "source_id": "5ab4fd0b55429942dd415fbb",
+    "ground_truth_file": "CQ013.txt",
+    "type": "bridge",
+    "level": "hard",
+    "category": "cardinal_direction",
+    "text": "Mundo Perdido was influenced by an ancient Mesoamerican city located in a sub-valley of the Valley of Mexico, that is 40 km northeast of what modern day city?",
+    "answer_format": "short answer"
+  },
+  {
+    "id": "CQ014",
+    "source_id": "5a8db19d5542994ba4e3dd00",
+    "ground_truth_file": "CQ014.txt",
+    "type": "comparison",
+    "level": "hard",
+    "category": "shared_classification",
+    "text": "Are Local H and For Against both from the United States?",
+    "answer_format": "short answer"
+  },
+  {
+    "id": "CQ015",
+    "source_id": "5ab56e32554299637185c594",
+    "ground_truth_file": "CQ015.txt",
+    "type": "comparison",
+    "level": "hard",
+    "category": "shared_classification",
+    "text": "Are Random House Tower and 888 7th Avenue both used for real estate?",
+    "answer_format": "short answer"
+  },
+  {
+    "id": "CQ016",
+    "source_id": "5ab29c24554299449642c932",
+    "ground_truth_file": "CQ016.txt",
+    "type": "comparison",
+    "level": "hard",
+    "category": "shared_classification",
+    "text": "Are Giuseppe Verdi and Ambroise Thomas both Opera composers ?",
+    "answer_format": "short answer"
   }
 ]

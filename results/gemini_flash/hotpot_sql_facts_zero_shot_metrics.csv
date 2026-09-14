@@ -92,3 +92,35 @@ hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,BQ094,The author of 
 hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,BQ095,"Which composer, born in the late 18th century and associated with the bel canto opera style, wrote the opera that premiered at the Teatro Valle in Rome on 4 February 1824 and was later renamed Don Gregorio for its Naples production?",Domenico Gaetano Maria Donizetti,Gaetano Donizetti,0,0.666667,1.0,0.5,evaluated,0.807,6472,5
 hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,BQ096,The open-air museum situated in the town that hosts the zoological gardens owned by the society founded in 1935 occupies how many square metres of former industrial land?,105000,105000,1,1.0,1.0,1.0,evaluated,0.711,4938,6
 hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,BQ097,The director who helmed the 2004 BBC television adaptation of an Anthony Trollope novel also directed a 2008 American comedy film starring Cameron Diaz and Ashton Kutcher; what is the title of that 2008 film?,What Happens in Vegas,What Happens in Vegas,1,1.0,1.0,1.0,evaluated,0.929,7036,4
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ001,,,,0,,,,error: KeyError,,,
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ002,,,,0,,,,error: KeyError,,,
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ003,,,,0,,,,error: KeyError,,,
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ004,,,,0,,,,error: KeyError,,,
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ005,,,,0,,,,error: KeyError,,,
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ006,,,,0,,,,error: KeyError,,,
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ007,,,,0,,,,error: KeyError,,,
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ008,,,,0,,,,error: KeyError,,,
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ009,,,,0,,,,error: KeyError,,,
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ010,,,,0,,,,error: KeyError,,,
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ011,,,,0,,,,error: KeyError,,,
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ012,,,,0,,,,error: KeyError,,,
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ013,,,,0,,,,error: KeyError,,,
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ014,,,,0,,,,error: KeyError,,,
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ015,,,,0,,,,error: KeyError,,,
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ016,,,,0,,,,error: KeyError,,,
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ001,"For how many years did a player, who woke up on March 28, 1996 without vision in his right eye, play for the Minnesota Twins?",12,12,1,1.0,1.0,1.0,evaluated,1.982,6912,2
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ002,How old was Virginia Bruce when she starred in Let Freedom Ring?,29,29,1,1.0,1.0,1.0,evaluated,0.786,4436,2
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ003,What is the full name of the viral respiratory disease in which Yi Guan's research helped to prevent the outbreak of?,severe acute respiratory syndrome,Severe acute respiratory syndrome,1,1.0,1.0,1.0,evaluated,0.767,6710,4
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ004,What is the full name of the captain of the Australian team that won the 1930 Ashes series?,"William Maldon ""Bill"" Woodfull",Bill Woodfull,0,0.666667,1.0,0.5,evaluated,1.161,8737,3
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ005,One of the coaches of Southern Methodist University also played what role at the Arizona State Sun Devils?,defensive coordinator,defensive coordinator,1,1.0,1.0,1.0,evaluated,1.118,9141,3
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ006,"What role did Veda Hlubinka-Cook have in the making of this 1997 video game that takes place on the Orient Express, days before the start of World War I?",technical director,technical director,1,1.0,1.0,1.0,evaluated,0.704,7891,2
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ007,What position did the former Major League Baseball player play who worked on the same broadcast team as Kim Kelch?,first baseman,first baseman,1,1.0,1.0,1.0,evaluated,0.913,6629,2
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ008,José Saramago and Ivo Andrić were recipients of what award in Literature?,Nobel Prize in Literature,Nobel Prize in Literature,1,1.0,1.0,1.0,evaluated,0.891,8680,5
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ009,"At the 46th Grammy Awards, which award did the album by The White Stripes, which included the song Seven Nation Army, win?",Best Alternative Music Album,Best Alternative Music Album,1,1.0,1.0,1.0,evaluated,0.821,7834,4
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ010,What award did the writer of Never Let Me Go novel win in 1989?,Man Booker Prize for Fiction,Man Booker Prize for Fiction,1,1.0,1.0,1.0,evaluated,1.034,6384,5
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ011,"Which of the city at the south of Shelly Beach, New South Wales is a local government area in the Hunter region of New South Wales, Australia?",City of Newcastle,City of Newcastle,1,1.0,1.0,1.0,evaluated,0.807,4986,3
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ012,"The USS Tortuga was named after the Dry Tortugas, a group of desert coral islets 60 miles west of which city with the motto ""One Human Family""?",Key West,Key West,1,1.0,1.0,1.0,evaluated,0.625,6131,2
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ013,"Mundo Perdido was influenced by an ancient Mesoamerican city located in a sub-valley of the Valley of Mexico, that is 40 km northeast of what modern day city?",Mexico City,Mexico City,1,1.0,1.0,1.0,evaluated,0.972,5795,2
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ014,Are Local H and For Against both from the United States?,yes,Yes,1,1.0,1.0,1.0,evaluated,0.698,6096,1
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ015,Are Random House Tower and 888 7th Avenue both used for real estate?,no,No,1,1.0,1.0,1.0,evaluated,0.652,5281,1
+hotpot_sql,gemini_flash,llm_only,hotpot_sql_facts_zero_shot,CQ016,Are Giuseppe Verdi and Ambroise Thomas both Opera composers ?,yes,Yes,1,1.0,1.0,1.0,evaluated,0.749,5207,1
