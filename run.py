@@ -275,11 +275,13 @@ def main() -> None:
 
     # Prepare SQL data only for SQL-detour mode on CSV-backed datasets
     subset_df = None
+    db_path_for_sql = None
     schema = ""
 
     if mode == "sql_detour":
         if config.get("data_file"):
             subset_df = pd.read_csv(config["data_file"])
+            schema = router.build_sql_schema(subset_df)
         elif config.get("sql_db_file"):
             db_path = Path(config["sql_db_file"])
             if not db_path.exists():
@@ -287,14 +289,8 @@ def main() -> None:
                     f"SQL database not found: {db_path}\n"
                     f"Please create it and place it at that path before running sql_detour."
                 )
-            import sqlite3
-            con = sqlite3.connect(str(db_path))
-            tables = con.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
-            table_name = tables[0][0]
-            subset_df = pd.read_sql_query(f"SELECT * FROM {table_name}", con)
-            con.close()
-        if subset_df is not None:
-            schema = router.build_sql_schema(subset_df)
+            db_path_for_sql = str(db_path)
+            schema = router.build_sql_schema_from_db(db_path_for_sql)
 
     reporter = Reporter(
         f"results/{args.model}/{output_stem}_metrics.csv"
@@ -419,16 +415,24 @@ def main() -> None:
             )
 
             evaluation_text = response.final_text
-            
+
             if mode == "sql_detour":
                 generated_sql = router.extract_sql(
                     response.final_text
                     )
-                
-                sql_result_csv, sql_error, actual_columns, row_count = (
-                    router.execute_sql(
-                        generated_sql,
-                        subset_df,
+
+                if db_path_for_sql:
+                    sql_result_csv, sql_error, actual_columns, row_count = (
+                        router.execute_sql_from_db(
+                            generated_sql,
+                            db_path_for_sql,
+                        )
+                    )
+                else:
+                    sql_result_csv, sql_error, actual_columns, row_count = (
+                        router.execute_sql(
+                            generated_sql,
+                            subset_df,
                         )
                     )
 
