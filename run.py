@@ -281,8 +281,14 @@ def main() -> None:
         if config.get("data_file"):
             subset_df = pd.read_csv(config["data_file"])
         elif config.get("sql_db_file"):
+            db_path = Path(config["sql_db_file"])
+            if not db_path.exists():
+                raise FileNotFoundError(
+                    f"SQL database not found: {db_path}\n"
+                    f"Please create it and place it at that path before running sql_detour."
+                )
             import sqlite3
-            con = sqlite3.connect(config["sql_db_file"])
+            con = sqlite3.connect(str(db_path))
             tables = con.execute("SELECT name FROM sqlite_master WHERE type='table'").fetchall()
             table_name = tables[0][0]
             subset_df = pd.read_sql_query(f"SELECT * FROM {table_name}", con)
