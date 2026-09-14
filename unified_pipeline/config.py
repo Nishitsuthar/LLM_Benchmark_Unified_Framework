@@ -8,6 +8,7 @@ from unified_pipeline.evidence.csv_full_evidence import CsvFullEvidenceBuilder  
 from unified_pipeline.evidence.prose_evidence import ProseEvidenceBuilder        # Satwik
 from unified_pipeline.evidence.rag_evidence import RagEvidenceBuilder            # Nishit adds
 from unified_pipeline.evidence.hotpot_evidence import HotpotEvidenceBuilder      # Sushma
+from unified_pipeline.evidence.hotpot_sql_evidence import HotpotSqlEvidenceBuilder  # Sushma (sql-facts)
 from unified_pipeline.evidence.visual_pdf_evidence import VisualPdfEvidenceBuilder  # Arpitha
 
 from unified_pipeline.evaluators.table_f1_evaluator import TableF1Evaluator      # Krittika
@@ -24,6 +25,7 @@ EVIDENCE_BUILDERS = {
     "pdf_rag": RagEvidenceBuilder,
     "pdf_visual": VisualPdfEvidenceBuilder,
     "hotpot_context": HotpotEvidenceBuilder,
+    "hotpot_sql": HotpotSqlEvidenceBuilder,
 }
 
 
