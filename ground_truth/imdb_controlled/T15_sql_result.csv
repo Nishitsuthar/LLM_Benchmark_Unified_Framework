@@ -1,217 +1,291 @@
-"genre","primarytitle","startyear","runtime","genre_avg","z_score"
-"Action","Kaalapani",1996,178,107.7,3.15
-"Action","Satya",1998,170,107.7,2.79
-"Action","Sanam Teri Kasam",2009,170,107.7,2.79
-"Action","Aaram Thamburan",1997,163,107.7,2.48
-"Action","C.I.D. Moosa",2003,160,107.7,2.34
-"Action","The Dark Knight",2008,152,107.7,1.98
-"Action","Yeh Dil Aashiqanaa",2002,152,107.7,1.98
-"Action","Gemini",2002,150,107.7,1.89
-"Action","Suryam",2004,150,107.7,1.89
-"Action","Malayalimamanu Vanakkam",2002,149,107.7,1.85
-"Action","Namak",1996,148,107.7,1.80
-"Action","Action Jackson",2014,144,107.7,1.63
-"Action","The Avengers",2012,143,107.7,1.58
-"Action","Man of Steel",2013,143,107.7,1.58
-"Action","Supari",2003,142,107.7,1.54
-"Action","Pudhiya Geethai",2003,140,107.7,1.45
-"Action","The Matrix",1999,136,107.7,1.27
-"Action","The Amazing Spider-Man",2012,136,107.7,1.27
-"Action","Nirbhay",1996,135,107.7,1.22
-"Action","Athisayan",2007,135,107.7,1.22
-"Action","John Carter",2012,132,107.7,1.09
-"Adventure","The Lord of the Rings: The Two Towers",2002,179,105.5,3.35
-"Adventure","The Lord of the Rings: The Fellowship of the Ring",2001,178,105.5,3.31
-"Adventure","Interstellar",2014,169,105.5,2.90
-"Adventure","Inglourious Basterds",2009,153,105.5,2.17
-"Adventure","Man of Steel",2013,143,105.5,1.71
-"Adventure","Princess Mononoke",1997,133,105.5,1.26
-"Adventure","John Carter",2012,132,105.5,1.21
-"Animation","The Tragedy of Man",2011,166,96.5,3.81
-"Animation","Princess Mononoke",1997,133,96.5,2.00
-"Biography","Dr. Babasaheb Ambedkar",2000,197,111.7,3.00
-"Biography","The Wolf of Wall Street",2013,180,111.7,2.40
-"Biography","George Wallace: Settin' the Woods on Fire",2000,167,111.7,1.94
-"Biography","Catch Me If You Can",2002,141,111.7,1.03
-"Comedy","Nuvvu Naaku Nachchav",2001,184,100.1,4.36
-"Comedy","Dil Chahta Hai",2001,183,100.1,4.31
-"Comedy","The Wolf of Wall Street",2013,180,100.1,4.15
-"Comedy","Rama Shama Bhama",2005,180,100.1,4.15
-"Comedy","Jaane Jigar",1998,175,100.1,3.89
-"Comedy","Bommarillu",2006,170,100.1,3.63
-"Comedy","C.I.D. Moosa",2003,160,100.1,3.11
-"Comedy","Chinthavishtayaya Shyamala",1998,158,100.1,3.01
-"Comedy","Shararat",2002,155,100.1,2.85
-"Comedy","Gemini",2002,150,100.1,2.59
-"Comedy","Malayalimamanu Vanakkam",2002,149,100.1,2.54
-"Comedy","Kitne Door... Kitne Paas",2002,146,100.1,2.39
-"Comedy","Mungaru Male",2006,143,100.1,2.23
-"Comedy","Manmadhudu",2002,142,100.1,2.18
-"Comedy","Bitters and Blue Ruin",2002,140,100.1,2.07
-"Comedy","Steppin: The Movie",2009,138,100.1,1.97
-"Comedy","Jhoom Barabar Jhoom",2007,138,100.1,1.97
-"Comedy","Socha Na Tha",2005,137,100.1,1.92
-"Comedy","Shall We Dance?",1996,136,100.1,1.87
-"Comedy","Secrets & Lies",1996,136,100.1,1.87
-"Comedy","Athisayan",2007,135,100.1,1.81
-"Comedy","Murali Krishnudu",2008,130,100.1,1.55
-"Comedy","The Gathering!",2003,129,100.1,1.50
-"Comedy","Atomic Blue Mexican Wrestler",1999,127,100.1,1.40
-"Comedy","G.O.R.A.",2004,127,100.1,1.40
-"Comedy","Kisse Pyaar Karoon?",2009,123,100.1,1.19
-"Comedy","Kottaram Vaidyan",2004,121,100.1,1.09
-"Comedy","Pakisabi na lang... Mahal ko siya",2002,120,100.1,1.03
-"Comedy","Sara",2001,120,100.1,1.03
-"Comedy","Nagbibinata",1998,120,100.1,1.03
-"Crime","The Wolf of Wall Street",2013,180,103.1,4.15
-"Crime","Satya",1998,170,103.1,3.61
-"Crime","The Dark Knight",2008,152,103.1,2.64
-"Crime","Shubho Mahurat",2003,150,103.1,2.53
-"Crime","Gemini",2002,150,103.1,2.53
-"Crime","Supari",2003,142,103.1,2.10
-"Crime","Catch Me If You Can",2002,141,103.1,2.05
-"Crime","The Bandit",1996,128,103.1,1.34
-"Crime","The Town",2010,125,103.1,1.18
-"Crime","Kisse Pyaar Karoon?",2009,123,103.1,1.07
-"Documentary","The Last Pogo Jumps Again",2013,200,94.5,4.25
-"Documentary","Gettysburg and Stories of Valor: Civil War Minutes III",2004,180,94.5,3.45
-"Documentary","Soviets Plus Electricity",2002,175,94.5,3.24
-"Documentary","Phish: Live in Vegas",2002,172,94.5,3.12
-"Documentary","George Wallace: Settin' the Woods on Fire",2000,167,94.5,2.92
-"Documentary","Trying to Describe Oneself",2005,165,94.5,2.84
-"Documentary","Ears, Open. Eyeballs, Click.",2005,155,94.5,2.44
-"Documentary","Big City Dick: Richard Peterson's First Movie",2004,129,94.5,1.39
-"Documentary","A Life in the Death of Joe Meek",2013,122,94.5,1.11
-"Documentary","Estamira",2004,121,94.5,1.07
-"Documentary","Bury the Hatchet",2010,120,94.5,1.03
-"Documentary","Peterka: Leto odlocitve",2003,120,94.5,1.03
-"Documentary","Cooper and Hemingway: The True Gen",2013,120,94.5,1.03
-"Documentary","They Fought Back!",2000,120,94.5,1.03
-"Documentary","Amazing Journey: The Story of The Who",2007,120,94.5,1.03
-"Drama","Dan Kolov - tzaryat na kecha",1999,194,104.0,4.12
-"Drama","Swades",2004,189,104.0,3.89
-"Drama","Magnolia",1999,188,104.0,3.85
-"Drama","Dil Chahta Hai",2001,183,104.0,3.62
-"Drama","The Lord of the Rings: The Two Towers",2002,179,104.0,3.43
-"Drama","The Lord of the Rings: The Fellowship of the Ring",2001,178,104.0,3.39
-"Drama","Kaalapani",1996,178,104.0,3.39
-"Drama","Jaane Jigar",1998,175,104.0,3.25
-"Drama","Sanam Teri Kasam",2009,170,104.0,3.02
-"Drama","Bommarillu",2006,170,104.0,3.02
-"Drama","Satya",1998,170,104.0,3.02
-"Drama","Saving Private Ryan",1998,169,104.0,2.98
-"Drama","Interstellar",2014,169,104.0,2.98
-"Drama","Khushi",2001,169,104.0,2.98
-"Drama","The Tragedy of Man",2011,166,104.0,2.84
-"Drama","The Yacoubian Building",2006,165,104.0,2.79
-"Drama","Aaram Thamburan",1997,163,104.0,2.70
-"Drama","Paruthiveeran",2007,162,104.0,2.65
-"Drama","Chinthavishtayaya Shyamala",1998,158,104.0,2.47
-"Drama","Shararat",2002,155,104.0,2.33
-"Drama","Amores Perros",2000,154,104.0,2.29
-"Drama","Inglourious Basterds",2009,153,104.0,2.24
-"Drama","Chak De! India",2007,153,104.0,2.24
-"Drama","The Dark Knight",2008,152,104.0,2.20
-"Drama","Ankahee",2006,151,104.0,2.15
-"Drama","Malayalimamanu Vanakkam",2002,149,104.0,2.06
-"Drama","Namak",1996,148,104.0,2.01
-"Drama","Tholi Prema",1998,146,104.0,1.92
-"Drama","Supari",2003,142,104.0,1.74
-"Drama","Catch Me If You Can",2002,141,104.0,1.69
-"Drama","Iruvar",1997,140,104.0,1.65
-"Drama","Pudhiya Geethai",2003,140,104.0,1.65
-"Drama","Jhoom Barabar Jhoom",2007,138,104.0,1.56
-"Drama","Socha Na Tha",2005,137,104.0,1.51
-"Drama","Guru",1997,136,104.0,1.46
-"Drama","Secrets & Lies",1996,136,104.0,1.46
-"Drama","Shall We Dance?",1996,136,104.0,1.46
-"Drama","Sat Na Gat",2013,135,104.0,1.42
-"Drama","Athisayan",2007,135,104.0,1.42
-"Drama","Everlasting Moments",2008,131,104.0,1.24
-"Drama","Dbl Rein-Beau",2002,130,104.0,1.19
-"Drama","The King",2002,130,104.0,1.19
-"Drama","Keerthi Chakra",2006,130,104.0,1.19
-"Drama","Delicate Instruments",2000,130,104.0,1.19
-"Drama","Zulmi",1999,129,104.0,1.14
-"Drama","The Gathering!",2003,129,104.0,1.14
-"Drama","The Bandit",1996,128,104.0,1.10
-"Drama","Stranger Than Fiction",2005,128,104.0,1.10
-"Drama","Life of Pi",2012,127,104.0,1.05
-"Drama","Hugo",2011,126,104.0,1.01
-"Family","Jaane Jigar",1998,175,100.2,3.81
-"Family","Chak De! India",2007,153,100.2,2.69
-"Family","Namak",1996,148,100.2,2.44
-"Family","Hugo",2011,126,100.2,1.32
-"Family","Shiva Shankar",2004,125,100.2,1.27
-"Fantasy","The Lord of the Rings: The Two Towers",2002,179,101.4,3.05
-"Fantasy","The Lord of the Rings: The Fellowship of the Ring",2001,178,101.4,3.01
-"Fantasy","Guru",1997,136,101.4,1.36
-"Fantasy","Princess Mononoke",1997,133,101.4,1.24
-"Fantasy","Life of Pi",2012,127,101.4,1.00
-"History","Dr. Babasaheb Ambedkar",2000,197,118.8,2.11
-"History","Kaalapani",1996,178,118.8,1.59
-"History","The Tragedy of Man",2011,166,118.8,1.27
-"Horror","Anxiety",2008,130,94.7,3.59
-"Horror","Zombies",2003,120,94.7,2.57
-"Horror","Den",2001,120,94.7,2.57
-"Horror","Nightmares in Precinct 7",2001,115,94.7,2.06
-"Horror","28 Days Later",2002,113,94.7,1.86
-"Horror","Kutob",2005,110,94.7,1.56
-"Horror","Saimin",1999,110,94.7,1.56
-"Horror","Maldoror",2001,110,94.7,1.56
-"Horror","Bad Blood",2012,107,94.7,1.25
-"Horror","My Soul to Take",2010,107,94.7,1.25
-"Horror","Jack & Diane",2012,105,94.7,1.05
-"Music","The Last Pogo Jumps Again",2013,200,105.5,3.43
-"Music","Phish: Live in Vegas",2002,172,105.5,2.41
-"Music","Mungaru Male",2006,143,105.5,1.36
-"Music","Steppin: The Movie",2009,138,105.5,1.18
-"Music","Shall We Dance?",1996,136,105.5,1.11
-"Musical","Swades",2004,189,114.8,2.37
-"Mystery","Shubho Mahurat",2003,150,98.1,3.83
-"Mystery","Innocence",2004,122,98.1,1.77
-"Mystery","Madhoshi",2004,122,98.1,1.77
-"Mystery","In the Electric Mist",2009,117,98.1,1.40
-"Mystery","Nightmares in Precinct 7",2001,115,98.1,1.25
-"Mystery","20.13: Purgatory",2006,114,98.1,1.18
-"Mystery","Memento",2000,113,98.1,1.10
-"Mystery","Disconnect",2010,112,98.1,1.03
-"Romance","Nuvvu Naaku Nachchav",2001,184,108.7,3.11
-"Romance","Dil Chahta Hai",2001,183,108.7,3.07
-"Romance","Sanam Teri Kasam",2009,170,108.7,2.54
-"Romance","Bommarillu",2006,170,108.7,2.54
-"Romance","Khushi",2001,169,108.7,2.49
-"Romance","Aaram Thamburan",1997,163,108.7,2.25
-"Romance","Paruthiveeran",2007,162,108.7,2.20
-"Romance","Unnai Kodu Ennai Tharuven",2000,157,108.7,2.00
-"Romance","Shararat",2002,155,108.7,1.92
-"Romance","Yeh Dil Aashiqanaa",2002,152,108.7,1.79
-"Romance","Ankahee",2006,151,108.7,1.75
-"Romance","Suryam",2004,150,108.7,1.71
-"Romance","Kitne Door... Kitne Paas",2002,146,108.7,1.54
-"Romance","Tholi Prema",1998,146,108.7,1.54
-"Romance","Mungaru Male",2006,143,108.7,1.42
-"Romance","Manmadhudu",2002,142,108.7,1.38
-"Romance","Pudhiya Geethai",2003,140,108.7,1.29
-"Romance","Manchala",1999,137,108.7,1.17
-"Romance","Socha Na Tha",2005,137,108.7,1.17
-"Sci-Fi","Interstellar",2014,169,106.0,3.08
-"Sci-Fi","The Avengers",2012,143,106.0,1.81
-"Sci-Fi","Man of Steel",2013,143,106.0,1.81
-"Sci-Fi","The Matrix",1999,136,106.0,1.47
-"Sci-Fi","The Amazing Spider-Man",2012,136,106.0,1.47
-"Sci-Fi","John Carter",2012,132,106.0,1.27
-"Sci-Fi","G.O.R.A.",2004,127,106.0,1.03
-"Sport","Chak De! India",2007,153,102.3,2.59
-"Thriller","Amores Perros",2000,154,97.3,4.12
-"Thriller","Ankahee",2006,151,97.3,3.90
-"Thriller","The Quiet Storm",2004,150,97.3,3.83
-"Thriller","Nirbhay",1996,135,97.3,2.74
-"Thriller","Anxiety",2008,130,97.3,2.37
-"Thriller","The Town",2010,125,97.3,2.01
-"Thriller","The Chosen Heaven",2010,123,97.3,1.87
-"Thriller","Den",2001,120,97.3,1.65
-"Thriller","Memento",2000,113,97.3,1.14
-"Thriller","The Condemned",2007,113,97.3,1.14
-"War","Saving Private Ryan",1998,169,110.9,2.10
-"War","Inglourious Basterds",2009,153,110.9,1.52
+"genre","primaryTitle","startYear","runtime","genre_avg","genre_stddev","z_score"
+"Action","Kaalapani",1996,178,107.697,22.422,3.135
+"Action","Satya",1998,170,107.697,22.422,2.779
+"Action","Sanam Teri Kasam",2009,170,107.697,22.422,2.779
+"Action","Aaram Thamburan",1997,163,107.697,22.422,2.466
+"Action","C.I.D. Moosa",2003,160,107.697,22.422,2.333
+"Action","Yeh Dil Aashiqanaa",2002,152,107.697,22.422,1.976
+"Action","The Dark Knight",2008,152,107.697,22.422,1.976
+"Action","Gemini",2002,150,107.697,22.422,1.887
+"Action","Suryam",2004,150,107.697,22.422,1.887
+"Action","Malayalimamanu Vanakkam",2002,149,107.697,22.422,1.842
+"Action","Namak",1996,148,107.697,22.422,1.797
+"Action","Action Jackson",2014,144,107.697,22.422,1.619
+"Action","The Avengers",2012,143,107.697,22.422,1.574
+"Action","Man of Steel",2013,143,107.697,22.422,1.574
+"Action","Supari",2003,142,107.697,22.422,1.53
+"Action","Pudhiya Geethai",2003,140,107.697,22.422,1.441
+"Action","The Matrix",1999,136,107.697,22.422,1.262
+"Action","The Amazing Spider-Man",2012,136,107.697,22.422,1.262
+"Action","Nirbhay",1996,135,107.697,22.422,1.218
+"Action","Athisayan",2007,135,107.697,22.422,1.218
+"Action","John Carter",2012,132,107.697,22.422,1.084
+"Action","38. expansiva",1996,85,107.697,22.422,-1.012
+"Action","Cactus",2001,85,107.697,22.422,-1.012
+"Action","Prisoners of the Sun",2013,85,107.697,22.422,-1.012
+"Action","Code Name: The Cleaner",2007,84,107.697,22.422,-1.057
+"Action","Hell Ride",2008,84,107.697,22.422,-1.057
+"Action","Yes Madam 5",1996,83,107.697,22.422,-1.101
+"Action","A Happy Ending",2005,60,107.697,22.422,-2.127
+"Adventure","The Lord of the Rings: The Two Towers",2002,179,105.476,22.1,3.327
+"Adventure","The Lord of the Rings: The Fellowship of the Ring",2001,178,105.476,22.1,3.282
+"Adventure","Interstellar",2014,169,105.476,22.1,2.874
+"Adventure","Inglourious Basterds",2009,153,105.476,22.1,2.15
+"Adventure","Man of Steel",2013,143,105.476,22.1,1.698
+"Adventure","Princess Mononoke",1997,133,105.476,22.1,1.245
+"Adventure","John Carter",2012,132,105.476,22.1,1.2
+"Adventure","The Cat in the Hat",2003,82,105.476,22.1,-1.062
+"Adventure","Chicken Little",2005,81,105.476,22.1,-1.108
+"Animation","The Tragedy of Man",2011,166,96.462,18.602,3.738
+"Animation","Princess Mononoke",1997,133,96.462,18.602,1.964
+"Animation","Alien Dreamtime",2003,60,96.462,18.602,-1.96
+"Biography","Dr. Babasaheb Ambedkar",2000,197,111.667,28.923,2.95
+"Biography","The Wolf of Wall Street",2013,180,111.667,28.923,2.363
+"Biography","George Wallace: Settin' the Woods on Fire",2000,167,111.667,28.923,1.913
+"Biography","Catch Me If You Can",2002,141,111.667,28.923,1.014
+"Biography","Nema aviona za Zagreb",2012,82,111.667,28.923,-1.026
+"Biography","The Last Wright",2008,60,111.667,28.923,-1.786
+"Biography","Joseph Smith: Prophet of the Restoration",2011,60,111.667,28.923,-1.786
+"Comedy","Nuvvu Naaku Nachchav",2001,184,100.102,19.278,4.352
+"Comedy","Dil Chahta Hai",2001,183,100.102,19.278,4.3
+"Comedy","Rama Shama Bhama",2005,180,100.102,19.278,4.145
+"Comedy","The Wolf of Wall Street",2013,180,100.102,19.278,4.145
+"Comedy","Jaane Jigar",1998,175,100.102,19.278,3.885
+"Comedy","Bommarillu",2006,170,100.102,19.278,3.626
+"Comedy","C.I.D. Moosa",2003,160,100.102,19.278,3.107
+"Comedy","Chinthavishtayaya Shyamala",1998,158,100.102,19.278,3.003
+"Comedy","Shararat",2002,155,100.102,19.278,2.848
+"Comedy","Gemini",2002,150,100.102,19.278,2.588
+"Comedy","Malayalimamanu Vanakkam",2002,149,100.102,19.278,2.536
+"Comedy","Kitne Door... Kitne Paas",2002,146,100.102,19.278,2.381
+"Comedy","Mungaru Male",2006,143,100.102,19.278,2.225
+"Comedy","Manmadhudu",2002,142,100.102,19.278,2.173
+"Comedy","Bitters and Blue Ruin",2002,140,100.102,19.278,2.07
+"Comedy","Jhoom Barabar Jhoom",2007,138,100.102,19.278,1.966
+"Comedy","Steppin: The Movie",2009,138,100.102,19.278,1.966
+"Comedy","Socha Na Tha",2005,137,100.102,19.278,1.914
+"Comedy","Secrets & Lies",1996,136,100.102,19.278,1.862
+"Comedy","Shall We Dance?",1996,136,100.102,19.278,1.862
+"Comedy","Athisayan",2007,135,100.102,19.278,1.81
+"Comedy","Murali Krishnudu",2008,130,100.102,19.278,1.551
+"Comedy","The Gathering!",2003,129,100.102,19.278,1.499
+"Comedy","Atomic Blue Mexican Wrestler",1999,127,100.102,19.278,1.395
+"Comedy","G.O.R.A.",2004,127,100.102,19.278,1.395
+"Comedy","Kisse Pyaar Karoon?",2009,123,100.102,19.278,1.188
+"Comedy","Kottaram Vaidyan",2004,121,100.102,19.278,1.084
+"Comedy","Nagbibinata",1998,120,100.102,19.278,1.032
+"Comedy","Sara",2001,120,100.102,19.278,1.032
+"Comedy","Pakisabi na lang... Mahal ko siya",2002,120,100.102,19.278,1.032
+"Comedy","A Happy Ending",2005,60,100.102,19.278,-2.08
+"Crime","The Wolf of Wall Street",2013,180,103.075,18.638,4.127
+"Crime","Satya",1998,170,103.075,18.638,3.591
+"Crime","The Dark Knight",2008,152,103.075,18.638,2.625
+"Crime","Gemini",2002,150,103.075,18.638,2.518
+"Crime","Shubho Mahurat",2003,150,103.075,18.638,2.518
+"Crime","Supari",2003,142,103.075,18.638,2.088
+"Crime","Catch Me If You Can",2002,141,103.075,18.638,2.035
+"Crime","The Bandit",1996,128,103.075,18.638,1.337
+"Crime","The Town",2010,125,103.075,18.638,1.176
+"Crime","Kisse Pyaar Karoon?",2009,123,103.075,18.638,1.069
+"Crime","The Robbery",1999,84,103.075,18.638,-1.023
+"Crime","Code Name: The Cleaner",2007,84,103.075,18.638,-1.023
+"Crime","Aftermath",2013,84,103.075,18.638,-1.023
+"Crime","Himmerland",2008,82,103.075,18.638,-1.131
+"Crime","The Casino Job",2009,81,103.075,18.638,-1.184
+"Documentary","The Last Pogo Jumps Again",2013,200,94.528,24.909,4.234
+"Documentary","Gettysburg and Stories of Valor: Civil War Minutes III",2004,180,94.528,24.909,3.431
+"Documentary","Soviets Plus Electricity",2002,175,94.528,24.909,3.231
+"Documentary","Phish: Live in Vegas",2002,172,94.528,24.909,3.11
+"Documentary","George Wallace: Settin' the Woods on Fire",2000,167,94.528,24.909,2.909
+"Documentary","Trying to Describe Oneself",2005,165,94.528,24.909,2.829
+"Documentary","Ears, Open. Eyeballs, Click.",2005,155,94.528,24.909,2.428
+"Documentary","Big City Dick: Richard Peterson's First Movie",2004,129,94.528,24.909,1.384
+"Documentary","A Life in the Death of Joe Meek",2013,122,94.528,24.909,1.103
+"Documentary","Estamira",2004,121,94.528,24.909,1.063
+"Documentary","They Fought Back!",2000,120,94.528,24.909,1.023
+"Documentary","Peterka: Leto odlocitve",2003,120,94.528,24.909,1.023
+"Documentary","Amazing Journey: The Story of The Who",2007,120,94.528,24.909,1.023
+"Documentary","Bury the Hatchet",2010,120,94.528,24.909,1.023
+"Documentary","Cooper and Hemingway: The True Gen",2013,120,94.528,24.909,1.023
+"Documentary","La palomilla salvaje",2006,61,94.528,24.909,-1.346
+"Documentary","Never Again, Forever",1996,60,94.528,24.909,-1.386
+"Documentary","The Sixth Sun: Mayan Uprising in Chiapas",1997,60,94.528,24.909,-1.386
+"Documentary","Surviving Friendly Fire",1997,60,94.528,24.909,-1.386
+"Documentary","Golden Threads",1999,60,94.528,24.909,-1.386
+"Documentary","The Way I Look at You - Five Stories of Driving School",1999,60,94.528,24.909,-1.386
+"Documentary","From Swastika to Jim Crow",2000,60,94.528,24.909,-1.386
+"Documentary","Unfinished Symphony: Democracy and Dissent",2001,60,94.528,24.909,-1.386
+"Documentary","Keeping Time: The Life, Music & Photography of Milt Hinton",2003,60,94.528,24.909,-1.386
+"Documentary","Alien Dreamtime",2003,60,94.528,24.909,-1.386
+"Documentary","Roads",2003,60,94.528,24.909,-1.386
+"Documentary","Piedra sobre piedra",2004,60,94.528,24.909,-1.386
+"Documentary","Samba on Your Feet",2005,60,94.528,24.909,-1.386
+"Documentary","Wall Rats",2006,60,94.528,24.909,-1.386
+"Documentary","Wildwood Days",2008,60,94.528,24.909,-1.386
+"Documentary","Texxas Jam '78",2012,60,94.528,24.909,-1.386
+"Drama","Dan Kolov - tzaryat na kecha",1999,194,104.002,21.871,4.115
+"Drama","Swades",2004,189,104.002,21.871,3.886
+"Drama","Magnolia",1999,188,104.002,21.871,3.841
+"Drama","Dil Chahta Hai",2001,183,104.002,21.871,3.612
+"Drama","The Lord of the Rings: The Two Towers",2002,179,104.002,21.871,3.429
+"Drama","Kaalapani",1996,178,104.002,21.871,3.383
+"Drama","The Lord of the Rings: The Fellowship of the Ring",2001,178,104.002,21.871,3.383
+"Drama","Jaane Jigar",1998,175,104.002,21.871,3.246
+"Drama","Satya",1998,170,104.002,21.871,3.018
+"Drama","Bommarillu",2006,170,104.002,21.871,3.018
+"Drama","Sanam Teri Kasam",2009,170,104.002,21.871,3.018
+"Drama","Saving Private Ryan",1998,169,104.002,21.871,2.972
+"Drama","Khushi",2001,169,104.002,21.871,2.972
+"Drama","Interstellar",2014,169,104.002,21.871,2.972
+"Drama","The Tragedy of Man",2011,166,104.002,21.871,2.835
+"Drama","The Yacoubian Building",2006,165,104.002,21.871,2.789
+"Drama","Aaram Thamburan",1997,163,104.002,21.871,2.698
+"Drama","Paruthiveeran",2007,162,104.002,21.871,2.652
+"Drama","Chinthavishtayaya Shyamala",1998,158,104.002,21.871,2.469
+"Drama","Shararat",2002,155,104.002,21.871,2.332
+"Drama","Amores Perros",2000,154,104.002,21.871,2.286
+"Drama","Chak De! India",2007,153,104.002,21.871,2.24
+"Drama","Inglourious Basterds",2009,153,104.002,21.871,2.24
+"Drama","The Dark Knight",2008,152,104.002,21.871,2.195
+"Drama","Ankahee",2006,151,104.002,21.871,2.149
+"Drama","Malayalimamanu Vanakkam",2002,149,104.002,21.871,2.057
+"Drama","Namak",1996,148,104.002,21.871,2.012
+"Drama","Tholi Prema",1998,146,104.002,21.871,1.92
+"Drama","Supari",2003,142,104.002,21.871,1.737
+"Drama","Catch Me If You Can",2002,141,104.002,21.871,1.692
+"Drama","Iruvar",1997,140,104.002,21.871,1.646
+"Drama","Pudhiya Geethai",2003,140,104.002,21.871,1.646
+"Drama","Jhoom Barabar Jhoom",2007,138,104.002,21.871,1.554
+"Drama","Socha Na Tha",2005,137,104.002,21.871,1.509
+"Drama","Secrets & Lies",1996,136,104.002,21.871,1.463
+"Drama","Shall We Dance?",1996,136,104.002,21.871,1.463
+"Drama","Guru",1997,136,104.002,21.871,1.463
+"Drama","Athisayan",2007,135,104.002,21.871,1.417
+"Drama","Sat Na Gat",2013,135,104.002,21.871,1.417
+"Drama","Everlasting Moments",2008,131,104.002,21.871,1.234
+"Drama","Delicate Instruments",2000,130,104.002,21.871,1.189
+"Drama","The King",2002,130,104.002,21.871,1.189
+"Drama","Dbl Rein-Beau",2002,130,104.002,21.871,1.189
+"Drama","Keerthi Chakra",2006,130,104.002,21.871,1.189
+"Drama","Zulmi",1999,129,104.002,21.871,1.143
+"Drama","The Gathering!",2003,129,104.002,21.871,1.143
+"Drama","The Bandit",1996,128,104.002,21.871,1.097
+"Drama","Stranger Than Fiction",2005,128,104.002,21.871,1.097
+"Drama","Life of Pi",2012,127,104.002,21.871,1.052
+"Drama","Hugo",2011,126,104.002,21.871,1.006
+"Drama","Without a Map",1996,82,104.002,21.871,-1.006
+"Drama","Blossi/810551",1997,82,104.002,21.871,-1.006
+"Drama","Angel Express",1998,82,104.002,21.871,-1.006
+"Drama","Pathogen",2006,82,104.002,21.871,-1.006
+"Drama","Himmerland",2008,82,104.002,21.871,-1.006
+"Drama","Exposed",2012,82,104.002,21.871,-1.006
+"Drama","Mat Tudung",2014,82,104.002,21.871,-1.006
+"Drama","A Cry in the Night",1996,81,104.002,21.871,-1.052
+"Drama","An Unexpected Walk",1997,81,104.002,21.871,-1.052
+"Drama","Occasional Coarse Language",1998,81,104.002,21.871,-1.052
+"Drama","The Casino Job",2009,81,104.002,21.871,-1.052
+"Drama","Harlem Hostel",2010,81,104.002,21.871,-1.052
+"Drama","Cry Havoc",1999,61,104.002,21.871,-1.966
+"Drama","Dolce...",2000,61,104.002,21.871,-1.966
+"Drama","Val/Val",2005,61,104.002,21.871,-1.966
+"Drama","Tama asobi",1996,60,104.002,21.871,-2.012
+"Drama","Kiskisan",2003,60,104.002,21.871,-2.012
+"Drama","A Happy Ending",2005,60,104.002,21.871,-2.012
+"Drama","Joseph Smith: Prophet of the Restoration",2011,60,104.002,21.871,-2.012
+"Drama","The Fallen Word",2013,60,104.002,21.871,-2.012
+"Family","Jaane Jigar",1998,175,100.175,19.865,3.767
+"Family","Chak De! India",2007,153,100.175,19.865,2.659
+"Family","Namak",1996,148,100.175,19.865,2.408
+"Family","Hugo",2011,126,100.175,19.865,1.3
+"Family","Shiva Shankar",2004,125,100.175,19.865,1.25
+"Fantasy","The Lord of the Rings: The Two Towers",2002,179,101.424,25.847,3.001
+"Fantasy","The Lord of the Rings: The Fellowship of the Ring",2001,178,101.424,25.847,2.963
+"Fantasy","Guru",1997,136,101.424,25.847,1.338
+"Fantasy","Princess Mononoke",1997,133,101.424,25.847,1.222
+"Fantasy","Alien Dreamtime",2003,60,101.424,25.847,-1.603
+"Fantasy","The Fallen Word",2013,60,101.424,25.847,-1.603
+"History","Dr. Babasaheb Ambedkar",2000,197,118.786,38.549,2.029
+"History","Kaalapani",1996,178,118.786,38.549,1.536
+"History","The Tragedy of Man",2011,166,118.786,38.549,1.225
+"History","Joseph Smith: Prophet of the Restoration",2011,60,118.786,38.549,-1.525
+"Horror","Anxiety",2008,130,94.731,9.891,3.566
+"Horror","Den",2001,120,94.731,9.891,2.555
+"Horror","Zombies",2003,120,94.731,9.891,2.555
+"Horror","Nightmares in Precinct 7",2001,115,94.731,9.891,2.049
+"Horror","28 Days Later",2002,113,94.731,9.891,1.847
+"Horror","Saimin",1999,110,94.731,9.891,1.544
+"Horror","Maldoror",2001,110,94.731,9.891,1.544
+"Horror","Kutob",2005,110,94.731,9.891,1.544
+"Horror","My Soul to Take",2010,107,94.731,9.891,1.24
+"Horror","Bad Blood",2012,107,94.731,9.891,1.24
+"Horror","Jack & Diane",2012,105,94.731,9.891,1.038
+"Horror","2001 Maniacs: Field of Screams",2010,84,94.731,9.891,-1.085
+"Horror","Bugged",1996,82,94.731,9.891,-1.287
+"Horror","Inside",2007,82,94.731,9.891,-1.287
+"Music","The Last Pogo Jumps Again",2013,200,105.452,28.055,3.37
+"Music","Phish: Live in Vegas",2002,172,105.452,28.055,2.372
+"Music","Mungaru Male",2006,143,105.452,28.055,1.338
+"Music","Steppin: The Movie",2009,138,105.452,28.055,1.16
+"Music","Shall We Dance?",1996,136,105.452,28.055,1.089
+"Music","Samba on Your Feet",2005,60,105.452,28.055,-1.62
+"Musical","Swades",2004,189,114.778,33.162,2.238
+"Mystery","Shubho Mahurat",2003,150,98.062,13.692,3.793
+"Mystery","Innocence",2004,122,98.062,13.692,1.748
+"Mystery","Madhoshi",2004,122,98.062,13.692,1.748
+"Mystery","In the Electric Mist",2009,117,98.062,13.692,1.383
+"Mystery","Nightmares in Precinct 7",2001,115,98.062,13.692,1.237
+"Mystery","20.13: Purgatory",2006,114,98.062,13.692,1.164
+"Mystery","Memento",2000,113,98.062,13.692,1.091
+"Mystery","Disconnect",2010,112,98.062,13.692,1.018
+"Mystery","Exposed",2012,82,98.062,13.692,-1.173
+"Mystery","The Fallen Word",2013,60,98.062,13.692,-2.78
+"Romance","Nuvvu Naaku Nachchav",2001,184,108.682,24.296,3.1
+"Romance","Dil Chahta Hai",2001,183,108.682,24.296,3.059
+"Romance","Bommarillu",2006,170,108.682,24.296,2.524
+"Romance","Sanam Teri Kasam",2009,170,108.682,24.296,2.524
+"Romance","Khushi",2001,169,108.682,24.296,2.483
+"Romance","Aaram Thamburan",1997,163,108.682,24.296,2.236
+"Romance","Paruthiveeran",2007,162,108.682,24.296,2.195
+"Romance","Unnai Kodu Ennai Tharuven",2000,157,108.682,24.296,1.989
+"Romance","Shararat",2002,155,108.682,24.296,1.906
+"Romance","Yeh Dil Aashiqanaa",2002,152,108.682,24.296,1.783
+"Romance","Ankahee",2006,151,108.682,24.296,1.742
+"Romance","Suryam",2004,150,108.682,24.296,1.701
+"Romance","Tholi Prema",1998,146,108.682,24.296,1.536
+"Romance","Kitne Door... Kitne Paas",2002,146,108.682,24.296,1.536
+"Romance","Mungaru Male",2006,143,108.682,24.296,1.413
+"Romance","Manmadhudu",2002,142,108.682,24.296,1.371
+"Romance","Pudhiya Geethai",2003,140,108.682,24.296,1.289
+"Romance","Manchala",1999,137,108.682,24.296,1.166
+"Romance","Socha Na Tha",2005,137,108.682,24.296,1.166
+"Romance","A h√°rom test√∂r Afrik√°ban",1996,84,108.682,24.296,-1.016
+"Romance","The Wednesday Night Save the World Society",2001,84,108.682,24.296,-1.016
+"Romance","Blunt Movie",2013,83,108.682,24.296,-1.057
+"Romance","Mat Tudung",2014,82,108.682,24.296,-1.098
+"Romance","Occasional Coarse Language",1998,81,108.682,24.296,-1.139
+"Romance","Kiskisan",2003,60,108.682,24.296,-2.004
+"Sci-Fi","Interstellar",2014,169,106.0,20.697,3.044
+"Sci-Fi","The Avengers",2012,143,106.0,20.697,1.788
+"Sci-Fi","Man of Steel",2013,143,106.0,20.697,1.788
+"Sci-Fi","The Matrix",1999,136,106.0,20.697,1.449
+"Sci-Fi","The Amazing Spider-Man",2012,136,106.0,20.697,1.449
+"Sci-Fi","John Carter",2012,132,106.0,20.697,1.256
+"Sci-Fi","G.O.R.A.",2004,127,106.0,20.697,1.015
+"Sci-Fi","El hada buena - Una f√°bula peronista",2010,85,106.0,20.697,-1.015
+"Sci-Fi","Bugged",1996,82,106.0,20.697,-1.16
+"Sport","Chak De! India",2007,153,102.3,20.629,2.458
+"Thriller","Amores Perros",2000,154,97.32,13.83,4.098
+"Thriller","Ankahee",2006,151,97.32,13.83,3.881
+"Thriller","The Quiet Storm",2004,150,97.32,13.83,3.809
+"Thriller","Nirbhay",1996,135,97.32,13.83,2.725
+"Thriller","Anxiety",2008,130,97.32,13.83,2.363
+"Thriller","The Town",2010,125,97.32,13.83,2.001
+"Thriller","The Chosen Heaven",2010,123,97.32,13.83,1.857
+"Thriller","Den",2001,120,97.32,13.83,1.64
+"Thriller","Memento",2000,113,97.32,13.83,1.134
+"Thriller","The Condemned",2007,113,97.32,13.83,1.134
+"Thriller","King of the Avenue",2010,83,97.32,13.83,-1.035
+"Thriller","Exposed",2012,82,97.32,13.83,-1.108
+"War","Saving Private Ryan",1998,169,110.923,28.756,2.02
+"War","Inglourious Basterds",2009,153,110.923,28.756,1.463
+"War","Cry Havoc",1999,61,110.923,28.756,-1.736

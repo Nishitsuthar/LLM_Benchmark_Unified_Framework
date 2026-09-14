@@ -1,3 +1,21 @@
-"credit_type","movie_count","avg_rating","rating_stddev"
-"Writer-director same person",567,6.240,1.762
-"Separate writer & director",311,6.165,1.770
+"genre","movie_count","avg_rating","avg_runtime","rating_per_minute"
+"Documentary",123,8.053,94.528,0.085
+"Animation",26,6.835,96.462,0.071
+"Music",31,7.419,105.452,0.07
+"War",13,7.423,110.923,0.067
+"Sport",10,6.72,102.3,0.066
+"Biography",33,7.27,111.667,0.065
+"History",14,7.464,118.786,0.063
+"Fantasy",33,6.139,101.424,0.06
+"Drama",425,6.252,104.002,0.06
+"Comedy",266,5.789,100.102,0.058
+"Mystery",48,5.51,98.062,0.056
+"Adventure",63,5.895,105.476,0.056
+"Romance",110,6.0,108.682,0.055
+"Crime",93,5.6,103.075,0.054
+"Sci-Fi",38,5.713,106.0,0.054
+"Family",40,5.37,100.175,0.054
+"Thriller",100,5.134,97.32,0.053
+"Action",122,5.471,107.697,0.051
+"Horror",67,4.579,94.731,0.048
+"Musical",9,5.233,114.778,0.046

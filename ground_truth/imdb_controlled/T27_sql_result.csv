@@ -1,7 +1,31 @@
-"genre","yr","movie_count","rating_stddev","label"
-"Action",2000,5,2.410,"Most polarized"
-"Comedy",2001,15,2.148,"Most polarized"
-"Action",1998,5,2.083,"Most polarized"
-"Documentary",1996,5,0.443,"Least polarized"
-"Documentary",2008,9,0.279,"Least polarized"
-"Documentary",1999,6,0.180,"Least polarized"
+"genre","startYear","movie_count","avg_rating"
+"Drama",1998,31,6.461
+"Drama",1996,29,6.386
+"Drama",2001,27,6.296
+"Drama",2004,26,5.904
+"Drama",2003,24,6.092
+"Drama",2005,24,6.275
+"Drama",1999,24,6.288
+"Drama",2002,24,6.612
+"Drama",2009,24,5.842
+"Drama",2000,23,6.804
+"Drama",2007,23,6.291
+"Drama",2006,23,6.27
+"Comedy",2002,21,6.09
+"Drama",1997,20,6.635
+"Comedy",2005,19,5.632
+"Comedy",1998,19,6.116
+"Drama",2011,19,6.1
+"Drama",2010,18,5.883
+"Drama",2008,16,6.244
+"Comedy",2003,16,5.719
+"Comedy",2004,16,6.188
+"Comedy",2006,16,6.025
+"Drama",2012,16,5.375
+"Comedy",2001,15,6.513
+"Comedy",1996,15,5.947
+"Comedy",2000,14,5.821
+"Comedy",2008,14,5.414
+"Comedy",2007,14,4.6
+"Drama",2014,14,6.5
+"Comedy",1999,14,5.271
