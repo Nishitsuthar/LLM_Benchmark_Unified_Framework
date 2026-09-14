@@ -573,9 +573,9 @@ def main() -> None:
             )
 
             exact = (
-                "✓"
+                "Y"
                 if result.content_exact_match
-                else "✗"
+                else "N"
             )
 
             _progress(
@@ -670,7 +670,7 @@ def main() -> None:
     print()
 
     print(
-        "  ─" * 25
+        "  -" * 25
     )
 
     print(
