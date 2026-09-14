@@ -7,11 +7,13 @@ run.py never changes — it only reads these dictionaries.
 from unified_pipeline.evidence.csv_full_evidence import CsvFullEvidenceBuilder  # Krittika
 from unified_pipeline.evidence.prose_evidence import ProseEvidenceBuilder        # Satwik
 from unified_pipeline.evidence.rag_evidence import RagEvidenceBuilder            # Nishit adds
+from unified_pipeline.evidence.hotpot_evidence import HotpotEvidenceBuilder      # Sushma
 from unified_pipeline.evidence.visual_pdf_evidence import VisualPdfEvidenceBuilder  # Arpitha
 
 from unified_pipeline.evaluators.table_f1_evaluator import TableF1Evaluator      # Krittika
 from unified_pipeline.evaluators.exact_match_evaluator import ExactMatchEvaluator  # Satwik
 from unified_pipeline.evaluators.span_f1_evaluator import SpanF1Evaluator        # Nishit adds
+from unified_pipeline.evaluators.hotpot_evaluator import HotpotEvaluator          # Sushma
 from unified_pipeline.evaluators.partial_credit_evaluator import PartialCreditEvaluator  # Arpitha adds
 from unified_pipeline.evaluators.sql_scalar_evaluator import SqlScalarEvaluator          # Satwik
 
@@ -21,6 +23,7 @@ EVIDENCE_BUILDERS = {
     "prose_docs": ProseEvidenceBuilder,
     "pdf_rag": RagEvidenceBuilder,
     "pdf_visual": VisualPdfEvidenceBuilder,
+    "hotpot_context": HotpotEvidenceBuilder,
 }
 
 
@@ -30,6 +33,7 @@ EVALUATORS = {
     "span_f1": SpanF1Evaluator,
     "partial_credit": PartialCreditEvaluator,
     "sql_scalar_match": SqlScalarEvaluator,
+    "hotpot_f1": HotpotEvaluator,
 }
 
 

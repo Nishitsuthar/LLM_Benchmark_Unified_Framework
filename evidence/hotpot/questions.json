@@ -1,0 +1,653 @@
+[
+  {
+    "id": "BQ001",
+    "text": "In what year was the original film released that served as the basis for the third and final installment of the Soderbergh-directed trilogy featuring an ensemble cast?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ001.txt",
+    "source_id": "5add352b5542990dbb2f7dc4"
+  },
+  {
+    "id": "BQ002",
+    "text": "In what year did the drama directed by the award-winning director of Pakistan and featuring the actress regarded as the Sweetest Mother of Pakistani Industry air on ARY Digital?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ002.txt",
+    "source_id": "5a77414155429972597f14d7"
+  },
+  {
+    "id": "BQ003",
+    "text": "In what year was the film released that marked the cinematic debut of the actor born on November 11, 1974, who later starred in a 1997 epic romance directed by James Cameron?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ003.txt",
+    "source_id": "5ab545d3554299494045ef5c"
+  },
+  {
+    "id": "BQ004",
+    "text": "In what year was the historically black comprehensive land-grant institution located northwest of Lorman, Mississippi in rural Claiborne County, which was founded by the Reconstruction-era legislature to provide higher education for freedmen and counts as a census-designated place with a resident population of 1,017 at the 2010 census, founded?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ004.txt",
+    "source_id": "5a7d1d825542995ed0d165f5"
+  },
+  {
+    "id": "BQ005",
+    "text": "In what year did the American multinational food manufacturing company headquartered in Battle Creek, Michigan, which produces a cocoa flavored version of Rice Krispies, begin sponsoring the television series based on comic book characters created by Jerry Siegel and Joe Shuster that began filming in 1951?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ005.txt",
+    "source_id": "5ae1801955429901ffe4aec4"
+  },
+  {
+    "id": "BQ006",
+    "text": "In what year did the individual who served as the private secretary to the leader of Nazi Germany and controlled access to him join that leader in the underground shelter complex located beneath the Reich Chancellery garden, which was expanded in 1943 with the addition of a lower level?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ006.txt",
+    "source_id": "5abbd3b4554299642a094b4f"
+  },
+  {
+    "id": "BQ008",
+    "text": "In what year was the South Korean model and actor who starred in the 2016 Chinese romantic drama film directed by Chen Bing born?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ008.txt",
+    "source_id": "5a7e71ab55429949594199bc"
+  },
+  {
+    "id": "BQ009",
+    "text": "In what year did the franchise that currently employs the Russian professional ice hockey player born on 5 July 1986 relocate from Minnesota to Texas?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ009.txt",
+    "source_id": "5ab875bd55429916710eb062"
+  },
+  {
+    "id": "BQ010",
+    "text": "In what year was the Athenian tragedy first performed around 429 BC, which is referenced alongside Hamlet and The Brothers Karamazov in a 1928 scholarly collection introduced by the founder of psychoanalysis, originally presented to the ancient Greeks under the simple title Oedipus?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ010.txt",
+    "source_id": "5a72a0be5542992359bc3143"
+  },
+  {
+    "id": "BQ011",
+    "text": "Which American singer and actress, born in 1946 and known as the Goddess of Pop, directed the third segment of the 1996 HBO film that follows three women's experiences with abortion across different decades in the same house?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ011.txt",
+    "source_id": "5a8ac44055429970aeb70304"
+  },
+  {
+    "id": "BQ012",
+    "text": "The American sleep researcher and neurologist born on December 27, 1972, who coined the term circadian advantage after studying travel effects on Major League Baseball teams and linked player sleepiness to reduced career longevity in 2013 — what specific research area did this individual investigate regarding Atlantic Coast Conference football players and their eventual draft success?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ012.txt",
+    "source_id": "5adc82fc554299438c868dce"
+  },
+  {
+    "id": "BQ013",
+    "text": "The handheld digital pet created in Japan by WiZ and Aki Maita of Bandai, released in November 1996 in Japan and May 1997 worldwide, with over 76 million units sold by 2010 and typically housed in an egg-shaped computer with a three-button interface, is explicitly described as similar to which other device that contains a diary, address book, friends list, and 20 possible activities including games, learning games, tools, and \"girl activities\"?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ013.txt",
+    "source_id": "5a82678a5542995ce29dccfa"
+  },
+  {
+    "id": "BQ014",
+    "text": "The Australian electoral division created in 1922 and named for the first Prime Minister of Australia was represented by a Labor member who was born in Grafton, New South Wales, and educated at state schools before becoming a farmer and teacher in Tullamore; in the 1931 federal election, this incumbent was defeated by a United Australia Party candidate who had previously served in the New South Wales Legislative Assembly as one of four members for Balmain — what was the surname of the candidate who won that 1931 election?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ014.txt",
+    "source_id": "5a7c67c15542990527d55498"
+  },
+  {
+    "id": "BQ015",
+    "text": "Which Dutch tenor performed the role of Sellem in the opera whose libretto was written by W. H. Auden and Chester Kallman and which is based on a series of eight paintings by William Hogarth?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ015.txt",
+    "source_id": "5a7e7d4655429934daa2fc2e"
+  },
+  {
+    "id": "BQ016",
+    "text": "The state whose seal depicts a landscape by the waterfalls described in Document 6 adopted its seal in what year?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ016.txt",
+    "source_id": "5a848eff5542990548d0b2cd"
+  },
+  {
+    "id": "BQ017",
+    "text": "Among the professional baseball left fielders described across these documents who were born in the 1990s and made their Major League Baseball debut in 2015, which one is the cousin of the player who debuted in 2013 and plays for the Miami Marlins?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ017.txt",
+    "source_id": "5ab2bc6b554299545a2cfa40"
+  },
+  {
+    "id": "BQ018",
+    "text": "Which American singer-songwriter, who is the son of a country music legend and active in outlaw country and Southern rock, has performed a cover of the song best known as the signature tune of the bass guitarist and vocalist for Chris Isaak's band Silvertone, a song that has also been covered by John Prine, Chris Smither, Shawn Colvin, Robert Plant, Alison Krauss, and Billy Ray Cyrus?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ018.txt",
+    "source_id": "5a8e16a5554299068b959e58"
+  },
+  {
+    "id": "BQ019",
+    "text": "Which specific dog breed, described in one document as a small terrier with origins in fox hunting and principally white-bodied, is explicitly identified in another document as a variety of the Fox Terrier breed that was developed by a clergyman known as 'The Sporting Parson' who served as vicar of Swimbridge and rector of Black Torrington?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ019.txt",
+    "source_id": "5ab66b63554299110f219a0a"
+  },
+  {
+    "id": "BQ020",
+    "text": "Which United States Navy officer, born in the first decade of the 1900s and decorated with the Medal of Honor for actions during the capture of a German Type IXC U-boat off French West Africa in June 1944, was part of the boarding party that seized the vessel which became the first enemy ship captured by the U.S. Navy since the nineteenth century?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ020.txt",
+    "source_id": "5abb254c5542992ccd8e7f29"
+  },
+  {
+    "id": "BQ021",
+    "text": "What is the official seating capacity of the on-campus football facility that serves as the home of the team which posted a 10–0–1 overall record and a 7–0 conference record to earn the Conference outright title under first-year head coach Barry Switzer in the 1973 NCAA Division I football season, following renovations in 2015?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ021.txt",
+    "source_id": "5a7150c75542994082a3e7be"
+  },
+  {
+    "id": "BQ022",
+    "text": "What is the polyphony specification of the drum machine introduced by the Roland Corporation in 1983 that was the first to use samples for cymbal and hi-hat sounds alongside analog sounds and was also the first MIDI-equipped drum machine?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ022.txt",
+    "source_id": "5a7c53a855429935c91b515d"
+  },
+  {
+    "id": "BQ023",
+    "text": "Which newspaper, founded as a weekly publication in 1873 and later renamed multiple times before adopting its current name, publishes a local weekly newspaper named after a town largely serving the Fylde Borough?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ023.txt",
+    "source_id": "5a8b3fe85542995d1e6f1323"
+  },
+  {
+    "id": "BQ024",
+    "text": "What is the title of the popular song from the 1953 musical Kismet whose melody was based on the most important large-scale work completed by the Russian composer who also wrote a string quartet dedicated to his wife Ekaterina Protopova?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ024.txt",
+    "source_id": "5abbdb9a55429931dba145ad"
+  },
+  {
+    "id": "BQ025",
+    "text": "What is the official language of the sovereign state that forms the largest and eastern portion of the ethno-linguistic region of Bengal and is bordered by India and Myanmar, which is also the primary language spoken in the culture of Bengal region encompassing Bangladesh and the Indian states of West Bengal, Tripura and Assam?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ025.txt",
+    "source_id": "5ae6097c55429929b0807a9a"
+  },
+  {
+    "id": "BQ026",
+    "text": "Which Indian classical musician, born in the late 1970s and originating from Kolkata, is recognized internationally as an instructor and performs on a fretless stringed instrument known for its deep, weighty, introspective sound and sympathetic strings that produce continuous slides between notes called meend?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ026.txt",
+    "source_id": "5ab31864554299233954ff06"
+  },
+  {
+    "id": "BQ027",
+    "text": "What is the name of the museum that is a branch of the institution preserving Hong Kong's historical and cultural heritage and is located in a former Hakka village house built during the Qing Dynasty in Chai Wan?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ027.txt",
+    "source_id": "5ab55e015542992aa134a2d3"
+  },
+  {
+    "id": "BQ028",
+    "text": "Which Irish animation studio, known for developing the cartoon series Skunk Fu! and based in Kilkenny, produced the 2009 animated fantasy film that premiered at the 59th Berlin International Film Festival and was nominated for Best Animated Feature at the 82nd Academy Awards?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ028.txt",
+    "source_id": "5a714dea5542994082a3e7a9"
+  },
+  {
+    "id": "BQ029",
+    "text": "What is the birth date of the French film director and cinematographer who directed the 2004 action film featuring parkour stunts performed without wires or computer-generated effects, the 2008 action thriller starring Liam Neeson, and the 2010 action film starring John Travolta and Jonathan Rhys Meyers?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ029.txt",
+    "source_id": "5adf38ae5542993a75d26433"
+  },
+  {
+    "id": "BQ030",
+    "text": "What is the name of the river that flows through the city where the one-man deathcore and electronic music project formed by Alex Gazin in 2011 originated, given that this city lies in a valley between low vine-covered hills of red sandstone near the border with Luxembourg?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ030.txt",
+    "source_id": "5a8d0c74554299585d9e37a1"
+  },
+  {
+    "id": "BQ031",
+    "text": "Which founding member of the English hard rock supergroup formed in Westminster in 1973 by former Free members and a Mott the Hoople guitarist also performed on a 1982 album by Jon Lord that featured Simon Phillips and Cozy Powell?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ031.txt",
+    "source_id": "5ae086d35542993d6555eb97"
+  },
+  {
+    "id": "BQ032",
+    "text": "The Norman baron who served as principal captain to the English king known as Richard Cœur de Lion constructed a castle in Rutland between 1180 and 1190; what is the name of that castle?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ032.txt",
+    "source_id": "5a8e08ab5542995085b37393"
+  },
+  {
+    "id": "BQ033",
+    "text": "Which song, originally recorded by a husband-and-wife duo in 1929 as a reaction to the Great Mississippi Flood of 1927, was later sampled in a track produced by Jack White for Beyoncé's sixth studio album?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ033.txt",
+    "source_id": "5ac19bf55542994ab5c67d97"
+  },
+  {
+    "id": "BQ034",
+    "text": "Which song, written by a Canadian musician and first recorded by a group featuring a drummer from Arkansas, was later recorded at a studio founded by David Briggs and Norbert Putnam by a folk singer known for her 1972 visit to North Vietnam?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ034.txt",
+    "source_id": "5ac24a035542992f1f2b3832"
+  },
+  {
+    "id": "BQ035",
+    "text": "The actor who portrayed the antagonist in the final installment of the original Superman film series, a role he reprised from the 1978 original, won his first Academy Award for Best Actor for which film?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ035.txt",
+    "source_id": "5a7912f655429974737f796c"
+  },
+  {
+    "id": "BQ036",
+    "text": "The wooden roller coaster that was originally built in 1950 by Philadelphia Toboggan Coasters and previously operated at the amusement park located at the corner of North Avenue and First Avenue in Melrose Park, Illinois — what is the name of the section within its current park where it reopened on May 27, 2010?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ036.txt",
+    "source_id": "5ae40d405542996836b02c28"
+  },
+  {
+    "id": "BQ037",
+    "text": "The British comedy panel game first broadcast on Sky1 in 2011 is hosted by an English comedian and actor born on 20 August 1971 who is known for his partnership with Matt Lucas on the BBC One sketch show Little Britain. What is the professional name of this host?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ037.txt",
+    "source_id": "5a8effb55542997ba9cb317f"
+  },
+  {
+    "id": "BQ038",
+    "text": "What is the name of the proprietary Unix operating system implementation developed by the enterprise information technology company that was founded on 1 November 2015 as part of the splitting of the Hewlett-Packard company and is based in Palo Alto, California?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ038.txt",
+    "source_id": "5ab868e755429919ba4e22e3"
+  },
+  {
+    "id": "BQ039",
+    "text": "What is the name of the principal town of the Native American people who historically lived in the Florida Panhandle between the Aucilla River and Ochlockonee River, at the head of Apalachee Bay, and spoke a Muskogean language that is now extinct?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ039.txt",
+    "source_id": "5ae7d0675542994a481bbdf2"
+  },
+  {
+    "id": "BQ040",
+    "text": "Which author, born in 1934, wrote a 2012 novel that serves as a sequel to a children's fantasy novel published by Collins in 1960, and what is the title of that 2012 novel?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ040.txt",
+    "source_id": "5ae528e655429908b632652c"
+  },
+  {
+    "id": "BQ044",
+    "text": "What is the Guinness World Record number of vocal edits in the track 'Somnambulist' from the album that features vocal performances by the actress who starred as Mary Winkler in a 2011 Lifetime Network film?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ044.txt",
+    "source_id": "5abcc96c5542996583600492"
+  },
+  {
+    "id": "BQ045",
+    "text": "What is the year in which the peer-reviewed scientific journal that covers research on antenna technology and electromagnetic wave propagation, and whose current Editor-in-Chief is an Italian-American engineer from the University of Illinois, Chicago named a Fellow of the IEEE in 2016, was established?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ045.txt",
+    "source_id": "5aba18ee5542994dbf0198b4"
+  },
+  {
+    "id": "BQ046",
+    "text": "What is the specific number of Canadians of full or partial Czech descent recorded in the 2006 Canadian census, where the term used for these individuals in the 19th century was the same as the term for a resident of Bohemia?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ046.txt",
+    "source_id": "5ae6371155429929b0807af1"
+  },
+  {
+    "id": "BQ047",
+    "text": "What is the total number of games won by the coach who led the team that entered the 1991 NCAA tournament unbeaten over his entire career?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ047.txt",
+    "source_id": "5ae0198455429942ec259c1e"
+  },
+  {
+    "id": "BQ048",
+    "text": "What is the name of the large sandstone rock formation in central Australia, located 335 km southwest of Alice Springs, at the base of which an Australian murderer drove a 25-tonne Mack truck into a crowded motel bar on 18 August 1983, killing five people?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ048.txt",
+    "source_id": "5a8e92b55542995085b37458"
+  },
+  {
+    "id": "BQ049",
+    "text": "The German actress who portrays Dr. Kate Murphy in the American television series created by Christopher Murphey was born in which month?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ049.txt",
+    "source_id": "5ae01b8855429925eb1afc14"
+  },
+  {
+    "id": "BQ050",
+    "text": "What is the name of the National Olympic Committee representing the country where the language spoken in Central Europe and official in Germany, Austria, and Switzerland is used for one of the four official names of the committee?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ050.txt",
+    "source_id": "5ac0b8395542996f0d89cc21"
+  },
+  {
+    "id": "BQ051",
+    "text": "The historic structure named for the self-taught surveyor who helped delineate the federal capital district in 1791 is situated in which neighborhood of Washington, D.C.?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ051.txt",
+    "source_id": "5ab42a2b5542996a3a969f5a"
+  },
+  {
+    "id": "BQ052",
+    "text": "What is the name of the hotel and casino that was located on the Boardwalk in Atlantic City, New Jersey, owned by a gaming and hospitality company founded in 1995 by Donald Trump, and hosted a mixed martial arts event on October 22, 2004?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ052.txt",
+    "source_id": "5a7d2aa05542995f4f40221f"
+  },
+  {
+    "id": "BQ053",
+    "text": "The project founded at the university established by the author of the Declaration of Independence in 1968 is currently headed by which individual?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ053.txt",
+    "source_id": "5abc3d505542993a06baf8a7"
+  },
+  {
+    "id": "BQ054",
+    "text": "The historical figure who served as Prefect of Bavaria under Charlemagne and was born into the Agilofing family — in the modern-day country corresponding to the region where he held that title, what is the cardinal direction of the area relative to the national capital?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ054.txt",
+    "source_id": "5ae4758b5542995dadf24342"
+  },
+  {
+    "id": "BQ055",
+    "text": "Which American rock band, formed in the mid-1980s and achieving mainstream fame in 1997 with a song appearing twice on the album 'Floored', performed at the opening of the Indianapolis 500 in 2006 alongside a band from Indianapolis founded by a former Transmatic guitarist?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ055.txt",
+    "source_id": "5a7758895542994aec3b729c"
+  },
+  {
+    "id": "BQ056",
+    "text": "What is the name of the English three-person alternative rock band formed in Tooting, South London in 1986 that released their fifth studio album in late September 2013, which is the same month and year that the English rock duo formed in Brighton released their debut studio album?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ056.txt",
+    "source_id": "5a7ed5af5542994959419a84"
+  },
+  {
+    "id": "BQ057",
+    "text": "The railway station situated in the historic locality that derives its name from a title conferred by Emperor Akbar upon a Brahmin who saved his life, and which falls under the North Central Railways zone, is located near which major historical fortification?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ057.txt",
+    "source_id": "5a771de05542993569682cc8"
+  },
+  {
+    "id": "BQ058",
+    "text": "Considering the Turkic language that serves as the official language of the country where the town with a 1989 population of 10,867 is located, and the Turkic language spoken in the autonomous republic within that same country which has two dialects and is closely related to Kazakh, which of these two languages belongs to the Karluk branch of the Turkic language family?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ058.txt",
+    "source_id": "5a77a8b45542995d83181253"
+  },
+  {
+    "id": "BQ059",
+    "text": "Comparing the Scottish musician who wrote the second single from the album \"12 Memories\" and the American composer who scored the 1989 film \"Batman\", how many years older is the American composer?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ059.txt",
+    "source_id": "5ab6e865554299710c8d1fad"
+  },
+  {
+    "id": "BQ060",
+    "text": "Considering the South Korean film director born on May 4, 1975, who directed a 2011 war film set during the Korean War ceasefire and a 2017 historical action drama starring Song Kang-ho, what is the difference in years between the release year of the war film and the release year of the historical action drama?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ060.txt",
+    "source_id": "5a88f2cc55429938390d3ffb"
+  },
+  {
+    "id": "BQ061",
+    "text": "Considering the American actor who starred as the magician Oscar Diggs in the 2013 fantasy prequel directed by Sam Raimi and the Indian actor who made his debut in the 1992 romantic drama directed by Raj Kanwar, which performer was born earlier, and by how many years?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ061.txt",
+    "source_id": "5ab8f7535542991b5579f0a7"
+  },
+  {
+    "id": "BQ062",
+    "text": "The American mechanical engineer who was one of the first to work for the oldest railroad in the United States and patented his own car bearing design on November 2, 1828 — in what year did that engineer die?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ062.txt",
+    "source_id": "5a807ca5554299485f598613"
+  },
+  {
+    "id": "BQ063",
+    "text": "Comparing the genus of conifers that includes the host plant for the weevil species endemic to New Zealand with the genus of ferns that includes the species known as Cinnamon fern, which genus has a greater number of species according to the species counts provided in the documents?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ063.txt",
+    "source_id": "5a90a9a45542990a9849367e"
+  },
+  {
+    "id": "BQ064",
+    "text": "Considering the genus of mosses that is composed principally of peat used in the low-pH compost required by plants which cannot tolerate alkaline soil and are described as ericaceous, what is the approximate number of accepted species in that genus?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ064.txt",
+    "source_id": "5a7a10755542996a35c170b1"
+  },
+  {
+    "id": "BQ065",
+    "text": "What is the length in miles of the tributary that begins west of the unincorporated community named for Richard Arthur and empties into the Monongahela River at Morgantown?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ065.txt",
+    "source_id": "5a8a1a975542992e4fca8505"
+  },
+  {
+    "id": "BQ066",
+    "text": "Which actor, who won an Academy Award for Best Actor for a 1996 film directed by Scott Hicks, also appeared in a 2003 romantic comedy directed by Joel and Ethan Coen alongside George Clooney and Catherine Zeta-Jones?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ066.txt",
+    "source_id": "5ae7766455429952e35ea920"
+  },
+  {
+    "id": "BQ067",
+    "text": "Which concept car, described as a preview to a midsize family vehicle that replaced the Mazda Capella and sold over one million units faster than all previous Mazdas, was made by the Japanese car manufacturer Mazda?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ067.txt",
+    "source_id": "5a89019a5542995153361259"
+  },
+  {
+    "id": "BQ068",
+    "text": "Among the individuals who are members of the legislative organ located at Sé and were born in the 1950s, how many also hold membership in the Chinese People's Political Consultative Conference?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ068.txt",
+    "source_id": "5a7aa5e75542992d025e66d9"
+  },
+  {
+    "id": "BQ069",
+    "text": "Among the dog breeds explicitly identified as rare in the document discussing uncommon canine varieties, which one shares its classification as a griffon-type hunting dog with the wirehaired pointers and smousje lines recognized by the international canine federation?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ069.txt",
+    "source_id": "5a75d45f5542994ccc918630"
+  },
+  {
+    "id": "BQ070",
+    "text": "Among the individuals described across the provided texts who were affiliated with Princeton University and received a Nobel Prize in Physics, which one was born in the same year as the Hungarian-American physicist who emigrated from Hungary in 1957 and later worked at the Princeton Plasma Physics Laboratory?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ070.txt",
+    "source_id": "5ae46c9d5542996836b02c9d"
+  },
+  {
+    "id": "BQ071",
+    "text": "Among the individuals who influenced the American novelist and poet born on March 12, 1922, and who also authored over thirty books on Eastern religion and philosophy, which one was born in 1868 and died in 1969?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ071.txt",
+    "source_id": "5a886098554299206df2b248"
+  },
+  {
+    "id": "BQ072",
+    "text": "Among the rulers identified across the provided texts as belonging to the group of five successive Roman emperors renowned for an era of peace and prosperity, which one is explicitly described in one document as having been born on 18 September 53 and in another document as the second member of that group?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ072.txt",
+    "source_id": "5ae37e525542992e3233c42d"
+  },
+  {
+    "id": "BQ073",
+    "text": "Among the publications described in the provided documents that are explicitly identified as magazines, which one is published by a company headquartered in Germany, and what is the name of that publishing company?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ073.txt",
+    "source_id": "5a74adb455429916b01641c6"
+  },
+  {
+    "id": "BQ074",
+    "text": "Identify the Ottoman newspaper editor who was assassinated while crossing the bridge that spans the Golden Horn and has featured in Turkish literature since the late 19th century, and name the publication he led.",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ074.txt",
+    "source_id": "5adc69ef554299438c868daf"
+  },
+  {
+    "id": "BQ075",
+    "text": "Among the shrub species belonging to the genus described as containing about 400 species of herbs and shrubs in the mimosoid clade of the legume family Fabaceae, which species is explicitly noted as having been reclassified from a prior classification as Mimosa biuncifera following a taxonomic revision proposed by Rupert C. Barneby in 1986?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ075.txt",
+    "source_id": "5ae4be5455429960a22e019c"
+  },
+  {
+    "id": "BQ076",
+    "text": "Among the individuals described across these documents who both founded a company that developed a Linux-based operating system and invested in a South African Linux distribution focused on the enterprise sector, what is the birth date of the person who also became the first citizen of an independent African country to travel to space as a space tourist?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ076.txt",
+    "source_id": "5a74e93e55429974ef308c92"
+  },
+  {
+    "id": "BQ077",
+    "text": "Among the American musicians who founded the heavy metal band Ratt and also formed the alternative metal band Vicious Delite in 1995, which one co-wrote the song \"Back For More\" with the bassist who currently owns MT Studios for BlueThumbProductions in Burbank, California?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ077.txt",
+    "source_id": "5a8cc7af554299653c1aa11e"
+  },
+  {
+    "id": "BQ078",
+    "text": "The American rapper who founded the Freebandz label imprint after signing with Epic Records and A1 Recordings released a song edited for radio as \"Shhh...\" that peaked at number 34 on the US Billboard Hot R&B/Hip-Hop Songs chart; what is the birth date of that rapper?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ078.txt",
+    "source_id": "5add6b595542992200553b0c"
+  },
+  {
+    "id": "BQ079",
+    "text": "The American actress who provided voice work for a Mexican-American animated action comedy film produced by Classic Media, Ánima Estudios, and Santo Domingo Films, and who is also known for portraying Naruto Uzumaki in the English version of Naruto, was born on what date?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ079.txt",
+    "source_id": "5a828c3355429940e5e1a8f0"
+  },
+  {
+    "id": "BQ080",
+    "text": "What is the name of the recombinant human epidermal growth factor developed by the bioengineering subsidiary of Daewoong Co., Ltd. that is headquartered in the capital city of South Korea?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ080.txt",
+    "source_id": "5a81108855429926c1cdace2"
+  },
+  {
+    "id": "BQ081",
+    "text": "Which documentary filmmaker, known for a 2006 HBO film depicting the Iraq war from a military hospital perspective, won three Emmy Awards for that work?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ081.txt",
+    "source_id": "5a7769a35542993569682d8f"
+  },
+  {
+    "id": "BQ082",
+    "text": "In the historic walled city where a Northumbrian magnate was sent to rule after paying homage to William the Conqueror in March 1067, what is the name of the river that joins the Ouse at the confluence?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ082.txt",
+    "source_id": "5ab6238e554299710c8d1e6d"
+  },
+  {
+    "id": "BQ083",
+    "text": "The city that hosts the temple which was the first in its state and featured a pioneering single-spire design is also served by an airport that was once called Fanning Field and ranks as the second-busiest in its state. What is the IATA code of that airport?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ083.txt",
+    "source_id": "5ae184185542990adbacf7ac"
+  },
+  {
+    "id": "BQ084",
+    "text": "Which author, recognized as a leading figure of late-20th century Southern literature and whose father was a United States Marine Corps colonel and member of the Black Sheep Squadron, wrote a memoir about his senior basketball season at The Citadel under a coach who served from 1960 to 1967?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ084.txt",
+    "source_id": "5abb61735542993f40c73aef"
+  },
+  {
+    "id": "BQ085",
+    "text": "Considering the English indie pop band formed in 2005 whose song inspired the track co-written and co-produced by the English singer who performed live on the seventh series of The X Factor on 17 October 2010, what is the formation year of that band?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ085.txt",
+    "source_id": "5ae733dc5542991e8301cbd1"
+  },
+  {
+    "id": "BQ086",
+    "text": "The individual who co-anchors the morning program on MSNBC and also anchors a Sunday edition of the national morning show, and who departed from a specific early morning program leading to a meteorologist becoming a substitute host for that program, was born in what year?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ086.txt",
+    "source_id": "5ae08dad55429945ae9593b9"
+  },
+  {
+    "id": "BQ087",
+    "text": "Among the rally drivers described in these documents who were born in the 1940s and achieved victories while driving for Lancia, which one also secured a manufacturers' world championship title for Lancia in the 1983 season as part of a team that included Markku Alén and Attilio Bettega?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ087.txt",
+    "source_id": "5a8f06075542995b44241f2d"
+  },
+  {
+    "id": "BQ088",
+    "text": "Which director, who served as the President of the Jury for the main competition at the festival where a Danish-Afghan drama film won the Art Cinema Award in the Directors' Fortnight section, is Australian?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ088.txt",
+    "source_id": "5ade4801554299728e26c6ab"
+  },
+  {
+    "id": "BQ089",
+    "text": "The American actor who was born in the fourth-largest city in Kentucky by population, which serves as the county seat of Daviess County and is the principal city of its metropolitan area — what is his full name?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ089.txt",
+    "source_id": "5ab283d9554299449642c8d8"
+  },
+  {
+    "id": "BQ090",
+    "text": "The Italian actress who directed a 2013 drama screened at Cannes and won a commendation from the Ecumenical Jury also starred in a 1988 American road comedy-drama directed by Barry Levinson; in that film, what is the name of the character she portrays, who is the girlfriend of the abrasive young wheeler-dealer played by Tom Cruise?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ090.txt",
+    "source_id": "5a7adaa35542992d025e670c"
+  },
+  {
+    "id": "BQ091",
+    "text": "The Irish entertainer who performed as part of a late 1960s girl group alongside a radio disc-jockey born in February 1950 and a woman born in April 1952 later gave birth to a singer who joined a Celtic music ensemble as its youngest original member; what is the birth date of that younger singer?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ091.txt",
+    "source_id": "5a722fae55429971e9dc9343"
+  },
+  {
+    "id": "BQ092",
+    "text": "The retired female javelin thrower from South Korea who achieved her personal best throw at the competition held at Busan Asiad Main Stadium — what was the distance of that personal best throw in metres?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ092.txt",
+    "source_id": "5a7d1e685542995ed0d165f7"
+  },
+  {
+    "id": "BQ093",
+    "text": "Which football club, founded in 1912 and a founder member of the Football League's Third Division in 1920, won the 93rd season of the main domestic football cup competition in Wales by winning both legs of the final against Shrewsbury Town?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ093.txt",
+    "source_id": "5ab1c693554299722f9b4c66"
+  },
+  {
+    "id": "BQ094",
+    "text": "The author of the novel subtitled 'A Tale of Manchester Life' also wrote a biography of Charlotte Brontë published in 1857; what was the maiden surname of this author?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ094.txt",
+    "source_id": "5a80fb97554299260e20a1eb"
+  },
+  {
+    "id": "BQ095",
+    "text": "Which composer, born in the late 18th century and associated with the bel canto opera style, wrote the opera that premiered at the Teatro Valle in Rome on 4 February 1824 and was later renamed Don Gregorio for its Naples production?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ095.txt",
+    "source_id": "5a714bb35542994082a3e78f"
+  },
+  {
+    "id": "BQ096",
+    "text": "The open-air museum situated in the town that hosts the zoological gardens owned by the society founded in 1935 occupies how many square metres of former industrial land?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ096.txt",
+    "source_id": "5ae694a15542991bbc976141"
+  },
+  {
+    "id": "BQ097",
+    "text": "The director who helmed the 2004 BBC television adaptation of an Anthony Trollope novel also directed a 2008 American comedy film starring Cameron Diaz and Ashton Kutcher; what is the title of that 2008 film?",
+    "answer_format": "A concise answer (typically 1-5 words)",
+    "ground_truth_file": "BQ097.txt",
+    "source_id": "5ab8179f5542990e739ec817"
+  }
+]

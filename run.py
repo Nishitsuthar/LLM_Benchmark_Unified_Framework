@@ -378,6 +378,8 @@ def main() -> None:
                 "_source_pdf": question.get(
                     "source_pdf"
                 ),
+                "question_doc_file": question.get("doc_file", ""),
+                "_question_id": question.get("id"),
             }
 
             evidence = builder.build(
