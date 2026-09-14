@@ -50,5 +50,4 @@ chroma_db/
 
 # Large evidence files — download locally, do not commit
 evidence/hotpot/hotpot_validation_distractor.json
-evidence/f1_racing/f1_racing.db
 evidence/imdb_20/imdb_20_movies_screenshot_evidence.pdf
