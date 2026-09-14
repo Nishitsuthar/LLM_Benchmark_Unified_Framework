@@ -49,5 +49,4 @@ chroma_db/
 *.log
 
 # Large evidence files — download locally, do not commit
-evidence/hotpot/hotpot_validation_distractor.json
 evidence/imdb_20/imdb_20_movies_screenshot_evidence.pdf
