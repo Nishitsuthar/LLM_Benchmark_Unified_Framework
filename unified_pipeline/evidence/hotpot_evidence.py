@@ -31,9 +31,21 @@ class HotpotEvidenceBuilder(BaseEvidenceBuilder):
             self._loaded_data_file = data_file
 
         question_id = config.get("_question_id", "")
-        source_id   = self._id_map.get(question_id, "")
-        context     = self._index.get(source_id, "")
+        _MISSING    = object()
+        source_id   = self._id_map.get(question_id, _MISSING)
 
+        if source_id is _MISSING:
+            raise KeyError(
+                f"No HotpotQA context found for question_id={question_id!r} "
+                f"— question is not in questions.json."
+            )
+        if source_id is None:
+            # Intentional: question has no HotpotQA source (HQ-series extra-hard questions)
+            return EvidenceResult(
+                text="[No context available — question has no HotpotQA source.]",
+                metadata={"question_id": question_id, "source_id": None},
+            )
+        context = self._index.get(source_id, "")
         if not context:
             raise KeyError(
                 f"No HotpotQA context found for question_id={question_id!r} "

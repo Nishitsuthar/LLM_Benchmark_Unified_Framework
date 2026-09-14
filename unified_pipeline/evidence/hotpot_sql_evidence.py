@@ -57,21 +57,27 @@ class HotpotSqlEvidenceBuilder(BaseEvidenceBuilder):
             self._db_path = db_path
 
         question_id = config.get("_question_id", "")
-        source_id   = self._id_map.get(question_id, "")
+        _MISSING    = object()
+        source_id   = self._id_map.get(question_id, _MISSING)
 
-        if not source_id:
+        if source_id is _MISSING:
             raise KeyError(
                 f"No source_id mapping found for question_id={question_id!r}. "
                 f"Check {questions_file}."
+            )
+        if source_id is None:
+            # Intentional: question has no HotpotQA source (e.g. HQ-series extra-hard questions)
+            return EvidenceResult(
+                text="[No structured facts available — question has no HotpotQA source.]",
+                metadata={"question_id": question_id, "source_id": None, "fact_count": 0},
             )
 
         rows = self._conn.execute(_QUERY, {"question_id": source_id}).fetchall()
 
         if not rows:
-            raise ValueError(
-                f"No facts in DB for question_id={question_id!r} "
-                f"(source_id={source_id!r}). "
-                f"Run build_fact_database.py to populate {db_path}."
+            return EvidenceResult(
+                text="[No facts found in database for this question.]",
+                metadata={"question_id": question_id, "source_id": source_id, "fact_count": 0},
             )
 
         context = self._format_facts(rows)

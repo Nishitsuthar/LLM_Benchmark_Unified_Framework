@@ -995,5 +995,155 @@
     "category": "shared_classification",
     "text": "Are Giuseppe Verdi and Ambroise Thomas both Opera composers ?",
     "answer_format": "short answer"
+  },
+  {
+    "id": "HQ001",
+    "source_id": null,
+    "text": "Which film has a higher worldwide box office gross — the 2003 Peter Jackson film that concludes a trilogy set in Middle-earth, or the 2009 James Cameron film set on the moon Pandora? Give only the film title.",
+    "answer_format": "short answer",
+    "ground_truth_file": "HQ001.txt",
+    "type": "comparison",
+    "level": "extremely_hard",
+    "category": "comparison"
+  },
+  {
+    "id": "HQ002",
+    "source_id": null,
+    "text": "Which record label was founded first — the one that released Michael Jackson's Thriller, or the one that released The Beatles' Abbey Road? Give only the label name.",
+    "answer_format": "short answer",
+    "ground_truth_file": "HQ002.txt",
+    "type": "comparison",
+    "level": "extremely_hard",
+    "category": "comparison"
+  },
+  {
+    "id": "HQ003",
+    "source_id": null,
+    "text": "Who has won more FIFA World Cup titles — the Brazilian forward who scored the opening goal in the 1970 World Cup final, or the Argentine who captained his country to the 1986 World Cup title? Give only the name.",
+    "answer_format": "short answer",
+    "ground_truth_file": "HQ003.txt",
+    "type": "comparison",
+    "level": "extremely_hard",
+    "category": "comparison"
+  },
+  {
+    "id": "HQ004",
+    "source_id": null,
+    "text": "In what century was the birthplace of the director of the 1993 Spielberg film about the Holocaust founded as a city? Give only the century (e.g. 18th century).",
+    "answer_format": "short answer",
+    "ground_truth_file": "HQ004.txt",
+    "type": "bridge",
+    "level": "extremely_hard",
+    "category": "bridge"
+  },
+  {
+    "id": "HQ005",
+    "source_id": null,
+    "text": "What year was the debut album released by the previous band of the lead vocalist of Soundgarden? Give only the year.",
+    "answer_format": "short answer",
+    "ground_truth_file": "HQ005.txt",
+    "type": "bridge",
+    "level": "extremely_hard",
+    "category": "bridge"
+  },
+  {
+    "id": "HQ006",
+    "source_id": null,
+    "text": "What theorem is named after the doctoral advisor of the mathematician who first proved the unsolvability of the halting problem? Give only the theorem name.",
+    "answer_format": "short answer",
+    "ground_truth_file": "HQ006.txt",
+    "type": "bridge",
+    "level": "extremely_hard",
+    "category": "bridge"
+  },
+  {
+    "id": "HQ007",
+    "source_id": null,
+    "text": "How many years after William Shakespeare died was Ludwig van Beethoven born? Give only the number.",
+    "answer_format": "short answer",
+    "ground_truth_file": "HQ007.txt",
+    "type": "bridge",
+    "level": "extremely_hard",
+    "category": "arithmetic_chain"
+  },
+  {
+    "id": "HQ008",
+    "source_id": null,
+    "text": "Add the gap in years between the founding of Apple Inc. and Microsoft, to the gap between the founding of Google and Amazon. Give only the total number.",
+    "answer_format": "short answer",
+    "ground_truth_file": "HQ008.txt",
+    "type": "bridge",
+    "level": "extremely_hard",
+    "category": "arithmetic_chain"
+  },
+  {
+    "id": "HQ009",
+    "source_id": null,
+    "text": "What is the full official papal name, including regnal number if any, of the pope elected on 13 March 2013? Give only the name.",
+    "answer_format": "short answer",
+    "ground_truth_file": "HQ009.txt",
+    "type": "bridge",
+    "level": "extremely_hard",
+    "category": "formal_full_name"
+  },
+  {
+    "id": "HQ010",
+    "source_id": null,
+    "text": "Is Barcelona, Spain located to the north or south of Rome, Italy? Give only north or south.",
+    "answer_format": "short answer",
+    "ground_truth_file": "HQ010.txt",
+    "type": "comparison",
+    "level": "extremely_hard",
+    "category": "cardinal_direction"
+  },
+  {
+    "id": "HQ011",
+    "source_id": null,
+    "text": "What is the name of the river that flows through the capital city of the country that won the 2018 FIFA World Cup? Give only the river name.",
+    "answer_format": "short answer",
+    "ground_truth_file": "HQ011.txt",
+    "type": "bridge",
+    "level": "extremely_hard",
+    "category": "bridge"
+  },
+  {
+    "id": "HQ012",
+    "source_id": null,
+    "text": "What year was the city founded where the composer of The Four Seasons was born? Give only the year.",
+    "answer_format": "short answer",
+    "ground_truth_file": "HQ012.txt",
+    "type": "bridge",
+    "level": "extremely_hard",
+    "category": "bridge"
+  },
+  {
+    "id": "HQ013",
+    "source_id": null,
+    "text": "How many years after the French Revolution began did Napoleon Bonaparte die? Give only the number.",
+    "answer_format": "short answer",
+    "ground_truth_file": "HQ013.txt",
+    "type": "bridge",
+    "level": "extremely_hard",
+    "category": "arithmetic_chain"
+  },
+  {
+    "id": "HQ014",
+    "source_id": null,
+    "text": "What is the name of the physics rule that shares its name with the doctoral supervisor of the physicist who proposed the uncertainty principle? Give only the rule name.",
+    "answer_format": "short answer",
+    "ground_truth_file": "HQ014.txt",
+    "type": "bridge",
+    "level": "extremely_hard",
+    "category": "bridge"
+  },
+  {
+    "id": "HQ015",
+    "source_id": null,
+    "text": "Add the regnal number of the English king who ruled from 1509 to 1547 to the regnal number of the English king who ruled from 1760 to 1820. Give only the total.",
+    "answer_format": "short answer",
+    "ground_truth_file": "HQ015.txt",
+    "type": "comparison",
+    "level": "extremely_hard",
+    "category": "arithmetic_chain"
   }
 ]
