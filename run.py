@@ -179,8 +179,8 @@ def _progress(
     )
 
     bar = (
-        "█" * filled
-        + "░" * (30 - filled)
+        "#" * filled
+        + "-" * (30 - filled)
     )
 
     pct = int(
