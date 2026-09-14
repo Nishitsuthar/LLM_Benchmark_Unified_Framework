@@ -8,6 +8,7 @@ from unified_pipeline.evidence.csv_full_evidence import CsvFullEvidenceBuilder  
 from unified_pipeline.evidence.prose_evidence import ProseEvidenceBuilder        # Satwik
 from unified_pipeline.evidence.rag_evidence import RagEvidenceBuilder            # Nishit
 from unified_pipeline.evidence.hotpot_evidence import HotpotEvidenceBuilder      # Sushma
+from unified_pipeline.evidence.hotpot_sql_evidence import HotpotSqlEvidenceBuilder  # Sushma (sql detour)
 from unified_pipeline.evidence.visual_pdf_evidence import VisualPdfEvidenceBuilder  # Arpitha
 
 from unified_pipeline.evaluators.table_f1_evaluator import TableF1Evaluator      # Krittika
@@ -15,7 +16,7 @@ from unified_pipeline.evaluators.exact_match_evaluator import ExactMatchEvaluato
 from unified_pipeline.evaluators.span_f1_evaluator import SpanF1Evaluator        # Nishit
 from unified_pipeline.evaluators.hotpot_evaluator import HotpotEvaluator          # Sushma
 from unified_pipeline.evaluators.partial_credit_evaluator import PartialCreditEvaluator  # Arpitha
-from unified_pipeline.evaluators.sql_evaluator import SqlTableF1Evaluator         # sql_detour
+from unified_pipeline.evaluators.sql_scalar_evaluator import SqlScalarEvaluator   # Satwik (prose sql)
 
 
 EVIDENCE_BUILDERS = {
@@ -23,6 +24,7 @@ EVIDENCE_BUILDERS = {
     "prose_docs":     ProseEvidenceBuilder,
     "pdf_rag":        RagEvidenceBuilder,
     "hotpot_context": HotpotEvidenceBuilder,
+    "hotpot_sql":     HotpotSqlEvidenceBuilder,
     "pdf_visual":     VisualPdfEvidenceBuilder,
 }
 
@@ -33,7 +35,7 @@ EVALUATORS = {
     "span_f1":        SpanF1Evaluator,
     "hotpot_f1":      HotpotEvaluator,
     "partial_credit": PartialCreditEvaluator,
-    "sql_table_f1":   SqlTableF1Evaluator,
+    "sql_scalar_match": SqlScalarEvaluator,
 }
 
 
