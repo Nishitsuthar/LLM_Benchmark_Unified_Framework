@@ -41,7 +41,7 @@ results/*
 # HotpotQA raw dataset — large file (~51MB), download with:
 #   python ../hotpot-structured-benchmark/scripts/download_distractor.py
 #   cp ../hotpot-structured-benchmark/data/hotpot_validation_distractor.json evidence/hotpot/
-evidence/hotpot/hotpot_validation_distractor.json
+# evidence/hotpot/hotpot_validation_distractor.json  # 51MB — committed directly
 
 # Local reference and session continuity files (Claude Code)
 PROJECT_REFERENCE.md
