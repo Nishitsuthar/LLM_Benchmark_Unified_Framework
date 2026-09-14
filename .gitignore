@@ -38,9 +38,6 @@ results/*
 !results/gemini_flash/
 !results/nemotron/
 
-# Large binary data files — copy locally, do not commit
-data/
-
 # HotpotQA raw dataset — large file (~51MB), download with:
 #   python ../hotpot-structured-benchmark/scripts/download_distractor.py
 #   cp ../hotpot-structured-benchmark/data/hotpot_validation_distractor.json evidence/hotpot/
