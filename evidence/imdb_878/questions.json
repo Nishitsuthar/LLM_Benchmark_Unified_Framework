@@ -1,0 +1,360 @@
+[
+  {
+    "id": "T01",
+    "text": "Find the top 3 highest-rated movies for each genre, but only include movies that are exclusive to that genre and do not belong to any other genre.",
+    "answer_format": "CSV table with columns: genre, primaryTitle, averageRating",
+    "expected_columns": [
+      "genre",
+      "primaryTitle",
+      "averageRating"
+    ],
+    "ground_truth_file": "T01_sql_result.csv"
+  },
+  {
+    "id": "T02",
+    "text": "For each year, find movies whose runtime is above the average runtime of that year, then calculate the median runtime among those movies.",
+    "answer_format": "CSV table with columns: startYear, medianRuntime",
+    "expected_columns": [
+      "startYear",
+      "medianRuntime"
+    ],
+    "ground_truth_file": "T02_sql_result.csv"
+  },
+  {
+    "id": "T03",
+    "text": "Find actors who appeared across the widest range of genres and calculate their total number of votes across those movies.",
+    "answer_format": "CSV table with columns: primaryName, genre_count, total_votes",
+    "expected_columns": [
+      "primaryName",
+      "genre_count",
+      "total_votes"
+    ],
+    "ground_truth_file": "T03_sql_result.csv"
+  },
+  {
+    "id": "T04",
+    "text": "Compute the z-score of numVotes across all movies using population standard deviation. Remove statistical outliers where absolute z-score is greater than 2. On the cleaned set, for each genre, find the movie whose averageRating is closest to, but not equal to, the genre's trimmed mean rating. The trimmed mean should exclude the top 10% and bottom 10% of movies by averageRating within that genre. Return one movie per genre.",
+    "answer_format": "CSV table with columns: genre, primaryTitle, averageRating, trimmedMeanRating, ratingDistance",
+    "expected_columns": [
+      "genre",
+      "primaryTitle",
+      "averageRating",
+      "trimmedMeanRating",
+      "ratingDistance"
+    ],
+    "ground_truth_file": "T04_sql_result.csv"
+  },
+  {
+    "id": "T05",
+    "text": "Find actors who appear in the top 20 highest-rated movies of the first decade, 1996-2005, but not in the top 20 highest-rated movies of the second decade, 2006-2015, and vice versa. Only consider movies with at least 1000 votes. Return the two disjoint actor sets, along with each actor's average rating across the respective decade's top-20 movies in which they appear.",
+    "answer_format": "CSV table with columns: decade_group, primaryName, actorAverageRating",
+    "expected_columns": [
+      "decade_group",
+      "primaryName",
+      "actorAverageRating"
+    ],
+    "ground_truth_file": "T05_sql_result.csv"
+  },
+  {
+    "id": "T06",
+    "text": "For each genre, split the comma-separated genres field and report the number of movies and the average rating. Only include genres with at least 10 movies. Order the result by average rating descending.",
+    "answer_format": "CSV table with columns: genre, movie_count, averageRating",
+    "expected_columns": [
+      "genre",
+      "movie_count",
+      "averageRating"
+    ],
+    "ground_truth_file": "T06_sql_result.csv"
+  },
+  {
+    "id": "T07",
+    "text": "For each year from 2011 to 2015, find the single movie with the highest numVotes. Return year, title, and vote count.",
+    "answer_format": "CSV table with columns: startYear, primaryTitle, numVotes",
+    "expected_columns": [
+      "startYear",
+      "primaryTitle",
+      "numVotes"
+    ],
+    "ground_truth_file": "T07_sql_result.csv"
+  },
+  {
+    "id": "T08",
+    "text": "Find all Comedy movies whose averageRating is higher than the average rating of all Comedy movies combined. Return title, year, and rating, along with the comedy-wide average for reference.",
+    "answer_format": "CSV table with columns: primaryTitle, startYear, averageRating, comedyAverageRating",
+    "expected_columns": [
+      "primaryTitle",
+      "startYear",
+      "averageRating",
+      "comedyAverageRating"
+    ],
+    "ground_truth_file": "T08_sql_result.csv"
+  },
+  {
+    "id": "T09",
+    "text": "Parse the Cast_and_Crew field to find the 10 people credited as actor or actress in the most movies. Return their name and movie count.",
+    "answer_format": "CSV table with columns: primaryName, movie_count",
+    "expected_columns": [
+      "primaryName",
+      "movie_count"
+    ],
+    "ground_truth_file": "T09_sql_result.csv"
+  },
+  {
+    "id": "T10",
+    "text": "For each genre, split the comma-separated genres field and find the single movie with the longest runtime. Return genre, title, runtime in minutes, and release year.",
+    "answer_format": "CSV table with columns: genre, primaryTitle, runtimeMinutes, startYear",
+    "expected_columns": [
+      "genre",
+      "primaryTitle",
+      "runtimeMinutes",
+      "startYear"
+    ],
+    "ground_truth_file": "T10_sql_result.csv"
+  },
+  {
+    "id": "T11",
+    "text": "For each release year, find all movies whose numVotes exceed the average numVotes of that year. Return title, year, the movie's votes, and the year's average vote count for reference.",
+    "answer_format": "CSV table with columns: primaryTitle, startYear, numVotes, yearAverageVotes",
+    "expected_columns": [
+      "primaryTitle",
+      "startYear",
+      "numVotes",
+      "yearAverageVotes"
+    ],
+    "ground_truth_file": "T11_sql_result.csv"
+  },
+  {
+    "id": "T12",
+    "text": "Count how many movies share each pair of genres that co-occur within the same movie, such as Drama + Comedy. Return the top 10 genre pairs by co-occurrence count.",
+    "answer_format": "CSV table with columns: genre_1, genre_2, cooccurrence_count",
+    "expected_columns": [
+      "genre_1",
+      "genre_2",
+      "cooccurrence_count"
+    ],
+    "ground_truth_file": "T12_sql_result.csv"
+  },
+  {
+    "id": "T13",
+    "text": "Divide all movies into four equal-sized runtime quartiles, from Q1 shortest to Q4 longest, using the global runtime distribution. For each quartile, report the runtime range, movie count, and average rating.",
+    "answer_format": "CSV table with columns: runtimeQuartile, minRuntimeMinutes, maxRuntimeMinutes, movie_count, averageRating",
+    "expected_columns": [
+      "runtimeQuartile",
+      "minRuntimeMinutes",
+      "maxRuntimeMinutes",
+      "movie_count",
+      "averageRating"
+    ],
+    "ground_truth_file": "T13_sql_result.csv"
+  },
+  {
+    "id": "T14",
+    "text": "Parse the Cast_and_Crew field to identify everyone credited as producer. Find producers who worked on more than 3 distinct movies. Return their name and movie count, ordered by count descending.",
+    "answer_format": "CSV table with columns: primaryName, movie_count",
+    "expected_columns": [
+      "primaryName",
+      "movie_count"
+    ],
+    "ground_truth_file": "T14_sql_result.csv"
+  },
+  {
+    "id": "T15",
+    "text": "For each genre, compute the average and standard deviation of runtime. Return movies whose runtime is more than 1 standard deviation above their genre's average, along with their z-score.",
+    "answer_format": "CSV table with columns: genre, primaryTitle, runtimeMinutes, genreAverageRuntime, genreRuntimeStddev, runtimeZScore",
+    "expected_columns": [
+      "genre",
+      "primaryTitle",
+      "runtimeMinutes",
+      "genreAverageRuntime",
+      "genreRuntimeStddev",
+      "runtimeZScore"
+    ],
+    "ground_truth_file": "T15_sql_result.csv"
+  },
+  {
+    "id": "T16",
+    "text": "Separate movies where primaryTitle equals originalTitle from those where they differ. For each genre, compare average rating and average votes between these two groups.",
+    "answer_format": "CSV table with columns: genre, title_group, movie_count, averageRating, averageVotes",
+    "expected_columns": [
+      "genre",
+      "title_group",
+      "movie_count",
+      "averageRating",
+      "averageVotes"
+    ],
+    "ground_truth_file": "T16_sql_result.csv"
+  },
+  {
+    "id": "T17",
+    "text": "For each genre, identify the year where the number of movies released grew the most compared to the previous year. Return the genre, peak growth year, the prior-year count, the new count, and the absolute increase.",
+    "answer_format": "CSV table with columns: genre, peakGrowthYear, priorYearMovieCount, movie_count, absoluteIncrease",
+    "expected_columns": [
+      "genre",
+      "peakGrowthYear",
+      "priorYearMovieCount",
+      "movie_count",
+      "absoluteIncrease"
+    ],
+    "ground_truth_file": "T17_sql_result.csv"
+  },
+  {
+    "id": "T18",
+    "text": "Compute an engagement ratio, numVotes divided by averageRating, for each movie. For each genre, return the top 5 movies by this ratio, along with their rank within the genre.",
+    "answer_format": "CSV table with columns: genre, rank, primaryTitle, numVotes, averageRating, engagementRatio",
+    "expected_columns": [
+      "genre",
+      "rank",
+      "primaryTitle",
+      "numVotes",
+      "averageRating",
+      "engagementRatio"
+    ],
+    "ground_truth_file": "T18_sql_result.csv"
+  },
+  {
+    "id": "T19",
+    "text": "Parse writers from Cast_and_Crew. For each writer, count how many distinct genres they have written across all their movies. Return the top 10 writers by genre breadth, with the list of genres covered.",
+    "answer_format": "CSV table with columns: primaryName, genre_count, genres_covered",
+    "expected_columns": [
+      "primaryName",
+      "genre_count",
+      "genres_covered"
+    ],
+    "ground_truth_file": "T19_sql_result.csv"
+  },
+  {
+    "id": "T20",
+    "text": "Find movies whose averageRating exceeds both the average rating of all movies in their genre and the average rating of all movies released in their year, simultaneously. Return title, year, rating, genre average, and year average.",
+    "answer_format": "CSV table with columns: genre, primaryTitle, startYear, averageRating, genreAverageRating, yearAverageRating",
+    "expected_columns": [
+      "genre",
+      "primaryTitle",
+      "startYear",
+      "averageRating",
+      "genreAverageRating",
+      "yearAverageRating"
+    ],
+    "ground_truth_file": "T20_sql_result.csv"
+  },
+  {
+    "id": "T21",
+    "text": "Find people, in any role, who worked on at least one pure Comedy movie and at least one pure Drama movie, but have never worked on a movie that is simultaneously both Comedy and Drama.",
+    "answer_format": "CSV table with columns: primaryName",
+    "expected_columns": [
+      "primaryName"
+    ],
+    "ground_truth_file": "T21_sql_result.csv"
+  },
+  {
+    "id": "T22",
+    "text": "For each year, compute what share of that year's total genre-film credits each genre holds, counting one film with two genres once for each genre. Return genre-year pairs where the share exceeded 40%, with the share percentage.",
+    "answer_format": "CSV table with columns: startYear, genre, genreFilmCredits, totalYearGenreFilmCredits, sharePercentage",
+    "expected_columns": [
+      "startYear",
+      "genre",
+      "genreFilmCredits",
+      "totalYearGenreFilmCredits",
+      "sharePercentage"
+    ],
+    "ground_truth_file": "T22_sql_result.csv"
+  },
+  {
+    "id": "T23",
+    "text": "Find director-actor pairs who worked together on more than 1 movie. For each pair, report director name, actor name, number of shared films, and the average rating across their collaborations.",
+    "answer_format": "CSV table with columns: directorName, actorName, sharedFilmCount, averageRating",
+    "expected_columns": [
+      "directorName",
+      "actorName",
+      "sharedFilmCount",
+      "averageRating"
+    ],
+    "ground_truth_file": "T23_sql_result.csv"
+  },
+  {
+    "id": "T24",
+    "text": "For each genre, find the longest consecutive run of years where every year's average runtime exceeded the genre's all-time average runtime. Report the genre, streak start, streak end, and length.",
+    "answer_format": "CSV table with columns: genre, streakStartYear, streakEndYear, streakLength",
+    "expected_columns": [
+      "genre",
+      "streakStartYear",
+      "streakEndYear",
+      "streakLength"
+    ],
+    "ground_truth_file": "T24_sql_result.csv"
+  },
+  {
+    "id": "T25",
+    "text": "Among all movies rated above 8.0, compute the 25th percentile of numVotes within that group. Return movies that exceed the 8.0 rating threshold but fall below that 25th-percentile vote count, as candidates for unreliable high ratings.",
+    "answer_format": "CSV table with columns: primaryTitle, startYear, averageRating, numVotes, voteCount25thPercentile",
+    "expected_columns": [
+      "primaryTitle",
+      "startYear",
+      "averageRating",
+      "numVotes",
+      "voteCount25thPercentile"
+    ],
+    "ground_truth_file": "T25_sql_result.csv"
+  },
+  {
+    "id": "T26",
+    "text": "Identify movies where at least one person is credited as both writer and director in the same film. Compare the average rating of writer-director movies against movies where no person holds both roles.",
+    "answer_format": "CSV table with columns: role_group, movie_count, averageRating",
+    "expected_columns": [
+      "role_group",
+      "movie_count",
+      "averageRating"
+    ],
+    "ground_truth_file": "T26_sql_result.csv"
+  },
+  {
+    "id": "T27",
+    "text": "For each genre-year combination with at least 5 movies, compute the standard deviation of averageRating as a polarization measure. Return the 3 most polarized and 3 least polarized genre-year pairs.",
+    "answer_format": "CSV table with columns: polarization_group, genre, startYear, movie_count, ratingStddev",
+    "expected_columns": [
+      "polarization_group",
+      "genre",
+      "startYear",
+      "movie_count",
+      "ratingStddev"
+    ],
+    "ground_truth_file": "T27_sql_result.csv"
+  },
+  {
+    "id": "T28",
+    "text": "Find movies that rank in the top 20% by numVotes within their genre, yet fall in the bottom 30% of averageRating globally. These films are widely seen but poorly received.",
+    "answer_format": "CSV table with columns: genre, primaryTitle, averageRating, numVotes, genreVote80thPercentile, globalRating30thPercentile",
+    "expected_columns": [
+      "genre",
+      "primaryTitle",
+      "averageRating",
+      "numVotes",
+      "genreVote80thPercentile",
+      "globalRating30thPercentile"
+    ],
+    "ground_truth_file": "T28_sql_result.csv"
+  },
+  {
+    "id": "T29",
+    "text": "For every producer-director pair who collaborated on at least 2 movies, count how many distinct genres their shared work spans. Return the top 5 pairs by genre versatility, with their shared movie count.",
+    "answer_format": "CSV table with columns: producerName, directorName, sharedMovieCount, genre_count",
+    "expected_columns": [
+      "producerName",
+      "directorName",
+      "sharedMovieCount",
+      "genre_count"
+    ],
+    "ground_truth_file": "T29_sql_result.csv"
+  },
+  {
+    "id": "T30",
+    "text": "For movies released before 2008, label each movie as relevant if its numVotes exceeds the median numVotes of all movies from its release year. Then compute, for each genre, what percentage of movies in that genre carry the relevant label.",
+    "answer_format": "CSV table with columns: genre, movie_count, relevant_movie_count, relevancePercentage",
+    "expected_columns": [
+      "genre",
+      "movie_count",
+      "relevant_movie_count",
+      "relevancePercentage"
+    ],
+    "ground_truth_file": "T30_sql_result.csv"
+  }
+]

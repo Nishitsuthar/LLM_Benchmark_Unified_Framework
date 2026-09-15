@@ -1,0 +1,946 @@
+[
+  {
+    "id": "T01",
+    "text": "What is the total number of streams accumulated by Kaven Sornwick across all platforms?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T01.txt",
+    "expected_columns": [],
+    "doc_file": "artist_028_kaven_sornwick.txt"
+  },
+  {
+    "id": "T02",
+    "text": "Which track by Kaven Sornwick has the highest total stream count, and what is that count?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T02.txt",
+    "expected_columns": [],
+    "doc_file": "artist_028_kaven_sornwick.txt"
+  },
+  {
+    "id": "T03",
+    "text": "What are the total royalty earnings for Kaven Sornwick across all recorded periods?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T03.txt",
+    "expected_columns": [],
+    "doc_file": "artist_028_kaven_sornwick.txt"
+  },
+  {
+    "id": "T04",
+    "text": "How many total weeks has Kaven Sornwick spent on music charts across all chart entries?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T04.txt",
+    "expected_columns": [],
+    "doc_file": "artist_028_kaven_sornwick.txt"
+  },
+  {
+    "id": "T05",
+    "text": "What is the average energy score across all 58 tracks by Kaven Sornwick?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T05.txt",
+    "expected_columns": [],
+    "doc_file": "artist_028_kaven_sornwick.txt"
+  },
+  {
+    "id": "T06",
+    "text": "How many of Kaven Sornwick's 58 tracks have an energy score above 0.75?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T06.txt",
+    "expected_columns": [],
+    "doc_file": "artist_028_kaven_sornwick.txt"
+  },
+  {
+    "id": "T07",
+    "text": "What percentage of Kaven Sornwick's total streams came from their single most-streamed track 'Bleeding Under Current'?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T07.txt",
+    "expected_columns": [],
+    "doc_file": "artist_028_kaven_sornwick.txt"
+  },
+  {
+    "id": "T08",
+    "text": "What is the median energy score across all 58 tracks by Kaven Sornwick?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T08.txt",
+    "expected_columns": [],
+    "doc_file": "artist_028_kaven_sornwick.txt"
+  },
+  {
+    "id": "T09",
+    "text": "How many of Kaven Sornwick's tracks have a total stream count above the artist's own average stream count per track?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T09.txt",
+    "expected_columns": [],
+    "doc_file": "artist_028_kaven_sornwick.txt"
+  },
+  {
+    "id": "T10",
+    "text": "Which album by Kaven Sornwick has the highest total stream count across all its tracks, and what is that total?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T10.txt",
+    "expected_columns": [],
+    "doc_file": "artist_028_kaven_sornwick.txt"
+  },
+  {
+    "id": "T11",
+    "text": "What is the total number of streams accumulated by Zindra Quelfield across all platforms?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T11.txt",
+    "expected_columns": [],
+    "doc_file": "artist_089_zindra_quelfield.txt"
+  },
+  {
+    "id": "T12",
+    "text": "Which track by Zindra Quelfield has the highest total stream count, and what is that count?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T12.txt",
+    "expected_columns": [],
+    "doc_file": "artist_089_zindra_quelfield.txt"
+  },
+  {
+    "id": "T13",
+    "text": "What are the total royalty earnings for Zindra Quelfield across all recorded periods?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T13.txt",
+    "expected_columns": [],
+    "doc_file": "artist_089_zindra_quelfield.txt"
+  },
+  {
+    "id": "T14",
+    "text": "How many total weeks has Zindra Quelfield spent on music charts across all chart entries?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T14.txt",
+    "expected_columns": [],
+    "doc_file": "artist_089_zindra_quelfield.txt"
+  },
+  {
+    "id": "T15",
+    "text": "What is the average energy score across all 60 tracks by Zindra Quelfield?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T15.txt",
+    "expected_columns": [],
+    "doc_file": "artist_089_zindra_quelfield.txt"
+  },
+  {
+    "id": "T16",
+    "text": "How many of Zindra Quelfield's 60 tracks have an energy score above 0.75?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T16.txt",
+    "expected_columns": [],
+    "doc_file": "artist_089_zindra_quelfield.txt"
+  },
+  {
+    "id": "T17",
+    "text": "What percentage of Zindra Quelfield's total streams came from their single most-streamed track 'Crimson Salt'?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T17.txt",
+    "expected_columns": [],
+    "doc_file": "artist_089_zindra_quelfield.txt"
+  },
+  {
+    "id": "T18",
+    "text": "What is the median energy score across all 60 tracks by Zindra Quelfield?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T18.txt",
+    "expected_columns": [],
+    "doc_file": "artist_089_zindra_quelfield.txt"
+  },
+  {
+    "id": "T19",
+    "text": "How many of Zindra Quelfield's tracks have a total stream count above the artist's own average stream count per track?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T19.txt",
+    "expected_columns": [],
+    "doc_file": "artist_089_zindra_quelfield.txt"
+  },
+  {
+    "id": "T20",
+    "text": "Which album by Zindra Quelfield has the highest total stream count across all its tracks, and what is that total?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T20.txt",
+    "expected_columns": [],
+    "doc_file": "artist_089_zindra_quelfield.txt"
+  },
+  {
+    "id": "T21",
+    "text": "What is the total number of streams accumulated by Quelvin Bresken across all platforms?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T21.txt",
+    "expected_columns": [],
+    "doc_file": "artist_103_quelvin_bresken.txt"
+  },
+  {
+    "id": "T22",
+    "text": "Which track by Quelvin Bresken has the highest total stream count, and what is that count?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T22.txt",
+    "expected_columns": [],
+    "doc_file": "artist_103_quelvin_bresken.txt"
+  },
+  {
+    "id": "T23",
+    "text": "What are the total royalty earnings for Quelvin Bresken across all recorded periods?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T23.txt",
+    "expected_columns": [],
+    "doc_file": "artist_103_quelvin_bresken.txt"
+  },
+  {
+    "id": "T24",
+    "text": "How many total weeks has Quelvin Bresken spent on music charts across all chart entries?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T24.txt",
+    "expected_columns": [],
+    "doc_file": "artist_103_quelvin_bresken.txt"
+  },
+  {
+    "id": "T25",
+    "text": "What is the average energy score across all 42 tracks by Quelvin Bresken?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T25.txt",
+    "expected_columns": [],
+    "doc_file": "artist_103_quelvin_bresken.txt"
+  },
+  {
+    "id": "T26",
+    "text": "How many of Quelvin Bresken's 42 tracks have an energy score above 0.75?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T26.txt",
+    "expected_columns": [],
+    "doc_file": "artist_103_quelvin_bresken.txt"
+  },
+  {
+    "id": "T27",
+    "text": "What percentage of Quelvin Bresken's total streams came from their single most-streamed track 'Echoing Time'?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T27.txt",
+    "expected_columns": [],
+    "doc_file": "artist_103_quelvin_bresken.txt"
+  },
+  {
+    "id": "T28",
+    "text": "What is the median energy score across all 42 tracks by Quelvin Bresken?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T28.txt",
+    "expected_columns": [],
+    "doc_file": "artist_103_quelvin_bresken.txt"
+  },
+  {
+    "id": "T29",
+    "text": "How many of Quelvin Bresken's tracks have a total stream count above the artist's own average stream count per track?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T29.txt",
+    "expected_columns": [],
+    "doc_file": "artist_103_quelvin_bresken.txt"
+  },
+  {
+    "id": "T30",
+    "text": "Which album by Quelvin Bresken has the highest total stream count across all its tracks, and what is that total?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T30.txt",
+    "expected_columns": [],
+    "doc_file": "artist_103_quelvin_bresken.txt"
+  },
+  {
+    "id": "T31",
+    "text": "What is the total number of streams accumulated by Elsten Quelfield across all platforms?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T31.txt",
+    "expected_columns": [],
+    "doc_file": "artist_116_elsten_quelfield.txt"
+  },
+  {
+    "id": "T32",
+    "text": "Which track by Elsten Quelfield has the highest total stream count, and what is that count?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T32.txt",
+    "expected_columns": [],
+    "doc_file": "artist_116_elsten_quelfield.txt"
+  },
+  {
+    "id": "T33",
+    "text": "What are the total royalty earnings for Elsten Quelfield across all recorded periods?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T33.txt",
+    "expected_columns": [],
+    "doc_file": "artist_116_elsten_quelfield.txt"
+  },
+  {
+    "id": "T34",
+    "text": "How many total weeks has Elsten Quelfield spent on music charts across all chart entries?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T34.txt",
+    "expected_columns": [],
+    "doc_file": "artist_116_elsten_quelfield.txt"
+  },
+  {
+    "id": "T35",
+    "text": "What is the average energy score across all 50 tracks by Elsten Quelfield?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T35.txt",
+    "expected_columns": [],
+    "doc_file": "artist_116_elsten_quelfield.txt"
+  },
+  {
+    "id": "T36",
+    "text": "How many of Elsten Quelfield's 50 tracks have an energy score above 0.75?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T36.txt",
+    "expected_columns": [],
+    "doc_file": "artist_116_elsten_quelfield.txt"
+  },
+  {
+    "id": "T37",
+    "text": "What percentage of Elsten Quelfield's total streams came from their single most-streamed track 'Reaching Without Orbit'?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T37.txt",
+    "expected_columns": [],
+    "doc_file": "artist_116_elsten_quelfield.txt"
+  },
+  {
+    "id": "T38",
+    "text": "What is the median energy score across all 50 tracks by Elsten Quelfield?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T38.txt",
+    "expected_columns": [],
+    "doc_file": "artist_116_elsten_quelfield.txt"
+  },
+  {
+    "id": "T39",
+    "text": "How many of Elsten Quelfield's tracks have a total stream count above the artist's own average stream count per track?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T39.txt",
+    "expected_columns": [],
+    "doc_file": "artist_116_elsten_quelfield.txt"
+  },
+  {
+    "id": "T40",
+    "text": "Which album by Elsten Quelfield has the highest total stream count across all its tracks, and what is that total?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T40.txt",
+    "expected_columns": [],
+    "doc_file": "artist_116_elsten_quelfield.txt"
+  },
+  {
+    "id": "T41",
+    "text": "What is the total number of streams accumulated by Pelion Stelwick across all platforms?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T41.txt",
+    "expected_columns": [],
+    "doc_file": "artist_182_pelion_stelwick.txt"
+  },
+  {
+    "id": "T42",
+    "text": "Which track by Pelion Stelwick has the highest total stream count, and what is that count?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T42.txt",
+    "expected_columns": [],
+    "doc_file": "artist_182_pelion_stelwick.txt"
+  },
+  {
+    "id": "T43",
+    "text": "What are the total royalty earnings for Pelion Stelwick across all recorded periods?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T43.txt",
+    "expected_columns": [],
+    "doc_file": "artist_182_pelion_stelwick.txt"
+  },
+  {
+    "id": "T44",
+    "text": "How many total weeks has Pelion Stelwick spent on music charts across all chart entries?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T44.txt",
+    "expected_columns": [],
+    "doc_file": "artist_182_pelion_stelwick.txt"
+  },
+  {
+    "id": "T45",
+    "text": "What is the average energy score across all 56 tracks by Pelion Stelwick?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T45.txt",
+    "expected_columns": [],
+    "doc_file": "artist_182_pelion_stelwick.txt"
+  },
+  {
+    "id": "T46",
+    "text": "How many of Pelion Stelwick's 56 tracks have an energy score above 0.75?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T46.txt",
+    "expected_columns": [],
+    "doc_file": "artist_182_pelion_stelwick.txt"
+  },
+  {
+    "id": "T47",
+    "text": "What percentage of Pelion Stelwick's total streams came from their single most-streamed track 'Trembling Snow'?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T47.txt",
+    "expected_columns": [],
+    "doc_file": "artist_182_pelion_stelwick.txt"
+  },
+  {
+    "id": "T48",
+    "text": "What is the median energy score across all 56 tracks by Pelion Stelwick?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T48.txt",
+    "expected_columns": [],
+    "doc_file": "artist_182_pelion_stelwick.txt"
+  },
+  {
+    "id": "T49",
+    "text": "How many of Pelion Stelwick's tracks have a total stream count above the artist's own average stream count per track?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T49.txt",
+    "expected_columns": [],
+    "doc_file": "artist_182_pelion_stelwick.txt"
+  },
+  {
+    "id": "T50",
+    "text": "Which album by Pelion Stelwick has the highest total stream count across all its tracks, and what is that total?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T50.txt",
+    "expected_columns": [],
+    "doc_file": "artist_182_pelion_stelwick.txt"
+  },
+  {
+    "id": "T51",
+    "text": "What is the total number of streams accumulated by Pyrex Wyndorn across all platforms?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T51.txt",
+    "expected_columns": [],
+    "doc_file": "artist_110_pyrex_wyndorn.txt"
+  },
+  {
+    "id": "T52",
+    "text": "Which track by Pyrex Wyndorn has the highest total stream count, and what is that count?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T52.txt",
+    "expected_columns": [],
+    "doc_file": "artist_110_pyrex_wyndorn.txt"
+  },
+  {
+    "id": "T53",
+    "text": "What are the total royalty earnings for Pyrex Wyndorn across all recorded periods?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T53.txt",
+    "expected_columns": [],
+    "doc_file": "artist_110_pyrex_wyndorn.txt"
+  },
+  {
+    "id": "T54",
+    "text": "How many total weeks has Pyrex Wyndorn spent on music charts across all chart entries?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T54.txt",
+    "expected_columns": [],
+    "doc_file": "artist_110_pyrex_wyndorn.txt"
+  },
+  {
+    "id": "T55",
+    "text": "What is the average energy score across all 81 tracks by Pyrex Wyndorn?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T55.txt",
+    "expected_columns": [],
+    "doc_file": "artist_110_pyrex_wyndorn.txt"
+  },
+  {
+    "id": "T56",
+    "text": "How many of Pyrex Wyndorn's 81 tracks have an energy score above 0.75?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T56.txt",
+    "expected_columns": [],
+    "doc_file": "artist_110_pyrex_wyndorn.txt"
+  },
+  {
+    "id": "T57",
+    "text": "What percentage of Pyrex Wyndorn's total streams came from their single most-streamed track 'Never Waiting'?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T57.txt",
+    "expected_columns": [],
+    "doc_file": "artist_110_pyrex_wyndorn.txt"
+  },
+  {
+    "id": "T58",
+    "text": "What is the median energy score across all 81 tracks by Pyrex Wyndorn?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T58.txt",
+    "expected_columns": [],
+    "doc_file": "artist_110_pyrex_wyndorn.txt"
+  },
+  {
+    "id": "T59",
+    "text": "How many of Pyrex Wyndorn's tracks have a total stream count above the artist's own average stream count per track?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T59.txt",
+    "expected_columns": [],
+    "doc_file": "artist_110_pyrex_wyndorn.txt"
+  },
+  {
+    "id": "T60",
+    "text": "Which album by Pyrex Wyndorn has the highest total stream count across all its tracks, and what is that total?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T60.txt",
+    "expected_columns": [],
+    "doc_file": "artist_110_pyrex_wyndorn.txt"
+  },
+  {
+    "id": "T61",
+    "text": "What is the total number of streams accumulated by Boravel Morvon across all platforms?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T61.txt",
+    "expected_columns": [],
+    "doc_file": "artist_007_boravel_morvon.txt"
+  },
+  {
+    "id": "T62",
+    "text": "Which track by Boravel Morvon has the highest total stream count, and what is that count?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T62.txt",
+    "expected_columns": [],
+    "doc_file": "artist_007_boravel_morvon.txt"
+  },
+  {
+    "id": "T63",
+    "text": "What are the total royalty earnings for Boravel Morvon across all recorded periods?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T63.txt",
+    "expected_columns": [],
+    "doc_file": "artist_007_boravel_morvon.txt"
+  },
+  {
+    "id": "T64",
+    "text": "How many total weeks has Boravel Morvon spent on music charts across all chart entries?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T64.txt",
+    "expected_columns": [],
+    "doc_file": "artist_007_boravel_morvon.txt"
+  },
+  {
+    "id": "T65",
+    "text": "What is the average energy score across all 46 tracks by Boravel Morvon?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T65.txt",
+    "expected_columns": [],
+    "doc_file": "artist_007_boravel_morvon.txt"
+  },
+  {
+    "id": "T66",
+    "text": "How many of Boravel Morvon's 46 tracks have an energy score above 0.75?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T66.txt",
+    "expected_columns": [],
+    "doc_file": "artist_007_boravel_morvon.txt"
+  },
+  {
+    "id": "T67",
+    "text": "What percentage of Boravel Morvon's total streams came from their single most-streamed track 'Never Chasing'?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T67.txt",
+    "expected_columns": [],
+    "doc_file": "artist_007_boravel_morvon.txt"
+  },
+  {
+    "id": "T68",
+    "text": "What is the median energy score across all 46 tracks by Boravel Morvon?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T68.txt",
+    "expected_columns": [],
+    "doc_file": "artist_007_boravel_morvon.txt"
+  },
+  {
+    "id": "T69",
+    "text": "How many of Boravel Morvon's tracks have a total stream count above the artist's own average stream count per track?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T69.txt",
+    "expected_columns": [],
+    "doc_file": "artist_007_boravel_morvon.txt"
+  },
+  {
+    "id": "T70",
+    "text": "Which album by Boravel Morvon has the highest total stream count across all its tracks, and what is that total?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T70.txt",
+    "expected_columns": [],
+    "doc_file": "artist_007_boravel_morvon.txt"
+  },
+  {
+    "id": "T71",
+    "text": "What is the total number of streams accumulated by Zella Quelborn across all platforms?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T71.txt",
+    "expected_columns": [],
+    "doc_file": "artist_196_zella_quelborn.txt"
+  },
+  {
+    "id": "T72",
+    "text": "Which track by Zella Quelborn has the highest total stream count, and what is that count?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T72.txt",
+    "expected_columns": [],
+    "doc_file": "artist_196_zella_quelborn.txt"
+  },
+  {
+    "id": "T73",
+    "text": "What are the total royalty earnings for Zella Quelborn across all recorded periods?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T73.txt",
+    "expected_columns": [],
+    "doc_file": "artist_196_zella_quelborn.txt"
+  },
+  {
+    "id": "T74",
+    "text": "How many total weeks has Zella Quelborn spent on music charts across all chart entries?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T74.txt",
+    "expected_columns": [],
+    "doc_file": "artist_196_zella_quelborn.txt"
+  },
+  {
+    "id": "T75",
+    "text": "What is the average energy score across all 55 tracks by Zella Quelborn?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T75.txt",
+    "expected_columns": [],
+    "doc_file": "artist_196_zella_quelborn.txt"
+  },
+  {
+    "id": "T76",
+    "text": "How many of Zella Quelborn's 55 tracks have an energy score above 0.75?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T76.txt",
+    "expected_columns": [],
+    "doc_file": "artist_196_zella_quelborn.txt"
+  },
+  {
+    "id": "T77",
+    "text": "What percentage of Zella Quelborn's total streams came from their single most-streamed track 'Without the Circuit'?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T77.txt",
+    "expected_columns": [],
+    "doc_file": "artist_196_zella_quelborn.txt"
+  },
+  {
+    "id": "T78",
+    "text": "What is the median energy score across all 55 tracks by Zella Quelborn?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T78.txt",
+    "expected_columns": [],
+    "doc_file": "artist_196_zella_quelborn.txt"
+  },
+  {
+    "id": "T79",
+    "text": "How many of Zella Quelborn's tracks have a total stream count above the artist's own average stream count per track?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T79.txt",
+    "expected_columns": [],
+    "doc_file": "artist_196_zella_quelborn.txt"
+  },
+  {
+    "id": "T80",
+    "text": "Which album by Zella Quelborn has the highest total stream count across all its tracks, and what is that total?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T80.txt",
+    "expected_columns": [],
+    "doc_file": "artist_196_zella_quelborn.txt"
+  },
+  {
+    "id": "T81",
+    "text": "What is the total number of streams accumulated by Zareth Tanver across all platforms?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T81.txt",
+    "expected_columns": [],
+    "doc_file": "artist_149_zareth_tanver.txt"
+  },
+  {
+    "id": "T82",
+    "text": "Which track by Zareth Tanver has the highest total stream count, and what is that count?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T82.txt",
+    "expected_columns": [],
+    "doc_file": "artist_149_zareth_tanver.txt"
+  },
+  {
+    "id": "T83",
+    "text": "What are the total royalty earnings for Zareth Tanver across all recorded periods?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T83.txt",
+    "expected_columns": [],
+    "doc_file": "artist_149_zareth_tanver.txt"
+  },
+  {
+    "id": "T84",
+    "text": "How many total weeks has Zareth Tanver spent on music charts across all chart entries?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T84.txt",
+    "expected_columns": [],
+    "doc_file": "artist_149_zareth_tanver.txt"
+  },
+  {
+    "id": "T85",
+    "text": "What is the average energy score across all 56 tracks by Zareth Tanver?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T85.txt",
+    "expected_columns": [],
+    "doc_file": "artist_149_zareth_tanver.txt"
+  },
+  {
+    "id": "T86",
+    "text": "How many of Zareth Tanver's 56 tracks have an energy score above 0.75?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T86.txt",
+    "expected_columns": [],
+    "doc_file": "artist_149_zareth_tanver.txt"
+  },
+  {
+    "id": "T87",
+    "text": "What percentage of Zareth Tanver's total streams came from their single most-streamed track 'Never Sinking'?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T87.txt",
+    "expected_columns": [],
+    "doc_file": "artist_149_zareth_tanver.txt"
+  },
+  {
+    "id": "T88",
+    "text": "What is the median energy score across all 56 tracks by Zareth Tanver?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T88.txt",
+    "expected_columns": [],
+    "doc_file": "artist_149_zareth_tanver.txt"
+  },
+  {
+    "id": "T89",
+    "text": "How many of Zareth Tanver's tracks have a total stream count above the artist's own average stream count per track?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T89.txt",
+    "expected_columns": [],
+    "doc_file": "artist_149_zareth_tanver.txt"
+  },
+  {
+    "id": "T90",
+    "text": "Which album by Zareth Tanver has the highest total stream count across all its tracks, and what is that total?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T90.txt",
+    "expected_columns": [],
+    "doc_file": "artist_149_zareth_tanver.txt"
+  },
+  {
+    "id": "T91",
+    "text": "What is the total number of streams accumulated by Harfen Sornwick across all platforms?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T91.txt",
+    "expected_columns": [],
+    "doc_file": "artist_009_harfen_sornwick.txt"
+  },
+  {
+    "id": "T92",
+    "text": "Which track by Harfen Sornwick has the highest total stream count, and what is that count?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T92.txt",
+    "expected_columns": [],
+    "doc_file": "artist_009_harfen_sornwick.txt"
+  },
+  {
+    "id": "T93",
+    "text": "What are the total royalty earnings for Harfen Sornwick across all recorded periods?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T93.txt",
+    "expected_columns": [],
+    "doc_file": "artist_009_harfen_sornwick.txt"
+  },
+  {
+    "id": "T94",
+    "text": "How many total weeks has Harfen Sornwick spent on music charts across all chart entries?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T94.txt",
+    "expected_columns": [],
+    "doc_file": "artist_009_harfen_sornwick.txt"
+  },
+  {
+    "id": "T95",
+    "text": "What is the average energy score across all 77 tracks by Harfen Sornwick?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T95.txt",
+    "expected_columns": [],
+    "doc_file": "artist_009_harfen_sornwick.txt"
+  },
+  {
+    "id": "T96",
+    "text": "How many of Harfen Sornwick's 77 tracks have an energy score above 0.75?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T96.txt",
+    "expected_columns": [],
+    "doc_file": "artist_009_harfen_sornwick.txt"
+  },
+  {
+    "id": "T97",
+    "text": "What percentage of Harfen Sornwick's total streams came from their single most-streamed track 'Waiting Current'?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T97.txt",
+    "expected_columns": [],
+    "doc_file": "artist_009_harfen_sornwick.txt"
+  },
+  {
+    "id": "T98",
+    "text": "What is the median energy score across all 77 tracks by Harfen Sornwick?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T98.txt",
+    "expected_columns": [],
+    "doc_file": "artist_009_harfen_sornwick.txt"
+  },
+  {
+    "id": "T99",
+    "text": "How many of Harfen Sornwick's tracks have a total stream count above the artist's own average stream count per track?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T99.txt",
+    "expected_columns": [],
+    "doc_file": "artist_009_harfen_sornwick.txt"
+  },
+  {
+    "id": "T100",
+    "text": "Which album by Harfen Sornwick has the highest total stream count across all its tracks, and what is that total?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T100.txt",
+    "expected_columns": [],
+    "doc_file": "artist_009_harfen_sornwick.txt"
+  },
+  {
+    "id": "T101",
+    "text": "Between Zindra Quelfield and Pyrex Wyndorn - both Country artists in the dataset - which one has accumulated more total streams across all platforms?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T101.txt",
+    "expected_columns": [],
+    "doc_file": ""
+  },
+  {
+    "id": "T102",
+    "text": "Between Zindra Quelfield and Pyrex Wyndorn - both Country artists - which one has earned more in total royalties?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T102.txt",
+    "expected_columns": [],
+    "doc_file": ""
+  },
+  {
+    "id": "T103",
+    "text": "Between Quelvin Bresken and Elsten Quelfield - both Folk artists in the dataset - which one has accumulated more total streams across all platforms?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T103.txt",
+    "expected_columns": [],
+    "doc_file": ""
+  },
+  {
+    "id": "T104",
+    "text": "Between Quelvin Bresken and Elsten Quelfield - both Folk artists - which one has earned more in total royalties?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T104.txt",
+    "expected_columns": [],
+    "doc_file": ""
+  },
+  {
+    "id": "T105",
+    "text": "Between Zareth Tanver and Harfen Sornwick - both Pop artists in the dataset - which one has accumulated more total streams across all platforms?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T105.txt",
+    "expected_columns": [],
+    "doc_file": ""
+  },
+  {
+    "id": "T106",
+    "text": "Between Zareth Tanver and Harfen Sornwick - both Pop artists - which one has earned more in total royalties?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T106.txt",
+    "expected_columns": [],
+    "doc_file": ""
+  },
+  {
+    "id": "T107",
+    "text": "Between Boravel Morvon and Zella Quelborn - both R&B artists in the dataset - which one has accumulated more total streams across all platforms?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T107.txt",
+    "expected_columns": [],
+    "doc_file": ""
+  },
+  {
+    "id": "T108",
+    "text": "Between Boravel Morvon and Zella Quelborn - both R&B artists - which one has earned more in total royalties?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T108.txt",
+    "expected_columns": [],
+    "doc_file": ""
+  },
+  {
+    "id": "T109",
+    "text": "Among all 10 artists in the dataset, which one has spent the most total weeks on music charts?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T109.txt",
+    "expected_columns": [],
+    "doc_file": ""
+  },
+  {
+    "id": "T110",
+    "text": "Across all 10 artists in the dataset, which single track has the highest total stream count?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T110.txt",
+    "expected_columns": [],
+    "doc_file": ""
+  },
+  {
+    "id": "T111",
+    "text": "How many of the 10 artists in the dataset have zero chart entries?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T111.txt",
+    "expected_columns": [],
+    "doc_file": ""
+  },
+  {
+    "id": "T112",
+    "text": "Among all 10 artists, which one has the highest ratio of total royalty earnings to total streams (royalties earned per stream)?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T112.txt",
+    "expected_columns": [],
+    "doc_file": ""
+  },
+  {
+    "id": "T113",
+    "text": "Among all 10 artists, which one has the highest average energy score across all their tracks?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T113.txt",
+    "expected_columns": [],
+    "doc_file": ""
+  },
+  {
+    "id": "T114",
+    "text": "Among all 10 artists, which one has the lowest average energy score across all their tracks?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T114.txt",
+    "expected_columns": [],
+    "doc_file": ""
+  },
+  {
+    "id": "T115",
+    "text": "Across all 10 artists combined, which streaming platform has the highest total stream count?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T115.txt",
+    "expected_columns": [],
+    "doc_file": ""
+  },
+  {
+    "id": "T116",
+    "text": "Among all 10 artists, which one has the most total streams overall, and which platform accounts for the most streams for that artist?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T116.txt",
+    "expected_columns": [],
+    "doc_file": ""
+  },
+  {
+    "id": "T117",
+    "text": "Among the top 3 artists by total streams, which one has the fewest chart entries — and how many chart entries do they have?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T117.txt",
+    "expected_columns": [],
+    "doc_file": ""
+  },
+  {
+    "id": "T118",
+    "text": "What is the total number of tracks released by all 10 artists combined?",
+    "answer_format": "a concise answer",
+    "ground_truth_file": "T118.txt",
+    "expected_columns": [],
+    "doc_file": ""
+  }
+]

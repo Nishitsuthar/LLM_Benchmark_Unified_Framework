@@ -1,0 +1,9 @@
+name: f1_racing
+description: "F1 Racing — 255 questions over 17 race report documents (Satwik)"
+
+evidence_type: prose_docs
+eval_strategy: exact_match
+
+evidence_path: evidence/f1_racing/
+questions_file: evidence/f1_racing/questions.json
+ground_truth_dir: ground_truth/f1_racing/

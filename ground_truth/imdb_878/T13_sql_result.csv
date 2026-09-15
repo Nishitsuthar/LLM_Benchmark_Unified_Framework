@@ -1,0 +1,5 @@
+"quartile","min_runtime","max_runtime","movie_count","avg_rating"
+1,60,90,220,6.186
+2,90,95,220,5.655
+3,95,107,219,6.155
+4,107,200,219,6.860

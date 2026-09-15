@@ -1,0 +1,9 @@
+name: music
+description: "Music — 118 questions over 250 artist documents (Satwik)"
+
+evidence_type: prose_docs
+eval_strategy: exact_match
+
+evidence_path: evidence/music/
+questions_file: evidence/music/questions.json
+ground_truth_dir: ground_truth/music/

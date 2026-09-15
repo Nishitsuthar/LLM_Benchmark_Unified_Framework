@@ -621,6 +621,27 @@ class ModelRouter:
             True,
             "valid",
         )
+    
+    @staticmethod
+    def build_sql_schema(subset_df: pd.DataFrame) -> str:
+        with sqlite3.connect(":memory:") as conn:
+            subset_df.to_sql(
+                SQL_TABLE_NAME,
+                conn,
+                index=False,
+                if_exists="replace",
+            )
+
+            rows = conn.execute(
+                f'PRAGMA table_info("{SQL_TABLE_NAME}")'
+            ).fetchall()
+
+        columns = "\n".join(
+            f"{row[1]} {row[2]}"
+            for row in rows
+        )
+
+        return f"Table: {SQL_TABLE_NAME}\nColumns:\n{columns}"
 
     @staticmethod
     def execute_sql(

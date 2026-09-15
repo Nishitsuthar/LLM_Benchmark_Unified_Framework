@@ -20,6 +20,7 @@ import json
 import sys
 import time
 from pathlib import Path
+import pandas as pd
 
 import yaml
 
@@ -47,13 +48,6 @@ def parse_args() -> argparse.Namespace:
         "--model",
         required=True,
         help="Model alias or raw provider model ID",
-    )
-
-    parser.add_argument(
-        "--mode",
-        default="llm_only",
-        choices=["llm_only", "sql_detour"],
-        help="Experiment mode",
     )
 
     parser.add_argument(
@@ -89,35 +83,19 @@ def load_questions(questions_file: str) -> list[dict]:
 
 def discover_prompts(
     dataset: str,
-    mode: str,
 ) -> list[tuple[str, Path]]:
     """Return (label, path) pairs — dataset-specific first, then generic."""
 
+    all_datasets = {p.stem for p in Path("datasets").glob("*.yaml")}
+
     found = []
 
-    for p in sorted(
-        PROMPTS_DIR.glob(
-            f"{dataset}_{mode}_*.txt"
-        )
-    ):
-        found.append(
-            (
-                f"{p.stem}  [dataset-specific]",
-                p,
-            )
-        )
+    for p in sorted(PROMPTS_DIR.glob(f"{dataset}_*.txt")):
+        found.append((f"{p.stem}  [dataset-specific]", p))
 
-    for p in sorted(
-        PROMPTS_DIR.glob(
-            f"{mode}_*.txt"
-        )
-    ):
-        found.append(
-            (
-                f"{p.stem}  [generic]",
-                p,
-            )
-        )
+    for p in sorted(PROMPTS_DIR.glob("*.txt")):
+        if not any(p.stem.startswith(ds) for ds in all_datasets):
+            found.append((f"{p.stem}  [generic]", p))
 
     return found
 
@@ -129,48 +107,31 @@ def select_prompt_interactive(
 
     print("\n  Available prompts:")
 
-    for i, (label, _) in enumerate(
-        options,
-        1,
-    ):
-        print(
-            f"    {i}. {label}"
-        )
+    for i, (label, _) in enumerate(options, 1):
+        print(f"    {i}. {label}")
+
+    print(f"    0. Exit")
 
     while True:
-        raw = (
-            input(
-                "  Select prompt [1]: "
-            ).strip()
-            or "1"
-        )
+        raw = input("  Select prompt [1]: ").strip() or "1"
 
-        if (
-            raw.isdigit()
-            and 1
-            <= int(raw)
-            <= len(options)
-        ):
-            label, path = options[
-                int(raw) - 1
-            ]
+        if raw == "0":
+            print("  Exiting.")
+            sys.exit(0)
 
-            return (
-                label,
-                path.read_text(
-                    encoding="utf-8"
-                ),
-            )
+        if raw.isdigit() and 1 <= int(raw) <= len(options):
+            label, path = options[int(raw) - 1]
+            return label, path.read_text(encoding="utf-8")
 
-        print(
-            f"  Please enter a number between 1 and {len(options)}."
-        )
+        print(f"  Please enter 0 to exit or a number between 1 and {len(options)}.")
 
 
 def build_prompt(
     template: str,
     question: dict,
     evidence_text: str,
+    sql_dialect: str = "sqlite",
+    schema: str = "",
 ) -> str:
     return template.format(
         question=question.get(
@@ -182,6 +143,8 @@ def build_prompt(
             "answer_format",
             "CSV table",
         ),
+        sql_dialect=sql_dialect,
+        schema=schema,
     )
 
 
@@ -287,38 +250,39 @@ def main() -> None:
     # Resolve prompt interactively
     # --------------------------------------------------------------
 
-    options = discover_prompts(
-        args.dataset,
-        args.mode,
-    )
+    options = discover_prompts(args.dataset)
 
     if not options:
         raise FileNotFoundError(
-            f"No prompt files found in "
-            f"{PROMPTS_DIR}/ for "
-            f"dataset={args.dataset}, "
-            f"mode={args.mode}. "
-            "Add a file named "
-            "{dataset}_{mode}_{style}.txt "
-            "or {mode}_{style}.txt."
+            f"No prompt files found in {PROMPTS_DIR}/ for dataset={args.dataset}. "
+            "Add a file named {dataset}_{mode}_{style}.txt or {mode}_{style}.txt."
         )
 
-    prompt_label, template = (
-        select_prompt_interactive(
-            options
-        )
+    prompt_label, template = select_prompt_interactive(options)
+
+    prompt_style_for_output = prompt_label.split("  ")[0]
+
+    # Derive mode from the chosen prompt filename
+    mode = "sql_detour" if "sql_detour" in prompt_style_for_output else "llm_only"
+
+    # Build output stem — dataset-specific prompts already contain the dataset
+    # name; generic prompts need it prepended so files don't collide across datasets
+    output_stem = (
+        prompt_style_for_output
+        if prompt_style_for_output.startswith(args.dataset)
+        else f"{args.dataset}_{prompt_style_for_output}"
     )
 
-    prompt_style_for_output = (
-        prompt_label.split("  ")[0]
-    )
+    # Prepare SQL data only for SQL-detour mode
+    subset_df = None
+    schema = ""
+
+    if mode == "sql_detour":
+        subset_df = pd.read_csv(config["data_file"])
+        schema = router.build_sql_schema(subset_df)
 
     reporter = Reporter(
-        f"results/{args.model}/"
-        f"{args.dataset}_"
-        f"{args.mode}_"
-        f"{prompt_style_for_output}_"
-        f"metrics.csv"
+        f"results/{args.model}/{output_stem}_metrics.csv"
     )
 
     # --------------------------------------------------------------
@@ -353,7 +317,7 @@ def main() -> None:
 
     print(
         f"  Mode     : "
-        f"{args.mode}  |  "
+        f"{mode}  |  "
         f"Prompt: {prompt_label}"
     )
 
@@ -421,6 +385,8 @@ def main() -> None:
                 template,
                 question,
                 evidence.text,
+                sql_dialect=config.get("sql_dialect", "sqlite"),
+                schema=schema,
             )
 
             # Visual evidence builders can provide base64 image
@@ -435,6 +401,27 @@ def main() -> None:
                 images=images,
             )
 
+            evaluation_text = response.final_text
+            
+            if mode == "sql_detour":
+                generated_sql = router.extract_sql(
+                    response.final_text
+                    )
+                
+                sql_result_csv, sql_error, actual_columns, row_count = (
+                    router.execute_sql(
+                        generated_sql,
+                        subset_df,
+                        )
+                    )
+
+                if sql_error:
+                    raise RuntimeError(
+                        f"SQL execution failed: {sql_error}"
+                    )
+
+                evaluation_text = sql_result_csv
+
             # ------------------------------------------------------
             # Step 3 — evaluate
             # ------------------------------------------------------
@@ -447,7 +434,7 @@ def main() -> None:
             )
 
             result = evaluator.evaluate(
-                response.final_text,
+                evaluation_text,
                 str(
                     Path(
                         config[
@@ -483,7 +470,7 @@ def main() -> None:
                 {
                     "dataset": args.dataset,
                     "model": args.model,
-                    "mode": args.mode,
+                    "mode": mode,
                     "prompt_style": (
                         prompt_style_for_output
                     ),
@@ -498,7 +485,7 @@ def main() -> None:
                         ).strip()
                     ),
                     "model_response": (
-                        response.final_text
+                        evaluation_text
                     ),
                     "exact_match": (
                         result.content_exact_match
@@ -575,7 +562,7 @@ def main() -> None:
                 {
                     "dataset": args.dataset,
                     "model": args.model,
-                    "mode": args.mode,
+                    "mode": mode,
                     "prompt_style": (
                         prompt_style_for_output
                     ),
@@ -669,11 +656,7 @@ def main() -> None:
 
     print(
         f"  Results  : "
-        f"results/{args.model}/"
-        f"{args.dataset}_"
-        f"{args.mode}_"
-        f"{prompt_style_for_output}_"
-        f"metrics.csv"
+        f"results/{args.model}/{output_stem}_metrics.csv"
     )
 
     print()
