@@ -653,6 +653,40 @@ class ModelRouter:
         return f"Table: {SQL_TABLE_NAME}\nColumns:\n{columns}"
 
     @staticmethod
+    def build_sql_schema_from_db(db_path: str) -> str:
+        """Build schema string for all tables in a SQLite DB file."""
+        con = sqlite3.connect(db_path)
+        tables = con.execute(
+            "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name"
+        ).fetchall()
+        parts = []
+        for (table_name,) in tables:
+            cols = con.execute(f'PRAGMA table_info("{table_name}")').fetchall()
+            col_str = "\n".join(f"  {c[1]} {c[2]}" for c in cols)
+            parts.append(f"Table: {table_name}\nColumns:\n{col_str}")
+        con.close()
+        return "\n\n".join(parts)
+
+    @staticmethod
+    def execute_sql_from_db(
+        sql: str,
+        db_path: str,
+    ) -> tuple[str, str, list[str], int]:
+        """Execute SQL directly against a SQLite DB file (multi-table support)."""
+        try:
+            con = sqlite3.connect(db_path)
+            result_df = pd.read_sql_query(sql, con)
+            con.close()
+        except Exception as exc:
+            return "", str(exc), [], 0
+        return (
+            result_df.to_csv(index=False),
+            "",
+            list(result_df.columns),
+            len(result_df),
+        )
+
+    @staticmethod
     def execute_sql(
         sql: str,
         subset_df: pd.DataFrame,

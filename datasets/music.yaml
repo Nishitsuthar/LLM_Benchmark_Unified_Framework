@@ -7,3 +7,4 @@ eval_strategy: exact_match
 evidence_path: evidence/music/
 questions_file: evidence/music/questions.json
 ground_truth_dir: ground_truth/music/
+sql_db_file: evidence/music/music.db

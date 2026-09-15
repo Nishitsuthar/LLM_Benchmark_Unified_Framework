@@ -1,0 +1,10 @@
+Answer the question using only the supplied HotpotQA documents. Do not use outside knowledge.
+
+Documents:
+{evidence}
+
+Question: {question}
+
+Answer format: {answer_format}
+
+Give only the final answer with no explanation, preamble, or punctuation.

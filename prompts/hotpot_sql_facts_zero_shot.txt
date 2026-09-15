@@ -1,0 +1,13 @@
+Answer the question using only the structured facts below. Do not use outside knowledge.
+
+Facts are extracted from Wikipedia documents relevant to the question.
+Each fact is formatted as:  subject | relation | object
+Followed by the original sentence as evidence.
+
+{evidence}
+
+Question: {question}
+
+Answer format: {answer_format}
+
+Give only the final answer with no explanation, preamble, or punctuation.

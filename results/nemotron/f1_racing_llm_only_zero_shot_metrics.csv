@@ -1,0 +1,337 @@
+dataset,model,mode,prompt_style,question_id,question,ground_truth,model_response,exact_match,row_f1,precision,recall,eval_status,latency_seconds,input_tokens,output_tokens
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T01,What is the total number of championship points awarded to all drivers combined in the Australian Grand Prix 2009?,39,39,1,1.0,1.0,1.0,evaluated,123.662,23642,303
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T02,How many drivers are recorded with a 'Finished' status in the Australian Grand Prix 2009?,11,"The user is asking for the number of drivers recorded with a 'Finished' status in the Australian Grand Prix 2009. I need to look at the race classification data provided in the evidence.
+
+From the race classification section, I can see the finishing positions and statuses. Let me count how many drivers actually finished the race (completed all 58 laps and were classified as finished).
+
+Looking at the race classification:
+1. Jenson Button - finished 1st, completed 58 laps
+2. Rubens Barrichello - finished 2nd, completed 58 laps
+3. Jarno Trulli - finished 3rd, completed 58 laps
+4. Timo Glock - finished 4th, completed 58 laps
+5. Fernando Alonso - finished 5th, completed 58 laps
+6. Nico Rosberg - finished 6th, completed 58 laps
+7. Sébastien Buemi - finished 7th, completed 58 laps
+8. Sébastien Bourdais - finished 8th, completed 58 laps
+9. Adrian Sutil - finished 9th, completed 58 laps
+10. Nick Heidfeld - finished 10th, completed 58 laps
+11. Giancarlo Fisichella - finished 11th, completed 58 laps
+12. Mark Webber - finished 12th, completed 57 laps (classified +1 Lap down)
+13. Sebastian Vettel - finished 13th, completed 56 laps (retired after 56 laps - collision)
+14. Robert Kubica - finished 14th, completed 55 laps (retired after 55 laps - collision)
+15. Kimi Räikkönen - finished 15th, completed 55 laps (retired after 55 laps - differential)
+16. Felipe Massa - finished 16th, completed 45 laps (retired after 45 laps - suspension)
+17. Nelson Piquet Jr. - finished 17th, completed 24 laps (retired after 24 laps - spun off)
+18. Kazuki Nakajima - finished 18th, completed 17 laps (retired after 17 laps - accident)
+19. Heikki Kovalainen - finished 19th, completed 0 laps (retired after 0 laps - collision)
+20. Lewis Hamilton - finished 20th, completed 58 laps (retired after 58 laps - disqualified)
+
+Wait, the classification says ""finished"" for all of them, but many have ""retired after X laps"" notes. In F1, drivers who complete 90% of the race distance are classified even if they retire. The race was 58 laps, so 90% would be 52.2 laps, meaning 53 laps or more.
+
+Let me check who completed the full 58 laps:
+- Button: 58 laps
+- Barrichello: 58 laps
+- Trulli: 58 laps
+- Glock: 58 laps
+- Alonso: 58 laps
+- Rosberg: 58 laps
+- Buemi: 58 laps
+- Bourdais: 58 laps
+- Sutil: 58 laps
+- Heidfeld: 58 laps
+- Fisichella: 58 laps
+- Hamilton: 58 laps (but disqualified)
+
+Webber completed 57 laps (classified +1 lap down)
+Vettel: 56 laps (retired)
+Kubica: 55 laps (retired)
+Räikkönen: 55 laps (retired)
+Massa: 45 laps (retired)
+Piquet Jr.: 24 laps (retired)
+Nakajima: 17 laps (retired)
+Kovalainen: 0 laps (retired)
+
+So drivers who actually finished the race (completed all 58 laps and were running at the end): Button, Barrichello, Trulli, Glock, Alonso, Rosberg, Buemi, Bourdais, Sutil, Heidfeld, Fisichella. That's 11 drivers.
+
+Hamilton completed 58 laps but was disqualified, so he didn't ""finish"" in the sense of being classified as a finisher.
+
+Webber completed 57 laps and was classified but +1 lap down.
+
+The question asks for ""Finished"" status. In the classification, all 20 are listed with finishing positions, but many have ""retired"" notes. Typically in F1, ""finished"" means they were running at the end of the race and completed the full distance.
+
+Looking at the data format: ""finished 1st having started 1st, holding position, completing 58 laps"" vs",0,0.0,0.0,0.0,evaluated,250.515,23640,1024
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T03,What is the combined total number of laps completed by all drivers in the Australian Grand Prix 2009?,1005,1005,1,1.0,1.0,1.0,evaluated,186.24,23641,901
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T04,How many drivers scored at least one championship point in the Australian Grand Prix 2009?,8,8,1,1.0,1.0,1.0,evaluated,114.205,23638,451
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T05,What is the average number of championship points scored per driver in the Australian Grand Prix 2009? Give your answer rounded to 2 decimal places.,1.95,2.60,0,0.0,0.0,0.0,evaluated,134.525,23650,464
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T06,Which driver gained the most positions from their starting grid slot to their final finishing position in the Australian Grand Prix 2009?,Jarno Trulli,Jarno Trulli,1,1.0,1.0,1.0,evaluated,250.241,23645,996
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T07,Which driver lost the most positions from their starting grid slot to their final finishing position in the Australian Grand Prix 2009?,Sebastian Vettel,"The user is asking which driver lost the most positions from their starting grid slot to their final finishing position in the 2009 Australian Grand Prix.
+
+I need to look at the race classification data and compare starting position (grid) to finishing position for each driver, then find the driver with the largest negative difference (lost the most positions).
+
+From the race classification section:
+
+1. Jenson Button: started 1st, finished 1st (0 change)
+2. Rubens Barrichello: started 2nd, finished 2nd (0 change)
+3. Jarno Trulli: started 20th, finished 3rd (+17 gained)
+4. Timo Glock: started 19th, finished 4th (+15 gained)
+5. Fernando Alonso: started 10th, finished 5th (+5 gained)
+6. Nico Rosberg: started 5th, finished 6th (-1 lost)
+7. Sébastien Buemi: started 13th, finished 7th (+6 gained)
+8. Sébastien Bourdais: started 17th, finished 8th (+9 gained)
+9. Adrian Sutil: started 16th, finished 9th (+7 gained)
+10. Nick Heidfeld: started 9th, finished 10th (-1 lost)
+11. Giancarlo Fisichella: started 15th, finished 11th (+4 gained)
+12. Mark Webber: started 8th, finished 12th (-4 lost)
+13. Sebastian Vettel: started 3rd, finished 13th (-10 lost)
+14. Robert Kubica: started 4th, finished 14th (-10 lost)
+15. Kimi Räikkönen: started 7th, finished 15th (-8 lost)
+16. Felipe Massa: started 6th, finished 16th (-10 lost)
+17. Nelson Piquet Jr.: started 14th, finished 17th (-3 lost)
+18. Kazuki Nakajima: started 11th, finished 18th (-7 lost)
+19. Heikki Kovalainen: started 12th, finished 19th (-7 lost)
+20. Lewis Hamilton: started 18th, finished 20th (-2 lost)
+
+Wait, let me double-check the starting positions from the qualifying results:
+
+Qualifying results:
+1. Jenson Button
+2. Rubens Barrichello
+3. Sebastian Vettel
+4. Robert Kubica
+5. Nico Rosberg
+6. Timo Glock
+7. Felipe Massa
+8. Jarno Trulli
+9. Kimi Räikkönen
+10. Mark Webber
+11. Nick Heidfeld
+12. Fernando Alonso
+13. Kazuki Nakajima
+14. Heikki Kovalainen
+15. Lewis Hamilton
+16. Sébastien Buemi
+17. Nelson Piquet Jr.
+18. Giancarlo Fisichella
+19. Adrian Sutil
+20. Sébastien Bourdais
+
+But the race classification says:
+- Jarno Trulli started 20th (but qualified 8th? Wait, the race classification says ""started 20th"" for Trulli)
+- Timo Glock started 19th (but qualified 6th)
+- Fernando Alonso started 10th (qualified 12th)
+- Sébastien Buemi started 13th (qualified 16th)
+- Sébastien Bourdais started 17th (qualified 20th)
+- Adrian Sutil started 16th (qualified 19th)
+- Nick Heidfeld started 9th (qualified 11th)
+- Giancarlo Fisichella started 15th (qualified 18th)
+- Mark Webber started 8th (qualified 10th)
+- Sebastian Vettel started 3rd (qualified 3rd)
+- Robert Kubica started 4th (qualified 4th)
+- Kimi Räikkönen started 7th (qualified 9th)
+- Felipe Massa started 6th (qualified 7th)
+- Nelson Piquet Jr. started 14th (qualified 17th)
+- Kazuki Nakajima started 11th (qualified 13th)
+- Heikki Kovalainen started 12th (qualified 14th)
+- Lewis Hamilton started 18th (qualified 15th)
+
+There seems to be a discrepancy between qualifying positions and race start positions. The race classification explicitly states ""having started Xth"" for each driver. I should use the race classification's stated starting positions, not the qualifying positions.
+
+From race classification:
+- Jenson Button: started 1st, finished 1st (0)
+- Rubens Barrichello",0,0.0,0.0,0.0,evaluated,205.392,23645,1024
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T08,Which constructor scored the most combined points across both their drivers in the Australian Grand Prix 2009?,Brawn,Brawn,1,1.0,1.0,1.0,evaluated,222.479,23640,228
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T09,How many total points did Brawn score across both drivers in the Australian Grand Prix 2009?,18.0,18,0,0.0,0.0,0.0,evaluated,152.494,23640,146
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T10,Which driver set the single fastest individual lap time during the Australian Grand Prix 2009?,Nico Rosberg,"The user is asking which driver set the single fastest individual lap time during the Australian Grand Prix 2009. I need to look through the lap-by-lap timing data to find the fastest lap time recorded by any driver.
+
+Looking at the lap-by-lap data, I need to scan through all the lap times to find the minimum time. Let me check the race classification section first - it mentions fastest laps for each driver:
+
+- Jenson Button: 1:28.020
+- Rubens Barrichello: 1:29.066
+- Jarno Trulli: 1:28.916
+- Timo Glock: 1:28.416
+- Fernando Alonso: 1:28.712
+- Nico Rosberg: 1:27.706
+- Sébastien Buemi: 1:29.230
+- Sébastien Bourdais: 1:29.823
+- Adrian Sutil: 1:28.943
+- Nick Heidfeld: 1:28.283
+- Giancarlo Fisichella: 1:29.005
+- Mark Webber: 1:28.508
+- Sebastian Vettel: 1:28.140
+- Robert Kubica: 1:27.988
+- Kimi Räikkönen: 1:28.488
+- Felipe Massa: 1:29.141
+- Nelson Piquet Jr.: 1:30.502
+- Kazuki Nakajima: 1:29.923
+- Lewis Hamilton: 1:29.020
+
+From these, the fastest appears to be Nico Rosberg with 1:27.706, followed by Robert Kubica with 1:27.988.
+
+But I should also check the lap-by-lap data to see if there were any faster laps recorded that aren't reflected in the ""fastest lap"" summary. Let me scan through the lap-by-lap times.
+
+Looking at the lap-by-lap data, I see many lap times. Let me look for the lowest times:
+
+- Lap 34: Robert Kubica posted 1:27.989 (running 3rd)
+- Lap 36: Robert Kubica posted 1:27.988 (running 3rd)
+- Lap 48: Nico Rosberg posted 1:27.706 (running 7th)
+
+Also checking other laps:
+- Lap 8: Sebastian Vettel posted 1:28.140
+- Lap 31: Robert Kubica posted 1:28.976
+- Lap 32: Robert Kubica posted 1:28.493
+- Lap 33: Robert Kubica posted 1:28.169
+- Lap 34: Robert Kubica posted 1:27.989
+- Lap 35: Robert Kubica posted 1:28.268
+- Lap 36: Robert Kubica posted 1:27.988
+- Lap 37: Robert Kubica posted 1:28.494
+- Lap 38: Robert Kubica posted 1:28.475
+
+And for Nico Rosberg:
+- Lap 48: 1:27.706
+- Lap 43: 1:28.728
+- Lap 42: 1:28.957
+- Lap 38: 1:29.737
+- Lap 37: 1:29.801
+- Lap 36: 1:29.878
+- Lap 35: 1:29.294
+- Lap 34: 1:29.059
+- Lap 33: 1:29.152
+- Lap 32: 1:29.350
+- Lap 31: 1:29.822
+- Lap 30: 1:30.032
+- Lap 29: 1:30.328
+- Lap 28: 1:30.439
+- Lap 27: 1:31.444
+- Lap 26: 1:31.336
+- Lap 25: 1:38.511
+- Lap 24: 2:21.",0,0.0,0.0,0.0,evaluated,262.686,23638,1024
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T11,"Among drivers classified as 'Finished' in the Australian Grand Prix 2009, which driver had the slowest average lap time over the course of the race?",Giancarlo Fisichella,"The user is asking: ""Among drivers classified as 'Finished' in the Australian Grand Prix 2009, which driver had the slowest average lap time over the course of the race?""
+
+We need to find which driver had the slowest average lap time among those classified as ""Finished"". The evidence includes a lot of data: qualifying times, race classification, lap pace breakdown, lap-by-lap timing detail.
+
+We need to interpret ""Finished"" as those who completed the race (i.e., not retired). In the race classification, it lists drivers with ""finished"" positions 1st to 20th, but some are noted as retired after certain laps. The classification includes all drivers who started, but some retired. The question says ""classified as 'Finished'"". In F1, ""Finished"" usually means they completed the race distance (or were classified despite not finishing if they completed 90% of race distance). But here the evidence shows ""Race classification"" with positions 1-20, and for each driver it says ""finished Xth having started Yth, ... completing Z laps and scoring ... points. His fastest lap was ... He retired after ... laps (reason)."" For those who retired, it says ""He retired after X laps"". For those who finished, it doesn't say retired. For example, Jenson Button: ""finished 1st having started 1st, holding position, completing 58 laps and scoring 10 championship points. His fastest lap was 1:28.020."" No mention of retirement. Rubens Barrichello: similar. Jarno Trulli: ""finished 3rd having started 20th, gaining 17 places, completing 58 laps and scoring 6 championship points. His fastest lap was 1:28.916."" No retirement. Timo Glock: ""finished 4th having started 19th, gaining 15 places, completing 58 laps and scoring 5 championship points. His fastest lap was 1:28.416."" No retirement. Fernando Alonso: ""finished 5th having started 10th, gaining 5 places, completing 58 laps and scoring 4 championship points. His fastest lap was 1:28.712."" No retirement. Nico Rosberg: ""finished 6th having started 5th, losing 1 place, completing 58 laps and scoring 3 championship points. His fastest lap was 1:27.706."" No retirement. Sébastien Buemi: ""finished 7th having started 13th, gaining 6 places, completing 58 laps and scoring 2 championship points. His fastest lap was 1:29.230."" No retirement. Sébastien Bourdais: ""finished 8th having started 17th, gaining 9 places, completing 58 laps and scoring 1 championship point. His fastest lap was 1:29.823."" No retirement. Adrian Sutil: ""finished 9th having started 16th, gaining 7 places, completing 58 laps and scoring 0 championship points. His fastest lap was 1:28.943."" No retirement. Nick Heidfeld: ""finished 10th having started 9th, losing 1 place, completing 58 laps and scoring 0 championship points. His fastest lap was 1:28.283."" No retirement. Giancarlo Fisichella: ""finished 11th having started 15th, gaining 4 places, completing 58 laps and scoring 0 championship points. His fastest lap was 1:29.005."" No retirement. Mark Webber: ""finished 12th having started 8th, losing 4 places, completing 57 laps and scoring 0 championship points. His fastest lap was 1:28.508. He was classified +1 Lap down."" He completed 57 laps, but classified. Sebastian Vettel: ""finished 13th having started 3rd, losing 10 places, completing 56 laps and scoring 0 championship points. His fastest lap was 1:28.140. He retired after 56 laps (collision)."" So he retired. Robert Kubica: ""finished 14th having started 4th, losing 10 places, completing 55 laps and scoring 0 championship points. His fastest lap was 1:27.988. He retired after 55 laps (collision)."" Retired. Kimi Räikkönen: ""finished 15th having started 7th, losing 8 places, completing 55 laps and scoring 0 championship points. His fastest lap was 1:28.488. He retired",0,0.0,0.0,0.0,evaluated,93.877,23652,1024
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T12,How many drivers retired (did not finish the race) in the Australian Grand Prix 2009?,4,8,0,0.0,0.0,0.0,evaluated,212.19,23640,1004
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T13,"After the Australian Grand Prix 2009, what is the points gap between the championship leader and the driver in second place in the Drivers' Championship?",2.0,2,0,0.0,0.0,0.0,evaluated,112.026,23650,117
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T14,"After the Australian Grand Prix 2009, how many drivers have accumulated more than 5 points in the Drivers' Championship standings?",3,3,1,1.0,1.0,1.0,evaluated,108.31,23646,251
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T15,Which constructor leads the Constructors' Championship after the Australian Grand Prix 2009?,Brawn,Brawn,1,1.0,1.0,1.0,evaluated,112.892,23637,184
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T16,What is the total number of championship points awarded to all drivers combined in the Malaysian Grand Prix 2009?,19.5,19,0,0.0,0.0,0.0,evaluated,95.631,14832,326
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T17,How many drivers are recorded with a 'Finished' status in the Malaysian Grand Prix 2009?,10,"The user is asking for the number of drivers recorded with a 'Finished' status in the Malaysian Grand Prix 2009. I need to look at the race classification data provided in the evidence.
+
+From the race classification section, I can see the finishing positions and statuses. Let me count how many drivers actually finished the race (completed all 31 laps) versus those who retired or were classified but didn't finish.
+
+Looking at the race classification:
+1. Jenson Button - finished 1st, completed 31 laps
+2. Nick Heidfeld - finished 2nd, completed 31 laps
+3. Timo Glock - finished 3rd, completed 31 laps
+4. Jarno Trulli - finished 4th, completed 31 laps
+5. Rubens Barrichello - finished 5th, completed 31 laps
+6. Mark Webber - finished 6th, completed 31 laps
+7. Lewis Hamilton - finished 7th, completed 31 laps
+8. Nico Rosberg - finished 8th, completed 31 laps
+9. Felipe Massa - finished 9th, completed 31 laps
+10. Sébastien Bourdais - finished 10th, completed 31 laps
+11. Fernando Alonso - finished 11th, completed 31 laps (classified +1 Lap down)
+12. Kazuki Nakajima - finished 12th, completed 31 laps (classified +1 Lap down)
+13. Nelson Piquet Jr. - finished 13th, completed 31 laps (classified +1 Lap down)
+14. Kimi Räikkönen - finished 14th, completed 31 laps (classified +1 Lap down)
+15. Sebastian Vettel - finished 15th, completed 30 laps, retired after 30 laps (spun off)
+16. Sébastien Buemi - finished 16th, completed 30 laps, retired after 30 laps (spun off)
+17. Adrian Sutil - finished 17th, completed 30 laps (classified +1 Lap down)
+18. Giancarlo Fisichella - finished 18th, completed 29 laps, retired after 29 laps (spun off)
+19. Robert Kubica - finished 19th, completed 1 lap, retired after 1 lap (engine)
+20. Heikki Kovalainen - finished 20th, completed 0 laps, retired after 0 laps (spun off)
+
+The question asks for drivers with a 'Finished' status. In F1 terminology, ""finished"" typically means they completed the race distance (or were classified as finishers). However, some drivers are listed as ""retired"" even though they have a finishing position.
+
+Looking at the data, drivers 1-14 all completed 31 laps (the full race distance). Drivers 15-20 either retired or completed fewer laps.
+
+But wait, the classification shows positions 1-20, and some are marked as ""retired"" in the description. Let me check the exact wording:
+
+- Positions 1-14: all say ""completed 31 laps"" and don't mention ""retired"" (except Alonso, Nakajima, Piquet Jr., Räikkönen are ""classified +1 Lap down"" but still completed 31 laps)
+- Position 15 (Vettel): ""completed 30 laps and scoring 0 championship points. His fastest lap was 1:38.427. He retired after 30 laps (spun off).""
+- Position 16 (Buemi): ""completed 30 laps and scoring 0 championship points. His fastest lap was 1:38.938. He retired after 30 laps (spun off).""
+- Position 17 (Sutil): ""completed 30 laps and scoring 0 championship points. His fastest lap was 1:39.464. He was classified +1 Lap down."" (doesn't say retired)
+- Position 18 (Fisichella): ""completed 29 laps and scoring 0 championship points. His fastest lap was 1:39.407. He retired after 29 laps (spun off).""
+- Position 19 (Kubica): ""completed 1 laps and scoring 0 championship points. He retired after 1 laps (engine).""
+- Position 20 (Kovalainen): ""completed 0 laps and scoring 0 championship points. He retired after 0 laps (spun off).""
+
+So drivers who actually finished (completed the race distance or were classified finishers): positions 1-14 (14 drivers) plus possibly Sutil (position 17) who was ""classified +",0,0.0,0.0,0.0,evaluated,114.814,14830,1024
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T18,What is the combined total number of laps completed by all drivers in the Malaysian Grand Prix 2009?,554,554,1,1.0,1.0,1.0,evaluated,139.984,14831,973
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T19,How many drivers scored at least one championship point in the Malaysian Grand Prix 2009?,8,7,0,0.0,0.0,0.0,evaluated,62.469,14828,543
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T20,What is the average number of championship points scored per driver in the Malaysian Grand Prix 2009? Give your answer rounded to 2 decimal places.,0.97,"The user is asking for the average number of championship points scored per driver in the Malaysian Grand Prix 2009, rounded to 2 decimal places.
+
+I need to look at the race classification and find the points scored by each driver, then calculate the average.
+
+From the race classification:
+- Jenson Button: 5 points
+- Nick Heidfeld: 4 points
+- Timo Glock: 3 points
+- Jarno Trulli: 2 points
+- Rubens Barrichello: 2 points
+- Mark Webber: 2 points
+- Lewis Hamilton: 1 point
+- Nico Rosberg: 0 points
+- Felipe Massa: 0 points
+- Sébastien Bourdais: 0 points
+- Fernando Alonso: 0 points
+- Kazuki Nakajima: 0 points
+- Nelson Piquet Jr.: 0 points
+- Kimi Räikkönen: 0 points
+- Sebastian Vettel: 0 points
+- Sébastien Buemi: 0 points
+- Adrian Sutil: 0 points
+- Giancarlo Fisichella: 0 points
+- Robert Kubica: 0 points
+- Heikki Kovalainen: 0 points
+
+Total points = 5 + 4 + 3 + 2 + 2 + 2 + 1 = 19 points
+
+Number of drivers = 20
+
+Average = 19 / 20 = 0.95
+
+Rounded to 2 decimal places: 0.95
+
+Let me double-check the points from the race classification text:
+""Jenson Button (Brawn) finished 1st having started 1st, holding position, completing 31 laps and scoring 5 championship points.""
+""Nick Heidfeld (BMW Sauber) finished 2nd having started 10th, gaining 8 places, completing 31 laps and scoring 4 championship points.""
+""Timo Glock (Toyota) finished 3rd having started 3rd, holding position, completing 31 laps and scoring 3 championship points.""
+""Jarno Trulli (Toyota) finished 4th having started 2nd, losing 2 places, completing 31 laps and scoring 2 championship points.""
+""Rubens Barrichello (Brawn) finished 5th having started 8th, gaining 3 places, completing 31 laps and scoring 2 championship points.""
+""Mark Webber (Red Bull) finished 6th having started 5th, losing 1 place, completing 31 laps and scoring 2 championship points.""
+""Lewis Hamilton (McLaren) finished 7th having started 12th, gaining 5 places, completing 31 laps and scoring 1 championship point.""
+""Nico Rosberg (Williams) finished 8th having started 4th, losing 4 places, completing 31 laps and scoring 0 championship points.""
+""Felipe Massa (Ferrari) finished 9th having started 16th, gaining 7 places, completing 31 laps and scoring 0 championship points.""
+""Sébastien Bourdais (Toro Rosso) finished 10th having started 15th, gaining 5 places, completing 31 laps and scoring 0 championship points.""
+""Fernando Alonso (Renault) finished 11th having started 9th, losing 2 places, completing 31 laps and scoring 0 championship points.""
+""Kazuki Nakajima (Williams) finished 12th having started 11th, losing 1 place, completing 31 laps and scoring 0 championship points.""
+""Nelson Piquet Jr. (Renault) finished 13th having started 17th, gaining 4 places, completing 31 laps and scoring 0 championship points.""
+""Kimi Räikkönen (Ferrari) finished 14th having started 7th, losing 7 places, completing 31 laps and scoring 0 championship points.""
+""Sebastian Vettel (Red Bull) finished 15th having started 13th, losing 2 places, completing 30 laps and scoring 0 championship points.""
+""Sébastien Buemi (Toro Rosso) finished 16th having started 20th, gaining 4 places, completing 30 laps and scoring 0 championship points.""
+""Adrian Sutil (Force India) finished 17th having started 19th, gaining 2 places, completing 30 laps and scoring 0 championship points.""
+""Giancarlo Fisichella (Force India) finished 18th having started 18th, holding position, completing 29 laps and scoring 0 championship points.""
+""Robert Kubica (BMW Sauber) finished 19th having started 6th, losing 13 places, completing 1 laps and scoring 0 championship points.""
+""Heikki Kovalainen",0,0.0,0.0,0.0,evaluated,312.099,14840,1024
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T21,Which driver gained the most positions from their starting grid slot to their final finishing position in the Malaysian Grand Prix 2009?,Nick Heidfeld,Nick Heidfeld,1,1.0,1.0,1.0,evaluated,124.164,14835,584
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T22,Which driver lost the most positions from their starting grid slot to their final finishing position in the Malaysian Grand Prix 2009?,Robert Kubica,Robert Kubica,1,1.0,1.0,1.0,evaluated,128.384,14835,921
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T23,Which constructor scored the most combined points across both their drivers in the Malaysian Grand Prix 2009?,Brawn,Brawn,1,1.0,1.0,1.0,evaluated,177.06,14830,707
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T24,How many total points did Brawn score across both drivers in the Malaysian Grand Prix 2009?,7.0,7,0,0.0,0.0,0.0,evaluated,57.618,14830,213
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T25,Which driver set the single fastest individual lap time during the Malaysian Grand Prix 2009?,Jenson Button,Jenson Button,1,1.0,1.0,1.0,evaluated,92.161,14828,916
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T26,"Among drivers classified as 'Finished' in the Malaysian Grand Prix 2009, which driver had the slowest average lap time over the course of the race?",Sébastien Bourdais,"The user is asking: ""Among drivers classified as 'Finished' in the Malaysian Grand Prix 2009, which driver had the slowest average lap time over the course of the race?""
+
+We need to find which driver had the slowest average lap time among those classified as ""Finished"". The evidence includes race classification, lap pace breakdown, lap-by-lap timing detail, etc.
+
+First, we need to identify which drivers are classified as ""Finished"". In the race classification, it lists drivers with ""finished"" positions 1st to 20th, but some are noted as ""retired after X laps"" or ""classified +1 Lap down"". The question says ""classified as 'Finished'"". In F1, ""Finished"" usually means they completed the race distance (or were classified despite not finishing if they completed 90% of race distance). But the evidence shows some drivers retired (e.g., Sebastian Vettel retired after 30 laps, Sébastien Buemi retired after 30 laps, Adrian Sutil classified +1 Lap down, Giancarlo Fisichella retired after 29 laps, Robert Kubica retired after 1 lap, Heikki Kovalainen retired after 0 laps). However, the classification list includes them as finishing positions 15th to 20th, but with notes ""retired after X laps"". The question specifically says ""classified as 'Finished'"". That might refer to drivers who actually finished the race (i.e., completed all 31 laps). In the race classification, it says ""completed 31 laps"" for those who finished the full race distance. For those who retired, it says ""completed 30 laps"" or less. Also some are ""classified +1 Lap down"" but completed 31 laps? Actually, for Fernando Alonso: ""completed 31 laps and scoring 0 championship points. He was classified +1 Lap down."" That suggests he completed 31 laps but was a lap down. Similarly Kazuki Nakajima, Nelson Piquet Jr., Kimi Räikkönen completed 31 laps but classified +1 Lap down. They are still classified as finishers (they completed the race distance). The ones who retired did not complete 31 laps: Vettel 30 laps, Buemi 30 laps, Sutil 30 laps (but classified +1 Lap down? Actually Sutil: ""completed 30 laps and scoring 0 championship points. He was classified +1 Lap down."" He completed 30 laps, not 31. Fisichella completed 29 laps, retired. Kubica 1 lap, retired. Kovalainen 0 laps, retired.
+
+So ""Finished"" likely means they completed the full race distance (31 laps) and were classified (including those a lap down). The question: ""Among drivers classified as 'Finished' in the Malaysian Grand Prix 2009, which driver had the slowest average lap time over the course of the race?"" We need to compute average lap time for each driver who finished (completed 31 laps). The evidence provides ""Lap pace breakdown"" with average times for opening, middle, closing phases, but not overall average. However, we can compute overall average lap time from total race time divided by number of laps. But we don't have total race time directly. We have lap-by-lap times for each driver for each lap they completed. For drivers who completed 31 laps, we have all 31 lap times in the lap-by-lap detail. We could compute average lap time for each such driver by summing their lap times and dividing by 31. But that would be tedious manually. However, the ""Lap pace breakdown"" gives average times for three phases: opening, middle, closing. But those are averages over subsets of laps, not overall. The overall average could be approximated by weighting, but not exact.
+
+Alternatively, maybe the ""Lap pace breakdown"" includes overall average? It says: ""Jenson Button averaged 99.325s in the opening phase, 100.102s in the middle phase, 121.486s in the closing phase."" That's three phases. The number of laps in each phase? Not given. But we could compute overall average if we know how many laps in each phase. The race was 31 laps. The phases might be roughly equal? Not sure.
+
+But perhaps the question expects us to use the ""Lap pace breakdown"" averages? But those are phase averages, not overall. The slowest average lap time overall might be the driver with the highest average lap time across all laps. We need to find which driver had the slowest average lap time among finishers.
+
+We have lap-by-lap times for each driver for each lap they ran. For finishers (31 laps), we have all 31 lap times. We could compute average for",0,0.0,0.0,0.0,evaluated,76.287,14842,1024
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T27,How many drivers retired (did not finish the race) in the Malaysian Grand Prix 2009?,2,5,0,0.0,0.0,0.0,evaluated,38.293,14830,650
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T28,"After the Malaysian Grand Prix 2009, what is the points gap between the championship leader and the driver in second place in the Drivers' Championship?",5.0,5,0,0.0,0.0,0.0,evaluated,46.605,14840,118
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T29,"After the Malaysian Grand Prix 2009, how many drivers have accumulated more than 5 points in the Drivers' Championship standings?",4,4,1,1.0,1.0,1.0,evaluated,95.836,14836,385
+f1_racing,nemotron,llm_only,llm_only_zero_shot,T30,Which constructor leads the Constructors' Championship after the Malaysian Grand Prix 2009?,Brawn,Brawn,1,1.0,1.0,1.0,evaluated,90.013,14827,209
