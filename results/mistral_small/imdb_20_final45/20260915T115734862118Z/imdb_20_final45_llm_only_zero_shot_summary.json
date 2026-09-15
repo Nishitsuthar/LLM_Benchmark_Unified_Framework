@@ -1,0 +1,12 @@
+{
+  "dataset": "imdb_20_final45",
+  "model_id": "mistralai/mistral-small-2603",
+  "correct": 1,
+  "valid_questions": 45,
+  "attempted_questions": 45,
+  "errors": 0,
+  "accuracy": 0.022222222222222223,
+  "successful_api_calls": 45,
+  "failed_api_calls": 0,
+  "denominator_policy": "Successfully evaluated responses; execution errors excluded; empty or non-exact answers score 0"
+}

@@ -5,7 +5,7 @@ Usage:
     python run.py --dataset music           --model gemini_flash
     python run.py --dataset uda_nqtext      --model deepseek_r1
 
-An interactive menu always appears to choose the prompt. Only prompts
+IMDb-20 uses its fixed zero-shot prompt. Other datasets show an interactive menu. Only prompts
 relevant to the selected dataset are shown (dataset-specific first,
 then generic fallbacks).
 
@@ -19,6 +19,7 @@ import argparse
 import json
 import sys
 import time
+from datetime import datetime, timezone
 from pathlib import Path
 import pandas as pd
 
@@ -31,6 +32,11 @@ from unified_pipeline.reporter import Reporter
 
 PROMPTS_DIR = Path("prompts")
 RESULTS_DIR = Path("results")
+IMDB_DATASETS = {"imdb_20", "imdb_20_final45"}
+IMDB_MODELS = {
+    "gemini_flash": "google/gemini-3.1-flash-lite",
+    "mistral_small": "mistralai/mistral-small-2603",
+}
 
 
 def parse_args() -> argparse.Namespace:
@@ -57,7 +63,19 @@ def parse_args() -> argparse.Namespace:
         help="Optional subset of task IDs to run, e.g. --task_ids T01 T05",
     )
 
-    return parser.parse_args()
+    parser.add_argument(
+        "--confirm-full-run", action="store_true",
+        help="IMDb-20: explicitly allow more than one question after smoke-test review",
+    )
+    args = parser.parse_args()
+    if args.dataset in IMDB_DATASETS:
+        aliases = {value: key for key, value in IMDB_MODELS.items()}
+        args.model = aliases.get(args.model, args.model)
+        if args.model not in IMDB_MODELS:
+            parser.error("imdb_20 supports gemini_flash or mistral_small for this workflow")
+        if not args.confirm_full_run and (not args.task_ids or len(args.task_ids) != 1):
+            parser.error("First use --task_ids F1; after review, use --confirm-full-run")
+    return args
 
 
 def load_questions(questions_file: str) -> list[dict]:
@@ -180,6 +198,7 @@ def _progress(
 
 def main() -> None:
     args = parse_args()
+    imdb_run = args.dataset in IMDB_DATASETS
 
     # --------------------------------------------------------------
     # Load dataset config
@@ -242,9 +261,10 @@ def main() -> None:
         eval_strategy
     ]()
 
-    router = ModelRouter(
-        args.model
-    )
+    router = ModelRouter(args.model)
+    if imdb_run:
+        # Count retries in our router rather than hiding additional SDK requests.
+        router.client = router.client.with_options(max_retries=0)
 
     # --------------------------------------------------------------
     # Resolve prompt interactively
@@ -258,7 +278,12 @@ def main() -> None:
             "Add a file named {dataset}_{mode}_{style}.txt or {mode}_{style}.txt."
         )
 
-    prompt_label, template = select_prompt_interactive(options)
+    if imdb_run:
+        prompt_path = PROMPTS_DIR / f"{args.dataset}_llm_only_zero_shot.txt"
+        prompt_label = prompt_path.stem
+        template = prompt_path.read_text(encoding="utf-8")
+    else:
+        prompt_label, template = select_prompt_interactive(options)
 
     prompt_style_for_output = prompt_label.split("  ")[0]
 
@@ -281,9 +306,28 @@ def main() -> None:
         subset_df = pd.read_csv(config["data_file"])
         schema = router.build_sql_schema(subset_df)
 
-    reporter = Reporter(
-        f"results/{args.model}/{output_stem}_metrics.csv"
-    )
+    output_dir = RESULTS_DIR / args.model
+    if imdb_run:
+        # Separate smoke and full runs; never append into a previous run's metrics.
+        run_id = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
+        output_dir = output_dir / args.dataset / run_id
+    reporter = Reporter(str(output_dir / f"{output_stem}_metrics.csv"))
+    raw_path = output_dir / f"{output_stem}_raw.jsonl"
+
+    def raw_message_text() -> str | None:
+        raw = router.last_raw_response or {}
+        choices = raw.get("choices") or []
+        if not choices:
+            return None
+        content = (choices[0].get("message") or {}).get("content")
+        return content if isinstance(content, str) or content is None else json.dumps(content, ensure_ascii=False)
+
+    def save_raw(question_id: str) -> None:
+        with raw_path.open("a", encoding="utf-8") as stream:
+            stream.write(json.dumps({
+                "question_id": question_id, "model_id": router.model_name,
+                "response": router.last_raw_response,
+            }, ensure_ascii=False) + "\n")
 
     # --------------------------------------------------------------
     # Load questions
@@ -292,6 +336,11 @@ def main() -> None:
     questions = load_questions(
         config["questions_file"]
     )
+
+    if imdb_run and args.task_ids:
+        unknown = set(args.task_ids) - {q.get("id") for q in questions}
+        if unknown:
+            raise ValueError(f"Unknown IMDb question IDs: {sorted(unknown)}")
 
     if args.task_ids:
         selected = set(
@@ -331,6 +380,7 @@ def main() -> None:
     run_start = time.time()
 
     f1_scores = []
+    binary_scores = []
     failed = []
 
     # --------------------------------------------------------------
@@ -346,7 +396,18 @@ def main() -> None:
             "unknown",
         )
 
+        response = None
+        images = None
+        successes_before = router.api_successes if imdb_run else 0
+        failures_before = router.api_failures if imdb_run else 0
+        raw_saved = False
+        ground_truth_text = None
+        question_start = time.perf_counter()
+        if imdb_run:
+            router.last_raw_response = None
         try:
+            if imdb_run:
+                ground_truth_text = (Path(config["ground_truth_dir"]) / question["ground_truth_file"]).read_text(encoding="utf-8").strip()
             # ------------------------------------------------------
             # Step 1 — build evidence
             # ------------------------------------------------------
@@ -401,6 +462,9 @@ def main() -> None:
                 images=images,
             )
 
+            if imdb_run:
+                save_raw(q_id)
+                raw_saved = True
             evaluation_text = response.final_text
             
             if mode == "sql_detour":
@@ -455,6 +519,11 @@ def main() -> None:
             # Step 4 — write row immediately (crash safe)
             # ------------------------------------------------------
 
+            if imdb_run:
+                # Preserve the evaluator's conservative normalization; use binary scoring.
+                result.evaluation_status = "evaluated_exact" if result.content_exact_match else "evaluated_incorrect"
+                result.row_f1 = result.precision = result.recall = None
+
             ground_truth = (
                 Path(
                     config[
@@ -468,6 +537,21 @@ def main() -> None:
 
             reporter.write_row(
                 {
+                    **({
+                        "model_id": router.model_name,
+                        "valid_question": True,
+                        "category": question.get("category", ""),
+                        "automatic_score": result.content_exact_match,
+                        "evaluation_status": result.evaluation_status,
+                        "scored_response": response.final_text,
+                        "image_count": len(images or []),
+                        "api_successes": router.api_successes - successes_before,
+                        "api_failures": router.api_failures - failures_before,
+                        "error": "",
+                        "reasoning_text": response.reasoning_text,
+                        "finish_reason": response.finish_reason,
+                        "raw_response_file": str(raw_path),
+                    } if imdb_run else {}),
                     "dataset": args.dataset,
                     "model": args.model,
                     "mode": mode,
@@ -485,7 +569,7 @@ def main() -> None:
                         ).strip()
                     ),
                     "model_response": (
-                        evaluation_text
+                        raw_message_text() if imdb_run else evaluation_text
                     ),
                     "exact_match": (
                         result.content_exact_match
@@ -513,6 +597,9 @@ def main() -> None:
                     ),
                 }
             )
+
+            if imdb_run:
+                binary_scores.append(result.content_exact_match)
 
             f1 = (
                 result.row_f1
@@ -545,7 +632,8 @@ def main() -> None:
                 q_id,
                 (
                     f"done  "
-                    f"f1={f1_str} "
+                    + (f"exact_match={result.content_exact_match} " if imdb_run else f"f1={f1_str} ")
+                    +
                     f"{exact} "
                     f"{lat_str}"
                 ),
@@ -554,12 +642,29 @@ def main() -> None:
             print()
 
         except Exception as exc:
+            if imdb_run and not raw_saved and router.last_raw_response is not None:
+                save_raw(q_id)
             failed.append(
                 q_id
             )
 
             reporter.write_row(
                 {
+                    **({
+                        "model_id": router.model_name,
+                        "valid_question": False,
+                        "category": question.get("category", ""),
+                        "automatic_score": 0,
+                        "evaluation_status": f"error: {type(exc).__name__}",
+                        "scored_response": response.final_text if response else None,
+                        "image_count": len(images or []),
+                        "api_successes": router.api_successes - successes_before,
+                        "api_failures": router.api_failures - failures_before,
+                        "error": f"{type(exc).__name__}: {exc}",
+                        "reasoning_text": response.reasoning_text if response else None,
+                        "finish_reason": response.finish_reason if response else None,
+                        "raw_response_file": str(raw_path),
+                    } if imdb_run else {}),
                     "dataset": args.dataset,
                     "model": args.model,
                     "mode": mode,
@@ -571,8 +676,8 @@ def main() -> None:
                         "text",
                         "",
                     ),
-                    "ground_truth": None,
-                    "model_response": None,
+                    "ground_truth": ground_truth_text if imdb_run else None,
+                    "model_response": raw_message_text() if imdb_run else None,
                     "exact_match": 0,
                     "row_f1": None,
                     "precision": None,
@@ -581,9 +686,9 @@ def main() -> None:
                         f"error: "
                         f"{type(exc).__name__}"
                     ),
-                    "latency_seconds": None,
-                    "input_tokens": None,
-                    "output_tokens": None,
+                    "latency_seconds": (response.latency_seconds if response else round(time.perf_counter() - question_start, 3)) if imdb_run else None,
+                    "input_tokens": response.input_tokens if imdb_run and response else None,
+                    "output_tokens": response.output_tokens if imdb_run and response else None,
                 }
             )
 
@@ -636,16 +741,26 @@ def main() -> None:
         f"in {elapsed:.1f}s"
     )
 
-    print(
-        f"  Avg F1   : "
-        f"{avg_f1:.3f}"
-    )
-
-    print(
-        f"  Exact    : "
-        f"{exact_n}/"
-        f"{len(questions)}"
-    )
+    if imdb_run:
+        correct = sum(binary_scores)
+        valid = len(binary_scores)
+        accuracy = correct / valid if valid else None
+        summary = {
+            "dataset": args.dataset, "model_id": router.model_name,
+            "correct": correct, "valid_questions": valid,
+            "attempted_questions": len(questions), "errors": len(failed),
+            "accuracy": accuracy,
+            "successful_api_calls": router.api_successes,
+            "failed_api_calls": router.api_failures,
+            "denominator_policy": "Successfully evaluated responses; execution errors excluded; empty or non-exact answers score 0",
+        }
+        (output_dir / f"{output_stem}_summary.json").write_text(
+            json.dumps(summary, indent=2) + "\n", encoding="utf-8",
+        )
+        print(f"  ACCURACY : {accuracy:.3f} ({correct}/{valid} valid questions)" if valid else "  ACCURACY : N/A (no valid questions)")
+    else:
+        print(f"  Avg F1   : {avg_f1:.3f}")
+        print(f"  Exact    : {exact_n}/{len(questions)}")
 
     if failed:
         print(
@@ -656,7 +771,7 @@ def main() -> None:
 
     print(
         f"  Results  : "
-        f"results/{args.model}/{output_stem}_metrics.csv"
+        f"{reporter.path}"
     )
 
     print()

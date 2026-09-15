@@ -1,0 +1,333 @@
+{
+  "condition": "image-only normalized metadata",
+  "source_csv_sha256": "d74ace74f20fccd218f81e4113e18ae7091d380db73058a4331b1bd080bccda3",
+  "source_db_sha256": "48b47af9aba47ba16199341c2dba2a1804450270a1de3780a454c267f92a5bdc",
+  "font_sha256": "525979822591a3447cfc49d943d6f7683508e25543407871c0ed8fed05fd2bd9",
+  "bold_font_sha256": "d72db21f9242aedd6b917d8549ad5921766b24d5f8d0becfda2ff4c620b3c2e0",
+  "original_questions_sha256": "2194c2e59ec9b77e3ab57778eddcf294e54043bdce3be5e66a72c5d706cd02ae",
+  "pdf_sha256": "80992be2857a109d3aab367ee38fa1650927d27b90ca8e189e2c6274d77423d5",
+  "cards": [
+    {
+      "movie_id": "1",
+      "page_index": 0,
+      "fields": {
+        "title": "Princess Mononoke",
+        "year": "1997",
+        "runtime_minutes": "133",
+        "imdb_rating": "8.3",
+        "director": "Hayao Miyazaki",
+        "genres": "Adventure; Animation; Fantasy"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_01.png",
+      "card_sha256": "a1a82b8de5fcefb99b2d3fb98ca1c3ce8cdfd488871bf495682e1ec3285e6bc5",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "2",
+      "page_index": 1,
+      "fields": {
+        "title": "The Big Lebowski",
+        "year": "1998",
+        "runtime_minutes": "117",
+        "imdb_rating": "8.1",
+        "director": "Joel Coen",
+        "genres": "Comedy; Crime"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_02.png",
+      "card_sha256": "4618e9eb93a4b3e32a320290d9da0819ad9853e98b06cd939abf536d05a3c7ec",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "3",
+      "page_index": 2,
+      "fields": {
+        "title": "American History X",
+        "year": "1998",
+        "runtime_minutes": "119",
+        "imdb_rating": "8.5",
+        "director": "Tony Kaye",
+        "genres": "Crime; Drama"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_03.png",
+      "card_sha256": "230693cfa9e2f38d551a0660878e4b7f247215de58bfa4e2d49b2a923d21fc8e",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "4",
+      "page_index": 3,
+      "fields": {
+        "title": "Saving Private Ryan",
+        "year": "1998",
+        "runtime_minutes": "169",
+        "imdb_rating": "8.6",
+        "director": "Steven Spielberg",
+        "genres": "Drama; War"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_04.png",
+      "card_sha256": "39e8d0c68a314932aa2c766ec0f5082c99a5f41a5a97e95f9870d8ab58d919db",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "5",
+      "page_index": 4,
+      "fields": {
+        "title": "The Matrix",
+        "year": "1999",
+        "runtime_minutes": "136",
+        "imdb_rating": "8.7",
+        "director": "Lana Wachowski",
+        "genres": "Action; Sci-Fi"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_05.png",
+      "card_sha256": "72ea8f083519d42d51b52d5ceff1331bf4d68bce38f1b10c638625c65cd66479",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "6",
+      "page_index": 5,
+      "fields": {
+        "title": "Memento",
+        "year": "2000",
+        "runtime_minutes": "113",
+        "imdb_rating": "8.4",
+        "director": "Christopher Nolan",
+        "genres": "Drama; Mystery; Thriller"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_06.png",
+      "card_sha256": "9ca066b66456e3589e3c6884cc08cc6823b62d347b73b30bb22dc40e9a7865de",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "7",
+      "page_index": 6,
+      "fields": {
+        "title": "The Lord of the Rings: The Fellowship of the Ring",
+        "year": "2001",
+        "runtime_minutes": "178",
+        "imdb_rating": "8.9",
+        "director": "Peter Jackson",
+        "genres": "Adventure; Drama; Fantasy"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_07.png",
+      "card_sha256": "4d91af3c8cf90898a46f4ab75ff3bdd48aa8747b5c3ec77065b2d2d9176904c0",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "8",
+      "page_index": 7,
+      "fields": {
+        "title": "Monsters Inc.",
+        "year": "2001",
+        "runtime_minutes": "92",
+        "imdb_rating": "8.1",
+        "director": "Pete Docter",
+        "genres": "Adventure; Animation; Comedy"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_08.png",
+      "card_sha256": "41d60cd611e74e5d033de56ae008b30b541b529273daba8a5ef91f0c1af9638f",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "9",
+      "page_index": 8,
+      "fields": {
+        "title": "Catch Me If You Can",
+        "year": "2002",
+        "runtime_minutes": "141",
+        "imdb_rating": "8.1",
+        "director": "Steven Spielberg",
+        "genres": "Biography; Crime; Drama"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_09.png",
+      "card_sha256": "38ad25e11dd5a68130dd34b622e3e49ba9a763b1f6ee3a1b6af782a154fe0901",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "10",
+      "page_index": 9,
+      "fields": {
+        "title": "The Lord of the Rings: The Two Towers",
+        "year": "2002",
+        "runtime_minutes": "179",
+        "imdb_rating": "8.8",
+        "director": "Peter Jackson",
+        "genres": "Adventure; Drama; Fantasy"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_10.png",
+      "card_sha256": "536ba6b2624f10523273921c6666fe1cdf5098860e0662e616969379ef7d3993",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "11",
+      "page_index": 10,
+      "fields": {
+        "title": "The Dark Knight",
+        "year": "2008",
+        "runtime_minutes": "152",
+        "imdb_rating": "9.1",
+        "director": "Christopher Nolan",
+        "genres": "Action; Crime; Drama"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_11.png",
+      "card_sha256": "a9e3a03175b51b1536aa5270033adcd8f8a0580bfd1abc0659e07b666fe4ca72",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "12",
+      "page_index": 11,
+      "fields": {
+        "title": "Inglourious Basterds",
+        "year": "2009",
+        "runtime_minutes": "153",
+        "imdb_rating": "8.4",
+        "director": "Quentin Tarantino",
+        "genres": "Adventure; Drama; War"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_12.png",
+      "card_sha256": "6172168691fc24df05d40d286e7369e142c51538d3d17ebd1fd456c4098ae74d",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "13",
+      "page_index": 12,
+      "fields": {
+        "title": "Toy Story 3",
+        "year": "2010",
+        "runtime_minutes": "103",
+        "imdb_rating": "8.3",
+        "director": "Lee Unkrich",
+        "genres": "Adventure; Animation; Comedy"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_13.png",
+      "card_sha256": "5a744d2caa54a30d87cafba88c886bd31b2a093aed9049084ffb8d36aa145943",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "14",
+      "page_index": 13,
+      "fields": {
+        "title": "How to Train Your Dragon",
+        "year": "2010",
+        "runtime_minutes": "98",
+        "imdb_rating": "8.1",
+        "director": "Dean DeBlois",
+        "genres": "Action; Adventure; Animation"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_14.png",
+      "card_sha256": "55544367976c976d25332613e7b499a16a69d745b2d23818ab3dbce188cf3b36",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "15",
+      "page_index": 14,
+      "fields": {
+        "title": "Black Swan",
+        "year": "2010",
+        "runtime_minutes": "108",
+        "imdb_rating": "8.0",
+        "director": "Darren Aronofsky",
+        "genres": "Drama; Thriller"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_15.png",
+      "card_sha256": "80bb636420cc38b802a54c36dde1a557cc2ac82af1b8dd447d5279acd045c923",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "16",
+      "page_index": 15,
+      "fields": {
+        "title": "The Avengers",
+        "year": "2012",
+        "runtime_minutes": "143",
+        "imdb_rating": "8.0",
+        "director": "Joss Whedon",
+        "genres": "Action; Sci-Fi"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_16.png",
+      "card_sha256": "3d4e6309ab7dd76e1c6bbe9a2e71eaaf5aae904a170cedeefc250d330af4739e",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "17",
+      "page_index": 16,
+      "fields": {
+        "title": "Life of Pi",
+        "year": "2012",
+        "runtime_minutes": "127",
+        "imdb_rating": "7.9",
+        "director": "Ang Lee",
+        "genres": "Adventure; Drama; Fantasy"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_17.png",
+      "card_sha256": "9f0ca7be9bedc526d6dc6d87fba74217a0c58383116d62b0b8484fe2d65b154c",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "18",
+      "page_index": 17,
+      "fields": {
+        "title": "The Wolf of Wall Street",
+        "year": "2013",
+        "runtime_minutes": "180",
+        "imdb_rating": "8.2",
+        "director": "Martin Scorsese",
+        "genres": "Biography; Comedy; Crime"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_18.png",
+      "card_sha256": "9cec44a1ced183f9d4a46ff9b500c489f558ad850a2748eef7a21f3dc811b14b",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "19",
+      "page_index": 18,
+      "fields": {
+        "title": "Interstellar",
+        "year": "2014",
+        "runtime_minutes": "169",
+        "imdb_rating": "8.7",
+        "director": "Christopher Nolan",
+        "genres": "Adventure; Drama; Sci-Fi"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_19.png",
+      "card_sha256": "ba3e0b5b8ead86e08d59892f8ed74f118f8a4ad0524cfbee221b83bb24c0365b",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    },
+    {
+      "movie_id": "20",
+      "page_index": 19,
+      "fields": {
+        "title": "Jurassic World",
+        "year": "2015",
+        "runtime_minutes": "124",
+        "imdb_rating": "6.9",
+        "director": "Colin Trevorrow",
+        "genres": "Action; Adventure; Sci-Fi"
+      },
+      "card": "evidence/imdb_20_final45/cards/movie_20.png",
+      "card_sha256": "02c1dee01dfd8edb36bd364b9a8bace329dbb3c21c1a4e2f8980f2f97dd8b6c5",
+      "source_csv_database_agree": true,
+      "layout_bounds_pass": true
+    }
+  ],
+  "note": "Frozen benchmark metadata. Use the listed benchmark director and normalized genres for all calculations.",
+  "model_payload": "Only rendered PDF image data URLs plus question/instructions. No manifest or structured source is sent."
+}

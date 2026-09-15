@@ -80,6 +80,9 @@ class ModelRouter:
             client_kwargs["base_url"] = base_url.rstrip("/")
 
         self.client = OpenAI(**client_kwargs)
+        self.last_raw_response: dict | None = None
+        self.api_successes = 0
+        self.api_failures = 0
 
     def call(
         self,
@@ -107,6 +110,7 @@ class ModelRouter:
             router.call(prompt_text, images=images)
         """
 
+        self.last_raw_response = None
         last_error: Exception | None = None
         start = time.perf_counter()
 
@@ -176,9 +180,14 @@ class ModelRouter:
                 if self.extra_body:
                     kwargs["extra_body"] = self.extra_body
 
-                response = self.client.chat.completions.create(
-                    **kwargs
-                )
+                try:
+                    response = self.client.chat.completions.create(**kwargs)
+                except Exception:
+                    self.api_failures += 1
+                    raise
+                self.api_successes += 1
+
+                self.last_raw_response = response.model_dump(mode="json")
 
                 latency = round(
                     time.perf_counter() - start,
