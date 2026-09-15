@@ -37,7 +37,7 @@ results/*
 !results/mistral_small/
 !results/gemini_flash/
 !results/nemotron/
-!results/imdb_20_final45_*.csv
+!results/arpitha/
 .DS_Store
 
 # Local reference and session continuity files (Claude Code)
