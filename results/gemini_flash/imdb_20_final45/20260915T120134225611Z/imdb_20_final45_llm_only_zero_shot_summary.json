@@ -1,0 +1,12 @@
+{
+  "dataset": "imdb_20_final45",
+  "model_id": "google/gemini-3.1-flash-lite",
+  "correct": 3,
+  "valid_questions": 45,
+  "attempted_questions": 45,
+  "errors": 0,
+  "accuracy": 0.06666666666666667,
+  "successful_api_calls": 45,
+  "failed_api_calls": 0,
+  "denominator_policy": "Successfully evaluated responses; execution errors excluded; empty or non-exact answers score 0"
+}

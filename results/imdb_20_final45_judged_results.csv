@@ -1,0 +1,91 @@
+neutral_id,judge_score,judge_reason
+R001,0,"Incorrect: reported 8.00, but the required average is 8.01."
+R002,0,"Incorrect: identified Comedy, but the qualifying genre with the lowest average is Sci-Fi at 8.08."
+R003,1,Correct: the response returns exactly the four required runtime outliers.
+R004,1,Correct: 621 is equivalent to the required total of 621 minutes.
+R005,0,"Incorrect: identified Adventure, but Action has the largest rating range at 2.2."
+R006,0,Incorrect: reported 148.00 minutes instead of 157.29 minutes.
+R007,1,Correct: Jurassic World is the requested rating outlier; the question did not require its rating value.
+R008,0,"Incorrect: the reported averages (8.42, 8.23) and difference (0.19) do not match 8.44, 8.26, and 0.18."
+R009,1,Correct: Drama is the genre with the highest total runtime; the question only asks which genre.
+R010,0,Incorrect: reported 8.44 instead of the required 8.53.
+R011,0,Incorrect: reported 635 minutes instead of 674 minutes.
+R012,0,Incorrect: reported 130.75 minutes instead of 131.50 minutes.
+R013,1,Correct: 8.73 matches the required Christopher Nolan average rating.
+R014,0,Incorrect: reported 8.63 instead of 8.67.
+R015,0,Incorrect: reported 152.80 minutes instead of 157.43 minutes.
+R016,0,Incorrect: Adventure at 8.36 is not correct; the answer is Drama at 8.49.
+R017,1,Correct: Animation and 426 minutes both match the required answer.
+R018,0,"Incorrect: Drama is correct, but the response gives 8 movies instead of 11; both components were requested."
+R019,0,"Incorrect: selected Drama at 146.18, but Fantasy has the highest average runtime at 154.25 minutes."
+R020,0,"Incorrect: Animation is the right genre, but 107.67 is not the required 106.50 minutes."
+R021,0,"Incorrect: selected Action at 60.00%, but Sci-Fi has the highest proportion at 75.00%."
+R022,1,Correct: Drama with 6 qualifying movies matches the ground truth.
+R023,1,Correct: the response gives exactly the five required high-runtime outlier titles.
+R024,0,"Incorrect: only Monsters Inc. was returned; Toy Story 3, How to Train Your Dragon, and Black Swan are also required."
+R025,1,"Correct: the three required high-rating outlier titles are all present, with no extras."
+R026,1,"Correct: the response returns exactly Fellowship, Two Towers, and Interstellar."
+R027,1,"Correct: the final list contains exactly Monsters Inc., Toy Story 3, and How to Train Your Dragon; order is immaterial."
+R028,1,Correct: the response returns exactly the two required Drama runtime outliers.
+R029,1,Correct: The Dark Knight is the sole required Action runtime outlier.
+R030,1,Correct: How to Train Your Dragon exactly matches the required answer.
+R031,0,Incorrect: reported 755 minutes instead of 1102 minutes.
+R032,1,Correct: both group averages and the 8.67-minute difference match after rounding.
+R033,0,Incorrect: reported 8.18 instead of 8.21.
+R034,0,Incorrect: reported 121.00 minutes instead of 125.55 minutes.
+R035,1,Correct: 434 minutes exactly matches the required total.
+R036,0,"Incorrect: reported Adventure with 87 minutes, but Comedy has the largest range at 88 minutes."
+R037,0,"Incorrect: selected Action, but Sci-Fi has the highest average release year at 2010.00."
+R038,1,Correct: Adventure with 5 qualifying movies matches both requested components.
+R039,1,Correct: Fantasy with 617 minutes matches both requested components.
+R040,0,"Incorrect: the reported Drama and Adventure averages and the 0.22 difference do not match 8.49, 8.24, and 0.25."
+R041,1,"Correct: the response returns exactly Saving Private Ryan, Fellowship, and Two Towers."
+R042,1,Correct: the final outlier list is exactly Memento and Monsters Inc.
+R043,1,Correct: the response returns exactly The Wolf of Wall Street and Interstellar.
+R044,1,Correct: the response returns exactly Toy Story 3 and How to Train Your Dragon.
+R045,0,Incorrect: The Matrix is an extra incorrect outlier; only The Dark Knight qualifies.
+R046,0,Incorrect: reported 8.19 instead of 8.01.
+R047,0,"Incorrect: selected Comedy at 8.10, but the correct genre is Sci-Fi at 8.08."
+R048,0,Incorrect: the list wrongly includes Saving Private Ryan and omits Interstellar.
+R049,0,Incorrect: reported 103 instead of the required total runtime of 621 minutes.
+R050,0,"Incorrect: identified Drama, but Action has the largest rating range."
+R051,0,Incorrect: reported 140.00 minutes instead of 157.29 minutes.
+R052,0,"Incorrect: identified The Dark Knight, but the IQR rating outlier is Jurassic World."
+R053,0,"Incorrect: all three reported values (8.38, 8.07, 0.31) differ from 8.44, 8.26, and 0.18."
+R054,1,Correct: Drama is the requested genre with the highest total runtime.
+R055,0,Incorrect: 143.5 is not the requested average IMDb rating of 8.53.
+R056,1,Correct: 674 is equivalent to the required total of 674 minutes.
+R057,0,Incorrect: reported 130.33 minutes instead of 131.50 minutes.
+R058,0,Incorrect: reported 8.80 instead of 8.73.
+R059,0,Incorrect: reported 8.68 instead of 8.67.
+R060,0,Incorrect: reported 143.50 minutes instead of 157.43 minutes.
+R061,0,"Incorrect: Drama is the right genre, but the requested average is 8.49, not 8.52."
+R062,0,"Incorrect: Animation is the right genre, but the total is 426 minutes, not 342."
+R063,0,"Incorrect: Drama is the right genre, but it appears in 11 movies, not 10."
+R064,0,"Incorrect: selected Drama at 143.00, but Fantasy is correct at 154.25 minutes."
+R065,0,"Incorrect: Animation is the right genre, but the average is 106.50 minutes, not 109.25."
+R066,0,"Incorrect: selected Adventure at 100.00%, but Sci-Fi is correct at 75.00%."
+R067,0,"Incorrect: Drama is the right genre, but the qualifying count is 6, not 3."
+R068,0,"Incorrect: the list substitutes Life of Pi for Interstellar, so the requested outlier set is wrong."
+R069,0,Incorrect: the returned list has multiple wrong items and omits How to Train Your Dragon; it does not match the required four titles.
+R070,0,"Incorrect: the response adds American History X, Saving Private Ryan, and The Matrix; only the three ground-truth titles qualify."
+R071,0,"Incorrect: the response includes The Wolf of Wall Street and Life of Pi as extras; only Fellowship, Two Towers, and Interstellar qualify."
+R072,0,Incorrect: How to Train Your Dragon is missing from the required three-title list.
+R073,0,"Incorrect: returned Saving Private Ryan, but the two qualifying Drama outliers are Fellowship and Two Towers."
+R074,0,Incorrect: returned several extra movies; The Dark Knight is the only qualifying Action runtime outlier.
+R075,0,"Incorrect: returned The Matrix, Monsters Inc., and Toy Story 3, but the correct answer is How to Train Your Dragon."
+R076,0,Incorrect: reported 497 minutes instead of 1102 minutes.
+R077,0,"Incorrect: the reported averages and 7.01-minute difference do not match 140.17, 131.50, and 8.67."
+R078,0,Incorrect: reported 8.16 instead of 8.21.
+R079,0,Incorrect: reported 117.00 minutes instead of 125.55 minutes.
+R080,0,Incorrect: reported 285 minutes instead of 434 minutes.
+R081,0,"Incorrect: reported Drama with a 71-minute range, but Comedy is correct with 88 minutes."
+R082,0,"Incorrect: reported Drama at 1998.00, but Sci-Fi is correct at 2010.00."
+R083,0,"Incorrect: reported Drama with 6, but Adventure has the greatest count with 5 qualifying movies."
+R084,0,"Incorrect: reported Drama with 709 minutes, but among genres appearing exactly four times the answer is Fantasy with 617 minutes."
+R085,0,Incorrect: the response reverses which genre has the higher average and gives incorrect averages and difference; the correct difference is 0.25 in favor of Drama.
+R086,0,Incorrect: The Wolf of Wall Street is an extra invalid item for the pre-2010 subset.
+R087,0,"Incorrect: returned Saving Private Ryan, but the low-runtime outliers are Memento and Monsters Inc."
+R088,0,Incorrect: the response includes three pre-2010 movies and omits Interstellar; the correct set is Wolf of Wall Street and Interstellar.
+R089,0,"Incorrect: returned Monsters Inc., but the correct low-runtime outliers are Toy Story 3 and How to Train Your Dragon."
+R090,1,Correct: The Dark Knight exactly matches the sole required Action rating outlier.

@@ -1,14 +1,14 @@
 """Visual PDF evidence builder — Arpitha.
 
-Renders the IMDb screenshot PDF into JPEG evidence images for
-multimodal model input.
+Renders visual PDF pages into JPEG evidence images for multimodal model input.
 
-The focused IMDb benchmark has 40 PDF pages:
-- metadata batch: pages 1, 3, 5, ..., 39
-- cast batch:     pages 2, 4, 6, ..., 40
+Historical IMDb benchmark:
+- alternating metadata/cast pages
+- every two selected pages combined vertically
 
-Every two selected PDF pages are combined vertically, giving
-10 evidence images per batch.
+Final45 benchmark:
+- metadata-only pages
+- optionally combines every four pages into a 2x2 grid
 """
 
 from __future__ import annotations
@@ -23,17 +23,11 @@ from PIL import Image
 from unified_pipeline.base import BaseEvidenceBuilder, EvidenceResult
 
 
-BATCH_PAGE_INDICES = {
-    "metadata": list(range(0, 40, 2)),
-    "cast": list(range(1, 40, 2)),
-}
-
-
 class VisualPdfEvidenceBuilder(BaseEvidenceBuilder):
-    """Prepare screenshot-PDF pages for multimodal model input."""
+    """Prepare visual-PDF pages for multimodal model input."""
 
     def __init__(self) -> None:
-        # Cache rendered images because several questions use the same batch.
+        # Cache rendered images because several questions use the same evidence.
         self._cache: dict[tuple, list[str]] = {}
 
     def build(self, question: str, config: dict) -> EvidenceResult:
@@ -44,12 +38,48 @@ class VisualPdfEvidenceBuilder(BaseEvidenceBuilder):
                 f"Visual PDF evidence not found: {pdf_path}"
             )
 
+        pdf_page_count = int(config["pdf_page_count"])
+        page_layout = config.get("page_layout", "alternating")
+
+        if page_layout not in {"alternating", "metadata_only"}:
+            raise ValueError(
+                f"Unknown visual PDF page_layout: {page_layout!r}"
+            )
+
+        pages_per_image = int(config.get("pages_per_image", 2))
+
+        if pages_per_image not in {1, 2, 4}:
+            raise ValueError(
+                "pages_per_image must be 1, 2, or 4"
+            )
+
+        if pdf_page_count <= 0:
+            raise ValueError(
+                f"pdf_page_count must be positive; got {pdf_page_count}."
+            )
+
+        if page_layout == "alternating" and pdf_page_count % 2 != 0:
+            raise ValueError(
+                "Alternating visual PDF layout requires an even "
+                f"pdf_page_count; got {pdf_page_count}."
+            )
+
+        batch_page_indices = {
+            "metadata": list(range(0, pdf_page_count, 2)),
+            "cast": list(range(1, pdf_page_count, 2)),
+        }
+
+        if page_layout == "metadata_only":
+            batch_page_indices = {
+                "metadata": list(range(pdf_page_count))
+            }
+
         batch_name = config.get("_source_pdf")
 
-        if batch_name not in BATCH_PAGE_INDICES:
+        if batch_name not in batch_page_indices:
             raise ValueError(
                 f"Unknown visual evidence batch: {batch_name!r}. "
-                f"Expected one of {list(BATCH_PAGE_INDICES)}."
+                f"Expected one of {list(batch_page_indices)}."
             )
 
         render_scale = float(config.get("render_scale", 1.0))
@@ -58,16 +88,21 @@ class VisualPdfEvidenceBuilder(BaseEvidenceBuilder):
         cache_key = (
             str(pdf_path.resolve()),
             batch_name,
+            pdf_page_count,
             render_scale,
             jpeg_quality,
+            page_layout,
+            pages_per_image,
         )
 
         if cache_key not in self._cache:
             self._cache[cache_key] = self._prepare_images(
                 pdf_path=pdf_path,
-                page_indices=BATCH_PAGE_INDICES[batch_name],
+                page_indices=batch_page_indices[batch_name],
+                pdf_page_count=pdf_page_count,
                 render_scale=render_scale,
                 jpeg_quality=jpeg_quality,
+                pages_per_image=pages_per_image,
             )
 
         images = self._cache[cache_key]
@@ -147,6 +182,46 @@ class VisualPdfEvidenceBuilder(BaseEvidenceBuilder):
         return combined
 
     @staticmethod
+    def _combine_four_pages_grid(
+        pages: list[Image.Image],
+    ) -> Image.Image:
+        """Combine four rendered pages into a 2x2 grid."""
+
+        if len(pages) != 4:
+            raise ValueError(
+                "Exactly four pages are required for a 2x2 grid."
+            )
+
+        gap = 20
+
+        left_width = max(pages[0].width, pages[2].width)
+        right_width = max(pages[1].width, pages[3].width)
+
+        top_height = max(pages[0].height, pages[1].height)
+        bottom_height = max(pages[2].height, pages[3].height)
+
+        width = left_width + gap + right_width
+        height = top_height + gap + bottom_height
+
+        combined = Image.new(
+            "RGB",
+            (width, height),
+            "white",
+        )
+
+        positions = [
+            (0, 0),
+            (left_width + gap, 0),
+            (0, top_height + gap),
+            (left_width + gap, top_height + gap),
+        ]
+
+        for image, position in zip(pages, positions):
+            combined.paste(image, position)
+
+        return combined
+
+    @staticmethod
     def _image_to_data_url(
         image: Image.Image,
         jpeg_quality: int,
@@ -172,14 +247,23 @@ class VisualPdfEvidenceBuilder(BaseEvidenceBuilder):
         self,
         pdf_path: Path,
         page_indices: list[int],
+        pdf_page_count: int,
         render_scale: float,
         jpeg_quality: int,
+        pages_per_image: int = 2,
     ) -> list[str]:
-        """Render selected pages and combine every two into one image."""
+        """Render selected PDF pages and group them into model images."""
 
         document = pymupdf.open(str(pdf_path))
 
         try:
+            if document.page_count < pdf_page_count:
+                raise ValueError(
+                    f"Configured pdf_page_count is {pdf_page_count}, "
+                    f"but the actual PDF contains only "
+                    f"{document.page_count} pages."
+                )
+
             rendered_pages = [
                 self._render_page(
                     document=document,
@@ -191,18 +275,41 @@ class VisualPdfEvidenceBuilder(BaseEvidenceBuilder):
         finally:
             document.close()
 
-        if len(rendered_pages) % 2 != 0:
+        if pages_per_image == 1:
+            return [
+                self._image_to_data_url(page, jpeg_quality)
+                for page in rendered_pages
+            ]
+
+        if len(rendered_pages) % pages_per_image != 0:
             raise ValueError(
-                "Visual evidence page count must be even so pages "
-                "can be combined in pairs."
+                f"Selected page count ({len(rendered_pages)}) "
+                f"must be divisible by pages_per_image "
+                f"({pages_per_image})."
             )
 
         images: list[str] = []
 
-        for index in range(0, len(rendered_pages), 2):
-            combined = self._combine_two_pages(
-                rendered_pages[index],
-                rendered_pages[index + 1],
+        if pages_per_image == 2:
+            for index in range(0, len(rendered_pages), 2):
+                combined = self._combine_two_pages(
+                    rendered_pages[index],
+                    rendered_pages[index + 1],
+                )
+
+                images.append(
+                    self._image_to_data_url(
+                        combined,
+                        jpeg_quality=jpeg_quality,
+                    )
+                )
+
+            return images
+
+        # pages_per_image == 4
+        for index in range(0, len(rendered_pages), 4):
+            combined = self._combine_four_pages_grid(
+                rendered_pages[index:index + 4]
             )
 
             images.append(
