@@ -70,8 +70,6 @@ MODEL_BASE_URL=https://openrouter.ai/api/v1
 MODEL_NAME=meta-llama/llama-3.3-70b-instruct
 ```
 
-> **Note:** `.env` is gitignored and must never be committed.
-
 ### 5. Large evidence files (download separately)
 
 The following files are too large for git and must be placed locally before running their respective datasets:
@@ -80,6 +78,7 @@ The following files are too large for git and must be placed locally before runn
 |------|---------|------|
 | `evidence/hotpot/hotpot_validation_distractor.json` | `hotpot` | ~50 MB |
 | `evidence/imdb_20/imdb_20_movies_screenshot_evidence.pdf` | `imdb_20` | ~250 MB |
+| `evidence/imdb_20/imdb_20_final_v2_metadata_cards.pdf` | `imdb_20_final45` | ~250 MB |
 
 ---
 
@@ -135,6 +134,7 @@ Results are written to `results/<model>/<dataset>_<prompt>_metrics.csv` after ea
 |---------|--------|-----------|----------|------|
 | `imdb_controlled` | Movies (structured) | 30 | CSV full-table | llm_only + sql_detour |
 | `imdb_20` | Movies (visual PDF) | 10 | Visual PDF screenshots | llm_only |
+| `imdb_20_final45` | Movies (visual PDF) | 45 | Visual PDF metadata cards | llm_only |
 | `f1_racing` | Formula 1 racing | 30 | Prose documents + SQLite DB | llm_only + sql_detour |
 | `music` | Music artists | 30 | Prose documents + SQLite DB | llm_only + sql_detour |
 | `hotpot` | Multi-hop QA | 124 | Wikipedia paragraphs | llm_only |
@@ -236,6 +236,6 @@ Any raw OpenRouter model ID can also be passed directly via `--model`.
 |--------|---------|------------------|
 | Nishit | `finhybrid`, `tathybrid`, `music_structured` | RAG (ChromaDB + sentence-transformers) |
 | Krittika | `imdb_controlled` | CSV full-table + SQL detour |
-| Arpitha | `imdb_20` | Visual PDF (base64 image) |
+| Arpitha | `imdb_20`, `imdb_20_final45` | Visual PDF (base64 image) |
 | Satwik | `f1_racing`, `music` | Prose documents + SQL detour |
 | Sushma | `hotpot`, `hotpot_sql` | HotpotQA context + SQL fact DB |
