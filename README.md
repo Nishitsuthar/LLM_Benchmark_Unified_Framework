@@ -41,8 +41,6 @@ cd LLM_Benchmark_Unified_Framework
 
 ### 2. Create and activate a virtual environment
 
-Using a virtual environment prevents conflicts with packages already installed on your system.
-
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate        # macOS / Linux
