@@ -1,0 +1,416 @@
+{
+  "offline_checks": "PASS",
+  "questions_verified": 45,
+  "category_counts": {
+    "arithmetic_aggregation": 15,
+    "genre_level_aggregation": 15,
+    "statistical_outlier_detection": 15
+  },
+  "cards_verified": 20,
+  "pdf_pages": 20,
+  "model_images": 5,
+  "pages_per_image": 4,
+  "model_image_size": [
+    2420,
+    1820
+  ],
+  "composite_sha256": [
+    "6362d0d60eb4cb5a8a77c62c3efaefb0d28fc6a03312ca8d0fa440d9bf3b234a",
+    "ca97de51f594ef14739e742f314877cdff05dbca5c8845dacbabb00696969215",
+    "ce7fb8f93febb8666dd651847baede7d13f914d86bc46a89c42f6bc86efd087c",
+    "a1095f6c3ac63520443130b5e1c70b7f4000c14a214355c116294156ffed3216",
+    "3ce408f1828b523c2eb83a13a58b5882107fddb983839ec8d0f9cccc89577f44"
+  ],
+  "evidence_text_empty": true,
+  "pdf_text_layer_absent": true,
+  "historical_rendering_unchanged": true,
+  "F1_F10_unchanged": true,
+  "computations": {
+    "F1": {
+      "answer": "8.01"
+    },
+    "F2": {
+      "answer": "Sci-Fi - 8.08",
+      "candidate_values": {
+        "Action": "8.16",
+        "Adventure": "8.24",
+        "Animation": "8.2",
+        "Comedy": "8.175",
+        "Crime": "8.4",
+        "Drama": "8.490909090909090909090909091",
+        "Fantasy": "8.475",
+        "Sci-Fi": "8.075"
+      },
+      "ties": false
+    },
+    "F3": {
+      "answer": "The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; The Wolf of Wall Street; Interstellar",
+      "n": 15,
+      "sum": "2060",
+      "mean": "137.3333333333333333333333333",
+      "population_sd": "29.70671454215172696247040048",
+      "threshold": "167.0400478754850602958037338"
+    },
+    "F4": {
+      "answer": "621 minutes"
+    },
+    "F5": {
+      "answer": "Action - 2.2 rating points",
+      "candidate_values": {
+        "Action": "2.2",
+        "Adventure": "2.0",
+        "Animation": "0.2",
+        "Comedy": "0.2",
+        "Crime": "1.0",
+        "Drama": "1.2",
+        "Fantasy": "1.0",
+        "Sci-Fi": "1.8"
+      },
+      "ties": false
+    },
+    "F6": {
+      "answer": "157.29 minutes"
+    },
+    "F7": {
+      "answer": "Jurassic World - 6.9"
+    },
+    "F8": {
+      "answer": "Before 2000: 8.44; 2000 or after: 8.26; Difference: 0.18"
+    },
+    "F9": {
+      "answer": "Drama - 1608 minutes",
+      "candidate_values": {
+        "Action": "653",
+        "Adventure": "1356",
+        "Animation": "426",
+        "Comedy": "492",
+        "Crime": "709",
+        "Drama": "1608",
+        "Fantasy": "617",
+        "Sci-Fi": "572"
+      },
+      "ties": false
+    },
+    "F10": {
+      "answer": "8.53"
+    },
+    "F11": {
+      "answer": "674 minutes",
+      "n": 5,
+      "sum": "674",
+      "mean": "134.8"
+    },
+    "F12": {
+      "answer": "131.50 minutes",
+      "n": 8,
+      "sum": "1052",
+      "mean": "131.5"
+    },
+    "F13": {
+      "answer": "8.73",
+      "n": 3,
+      "sum": "26.2",
+      "mean": "8.733333333333333333333333333"
+    },
+    "F14": {
+      "answer": "8.67",
+      "n": 7,
+      "sum": "60.7",
+      "mean": "8.671428571428571428571428571"
+    },
+    "F15": {
+      "answer": "157.43 minutes",
+      "n": 7,
+      "sum": "1102",
+      "mean": "157.4285714285714285714285714"
+    },
+    "F16": {
+      "answer": "Drama - 8.49",
+      "candidate_values": {
+        "Action": "8.16",
+        "Adventure": "8.24",
+        "Animation": "8.2",
+        "Comedy": "8.175",
+        "Crime": "8.4",
+        "Drama": "8.490909090909090909090909091",
+        "Fantasy": "8.475",
+        "Sci-Fi": "8.075"
+      },
+      "ties": false
+    },
+    "F17": {
+      "answer": "Animation - 426 minutes",
+      "candidate_values": {
+        "Action": "653",
+        "Adventure": "1356",
+        "Animation": "426",
+        "Comedy": "492",
+        "Crime": "709",
+        "Drama": "1608",
+        "Fantasy": "617",
+        "Sci-Fi": "572"
+      },
+      "ties": false
+    },
+    "F18": {
+      "answer": "Drama - 11 movies",
+      "candidate_values": {
+        "Action": "5",
+        "Adventure": "10",
+        "Animation": "4",
+        "Biography": "2",
+        "Comedy": "4",
+        "Crime": "5",
+        "Drama": "11",
+        "Fantasy": "4",
+        "Mystery": "1",
+        "Sci-Fi": "4",
+        "Thriller": "2",
+        "War": "2"
+      },
+      "ties": false
+    },
+    "F19": {
+      "answer": "Fantasy - 154.25 minutes",
+      "candidate_values": {
+        "Action": "130.6",
+        "Adventure": "135.6",
+        "Animation": "106.5",
+        "Comedy": "123",
+        "Crime": "141.8",
+        "Drama": "146.1818181818181818181818182",
+        "Fantasy": "154.25",
+        "Sci-Fi": "143"
+      },
+      "ties": false
+    },
+    "F20": {
+      "answer": "Animation - 106.50 minutes",
+      "candidate_values": {
+        "Action": "130.6",
+        "Adventure": "135.6",
+        "Animation": "106.5",
+        "Comedy": "123",
+        "Crime": "141.8",
+        "Drama": "146.1818181818181818181818182",
+        "Fantasy": "154.25",
+        "Sci-Fi": "143"
+      },
+      "ties": false
+    },
+    "F21": {
+      "answer": "Sci-Fi - 75.00%",
+      "candidate_values": {
+        "Action": "60",
+        "Adventure": "50",
+        "Animation": "50",
+        "Comedy": "50",
+        "Crime": "20",
+        "Drama": "27.27272727272727272727272727",
+        "Fantasy": "25",
+        "Sci-Fi": "75"
+      },
+      "ties": false
+    },
+    "F22": {
+      "answer": "Drama - 6 movies",
+      "candidate_values": {
+        "Action": "2",
+        "Adventure": "3",
+        "Animation": "0",
+        "Comedy": "0",
+        "Crime": "2",
+        "Drama": "6",
+        "Fantasy": "2",
+        "Sci-Fi": "2"
+      },
+      "ties": false
+    },
+    "F23": {
+      "answer": "Saving Private Ryan; The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; The Wolf of Wall Street; Interstellar",
+      "n": 20,
+      "sum": "2734",
+      "mean": "136.7",
+      "population_sd": "27.38813611766963597219352150",
+      "threshold": "164.0881361176696359721935215"
+    },
+    "F24": {
+      "answer": "Monsters Inc.; Toy Story 3; How to Train Your Dragon; Black Swan",
+      "n": 20,
+      "sum": "2734",
+      "mean": "136.7",
+      "population_sd": "27.38813611766963597219352150",
+      "threshold": "109.3118638823303640278064785"
+    },
+    "F25": {
+      "answer": "The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; The Dark Knight",
+      "n": 20,
+      "sum": "166.1",
+      "mean": "8.305",
+      "population_sd": "0.4576843890717707229848831083",
+      "threshold": "8.762684389071770722984883108"
+    },
+    "F26": {
+      "answer": "The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; Interstellar",
+      "n": 10,
+      "sum": "1356",
+      "mean": "135.6",
+      "population_sd": "31.13261954927660757187193879",
+      "threshold": "166.7326195492766075718719388"
+    },
+    "F27": {
+      "answer": "Monsters Inc.; Toy Story 3; How to Train Your Dragon",
+      "n": 10,
+      "sum": "1356",
+      "mean": "135.6",
+      "population_sd": "31.13261954927660757187193879",
+      "threshold": "104.4673804507233924281280612"
+    },
+    "F28": {
+      "answer": "The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers",
+      "n": 11,
+      "sum": "1608",
+      "mean": "146.1818181818181818181818182",
+      "population_sd": "25.05201201071730220365709936",
+      "threshold": "171.2338301925354840218389176"
+    },
+    "F29": {
+      "answer": "The Dark Knight",
+      "n": 5,
+      "sum": "653",
+      "mean": "130.6",
+      "population_sd": "18.69331431287667617705949583",
+      "threshold": "149.2933143128766761770594958"
+    },
+    "F30": {
+      "answer": "How to Train Your Dragon",
+      "n": 5,
+      "sum": "653",
+      "mean": "130.6",
+      "population_sd": "18.69331431287667617705949583",
+      "threshold": "111.9066856871233238229405042"
+    },
+    "F31": {
+      "answer": "1102 minutes",
+      "n": 7,
+      "sum": "1102",
+      "mean": "157.4285714285714285714285714"
+    },
+    "F32": {
+      "answer": "Before 2010: 140.17 minutes; 2010 or after: 131.50 minutes; Difference: 8.67 minutes"
+    },
+    "F33": {
+      "answer": "8.21",
+      "n": 7,
+      "sum": "57.5",
+      "mean": "8.214285714285714285714285714"
+    },
+    "F34": {
+      "answer": "125.55 minutes",
+      "n": 11,
+      "sum": "1381",
+      "mean": "125.5454545454545454545454545"
+    },
+    "F35": {
+      "answer": "434 minutes",
+      "n": 3,
+      "sum": "434",
+      "mean": "144.6666666666666666666666667"
+    },
+    "F36": {
+      "answer": "Comedy - 88 minutes",
+      "candidate_values": {
+        "Action": "54",
+        "Adventure": "87",
+        "Animation": "41",
+        "Comedy": "88",
+        "Crime": "63",
+        "Drama": "71",
+        "Fantasy": "52",
+        "Sci-Fi": "45"
+      },
+      "ties": false
+    },
+    "F37": {
+      "answer": "Sci-Fi - 2010.00",
+      "candidate_values": {
+        "Action": "2008.8",
+        "Adventure": "2007.1",
+        "Animation": "2004.5",
+        "Comedy": "2005.5",
+        "Crime": "2003.8",
+        "Drama": "2004.909090909090909090909091",
+        "Fantasy": "2003",
+        "Sci-Fi": "2010"
+      },
+      "ties": false
+    },
+    "F38": {
+      "answer": "Adventure - 5 movies",
+      "candidate_values": {
+        "Action": "3",
+        "Adventure": "5",
+        "Animation": "2",
+        "Comedy": "2",
+        "Crime": "1",
+        "Drama": "3",
+        "Fantasy": "1",
+        "Sci-Fi": "3"
+      },
+      "ties": false
+    },
+    "F39": {
+      "answer": "Fantasy - 617 minutes",
+      "candidate_values": {
+        "Animation": "426",
+        "Comedy": "492",
+        "Fantasy": "617",
+        "Sci-Fi": "572"
+      },
+      "ties": false
+    },
+    "F40": {
+      "answer": "Drama - 8.49; Adventure - 8.24; Difference: 0.25"
+    },
+    "F41": {
+      "answer": "Saving Private Ryan; The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers",
+      "n": 12,
+      "sum": "1682",
+      "mean": "140.1666666666666666666666667",
+      "population_sd": "26.12097922275417980957243090",
+      "threshold": "166.2876458894208464762390976"
+    },
+    "F42": {
+      "answer": "Memento; Monsters Inc.",
+      "n": 12,
+      "sum": "1682",
+      "mean": "140.1666666666666666666666667",
+      "population_sd": "26.12097922275417980957243090",
+      "threshold": "114.0456874439124868570942358"
+    },
+    "F43": {
+      "answer": "The Wolf of Wall Street; Interstellar",
+      "n": 8,
+      "sum": "1052",
+      "mean": "131.5",
+      "population_sd": "28.40334487344756372857635032",
+      "threshold": "159.9033448734475637285763503"
+    },
+    "F44": {
+      "answer": "Toy Story 3; How to Train Your Dragon",
+      "n": 8,
+      "sum": "1052",
+      "mean": "131.5",
+      "population_sd": "28.40334487344756372857635032",
+      "threshold": "103.0966551265524362714236497"
+    },
+    "F45": {
+      "answer": "The Dark Knight",
+      "n": 5,
+      "sum": "40.8",
+      "mean": "8.16",
+      "population_sd": "0.7472616676907761739388327794",
+      "threshold": "8.907261667690776173938832779"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+You are given visual evidence from an IMDb benchmark.
+
+Use only the provided evidence images to answer the question.
+
+Do not use outside knowledge.
+Do not guess if the evidence is insufficient.
+
+Question:
+{question}
+
+Answer format:
+{answer_format}
+
+Return only the final answer.

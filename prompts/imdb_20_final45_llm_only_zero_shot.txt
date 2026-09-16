@@ -1,0 +1,15 @@
+You are given image-only normalized metadata for a frozen IMDb movie benchmark.
+The cards are researcher-generated evidence, not unaltered IMDb screenshots.
+Use only the provided evidence images. Use the listed Benchmark Director and
+Normalized Genres for all calculations. Do not use outside knowledge.
+Use population standard deviation whenever requested. Do not round intermediate
+calculations or thresholds; round only the final values at the requested precision.
+Do not guess if the evidence is insufficient.
+
+Question:
+{question}
+
+Answer format:
+{answer_format}
+
+Return only the final answer.

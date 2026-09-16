@@ -1,0 +1,364 @@
+{
+  "questions": [
+    {
+      "id": "F1",
+      "text": "Among movies released in or after 2010, what is the average IMDb rating? Round the answer to two decimal places.",
+      "category": "arithmetic_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F1.csv"
+    },
+    {
+      "id": "F2",
+      "text": "Among genres appearing in at least 4 movies, which genre has the lowest average IMDb rating? Round the average to two decimal places.",
+      "category": "genre_level_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F2.csv"
+    },
+    {
+      "id": "F3",
+      "text": "Among movies released in or after 2000, use the rule runtime > subset mean runtime + 1 population standard deviation. Which movies are runtime outliers?",
+      "category": "statistical_outlier_detection",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F3.csv"
+    },
+    {
+      "id": "F4",
+      "text": "What is the total runtime of all Adventure movies released in or after 2010?",
+      "category": "arithmetic_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F4.csv"
+    },
+    {
+      "id": "F5",
+      "text": "Among genres appearing in at least 3 movies, which genre has the largest IMDb rating range, calculated as maximum rating minus minimum rating?",
+      "category": "genre_level_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F5.csv"
+    },
+    {
+      "id": "F6",
+      "text": "Consider only directors who directed more than one movie in the dataset. What is the average runtime of all movies directed by those repeated directors? Round to two decimal places.",
+      "category": "arithmetic_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F6.csv"
+    },
+    {
+      "id": "F7",
+      "text": "Using the 1.5 × IQR rule for IMDb ratings, with Q1 and Q3 calculated as the medians of the lower and upper halves, which movie is a rating outlier?",
+      "category": "statistical_outlier_detection",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F7.csv"
+    },
+    {
+      "id": "F8",
+      "text": "What is the difference between the average IMDb rating of movies released before 2000 and movies released in or after 2000? Report both averages and the difference.",
+      "category": "arithmetic_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F8.csv"
+    },
+    {
+      "id": "F9",
+      "text": "Among genres appearing in at least 3 movies, which genre has the highest total runtime across all its movies?",
+      "category": "genre_level_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F9.csv"
+    },
+    {
+      "id": "F10",
+      "text": "First calculate the overall mean runtime of all 20 movies. Then calculate the average IMDb rating of movies whose runtime is above that mean. Round the final rating to two decimal places.",
+      "category": "arithmetic_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F10.csv"
+    },
+    {
+      "id": "F11",
+      "text": "What is the total runtime of all movies released before 2000?",
+      "category": "arithmetic_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F11.csv"
+    },
+    {
+      "id": "F12",
+      "text": "What is the average runtime of movies released in or after 2010? Round the answer to two decimal places.",
+      "category": "arithmetic_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F12.csv"
+    },
+    {
+      "id": "F13",
+      "text": "What is the average IMDb rating of all movies directed by Christopher Nolan? Round the answer to two decimal places.",
+      "category": "arithmetic_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F13.csv"
+    },
+    {
+      "id": "F14",
+      "text": "Among movies with runtime of at least 150 minutes, what is the average IMDb rating? Round the answer to two decimal places.",
+      "category": "arithmetic_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F14.csv"
+    },
+    {
+      "id": "F15",
+      "text": "Among movies with an IMDb rating of at least 8.5, what is the average runtime? Round the answer to two decimal places.",
+      "category": "arithmetic_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F15.csv"
+    },
+    {
+      "id": "F16",
+      "text": "Among genres appearing in at least 4 movies, which genre has the highest average IMDb rating? Round the average to two decimal places.",
+      "category": "genre_level_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F16.csv"
+    },
+    {
+      "id": "F17",
+      "text": "Among genres appearing in at least 4 movies, which genre has the lowest total runtime across all its movies? Report the genre and its total runtime in minutes.",
+      "category": "genre_level_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F17.csv"
+    },
+    {
+      "id": "F18",
+      "text": "Which genre appears in the greatest number of movies in the dataset? Report the genre and the number of movies.",
+      "category": "genre_level_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F18.csv"
+    },
+    {
+      "id": "F19",
+      "text": "Among genres appearing in at least 4 movies, which genre has the highest average runtime? Round the answer to two decimal places.",
+      "category": "genre_level_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F19.csv"
+    },
+    {
+      "id": "F20",
+      "text": "Among genres appearing in at least 4 movies, which genre has the lowest average runtime? Round the answer to two decimal places.",
+      "category": "genre_level_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F20.csv"
+    },
+    {
+      "id": "F21",
+      "text": "Among genres appearing in at least 4 movies, which genre has the highest proportion of its movies released in or after 2010? Report the genre and the percentage, rounded to two decimal places.",
+      "category": "genre_level_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F21.csv"
+    },
+    {
+      "id": "F22",
+      "text": "Among genres appearing in at least 4 movies, which genre contains the greatest number of movies with an IMDb rating of at least 8.5? Report the genre and the number of qualifying movies.",
+      "category": "genre_level_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F22.csv"
+    },
+    {
+      "id": "F23",
+      "text": "Using all 20 movies, identify the movies whose runtime is greater than the mean runtime plus 1 population standard deviation. Calculate the mean and population standard deviation as intermediate steps. Return only the movie titles.",
+      "category": "statistical_outlier_detection",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F23.csv"
+    },
+    {
+      "id": "F24",
+      "text": "Using all 20 movies, identify the movies whose runtime is less than the mean runtime minus 1 population standard deviation. Calculate the mean and population standard deviation as intermediate steps. Return only the movie titles.",
+      "category": "statistical_outlier_detection",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F24.csv"
+    },
+    {
+      "id": "F25",
+      "text": "Using all 20 movies, identify the movies whose IMDb rating is greater than the mean IMDb rating plus 1 population standard deviation. Calculate the mean and population standard deviation as intermediate steps. Return only the movie titles.",
+      "category": "statistical_outlier_detection",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F25.csv"
+    },
+    {
+      "id": "F26",
+      "text": "Among Adventure movies only, which movies have runtime greater than the Adventure-movie mean runtime + 1 population standard deviation?",
+      "category": "statistical_outlier_detection",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F26.csv"
+    },
+    {
+      "id": "F27",
+      "text": "Among Adventure movies only, which movies have runtime less than the Adventure-movie mean runtime - 1 population standard deviation?",
+      "category": "statistical_outlier_detection",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F27.csv"
+    },
+    {
+      "id": "F28",
+      "text": "Among Drama movies only, which movies have runtime greater than the Drama-movie mean runtime + 1 population standard deviation?",
+      "category": "statistical_outlier_detection",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F28.csv"
+    },
+    {
+      "id": "F29",
+      "text": "Among Action movies only, which movies have runtime greater than the Action-movie mean runtime + 1 population standard deviation?",
+      "category": "statistical_outlier_detection",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F29.csv"
+    },
+    {
+      "id": "F30",
+      "text": "Among Action movies only, which movies have runtime less than the Action-movie mean runtime - 1 population standard deviation?",
+      "category": "statistical_outlier_detection",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F30.csv"
+    },
+    {
+      "id": "F31",
+      "text": "What is the total runtime of all movies with an IMDb rating of at least 8.5?",
+      "category": "arithmetic_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F31.csv"
+    },
+    {
+      "id": "F32",
+      "text": "What is the difference between the average runtime of movies released before 2010 and movies released in or after 2010? Report both averages and the difference, rounded to two decimal places.",
+      "category": "arithmetic_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F32.csv"
+    },
+    {
+      "id": "F33",
+      "text": "Among movies with runtime less than 120 minutes, what is the average IMDb rating? Round the answer to two decimal places.",
+      "category": "arithmetic_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F33.csv"
+    },
+    {
+      "id": "F34",
+      "text": "Among movies with IMDb ratings from 8.0 through 8.4 inclusive, what is the average runtime? Round the answer to two decimal places.",
+      "category": "arithmetic_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F34.csv"
+    },
+    {
+      "id": "F35",
+      "text": "What is the total runtime of all movies directed by Christopher Nolan?",
+      "category": "arithmetic_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F35.csv"
+    },
+    {
+      "id": "F36",
+      "text": "Among genres appearing in at least 4 movies, which genre has the largest runtime range, calculated as maximum runtime minus minimum runtime? Report the genre and its runtime range in minutes.",
+      "category": "genre_level_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F36.csv"
+    },
+    {
+      "id": "F37",
+      "text": "Among genres appearing in at least 4 movies, which genre has the highest average release year? Round the average year to two decimal places.",
+      "category": "genre_level_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F37.csv"
+    },
+    {
+      "id": "F38",
+      "text": "Among genres appearing in at least 4 movies, which genre contains the greatest number of movies released in or after 2010? Report the genre and the number of qualifying movies.",
+      "category": "genre_level_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F38.csv"
+    },
+    {
+      "id": "F39",
+      "text": "Among genres appearing in exactly 4 movies, which genre has the highest total runtime? Report the genre and its total runtime in minutes.",
+      "category": "genre_level_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F39.csv"
+    },
+    {
+      "id": "F40",
+      "text": "Compare Drama and Adventure movies. Which genre has the higher average IMDb rating, and what is the difference between their averages? Round averages and the difference to two decimal places.",
+      "category": "genre_level_aggregation",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F40.csv"
+    },
+    {
+      "id": "F41",
+      "text": "Among movies released before 2010, use the rule runtime > subset mean runtime + 1 population standard deviation. Which movies are runtime outliers?",
+      "category": "statistical_outlier_detection",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F41.csv"
+    },
+    {
+      "id": "F42",
+      "text": "Among movies released before 2010, use the rule runtime < subset mean runtime - 1 population standard deviation. Which movies are runtime outliers?",
+      "category": "statistical_outlier_detection",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F42.csv"
+    },
+    {
+      "id": "F43",
+      "text": "Among movies released in or after 2010, use the rule runtime > subset mean runtime + 1 population standard deviation. Which movies are runtime outliers?",
+      "category": "statistical_outlier_detection",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F43.csv"
+    },
+    {
+      "id": "F44",
+      "text": "Among movies released in or after 2010, use the rule runtime < subset mean runtime - 1 population standard deviation. Which movies are runtime outliers?",
+      "category": "statistical_outlier_detection",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F44.csv"
+    },
+    {
+      "id": "F45",
+      "text": "Among Action movies only, use the rule IMDb rating > Action-movie mean rating + 1 population standard deviation. Which movies are rating outliers?",
+      "category": "statistical_outlier_detection",
+      "source_pdf": "metadata",
+      "answer_format": "Return only the final answer.",
+      "ground_truth_file": "F45.csv"
+    }
+  ]
+}

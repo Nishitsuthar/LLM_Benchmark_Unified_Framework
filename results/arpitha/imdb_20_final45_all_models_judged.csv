@@ -1,0 +1,1229 @@
+model_id,valid_question,category,automatic_score,evaluation_status,scored_response,image_count,api_successes,api_failures,error,reasoning_text,finish_reason,raw_response_file,dataset,model,mode,prompt_style,question_id,question,ground_truth,model_response,exact_match,row_f1,precision,recall,eval_status,latency_seconds,input_tokens,output_tokens,judge_score,judge_reason,judge_disagrees_with_exact_match
+google/gemini-3.1-flash-lite,True,arithmetic_aggregation,0,evaluated_incorrect,8.00,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F1,"Among movies released in or after 2010, what is the average IMDb rating? Round the answer to two decimal places.","answer_text
+8.01",8.00,0,,,,evaluated_incorrect,2.812,5652,4,0,"Incorrect: reported 8.00, but the required average is 8.01.",0
+google/gemini-3.1-flash-lite,True,genre_level_aggregation,0,evaluated_incorrect,Comedy,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F2,"Among genres appearing in at least 4 movies, which genre has the lowest average IMDb rating? Round the average to two decimal places.","answer_text
+Sci-Fi - 8.08",Comedy,0,,,,evaluated_incorrect,1.312,5652,1,0,"Incorrect: identified Comedy, but the qualifying genre with the lowest average is Sci-Fi at 8.08.",0
+google/gemini-3.1-flash-lite,True,statistical_outlier_detection,0,evaluated_incorrect,"The movies released in or after 2000 are:
+1. Memento (113)
+2. The Lord of the Rings: The Fellowship of the Ring (178)
+3. Monsters Inc. (92)
+4. Catch Me If You Can (141)
+5. The Lord of the Rings: The Two Towers (179)
+6. The Dark Knight (152)
+7. Inglourious Basterds (153)
+8. Toy Story 3 (103)
+9. How to Train Your Dragon (98)
+10. Black Swan (108)
+11. The Avengers (143)
+12. Life of Pi (127)
+13. The Wolf of Wall Street (180)
+14. Interstellar (169)
+15. Jurassic World (124)
+
+Subset Runtimes: {113, 178, 92, 141, 179, 152, 153, 103, 98, 108, 143, 127, 180, 169, 124}
+Subset Mean: 1860 / 15 = 124
+Population Variance: [(113-124)^2 + (178-124)^2 + (92-124)^2 + (141-124)^2 + (179-124)^2 + (152-124)^2 + (153-124)^2 + (103-124)^2 + (98-124)^2 + (108-124)^2 + (143-124)^2 + (127-124)^2 + (180-124)^2 + (169-124)^2 + (124-124)^2] / 15
+= [121 + 2916 + 1024 + 289 + 3025 + 784 + 841 + 441 + 676 + 256 + 361 + 9 + 3136 + 2025 + 0] / 15
+= 15904 / 15 = 1060.2666666666667
+Population Standard Deviation: sqrt(1060.2666666666667) ≈ 32.561736236286
+Threshold (Mean + 1 SD): 124 + 32.561736236286 = 156.561736236286
+
+Movies with runtime > 156.561736236286:
+- The Lord of the Rings: The Fellowship of the Ring (178)
+- The Lord of the Rings: The Two Towers (179)
+- The Wolf of Wall Street (180)
+- Interstellar (169)
+
+The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, The Wolf of Wall Street, Interstellar",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F3,"Among movies released in or after 2000, use the rule runtime > subset mean runtime + 1 population standard deviation. Which movies are runtime outliers?","answer_text
+The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; The Wolf of Wall Street; Interstellar","The movies released in or after 2000 are:
+1. Memento (113)
+2. The Lord of the Rings: The Fellowship of the Ring (178)
+3. Monsters Inc. (92)
+4. Catch Me If You Can (141)
+5. The Lord of the Rings: The Two Towers (179)
+6. The Dark Knight (152)
+7. Inglourious Basterds (153)
+8. Toy Story 3 (103)
+9. How to Train Your Dragon (98)
+10. Black Swan (108)
+11. The Avengers (143)
+12. Life of Pi (127)
+13. The Wolf of Wall Street (180)
+14. Interstellar (169)
+15. Jurassic World (124)
+
+Subset Runtimes: {113, 178, 92, 141, 179, 152, 153, 103, 98, 108, 143, 127, 180, 169, 124}
+Subset Mean: 1860 / 15 = 124
+Population Variance: [(113-124)^2 + (178-124)^2 + (92-124)^2 + (141-124)^2 + (179-124)^2 + (152-124)^2 + (153-124)^2 + (103-124)^2 + (98-124)^2 + (108-124)^2 + (143-124)^2 + (127-124)^2 + (180-124)^2 + (169-124)^2 + (124-124)^2] / 15
+= [121 + 2916 + 1024 + 289 + 3025 + 784 + 841 + 441 + 676 + 256 + 361 + 9 + 3136 + 2025 + 0] / 15
+= 15904 / 15 = 1060.2666666666667
+Population Standard Deviation: sqrt(1060.2666666666667) ≈ 32.561736236286
+Threshold (Mean + 1 SD): 124 + 32.561736236286 = 156.561736236286
+
+Movies with runtime > 156.561736236286:
+- The Lord of the Rings: The Fellowship of the Ring (178)
+- The Lord of the Rings: The Two Towers (179)
+- The Wolf of Wall Street (180)
+- Interstellar (169)
+
+The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, The Wolf of Wall Street, Interstellar",0,,,,evaluated_incorrect,15.86,5659,588,1,Correct: the response returns exactly the four required runtime outliers.,1
+google/gemini-3.1-flash-lite,True,arithmetic_aggregation,0,evaluated_incorrect,621,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F4,What is the total runtime of all Adventure movies released in or after 2010?,"answer_text
+621 minutes",621,0,,,,evaluated_incorrect,1.469,5644,3,1,Correct: 621 is equivalent to the required total of 621 minutes.,1
+google/gemini-3.1-flash-lite,True,genre_level_aggregation,0,evaluated_incorrect,Adventure,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F5,"Among genres appearing in at least 3 movies, which genre has the largest IMDb rating range, calculated as maximum rating minus minimum rating?","answer_text
+Action - 2.2 rating points",Adventure,0,,,,evaluated_incorrect,1.454,5652,1,0,"Incorrect: identified Adventure, but Action has the largest rating range at 2.2.",0
+google/gemini-3.1-flash-lite,True,arithmetic_aggregation,0,evaluated_incorrect,148.00,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F6,Consider only directors who directed more than one movie in the dataset. What is the average runtime of all movies directed by those repeated directors? Round to two decimal places.,"answer_text
+157.29 minutes",148.00,0,,,,evaluated_incorrect,2.064,5658,6,0,Incorrect: reported 148.00 minutes instead of 157.29 minutes.,0
+google/gemini-3.1-flash-lite,True,statistical_outlier_detection,0,evaluated_incorrect,Jurassic World,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F7,"Using the 1.5 × IQR rule for IMDb ratings, with Q1 and Q3 calculated as the medians of the lower and upper halves, which movie is a rating outlier?","answer_text
+Jurassic World - 6.9",Jurassic World,0,,,,evaluated_incorrect,1.548,5663,2,1,Correct: Jurassic World is the requested rating outlier; the question did not require its rating value.,1
+google/gemini-3.1-flash-lite,True,arithmetic_aggregation,0,evaluated_incorrect,"Average IMDb rating of movies released before 2000: 8.42
+Average IMDb rating of movies released in or after 2000: 8.23
+Difference: 0.19",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F8,What is the difference between the average IMDb rating of movies released before 2000 and movies released in or after 2000? Report both averages and the difference.,"answer_text
+Before 2000: 8.44; 2000 or after: 8.26; Difference: 0.18","Average IMDb rating of movies released before 2000: 8.42
+Average IMDb rating of movies released in or after 2000: 8.23
+Difference: 0.19",0,,,,evaluated_incorrect,1.635,5662,47,0,"Incorrect: the reported averages (8.42, 8.23) and difference (0.19) do not match 8.44, 8.26, and 0.18.",0
+google/gemini-3.1-flash-lite,True,genre_level_aggregation,0,evaluated_incorrect,Drama,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F9,"Among genres appearing in at least 3 movies, which genre has the highest total runtime across all its movies?","answer_text
+Drama - 1608 minutes",Drama,0,,,,evaluated_incorrect,1.121,5647,1,1,Correct: Drama is the genre with the highest total runtime; the question only asks which genre.,1
+google/gemini-3.1-flash-lite,True,arithmetic_aggregation,0,evaluated_incorrect,8.44,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F10,First calculate the overall mean runtime of all 20 movies. Then calculate the average IMDb rating of movies whose runtime is above that mean. Round the final rating to two decimal places.,"answer_text
+8.53",8.44,0,,,,evaluated_incorrect,6.229,5662,4,0,Incorrect: reported 8.44 instead of the required 8.53.,0
+google/gemini-3.1-flash-lite,True,arithmetic_aggregation,0,evaluated_incorrect,635,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F11,What is the total runtime of all movies released before 2000?,"answer_text
+674 minutes",635,0,,,,evaluated_incorrect,6.462,5641,3,0,Incorrect: reported 635 minutes instead of 674 minutes.,0
+google/gemini-3.1-flash-lite,True,arithmetic_aggregation,0,evaluated_incorrect,130.75,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F12,What is the average runtime of movies released in or after 2010? Round the answer to two decimal places.,"answer_text
+131.50 minutes",130.75,0,,,,evaluated_incorrect,1.375,5650,6,0,Incorrect: reported 130.75 minutes instead of 131.50 minutes.,0
+google/gemini-3.1-flash-lite,True,arithmetic_aggregation,1,evaluated_exact,8.73,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F13,What is the average IMDb rating of all movies directed by Christopher Nolan? Round the answer to two decimal places.,"answer_text
+8.73",8.73,1,,,,evaluated_exact,1.898,5647,4,1,Correct: 8.73 matches the required Christopher Nolan average rating.,0
+google/gemini-3.1-flash-lite,True,arithmetic_aggregation,0,evaluated_incorrect,8.63,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F14,"Among movies with runtime of at least 150 minutes, what is the average IMDb rating? Round the answer to two decimal places.","answer_text
+8.67",8.63,0,,,,evaluated_incorrect,1.321,5653,4,0,Incorrect: reported 8.63 instead of 8.67.,0
+google/gemini-3.1-flash-lite,True,arithmetic_aggregation,0,evaluated_incorrect,152.80,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F15,"Among movies with an IMDb rating of at least 8.5, what is the average runtime? Round the answer to two decimal places.","answer_text
+157.43 minutes",152.80,0,,,,evaluated_incorrect,1.487,5653,6,0,Incorrect: reported 152.80 minutes instead of 157.43 minutes.,0
+google/gemini-3.1-flash-lite,True,genre_level_aggregation,0,evaluated_incorrect,Adventure: 8.36,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F16,"Among genres appearing in at least 4 movies, which genre has the highest average IMDb rating? Round the average to two decimal places.","answer_text
+Drama - 8.49",Adventure: 8.36,0,,,,evaluated_incorrect,1.413,5652,7,0,Incorrect: Adventure at 8.36 is not correct; the answer is Drama at 8.49.,0
+google/gemini-3.1-flash-lite,True,genre_level_aggregation,0,evaluated_incorrect,"To determine the genre with the lowest total runtime among those appearing in at least 4 movies, we first count the occurrences of each genre:
+
+1.  **Adventure**: Princess Mononoke (133), LOTR: Fellowship (178), Monsters Inc. (92), LOTR: Two Towers (179), Inglorious Basterds (153), Toy Story 3 (103), How to Train Your Dragon (98), Life of Pi (127), Interstellar (169), Jurassic World (124). **(10 movies)**
+2.  **Animation**: Princess Mononoke (133), Monsters Inc. (92), Toy Story 3 (103), How to Train Your Dragon (98). **(4 movies)**
+3.  **Fantasy**: Princess Mononoke (133), LOTR: Fellowship (178), LOTR: Two Towers (179), Life of Pi (127). **(4 movies)**
+4.  **Comedy**: The Big Lebowski (117), Monsters Inc. (92), Toy Story 3 (103), The Wolf of Wall Street (180). **(4 movies)**
+5.  **Crime**: The Big Lebowski (117), American History X (119), Catch Me If You Can (141), The Dark Knight (152), The Wolf of Wall Street (180). **(5 movies)**
+6.  **Drama**: American History X (119), Saving Private Ryan (169), Memento (113), LOTR: Fellowship (178), Catch Me If You Can (141), LOTR: Two Towers (179), The Dark Knight (152), Inglorious Basterds (153), Black Swan (108), Life of Pi (127), Interstellar (169). **(11 movies)**
+7.  **Action**: The Matrix (136), The Dark Knight (152), How to Train Your Dragon (98), The Avengers (143), Jurassic World (124). **(5 movies)**
+
+Next, we calculate the total runtime for the qualifying genres:
+*   **Animation**: 133 + 92 + 103 + 98 = 426 minutes
+*   **Fantasy**: 133 + 178 + 179 + 127 = 617 minutes
+*   **Comedy**: 117 + 92 + 103 + 180 = 492 minutes
+*   **Crime**: 117 + 119 + 141 + 152 + 180 = 709 minutes
+*   **Drama**: 119 + 169 + 113 + 178 + 141 + 179 + 152 + 153 + 108 + 127 + 169 = 1608 minutes
+*   **Action**: 136 + 152 + 98 + 143 + 124 = 653 minutes
+*   **Adventure**: 133 + 178 + 92 + 179 + 153 + 103 + 98 + 127 + 169 + 124 = 1356 minutes
+
+Comparing the totals, Animation has the lowest total runtime.
+
+Animation, 426 minutes",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F17,"Among genres appearing in at least 4 movies, which genre has the lowest total runtime across all its movies? Report the genre and its total runtime in minutes.","answer_text
+Animation - 426 minutes","To determine the genre with the lowest total runtime among those appearing in at least 4 movies, we first count the occurrences of each genre:
+
+1.  **Adventure**: Princess Mononoke (133), LOTR: Fellowship (178), Monsters Inc. (92), LOTR: Two Towers (179), Inglorious Basterds (153), Toy Story 3 (103), How to Train Your Dragon (98), Life of Pi (127), Interstellar (169), Jurassic World (124). **(10 movies)**
+2.  **Animation**: Princess Mononoke (133), Monsters Inc. (92), Toy Story 3 (103), How to Train Your Dragon (98). **(4 movies)**
+3.  **Fantasy**: Princess Mononoke (133), LOTR: Fellowship (178), LOTR: Two Towers (179), Life of Pi (127). **(4 movies)**
+4.  **Comedy**: The Big Lebowski (117), Monsters Inc. (92), Toy Story 3 (103), The Wolf of Wall Street (180). **(4 movies)**
+5.  **Crime**: The Big Lebowski (117), American History X (119), Catch Me If You Can (141), The Dark Knight (152), The Wolf of Wall Street (180). **(5 movies)**
+6.  **Drama**: American History X (119), Saving Private Ryan (169), Memento (113), LOTR: Fellowship (178), Catch Me If You Can (141), LOTR: Two Towers (179), The Dark Knight (152), Inglorious Basterds (153), Black Swan (108), Life of Pi (127), Interstellar (169). **(11 movies)**
+7.  **Action**: The Matrix (136), The Dark Knight (152), How to Train Your Dragon (98), The Avengers (143), Jurassic World (124). **(5 movies)**
+
+Next, we calculate the total runtime for the qualifying genres:
+*   **Animation**: 133 + 92 + 103 + 98 = 426 minutes
+*   **Fantasy**: 133 + 178 + 179 + 127 = 617 minutes
+*   **Comedy**: 117 + 92 + 103 + 180 = 492 minutes
+*   **Crime**: 117 + 119 + 141 + 152 + 180 = 709 minutes
+*   **Drama**: 119 + 169 + 113 + 178 + 141 + 179 + 152 + 153 + 108 + 127 + 169 = 1608 minutes
+*   **Action**: 136 + 152 + 98 + 143 + 124 = 653 minutes
+*   **Adventure**: 133 + 178 + 92 + 179 + 153 + 103 + 98 + 127 + 169 + 124 = 1356 minutes
+
+Comparing the totals, Animation has the lowest total runtime.
+
+Animation, 426 minutes",0,,,,evaluated_incorrect,3.528,5657,802,1,Correct: Animation and 426 minutes both match the required answer.,1
+google/gemini-3.1-flash-lite,True,genre_level_aggregation,0,evaluated_incorrect,"Drama, 8",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F18,Which genre appears in the greatest number of movies in the dataset? Report the genre and the number of movies.,"answer_text
+Drama - 11 movies","Drama, 8",0,,,,evaluated_incorrect,1.543,5647,4,0,"Incorrect: Drama is correct, but the response gives 8 movies instead of 11; both components were requested.",0
+google/gemini-3.1-flash-lite,True,genre_level_aggregation,0,evaluated_incorrect,"To determine the genre with the highest average runtime among those appearing in at least 4 movies, we first list the movies and their runtimes:
+
+1.  **Princess Mononoke**: 133 min (Adventure, Animation, Fantasy)
+2.  **The Big Lebowski**: 117 min (Comedy, Crime)
+3.  **American History X**: 119 min (Crime, Drama)
+4.  **Saving Private Ryan**: 169 min (Drama, War)
+5.  **The Matrix**: 136 min (Action, Sci-Fi)
+6.  **Memento**: 113 min (Drama, Mystery, Thriller)
+7.  **The Lord of the Rings: The Fellowship of the Ring**: 178 min (Adventure, Drama, Fantasy)
+8.  **Monsters Inc.**: 92 min (Adventure, Animation, Comedy)
+9.  **Catch Me If You Can**: 141 min (Biography, Crime, Drama)
+10. **The Lord of the Rings: The Two Towers**: 179 min (Adventure, Drama, Fantasy)
+11. **The Dark Knight**: 152 min (Action, Crime, Drama)
+12. **Inglourious Basterds**: 153 min (Adventure, Drama, War)
+13. **Toy Story 3**: 103 min (Adventure, Animation, Comedy)
+14. **How to Train Your Dragon**: 98 min (Action, Adventure, Animation)
+15. **Black Swan**: 108 min (Drama, Thriller)
+16. **The Avengers**: 143 min (Action, Sci-Fi)
+17. **Life of Pi**: 127 min (Adventure, Drama, Fantasy)
+18. **The Wolf of Wall Street**: 180 min (Biography, Comedy, Crime)
+19. **Interstellar**: 169 min (Adventure, Drama, Sci-Fi)
+20. **Jurassic World**: 124 min (Action, Adventure, Sci-Fi)
+
+**Genre Counts:**
+*   **Adventure**: 1, 7, 8, 10, 12, 13, 14, 17, 19, 20 (10 movies)
+*   **Animation**: 1, 8, 13, 14 (4 movies)
+*   **Comedy**: 2, 8, 13, 18 (4 movies)
+*   **Crime**: 2, 3, 9, 11, 18 (5 movies)
+*   **Drama**: 3, 4, 6, 7, 9, 10, 11, 12, 15, 17, 19 (11 movies)
+*   **Action**: 5, 11, 14, 16, 20 (5 movies)
+*   **Sci-Fi**: 5, 16, 19, 20 (4 movies)
+
+**Average Runtimes:**
+*   **Adventure**: (133+178+92+179+153+103+98+127+169+124) / 10 = 1356 / 10 = 135.6
+*   **Animation**: (133+92+103+98) / 4 = 426 / 4 = 106.5
+*   **Comedy**: (117+92+103+180) / 4 = 492 / 4 = 123.0
+*   **Crime**: (117+119+141+152+180) / 5 = 709 / 5 = 141.8
+*   **Drama**: (119+169+113+178+141+179+152+153+108+127+169) / 11 = 1608 / 11 ≈ 146.18
+*   **Action**: (136+152+98+143+124) / 5 = 653 / 5 = 130.6
+*   **Sci-Fi**: (136+143+169+124) / 4 = 572 / 4 = 143.0
+
+The genre with the highest average runtime is Drama.
+
+146.18",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F19,"Among genres appearing in at least 4 movies, which genre has the highest average runtime? Round the answer to two decimal places.","answer_text
+Fantasy - 154.25 minutes","To determine the genre with the highest average runtime among those appearing in at least 4 movies, we first list the movies and their runtimes:
+
+1.  **Princess Mononoke**: 133 min (Adventure, Animation, Fantasy)
+2.  **The Big Lebowski**: 117 min (Comedy, Crime)
+3.  **American History X**: 119 min (Crime, Drama)
+4.  **Saving Private Ryan**: 169 min (Drama, War)
+5.  **The Matrix**: 136 min (Action, Sci-Fi)
+6.  **Memento**: 113 min (Drama, Mystery, Thriller)
+7.  **The Lord of the Rings: The Fellowship of the Ring**: 178 min (Adventure, Drama, Fantasy)
+8.  **Monsters Inc.**: 92 min (Adventure, Animation, Comedy)
+9.  **Catch Me If You Can**: 141 min (Biography, Crime, Drama)
+10. **The Lord of the Rings: The Two Towers**: 179 min (Adventure, Drama, Fantasy)
+11. **The Dark Knight**: 152 min (Action, Crime, Drama)
+12. **Inglourious Basterds**: 153 min (Adventure, Drama, War)
+13. **Toy Story 3**: 103 min (Adventure, Animation, Comedy)
+14. **How to Train Your Dragon**: 98 min (Action, Adventure, Animation)
+15. **Black Swan**: 108 min (Drama, Thriller)
+16. **The Avengers**: 143 min (Action, Sci-Fi)
+17. **Life of Pi**: 127 min (Adventure, Drama, Fantasy)
+18. **The Wolf of Wall Street**: 180 min (Biography, Comedy, Crime)
+19. **Interstellar**: 169 min (Adventure, Drama, Sci-Fi)
+20. **Jurassic World**: 124 min (Action, Adventure, Sci-Fi)
+
+**Genre Counts:**
+*   **Adventure**: 1, 7, 8, 10, 12, 13, 14, 17, 19, 20 (10 movies)
+*   **Animation**: 1, 8, 13, 14 (4 movies)
+*   **Comedy**: 2, 8, 13, 18 (4 movies)
+*   **Crime**: 2, 3, 9, 11, 18 (5 movies)
+*   **Drama**: 3, 4, 6, 7, 9, 10, 11, 12, 15, 17, 19 (11 movies)
+*   **Action**: 5, 11, 14, 16, 20 (5 movies)
+*   **Sci-Fi**: 5, 16, 19, 20 (4 movies)
+
+**Average Runtimes:**
+*   **Adventure**: (133+178+92+179+153+103+98+127+169+124) / 10 = 1356 / 10 = 135.6
+*   **Animation**: (133+92+103+98) / 4 = 426 / 4 = 106.5
+*   **Comedy**: (117+92+103+180) / 4 = 492 / 4 = 123.0
+*   **Crime**: (117+119+141+152+180) / 5 = 709 / 5 = 141.8
+*   **Drama**: (119+169+113+178+141+179+152+153+108+127+169) / 11 = 1608 / 11 ≈ 146.18
+*   **Action**: (136+152+98+143+124) / 5 = 653 / 5 = 130.6
+*   **Sci-Fi**: (136+143+169+124) / 4 = 572 / 4 = 143.0
+
+The genre with the highest average runtime is Drama.
+
+146.18",0,,,,evaluated_incorrect,4.703,5651,1068,0,"Incorrect: selected Drama at 146.18, but Fantasy has the highest average runtime at 154.25 minutes.",0
+google/gemini-3.1-flash-lite,True,genre_level_aggregation,0,evaluated_incorrect,Animation: 107.67,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F20,"Among genres appearing in at least 4 movies, which genre has the lowest average runtime? Round the answer to two decimal places.","answer_text
+Animation - 106.50 minutes",Animation: 107.67,0,,,,evaluated_incorrect,1.722,5651,9,0,"Incorrect: Animation is the right genre, but 107.67 is not the required 106.50 minutes.",0
+google/gemini-3.1-flash-lite,True,genre_level_aggregation,0,evaluated_incorrect,"To determine the genre with the highest proportion of movies released in or after 2010 among those appearing in at least 4 movies, we first count the occurrences of each genre and identify those with 4 or more movies:
+
+1.  **Adventure**: Princess Mononoke, LOTR: Fellowship, Monsters Inc., LOTR: Two Towers, Inglourious Basterds, Toy Story 3, How to Train Your Dragon, Life of Pi, Interstellar, Jurassic World (10 movies)
+2.  **Animation**: Princess Mononoke, Monsters Inc., Toy Story 3, How to Train Your Dragon (4 movies)
+3.  **Fantasy**: Princess Mononoke, LOTR: Fellowship, LOTR: Two Towers, Life of Pi (4 movies)
+4.  **Comedy**: The Big Lebowski, Monsters Inc., Toy Story 3, The Wolf of Wall Street (4 movies)
+5.  **Crime**: The Big Lebowski, American History X, Catch Me If You Can, The Dark Knight, The Wolf of Wall Street (5 movies)
+6.  **Drama**: American History X, Saving Private Ryan, Memento, LOTR: Fellowship, Catch Me If You Can, LOTR: Two Towers, The Dark Knight, Inglourious Basterds, Black Swan, Life of Pi, Interstellar (11 movies)
+7.  **Action**: The Matrix, The Dark Knight, Toy Story 3 (Wait, Toy Story 3 is Adventure/Animation/Comedy), Action movies: The Matrix, The Dark Knight, How to Train Your Dragon, The Avengers, Jurassic World (5 movies)
+
+Next, we calculate the proportion of movies released in or after 2010 for these genres:
+*   **Adventure**: Toy Story 3 (2010), How to Train Your Dragon (2010), Life of Pi (2012), Interstellar (2014), Jurassic World (2015). (5/10 = 50.00%)
+*   **Animation**: Toy Story 3 (2010), How to Train Your Dragon (2010). (2/4 = 50.00%)
+*   **Fantasy**: Life of Pi (2012). (1/4 = 25.00%)
+*   **Comedy**: Toy Story 3 (2010), The Wolf of Wall Street (2013). (2/4 = 50.00%)
+*   **Crime**: The Wolf of Wall Street (2013). (1/5 = 20.00%)
+*   **Drama**: Black Swan (2010), Life of Pi (2012), Interstellar (2014). (3/11 = 27.27%)
+*   **Action**: How to Train Your Dragon (2010), The Avengers (2012), Jurassic World (2015). (3/5 = 60.00%)
+
+Comparing the proportions, Action has the highest at 60.00%.
+
+Action, 60.00%",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F21,"Among genres appearing in at least 4 movies, which genre has the highest proportion of its movies released in or after 2010? Report the genre and the percentage, rounded to two decimal places.","answer_text
+Sci-Fi - 75.00%","To determine the genre with the highest proportion of movies released in or after 2010 among those appearing in at least 4 movies, we first count the occurrences of each genre and identify those with 4 or more movies:
+
+1.  **Adventure**: Princess Mononoke, LOTR: Fellowship, Monsters Inc., LOTR: Two Towers, Inglourious Basterds, Toy Story 3, How to Train Your Dragon, Life of Pi, Interstellar, Jurassic World (10 movies)
+2.  **Animation**: Princess Mononoke, Monsters Inc., Toy Story 3, How to Train Your Dragon (4 movies)
+3.  **Fantasy**: Princess Mononoke, LOTR: Fellowship, LOTR: Two Towers, Life of Pi (4 movies)
+4.  **Comedy**: The Big Lebowski, Monsters Inc., Toy Story 3, The Wolf of Wall Street (4 movies)
+5.  **Crime**: The Big Lebowski, American History X, Catch Me If You Can, The Dark Knight, The Wolf of Wall Street (5 movies)
+6.  **Drama**: American History X, Saving Private Ryan, Memento, LOTR: Fellowship, Catch Me If You Can, LOTR: Two Towers, The Dark Knight, Inglourious Basterds, Black Swan, Life of Pi, Interstellar (11 movies)
+7.  **Action**: The Matrix, The Dark Knight, Toy Story 3 (Wait, Toy Story 3 is Adventure/Animation/Comedy), Action movies: The Matrix, The Dark Knight, How to Train Your Dragon, The Avengers, Jurassic World (5 movies)
+
+Next, we calculate the proportion of movies released in or after 2010 for these genres:
+*   **Adventure**: Toy Story 3 (2010), How to Train Your Dragon (2010), Life of Pi (2012), Interstellar (2014), Jurassic World (2015). (5/10 = 50.00%)
+*   **Animation**: Toy Story 3 (2010), How to Train Your Dragon (2010). (2/4 = 50.00%)
+*   **Fantasy**: Life of Pi (2012). (1/4 = 25.00%)
+*   **Comedy**: Toy Story 3 (2010), The Wolf of Wall Street (2013). (2/4 = 50.00%)
+*   **Crime**: The Wolf of Wall Street (2013). (1/5 = 20.00%)
+*   **Drama**: Black Swan (2010), Life of Pi (2012), Interstellar (2014). (3/11 = 27.27%)
+*   **Action**: How to Train Your Dragon (2010), The Avengers (2012), Jurassic World (2015). (3/5 = 60.00%)
+
+Comparing the proportions, Action has the highest at 60.00%.
+
+Action, 60.00%",0,,,,evaluated_incorrect,3.284,5667,682,0,"Incorrect: selected Action at 60.00%, but Sci-Fi has the highest proportion at 75.00%.",0
+google/gemini-3.1-flash-lite,True,genre_level_aggregation,0,evaluated_incorrect,"To determine the answer, we first count the occurrences of each genre across all 16 movies:
+
+*   **Adventure:** Princess Mononoke, LOTR: Fellowship, Monsters Inc., LOTR: Two Towers, Inglourious Basterds, Toy Story 3, How to Train Your Dragon, Life of Pi, Interstellar, Jurassic World (10)
+*   **Animation:** Princess Mononoke, Monsters Inc., Toy Story 3, How to Train Your Dragon (4)
+*   **Fantasy:** Princess Mononoke, LOTR: Fellowship, LOTR: Two Towers, Life of Pi (4)
+*   **Comedy:** The Big Lebowski, Monsters Inc., Toy Story 3, The Wolf of Wall Street (4)
+*   **Crime:** The Big Lebowski, American History X, Catch Me If You Can, The Dark Knight, The Wolf of Wall Street (5)
+*   **Drama:** American History X, Saving Private Ryan, Memento, LOTR: Fellowship, Catch Me If You Can, LOTR: Two Towers, The Dark Knight, Inglourious Basterds, Black Swan, Life of Pi, Interstellar (11)
+*   **Action:** The Matrix, The Dark Knight, How to Train Your Dragon, The Avengers, Jurassic World (5)
+*   **Sci-Fi:** The Matrix, The Avengers, Interstellar, Jurassic World (4)
+*   **War:** Saving Private Ryan, Inglourious Basterds (2)
+*   **Biography:** Catch Me If You Can, The Wolf of Wall Street (2)
+*   **Mystery:** Memento (1)
+*   **Thriller:** Memento, Black Swan (2)
+
+Genres with at least 4 movies: **Adventure, Animation, Fantasy, Comedy, Crime, Drama, Action, Sci-Fi.**
+
+Next, we identify movies with an IMDb rating of at least 8.5:
+*   American History X (8.5) - Genres: Crime, Drama
+*   Saving Private Ryan (8.6) - Genres: Drama, War
+*   The Matrix (8.7) - Genres: Action, Sci-Fi
+*   LOTR: Fellowship (8.9) - Genres: Adventure, Drama, Fantasy
+*   LOTR: Two Towers (8.8) - Genres: Adventure, Drama, Fantasy
+*   The Dark Knight (9.1) - Genres: Action, Crime, Drama
+*   Interstellar (8.7) - Genres: Adventure, Drama, Sci-Fi
+
+Counting qualifying movies per genre:
+*   **Drama:** 6 (American History X, Saving Private Ryan, LOTR: Fellowship, LOTR: Two Towers, The Dark Knight, Interstellar)
+*   **Adventure:** 3 (LOTR: Fellowship, LOTR: Two Towers, Interstellar)
+*   **Action:** 2 (The Matrix, The Dark Knight)
+*   **Crime:** 2 (American History X, The Dark Knight)
+*   **Sci-Fi:** 2 (The Matrix, Interstellar)
+*   **Fantasy:** 2 (LOTR: Fellowship, LOTR: Two Towers)
+*   **Animation:** 0
+*   **Comedy:** 0
+
+The genre with the greatest number of qualifying movies is Drama, with 6.
+
+Drama, 6",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F22,"Among genres appearing in at least 4 movies, which genre contains the greatest number of movies with an IMDb rating of at least 8.5? Report the genre and the number of qualifying movies.","answer_text
+Drama - 6 movies","To determine the answer, we first count the occurrences of each genre across all 16 movies:
+
+*   **Adventure:** Princess Mononoke, LOTR: Fellowship, Monsters Inc., LOTR: Two Towers, Inglourious Basterds, Toy Story 3, How to Train Your Dragon, Life of Pi, Interstellar, Jurassic World (10)
+*   **Animation:** Princess Mononoke, Monsters Inc., Toy Story 3, How to Train Your Dragon (4)
+*   **Fantasy:** Princess Mononoke, LOTR: Fellowship, LOTR: Two Towers, Life of Pi (4)
+*   **Comedy:** The Big Lebowski, Monsters Inc., Toy Story 3, The Wolf of Wall Street (4)
+*   **Crime:** The Big Lebowski, American History X, Catch Me If You Can, The Dark Knight, The Wolf of Wall Street (5)
+*   **Drama:** American History X, Saving Private Ryan, Memento, LOTR: Fellowship, Catch Me If You Can, LOTR: Two Towers, The Dark Knight, Inglourious Basterds, Black Swan, Life of Pi, Interstellar (11)
+*   **Action:** The Matrix, The Dark Knight, How to Train Your Dragon, The Avengers, Jurassic World (5)
+*   **Sci-Fi:** The Matrix, The Avengers, Interstellar, Jurassic World (4)
+*   **War:** Saving Private Ryan, Inglourious Basterds (2)
+*   **Biography:** Catch Me If You Can, The Wolf of Wall Street (2)
+*   **Mystery:** Memento (1)
+*   **Thriller:** Memento, Black Swan (2)
+
+Genres with at least 4 movies: **Adventure, Animation, Fantasy, Comedy, Crime, Drama, Action, Sci-Fi.**
+
+Next, we identify movies with an IMDb rating of at least 8.5:
+*   American History X (8.5) - Genres: Crime, Drama
+*   Saving Private Ryan (8.6) - Genres: Drama, War
+*   The Matrix (8.7) - Genres: Action, Sci-Fi
+*   LOTR: Fellowship (8.9) - Genres: Adventure, Drama, Fantasy
+*   LOTR: Two Towers (8.8) - Genres: Adventure, Drama, Fantasy
+*   The Dark Knight (9.1) - Genres: Action, Crime, Drama
+*   Interstellar (8.7) - Genres: Adventure, Drama, Sci-Fi
+
+Counting qualifying movies per genre:
+*   **Drama:** 6 (American History X, Saving Private Ryan, LOTR: Fellowship, LOTR: Two Towers, The Dark Knight, Interstellar)
+*   **Adventure:** 3 (LOTR: Fellowship, LOTR: Two Towers, Interstellar)
+*   **Action:** 2 (The Matrix, The Dark Knight)
+*   **Crime:** 2 (American History X, The Dark Knight)
+*   **Sci-Fi:** 2 (The Matrix, Interstellar)
+*   **Fantasy:** 2 (LOTR: Fellowship, LOTR: Two Towers)
+*   **Animation:** 0
+*   **Comedy:** 0
+
+The genre with the greatest number of qualifying movies is Drama, with 6.
+
+Drama, 6",0,,,,evaluated_incorrect,3.474,5665,716,1,Correct: Drama with 6 qualifying movies matches the ground truth.,1
+google/gemini-3.1-flash-lite,True,statistical_outlier_detection,0,evaluated_incorrect,"Saving Private Ryan, The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, The Wolf of Wall Street, Interstellar",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F23,"Using all 20 movies, identify the movies whose runtime is greater than the mean runtime plus 1 population standard deviation. Calculate the mean and population standard deviation as intermediate steps. Return only the movie titles.","answer_text
+Saving Private Ryan; The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; The Wolf of Wall Street; Interstellar","Saving Private Ryan, The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, The Wolf of Wall Street, Interstellar",0,,,,evaluated_incorrect,1.735,5667,34,1,Correct: the response gives exactly the five required high-runtime outlier titles.,1
+google/gemini-3.1-flash-lite,True,statistical_outlier_detection,0,evaluated_incorrect,Monsters Inc.,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F24,"Using all 20 movies, identify the movies whose runtime is less than the mean runtime minus 1 population standard deviation. Calculate the mean and population standard deviation as intermediate steps. Return only the movie titles.","answer_text
+Monsters Inc.; Toy Story 3; How to Train Your Dragon; Black Swan",Monsters Inc.,0,,,,evaluated_incorrect,1.509,5667,4,0,"Incorrect: only Monsters Inc. was returned; Toy Story 3, How to Train Your Dragon, and Black Swan are also required.",0
+google/gemini-3.1-flash-lite,True,statistical_outlier_detection,0,evaluated_incorrect,"The Dark Knight, The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F25,"Using all 20 movies, identify the movies whose IMDb rating is greater than the mean IMDb rating plus 1 population standard deviation. Calculate the mean and population standard deviation as intermediate steps. Return only the movie titles.","answer_text
+The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; The Dark Knight","The Dark Knight, The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers",0,,,,evaluated_incorrect,1.634,5669,25,1,"Correct: the three required high-rating outlier titles are all present, with no extras.",1
+google/gemini-3.1-flash-lite,True,statistical_outlier_detection,0,evaluated_incorrect,"To determine which Adventure movies have a runtime greater than the Adventure-movie mean runtime + 1 population standard deviation, we first identify all movies with ""Adventure"" in their Normalized Genres:
+
+1.  **Princess Mononoke**: 133 minutes
+2.  **The Lord of the Rings: The Fellowship of the Ring**: 178 minutes
+3.  **Monsters Inc.**: 92 minutes
+4.  **The Lord of the Rings: The Two Towers**: 179 minutes
+5.  **Inglourious Basterds**: 153 minutes
+6.  **Toy Story 3**: 103 minutes
+7.  **How to Train Your Dragon**: 98 minutes
+8.  **Life of Pi**: 127 minutes
+9.  **Interstellar**: 169 minutes
+10. **Jurassic World**: 124 minutes
+
+**Calculations:**
+*   **Count (N)**: 10
+*   **Sum of runtimes**: 133 + 178 + 92 + 179 + 153 + 103 + 98 + 127 + 169 + 124 = 1356
+*   **Mean (μ)**: 1356 / 10 = 135.6
+*   **Variance (σ²)**: [(133-135.6)² + (178-135.6)² + (92-135.6)² + (179-135.6)² + (153-135.6)² + (103-135.6)² + (98-135.6)² + (127-135.6)² + (169-135.6)² + (124-135.6)²] / 10
+    *   = [(-2.6)² + (42.4)² + (-43.6)² + (43.4)² + (17.4)² + (-32.6)² + (-37.6)² + (-8.6)² + (33.4)² + (-11.6)²] / 10
+    *   = [6.76 + 1797.76 + 1900.96 + 1883.56 + 302.76 + 1062.76 + 1413.76 + 73.96 + 1115.56 + 134.56] / 10
+    *   = 9692.4 / 10 = 969.24
+*   **Population Standard Deviation (σ)**: √969.24 ≈ 31.1326196
+*   **Threshold (μ + σ)**: 135.6 + 31.1326196 = 166.7326196
+
+**Comparison:**
+*   Princess Mononoke (133) < 166.73
+*   **The Lord of the Rings: The Fellowship of the Ring (178) > 166.73**
+*   Monsters Inc. (92) < 166.73
+*   **The Lord of the Rings: The Two Towers (179) > 166.73**
+*   Inglourious Basterds (153) < 166.73
+*   Toy Story 3 (103) < 166.73
+*   How to Train Your Dragon (98) < 166.73
+*   Life of Pi (127) < 166.73
+*   **Interstellar (169) > 166.73**
+*   Jurassic World (124) < 166.73
+
+The movies are: The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, Interstellar.",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F26,"Among Adventure movies only, which movies have runtime greater than the Adventure-movie mean runtime + 1 population standard deviation?","answer_text
+The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; Interstellar","To determine which Adventure movies have a runtime greater than the Adventure-movie mean runtime + 1 population standard deviation, we first identify all movies with ""Adventure"" in their Normalized Genres:
+
+1.  **Princess Mononoke**: 133 minutes
+2.  **The Lord of the Rings: The Fellowship of the Ring**: 178 minutes
+3.  **Monsters Inc.**: 92 minutes
+4.  **The Lord of the Rings: The Two Towers**: 179 minutes
+5.  **Inglourious Basterds**: 153 minutes
+6.  **Toy Story 3**: 103 minutes
+7.  **How to Train Your Dragon**: 98 minutes
+8.  **Life of Pi**: 127 minutes
+9.  **Interstellar**: 169 minutes
+10. **Jurassic World**: 124 minutes
+
+**Calculations:**
+*   **Count (N)**: 10
+*   **Sum of runtimes**: 133 + 178 + 92 + 179 + 153 + 103 + 98 + 127 + 169 + 124 = 1356
+*   **Mean (μ)**: 1356 / 10 = 135.6
+*   **Variance (σ²)**: [(133-135.6)² + (178-135.6)² + (92-135.6)² + (179-135.6)² + (153-135.6)² + (103-135.6)² + (98-135.6)² + (127-135.6)² + (169-135.6)² + (124-135.6)²] / 10
+    *   = [(-2.6)² + (42.4)² + (-43.6)² + (43.4)² + (17.4)² + (-32.6)² + (-37.6)² + (-8.6)² + (33.4)² + (-11.6)²] / 10
+    *   = [6.76 + 1797.76 + 1900.96 + 1883.56 + 302.76 + 1062.76 + 1413.76 + 73.96 + 1115.56 + 134.56] / 10
+    *   = 9692.4 / 10 = 969.24
+*   **Population Standard Deviation (σ)**: √969.24 ≈ 31.1326196
+*   **Threshold (μ + σ)**: 135.6 + 31.1326196 = 166.7326196
+
+**Comparison:**
+*   Princess Mononoke (133) < 166.73
+*   **The Lord of the Rings: The Fellowship of the Ring (178) > 166.73**
+*   Monsters Inc. (92) < 166.73
+*   **The Lord of the Rings: The Two Towers (179) > 166.73**
+*   Inglourious Basterds (153) < 166.73
+*   Toy Story 3 (103) < 166.73
+*   How to Train Your Dragon (98) < 166.73
+*   Life of Pi (127) < 166.73
+*   **Interstellar (169) > 166.73**
+*   Jurassic World (124) < 166.73
+
+The movies are: The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, Interstellar.",0,,,,evaluated_incorrect,3.837,5649,947,1,"Correct: the response returns exactly Fellowship, Two Towers, and Interstellar.",1
+google/gemini-3.1-flash-lite,True,statistical_outlier_detection,0,evaluated_incorrect,"To determine which Adventure movies have a runtime less than the Adventure-movie mean runtime minus 1 population standard deviation, we first identify all movies with ""Adventure"" in their Normalized Genres:
+
+1.  **Princess Mononoke**: 133 minutes
+2.  **The Lord of the Rings: The Fellowship of the Ring**: 178 minutes
+3.  **Monsters Inc.**: 92 minutes
+4.  **The Lord of the Rings: The Two Towers**: 179 minutes
+5.  **Inglourious Basterds**: 153 minutes
+6.  **Toy Story 3**: 103 minutes
+7.  **How to Train Your Dragon**: 98 minutes
+8.  **Life of Pi**: 127 minutes
+9.  **Interstellar**: 169 minutes
+10. **Jurassic World**: 124 minutes
+
+**Calculations:**
+*   **Count (N)**: 10
+*   **Sum of runtimes**: 133 + 178 + 92 + 179 + 153 + 103 + 98 + 127 + 169 + 124 = 1356
+*   **Mean (μ)**: 1356 / 10 = 135.6
+*   **Variance (σ²)**: [(133-135.6)² + (178-135.6)² + (92-135.6)² + (179-135.6)² + (153-135.6)² + (103-135.6)² + (98-135.6)² + (127-135.6)² + (169-135.6)² + (124-135.6)²] / 10
+    = [(-2.6)² + (42.4)² + (-43.6)² + (43.4)² + (17.4)² + (-32.6)² + (-37.6)² + (-8.6)² + (33.4)² + (-11.6)²] / 10
+    = [6.76 + 1797.76 + 1900.96 + 1883.56 + 302.76 + 1062.76 + 1413.76 + 73.96 + 1115.56 + 134.56] / 10
+    = 9682.4 / 10 = 968.24
+*   **Population Standard Deviation (σ)**: √968.24 ≈ 31.11655509
+*   **Threshold (μ - σ)**: 135.6 - 31.11655509 = 104.48344491
+
+**Comparison:**
+Movies with runtime < 104.48344491:
+*   Monsters Inc. (92)
+*   How to Train Your Dragon (98)
+*   Toy Story 3 (103)
+
+Monsters Inc., How to Train Your Dragon, Toy Story 3",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F27,"Among Adventure movies only, which movies have runtime less than the Adventure-movie mean runtime - 1 population standard deviation?","answer_text
+Monsters Inc.; Toy Story 3; How to Train Your Dragon","To determine which Adventure movies have a runtime less than the Adventure-movie mean runtime minus 1 population standard deviation, we first identify all movies with ""Adventure"" in their Normalized Genres:
+
+1.  **Princess Mononoke**: 133 minutes
+2.  **The Lord of the Rings: The Fellowship of the Ring**: 178 minutes
+3.  **Monsters Inc.**: 92 minutes
+4.  **The Lord of the Rings: The Two Towers**: 179 minutes
+5.  **Inglourious Basterds**: 153 minutes
+6.  **Toy Story 3**: 103 minutes
+7.  **How to Train Your Dragon**: 98 minutes
+8.  **Life of Pi**: 127 minutes
+9.  **Interstellar**: 169 minutes
+10. **Jurassic World**: 124 minutes
+
+**Calculations:**
+*   **Count (N)**: 10
+*   **Sum of runtimes**: 133 + 178 + 92 + 179 + 153 + 103 + 98 + 127 + 169 + 124 = 1356
+*   **Mean (μ)**: 1356 / 10 = 135.6
+*   **Variance (σ²)**: [(133-135.6)² + (178-135.6)² + (92-135.6)² + (179-135.6)² + (153-135.6)² + (103-135.6)² + (98-135.6)² + (127-135.6)² + (169-135.6)² + (124-135.6)²] / 10
+    = [(-2.6)² + (42.4)² + (-43.6)² + (43.4)² + (17.4)² + (-32.6)² + (-37.6)² + (-8.6)² + (33.4)² + (-11.6)²] / 10
+    = [6.76 + 1797.76 + 1900.96 + 1883.56 + 302.76 + 1062.76 + 1413.76 + 73.96 + 1115.56 + 134.56] / 10
+    = 9682.4 / 10 = 968.24
+*   **Population Standard Deviation (σ)**: √968.24 ≈ 31.11655509
+*   **Threshold (μ - σ)**: 135.6 - 31.11655509 = 104.48344491
+
+**Comparison:**
+Movies with runtime < 104.48344491:
+*   Monsters Inc. (92)
+*   How to Train Your Dragon (98)
+*   Toy Story 3 (103)
+
+Monsters Inc., How to Train Your Dragon, Toy Story 3",0,,,,evaluated_incorrect,3.345,5649,768,1,"Correct: the final list contains exactly Monsters Inc., Toy Story 3, and How to Train Your Dragon; order is immaterial.",1
+google/gemini-3.1-flash-lite,True,statistical_outlier_detection,0,evaluated_incorrect,"To determine which Drama movies have a runtime greater than the Drama-movie mean runtime + 1 population standard deviation, we first identify all movies with ""Drama"" in their Normalized Genres:
+
+1.  **American History X**: 119 minutes
+2.  **Saving Private Ryan**: 169 minutes
+3.  **Memento**: 113 minutes
+4.  **The Lord of the Rings: The Fellowship of the Ring**: 178 minutes
+5.  **Catch Me If You Can**: 141 minutes
+6.  **The Lord of the Rings: The Two Towers**: 179 minutes
+7.  **The Dark Knight**: 152 minutes
+8.  **Inglourious Basterds**: 153 minutes
+9.  **Black Swan**: 108 minutes
+10. **Life of Pi**: 127 minutes
+11. **Interstellar**: 169 minutes
+
+**Calculations:**
+*   **Count (N)**: 11
+*   **Sum of runtimes**: 119 + 169 + 113 + 178 + 141 + 179 + 152 + 153 + 108 + 127 + 169 = 1608
+*   **Mean (μ)**: 1608 / 11 = 146.18181818181818...
+*   **Variance (σ²)**: Sum of (x - μ)² / 11
+    *   (119 - 146.1818)² = 738.842975
+    *   (169 - 146.1818)² = 520.661157
+    *   (113 - 146.1818)² = 1101.074380
+    *   (178 - 146.1818)² = 1012.396694
+    *   (141 - 146.1818)² = 26.859504
+    *   (179 - 146.1818)² = 1076.859504
+    *   (152 - 146.1818)² = 33.851240
+    *   (153 - 146.1818)² = 46.495868
+    *   (108 - 146.1818)² = 1457.851240
+    *   (127 - 146.1818)² = 367.933884
+    *   (169 - 146.1818)² = 520.661157
+    *   Sum of squares = 6903.454545...
+    *   Variance (σ²) = 6903.454545 / 11 = 627.5867768595...
+*   **Standard Deviation (σ)**: √627.5867768595 = 25.051682117...
+*   **Threshold (μ + σ)**: 146.1818181818 + 25.051682117 = 171.2335002988...
+
+**Comparison:**
+*   The Lord of the Rings: The Fellowship of the Ring (178 > 171.23)
+*   The Lord of the Rings: The Two Towers (179 > 171.23)
+
+The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F28,"Among Drama movies only, which movies have runtime greater than the Drama-movie mean runtime + 1 population standard deviation?","answer_text
+The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers","To determine which Drama movies have a runtime greater than the Drama-movie mean runtime + 1 population standard deviation, we first identify all movies with ""Drama"" in their Normalized Genres:
+
+1.  **American History X**: 119 minutes
+2.  **Saving Private Ryan**: 169 minutes
+3.  **Memento**: 113 minutes
+4.  **The Lord of the Rings: The Fellowship of the Ring**: 178 minutes
+5.  **Catch Me If You Can**: 141 minutes
+6.  **The Lord of the Rings: The Two Towers**: 179 minutes
+7.  **The Dark Knight**: 152 minutes
+8.  **Inglourious Basterds**: 153 minutes
+9.  **Black Swan**: 108 minutes
+10. **Life of Pi**: 127 minutes
+11. **Interstellar**: 169 minutes
+
+**Calculations:**
+*   **Count (N)**: 11
+*   **Sum of runtimes**: 119 + 169 + 113 + 178 + 141 + 179 + 152 + 153 + 108 + 127 + 169 = 1608
+*   **Mean (μ)**: 1608 / 11 = 146.18181818181818...
+*   **Variance (σ²)**: Sum of (x - μ)² / 11
+    *   (119 - 146.1818)² = 738.842975
+    *   (169 - 146.1818)² = 520.661157
+    *   (113 - 146.1818)² = 1101.074380
+    *   (178 - 146.1818)² = 1012.396694
+    *   (141 - 146.1818)² = 26.859504
+    *   (179 - 146.1818)² = 1076.859504
+    *   (152 - 146.1818)² = 33.851240
+    *   (153 - 146.1818)² = 46.495868
+    *   (108 - 146.1818)² = 1457.851240
+    *   (127 - 146.1818)² = 367.933884
+    *   (169 - 146.1818)² = 520.661157
+    *   Sum of squares = 6903.454545...
+    *   Variance (σ²) = 6903.454545 / 11 = 627.5867768595...
+*   **Standard Deviation (σ)**: √627.5867768595 = 25.051682117...
+*   **Threshold (μ + σ)**: 146.1818181818 + 25.051682117 = 171.2335002988...
+
+**Comparison:**
+*   The Lord of the Rings: The Fellowship of the Ring (178 > 171.23)
+*   The Lord of the Rings: The Two Towers (179 > 171.23)
+
+The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers",0,,,,evaluated_incorrect,4.323,5649,933,1,Correct: the response returns exactly the two required Drama runtime outliers.,1
+google/gemini-3.1-flash-lite,True,statistical_outlier_detection,0,evaluated_incorrect,"The Action movies identified from the provided evidence are:
+1. The Matrix (136 minutes)
+2. The Dark Knight (152 minutes)
+3. How to Train Your Dragon (98 minutes)
+4. The Avengers (143 minutes)
+5. Jurassic World (124 minutes)
+
+**Calculations:**
+*   **Runtimes:** {136, 152, 98, 143, 124}
+*   **Mean:** (136 + 152 + 98 + 143 + 124) / 5 = 653 / 5 = 130.6
+*   **Population Variance:** ((136-130.6)² + (152-130.6)² + (98-130.6)² + (143-130.6)² + (124-130.6)²) / 5
+    = (29.16 + 457.96 + 1062.76 + 153.76 + 43.56) / 5
+    = 1747.2 / 5 = 349.44
+*   **Population Standard Deviation:** √349.44 = 18.693314313
+*   **Threshold (Mean + 1 SD):** 130.6 + 18.693314313 = 149.293314313
+
+Comparing the runtimes to the threshold of 149.293314313:
+*   The Matrix: 136 (No)
+*   The Dark Knight: 152 (Yes)
+*   How to Train Your Dragon: 98 (No)
+*   The Avengers: 143 (No)
+*   Jurassic World: 124 (No)
+
+The Dark Knight",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F29,"Among Action movies only, which movies have runtime greater than the Action-movie mean runtime + 1 population standard deviation?","answer_text
+The Dark Knight","The Action movies identified from the provided evidence are:
+1. The Matrix (136 minutes)
+2. The Dark Knight (152 minutes)
+3. How to Train Your Dragon (98 minutes)
+4. The Avengers (143 minutes)
+5. Jurassic World (124 minutes)
+
+**Calculations:**
+*   **Runtimes:** {136, 152, 98, 143, 124}
+*   **Mean:** (136 + 152 + 98 + 143 + 124) / 5 = 653 / 5 = 130.6
+*   **Population Variance:** ((136-130.6)² + (152-130.6)² + (98-130.6)² + (143-130.6)² + (124-130.6)²) / 5
+    = (29.16 + 457.96 + 1062.76 + 153.76 + 43.56) / 5
+    = 1747.2 / 5 = 349.44
+*   **Population Standard Deviation:** √349.44 = 18.693314313
+*   **Threshold (Mean + 1 SD):** 130.6 + 18.693314313 = 149.293314313
+
+Comparing the runtimes to the threshold of 149.293314313:
+*   The Matrix: 136 (No)
+*   The Dark Knight: 152 (Yes)
+*   How to Train Your Dragon: 98 (No)
+*   The Avengers: 143 (No)
+*   Jurassic World: 124 (No)
+
+The Dark Knight",0,,,,evaluated_incorrect,4.78,5649,461,1,Correct: The Dark Knight is the sole required Action runtime outlier.,1
+google/gemini-3.1-flash-lite,True,statistical_outlier_detection,1,evaluated_exact,How to Train Your Dragon,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F30,"Among Action movies only, which movies have runtime less than the Action-movie mean runtime - 1 population standard deviation?","answer_text
+How to Train Your Dragon",How to Train Your Dragon,1,,,,evaluated_exact,1.495,5649,5,1,Correct: How to Train Your Dragon exactly matches the required answer.,0
+google/gemini-3.1-flash-lite,True,arithmetic_aggregation,0,evaluated_incorrect,755,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F31,What is the total runtime of all movies with an IMDb rating of at least 8.5?,"answer_text
+1102 minutes",755,0,,,,evaluated_incorrect,1.581,5645,3,0,Incorrect: reported 755 minutes instead of 1102 minutes.,0
+google/gemini-3.1-flash-lite,True,arithmetic_aggregation,0,evaluated_incorrect,"To calculate the average runtime for movies released before 2010 and in or after 2010:
+
+**Movies released before 2010:**
+1. Princess Mononoke (1997): 133
+2. The Big Lebowski (1998): 117
+3. American History X (1998): 119
+4. Saving Private Ryan (1998): 169
+5. The Matrix (1999): 136
+6. Memento (2000): 113
+7. The Lord of the Rings: The Fellowship of the Ring (2001): 178
+8. Monsters Inc. (2001): 92
+9. Catch Me If You Can (2002): 141
+10. The Lord of the Rings: The Two Towers (2002): 179
+11. The Dark Knight (2008): 152
+12. Inglourious Basterds (2009): 153
+*   Sum: 1682
+*   Count: 12
+*   Average: 1682 / 12 = 140.16666666666667
+
+**Movies released in or after 2010:**
+1. Toy Story 3 (2010): 103
+2. How to Train Your Dragon (2010): 98
+3. Black Swan (2010): 108
+4. The Avengers (2012): 143
+5. Life of Pi (2012): 127
+6. The Wolf of Wall Street (2013): 180
+7. Interstellar (2014): 169
+8. Jurassic World (2015): 124
+*   Sum: 1052
+*   Count: 8
+*   Average: 1052 / 8 = 131.5
+
+**Difference:**
+140.16666666666667 - 131.5 = 8.66666666666667
+
+**Final Rounded Values:**
+Average before 2010: 140.17
+Average in or after 2010: 131.50
+Difference: 8.67",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F32,"What is the difference between the average runtime of movies released before 2010 and movies released in or after 2010? Report both averages and the difference, rounded to two decimal places.","answer_text
+Before 2010: 140.17 minutes; 2010 or after: 131.50 minutes; Difference: 8.67 minutes","To calculate the average runtime for movies released before 2010 and in or after 2010:
+
+**Movies released before 2010:**
+1. Princess Mononoke (1997): 133
+2. The Big Lebowski (1998): 117
+3. American History X (1998): 119
+4. Saving Private Ryan (1998): 169
+5. The Matrix (1999): 136
+6. Memento (2000): 113
+7. The Lord of the Rings: The Fellowship of the Ring (2001): 178
+8. Monsters Inc. (2001): 92
+9. Catch Me If You Can (2002): 141
+10. The Lord of the Rings: The Two Towers (2002): 179
+11. The Dark Knight (2008): 152
+12. Inglourious Basterds (2009): 153
+*   Sum: 1682
+*   Count: 12
+*   Average: 1682 / 12 = 140.16666666666667
+
+**Movies released in or after 2010:**
+1. Toy Story 3 (2010): 103
+2. How to Train Your Dragon (2010): 98
+3. Black Swan (2010): 108
+4. The Avengers (2012): 143
+5. Life of Pi (2012): 127
+6. The Wolf of Wall Street (2013): 180
+7. Interstellar (2014): 169
+8. Jurassic World (2015): 124
+*   Sum: 1052
+*   Count: 8
+*   Average: 1052 / 8 = 131.5
+
+**Difference:**
+140.16666666666667 - 131.5 = 8.66666666666667
+
+**Final Rounded Values:**
+Average before 2010: 140.17
+Average in or after 2010: 131.50
+Difference: 8.67",0,,,,evaluated_incorrect,3.255,5667,574,1,Correct: both group averages and the 8.67-minute difference match after rounding.,1
+google/gemini-3.1-flash-lite,True,arithmetic_aggregation,0,evaluated_incorrect,8.18,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F33,"Among movies with runtime less than 120 minutes, what is the average IMDb rating? Round the answer to two decimal places.","answer_text
+8.21",8.18,0,,,,evaluated_incorrect,2.067,5652,4,0,Incorrect: reported 8.18 instead of 8.21.,0
+google/gemini-3.1-flash-lite,True,arithmetic_aggregation,0,evaluated_incorrect,121.00,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F34,"Among movies with IMDb ratings from 8.0 through 8.4 inclusive, what is the average runtime? Round the answer to two decimal places.","answer_text
+125.55 minutes",121.00,0,,,,evaluated_incorrect,1.65,5656,6,0,Incorrect: reported 121.00 minutes instead of 125.55 minutes.,0
+google/gemini-3.1-flash-lite,True,arithmetic_aggregation,1,evaluated_exact,434 minutes,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F35,What is the total runtime of all movies directed by Christopher Nolan?,"answer_text
+434 minutes",434 minutes,1,,,,evaluated_exact,1.295,5638,4,1,Correct: 434 minutes exactly matches the required total.,0
+google/gemini-3.1-flash-lite,True,genre_level_aggregation,0,evaluated_incorrect,Adventure: 87 minutes,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F36,"Among genres appearing in at least 4 movies, which genre has the largest runtime range, calculated as maximum runtime minus minimum runtime? Report the genre and its runtime range in minutes.","answer_text
+Comedy - 88 minutes",Adventure: 87 minutes,0,,,,evaluated_incorrect,1.548,5661,6,0,"Incorrect: reported Adventure with 87 minutes, but Comedy has the largest range at 88 minutes.",0
+google/gemini-3.1-flash-lite,True,genre_level_aggregation,0,evaluated_incorrect,Action,5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F37,"Among genres appearing in at least 4 movies, which genre has the highest average release year? Round the average year to two decimal places.","answer_text
+Sci-Fi - 2010.00",Action,0,,,,evaluated_incorrect,1.714,5653,1,0,"Incorrect: selected Action, but Sci-Fi has the highest average release year at 2010.00.",0
+google/gemini-3.1-flash-lite,True,genre_level_aggregation,0,evaluated_incorrect,"Adventure, 5",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F38,"Among genres appearing in at least 4 movies, which genre contains the greatest number of movies released in or after 2010? Report the genre and the number of qualifying movies.","answer_text
+Adventure - 5 movies","Adventure, 5",0,,,,evaluated_incorrect,1.431,5663,4,1,Correct: Adventure with 5 qualifying movies matches both requested components.,1
+google/gemini-3.1-flash-lite,True,genre_level_aggregation,0,evaluated_incorrect,"To determine which genre appearing in exactly 4 movies has the highest total runtime, we first count the occurrences of each genre across the provided movies:
+
+1.  **Princess Mononoke**: Adventure, Animation, Fantasy
+2.  **The Big Lebowski**: Comedy, Crime
+3.  **American History X**: Crime, Drama
+4.  **Saving Private Ryan**: Drama, War
+5.  **The Matrix**: Action, Sci-Fi
+6.  **Memento**: Drama, Mystery, Thriller
+7.  **The Lord of the Rings: The Fellowship of the Ring**: Adventure, Drama, Fantasy
+8.  **Monsters Inc.**: Adventure, Animation, Comedy
+9.  **Catch Me If You Can**: Biography, Crime, Drama
+10. **The Lord of the Rings: The Two Towers**: Adventure, Drama, Fantasy
+11. **The Dark Knight**: Action, Crime, Drama
+12. **Inglourious Basterds**: Adventure, Drama, War
+13. **Toy Story 3**: Adventure, Animation, Comedy
+14. **How to Train Your Dragon**: Action, Adventure, Animation
+15. **Black Swan**: Drama, Thriller
+16. **The Avengers**: Action, Sci-Fi
+17. **Life of Pi**: Adventure, Drama, Fantasy
+18. **The Wolf of Wall Street**: Biography, Comedy, Crime
+19. **Interstellar**: Adventure, Drama, Sci-Fi
+20. **Jurassic World**: Action, Adventure, Sci-Fi
+
+**Genre Counts:**
+*   **Adventure**: 1, 7, 8, 10, 12, 13, 14, 17, 19, 20 (10)
+*   **Animation**: 1, 8, 13, 14 (4)
+*   **Fantasy**: 1, 7, 10, 17 (4)
+*   **Comedy**: 2, 8, 13, 18 (4)
+*   **Crime**: 2, 3, 9, 11, 18 (5)
+*   **Drama**: 3, 4, 6, 7, 9, 10, 11, 12, 17, 19 (10)
+*   **War**: 4, 12 (2)
+*   **Action**: 5, 11, 14, 16, 20 (5)
+*   **Sci-Fi**: 5, 16, 19, 20 (4)
+*   **Mystery**: 6 (1)
+*   **Thriller**: 6, 15 (2)
+*   **Biography**: 9, 18 (2)
+
+**Genres with exactly 4 movies:** Animation, Fantasy, Comedy, Sci-Fi.
+
+**Total Runtimes for these genres:**
+*   **Animation**: 133 (Mononoke) + 92 (Monsters Inc.) + 103 (Toy Story 3) + 98 (HTTYD) = 426 minutes
+*   **Fantasy**: 133 (Mononoke) + 178 (Fellowship) + 179 (Two Towers) + 127 (Life of Pi) = 617 minutes
+*   **Comedy**: 117 (Lebowski) + 92 (Monsters Inc.) + 103 (Toy Story 3) + 180 (Wolf of Wall Street) = 492 minutes
+*   **Sci-Fi**: 136 (Matrix) + 143 (Avengers) + 169 (Interstellar) + 124 (Jurassic World) = 572 minutes
+
+The genre with the highest total runtime is Fantasy with 617 minutes.
+
+Fantasy, 617 minutes",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F39,"Among genres appearing in exactly 4 movies, which genre has the highest total runtime? Report the genre and its total runtime in minutes.","answer_text
+Fantasy - 617 minutes","To determine which genre appearing in exactly 4 movies has the highest total runtime, we first count the occurrences of each genre across the provided movies:
+
+1.  **Princess Mononoke**: Adventure, Animation, Fantasy
+2.  **The Big Lebowski**: Comedy, Crime
+3.  **American History X**: Crime, Drama
+4.  **Saving Private Ryan**: Drama, War
+5.  **The Matrix**: Action, Sci-Fi
+6.  **Memento**: Drama, Mystery, Thriller
+7.  **The Lord of the Rings: The Fellowship of the Ring**: Adventure, Drama, Fantasy
+8.  **Monsters Inc.**: Adventure, Animation, Comedy
+9.  **Catch Me If You Can**: Biography, Crime, Drama
+10. **The Lord of the Rings: The Two Towers**: Adventure, Drama, Fantasy
+11. **The Dark Knight**: Action, Crime, Drama
+12. **Inglourious Basterds**: Adventure, Drama, War
+13. **Toy Story 3**: Adventure, Animation, Comedy
+14. **How to Train Your Dragon**: Action, Adventure, Animation
+15. **Black Swan**: Drama, Thriller
+16. **The Avengers**: Action, Sci-Fi
+17. **Life of Pi**: Adventure, Drama, Fantasy
+18. **The Wolf of Wall Street**: Biography, Comedy, Crime
+19. **Interstellar**: Adventure, Drama, Sci-Fi
+20. **Jurassic World**: Action, Adventure, Sci-Fi
+
+**Genre Counts:**
+*   **Adventure**: 1, 7, 8, 10, 12, 13, 14, 17, 19, 20 (10)
+*   **Animation**: 1, 8, 13, 14 (4)
+*   **Fantasy**: 1, 7, 10, 17 (4)
+*   **Comedy**: 2, 8, 13, 18 (4)
+*   **Crime**: 2, 3, 9, 11, 18 (5)
+*   **Drama**: 3, 4, 6, 7, 9, 10, 11, 12, 17, 19 (10)
+*   **War**: 4, 12 (2)
+*   **Action**: 5, 11, 14, 16, 20 (5)
+*   **Sci-Fi**: 5, 16, 19, 20 (4)
+*   **Mystery**: 6 (1)
+*   **Thriller**: 6, 15 (2)
+*   **Biography**: 9, 18 (2)
+
+**Genres with exactly 4 movies:** Animation, Fantasy, Comedy, Sci-Fi.
+
+**Total Runtimes for these genres:**
+*   **Animation**: 133 (Mononoke) + 92 (Monsters Inc.) + 103 (Toy Story 3) + 98 (HTTYD) = 426 minutes
+*   **Fantasy**: 133 (Mononoke) + 178 (Fellowship) + 179 (Two Towers) + 127 (Life of Pi) = 617 minutes
+*   **Comedy**: 117 (Lebowski) + 92 (Monsters Inc.) + 103 (Toy Story 3) + 180 (Wolf of Wall Street) = 492 minutes
+*   **Sci-Fi**: 136 (Matrix) + 143 (Avengers) + 169 (Interstellar) + 124 (Jurassic World) = 572 minutes
+
+The genre with the highest total runtime is Fantasy with 617 minutes.
+
+Fantasy, 617 minutes",0,,,,evaluated_incorrect,3.851,5652,873,1,Correct: Fantasy with 617 minutes matches both requested components.,1
+google/gemini-3.1-flash-lite,True,genre_level_aggregation,0,evaluated_incorrect,"Drama: 8.48, Adventure: 8.26, Difference: 0.22",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F40,"Compare Drama and Adventure movies. Which genre has the higher average IMDb rating, and what is the difference between their averages? Round averages and the difference to two decimal places.","answer_text
+Drama - 8.49; Adventure - 8.24; Difference: 0.25","Drama: 8.48, Adventure: 8.26, Difference: 0.22",0,,,,evaluated_incorrect,1.607,5659,23,0,"Incorrect: the reported Drama and Adventure averages and the 0.22 difference do not match 8.49, 8.24, and 0.25.",0
+google/gemini-3.1-flash-lite,True,statistical_outlier_detection,0,evaluated_incorrect,"To identify the runtime outliers among movies released before 2010, we first list the runtimes of all movies with a release year < 2010:
+
+1.  Princess Mononoke (1997): 133
+2.  The Big Lebowski (1998): 117
+3.  American History X (1998): 119
+4.  Saving Private Ryan (1998): 169
+5.  The Matrix (1999): 136
+6.  Memento (2000): 113
+7.  The Lord of the Rings: The Fellowship of the Ring (2001): 178
+8.  Monsters Inc. (2001): 92
+9.  Catch Me If You Can (2002): 141
+10. The Lord of the Rings: The Two Towers (2002): 179
+11. The Dark Knight (2008): 152
+12. Inglourious Basterds (2009): 153
+
+**Calculations:**
+*   **Count (N):** 12
+*   **Sum:** 133 + 117 + 119 + 169 + 136 + 113 + 178 + 92 + 141 + 179 + 152 + 153 = 1682
+*   **Mean:** 1682 / 12 = 140.16666666666666...
+*   **Variance (Population):**
+    Sum of squared differences from the mean:
+    (133-140.166...)^2 = 51.3611...
+    (117-140.166...)^2 = 536.6944...
+    (119-140.166...)^2 = 448.0277...
+    (169-140.166...)^2 = 831.3611...
+    (136-140.166...)^2 = 17.3611...
+    (113-140.166...)^2 = 738.0277...
+    (178-140.166...)^2 = 1431.3611...
+    (92-140.166...)^2 = 2320.0277...
+    (141-140.166...)^2 = 0.6944...
+    (179-140.166...)^2 = 1508.0277...
+    (152-140.166...)^2 = 140.0277...
+    (153-140.166...)^2 = 164.6944...
+    Sum = 8187.6666...
+    Variance = 8187.6666... / 12 = 682.3055...
+*   **Population Standard Deviation:** sqrt(682.3055...) = 26.120978...
+*   **Threshold (Mean + 1 SD):** 140.1666... + 26.120978... = 166.2876...
+
+**Outliers (Runtime > 166.2876...):**
+*   Saving Private Ryan (169)
+*   The Lord of the Rings: The Fellowship of the Ring (178)
+*   The Lord of the Rings: The Two Towers (179)
+
+Saving Private Ryan, The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F41,"Among movies released before 2010, use the rule runtime > subset mean runtime + 1 population standard deviation. Which movies are runtime outliers?","answer_text
+Saving Private Ryan; The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers","To identify the runtime outliers among movies released before 2010, we first list the runtimes of all movies with a release year < 2010:
+
+1.  Princess Mononoke (1997): 133
+2.  The Big Lebowski (1998): 117
+3.  American History X (1998): 119
+4.  Saving Private Ryan (1998): 169
+5.  The Matrix (1999): 136
+6.  Memento (2000): 113
+7.  The Lord of the Rings: The Fellowship of the Ring (2001): 178
+8.  Monsters Inc. (2001): 92
+9.  Catch Me If You Can (2002): 141
+10. The Lord of the Rings: The Two Towers (2002): 179
+11. The Dark Knight (2008): 152
+12. Inglourious Basterds (2009): 153
+
+**Calculations:**
+*   **Count (N):** 12
+*   **Sum:** 133 + 117 + 119 + 169 + 136 + 113 + 178 + 92 + 141 + 179 + 152 + 153 = 1682
+*   **Mean:** 1682 / 12 = 140.16666666666666...
+*   **Variance (Population):**
+    Sum of squared differences from the mean:
+    (133-140.166...)^2 = 51.3611...
+    (117-140.166...)^2 = 536.6944...
+    (119-140.166...)^2 = 448.0277...
+    (169-140.166...)^2 = 831.3611...
+    (136-140.166...)^2 = 17.3611...
+    (113-140.166...)^2 = 738.0277...
+    (178-140.166...)^2 = 1431.3611...
+    (92-140.166...)^2 = 2320.0277...
+    (141-140.166...)^2 = 0.6944...
+    (179-140.166...)^2 = 1508.0277...
+    (152-140.166...)^2 = 140.0277...
+    (153-140.166...)^2 = 164.6944...
+    Sum = 8187.6666...
+    Variance = 8187.6666... / 12 = 682.3055...
+*   **Population Standard Deviation:** sqrt(682.3055...) = 26.120978...
+*   **Threshold (Mean + 1 SD):** 140.1666... + 26.120978... = 166.2876...
+
+**Outliers (Runtime > 166.2876...):**
+*   Saving Private Ryan (169)
+*   The Lord of the Rings: The Fellowship of the Ring (178)
+*   The Lord of the Rings: The Two Towers (179)
+
+Saving Private Ryan, The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers",0,,,,evaluated_incorrect,9.479,5656,947,1,"Correct: the response returns exactly Saving Private Ryan, Fellowship, and Two Towers.",1
+google/gemini-3.1-flash-lite,True,statistical_outlier_detection,0,evaluated_incorrect,"To identify the runtime outliers among movies released before 2010, we first list the runtimes of all movies released in 1997, 1998, 1999, 2000, 2001, 2002, 2008, and 2009:
+
+1.  Princess Mononoke (1997): 133
+2.  The Big Lebowski (1998): 117
+3.  American History X (1998): 119
+4.  Saving Private Ryan (1998): 169
+5.  The Matrix (1999): 136
+6.  Memento (2000): 113
+7.  The Lord of the Rings: The Fellowship of the Ring (2001): 178
+8.  Monsters Inc. (2001): 92
+9.  Catch Me If You Can (2002): 141
+10. The Lord of the Rings: The Two Towers (2002): 179
+11. The Dark Knight (2008): 152
+12. Inglourious Basterds (2009): 153
+
+**Calculations:**
+*   **Count (N):** 12
+*   **Sum:** 133 + 117 + 119 + 169 + 136 + 113 + 178 + 92 + 141 + 179 + 152 + 153 = 1682
+*   **Mean:** 1682 / 12 = 140.16666666666666666666666666667
+*   **Variance (Population):**
+    Sum of squared differences from mean:
+    (133-140.166...)^2 = 51.3611...
+    (117-140.166...)^2 = 536.6944...
+    (119-140.166...)^2 = 448.0277...
+    (169-140.166...)^2 = 831.3611...
+    (136-140.166...)^2 = 17.3611...
+    (113-140.166...)^2 = 738.0277...
+    (178-140.166...)^2 = 1431.3611...
+    (92-140.166...)^2 = 2319.6944...
+    (141-140.166...)^2 = 0.6944...
+    (179-140.166...)^2 = 1507.3611...
+    (152-140.166...)^2 = 140.0277...
+    (153-140.166...)^2 = 164.6944...
+    Sum = 8246.6666666666666666666666666667
+    Variance = 8246.6666666666666666666666666667 / 12 = 687.22222222222222222222222222222
+*   **Standard Deviation (Population):** sqrt(687.222...) = 26.214923654913055555555555555556
+*   **Threshold (Mean - 1 SD):** 140.166... - 26.2149... = 113.95174301175361111111111111111
+
+Movies with runtime < 113.95174301175361111111111111111:
+*   Memento (113)
+*   Monsters Inc. (92)
+
+Answer: Memento, Monsters Inc.",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F42,"Among movies released before 2010, use the rule runtime < subset mean runtime - 1 population standard deviation. Which movies are runtime outliers?","answer_text
+Memento; Monsters Inc.","To identify the runtime outliers among movies released before 2010, we first list the runtimes of all movies released in 1997, 1998, 1999, 2000, 2001, 2002, 2008, and 2009:
+
+1.  Princess Mononoke (1997): 133
+2.  The Big Lebowski (1998): 117
+3.  American History X (1998): 119
+4.  Saving Private Ryan (1998): 169
+5.  The Matrix (1999): 136
+6.  Memento (2000): 113
+7.  The Lord of the Rings: The Fellowship of the Ring (2001): 178
+8.  Monsters Inc. (2001): 92
+9.  Catch Me If You Can (2002): 141
+10. The Lord of the Rings: The Two Towers (2002): 179
+11. The Dark Knight (2008): 152
+12. Inglourious Basterds (2009): 153
+
+**Calculations:**
+*   **Count (N):** 12
+*   **Sum:** 133 + 117 + 119 + 169 + 136 + 113 + 178 + 92 + 141 + 179 + 152 + 153 = 1682
+*   **Mean:** 1682 / 12 = 140.16666666666666666666666666667
+*   **Variance (Population):**
+    Sum of squared differences from mean:
+    (133-140.166...)^2 = 51.3611...
+    (117-140.166...)^2 = 536.6944...
+    (119-140.166...)^2 = 448.0277...
+    (169-140.166...)^2 = 831.3611...
+    (136-140.166...)^2 = 17.3611...
+    (113-140.166...)^2 = 738.0277...
+    (178-140.166...)^2 = 1431.3611...
+    (92-140.166...)^2 = 2319.6944...
+    (141-140.166...)^2 = 0.6944...
+    (179-140.166...)^2 = 1507.3611...
+    (152-140.166...)^2 = 140.0277...
+    (153-140.166...)^2 = 164.6944...
+    Sum = 8246.6666666666666666666666666667
+    Variance = 8246.6666666666666666666666666667 / 12 = 687.22222222222222222222222222222
+*   **Standard Deviation (Population):** sqrt(687.222...) = 26.214923654913055555555555555556
+*   **Threshold (Mean - 1 SD):** 140.166... - 26.2149... = 113.95174301175361111111111111111
+
+Movies with runtime < 113.95174301175361111111111111111:
+*   Memento (113)
+*   Monsters Inc. (92)
+
+Answer: Memento, Monsters Inc.",0,,,,evaluated_incorrect,4.798,5656,1092,1,Correct: the final outlier list is exactly Memento and Monsters Inc.,1
+google/gemini-3.1-flash-lite,True,statistical_outlier_detection,0,evaluated_incorrect,"The movies released in or after 2010 are:
+- Toy Story 3: 103 minutes
+- How to Train Your Dragon: 98 minutes
+- Black Swan: 108 minutes
+- The Avengers: 143 minutes
+- Life of Pi: 127 minutes
+- The Wolf of Wall Street: 180 minutes
+- Interstellar: 169 minutes
+- Jurassic World: 124 minutes
+
+1. **Subset Mean Runtime:** (103 + 98 + 108 + 143 + 127 + 180 + 169 + 124) / 8 = 1052 / 8 = 131.5
+2. **Population Standard Deviation:**
+   - Deviations from mean: (103-131.5)=-28.5, (98-131.5)=-33.5, (108-131.5)=-23.5, (143-131.5)=11.5, (127-131.5)=-4.5, (180-131.5)=48.5, (169-131.5)=37.5, (124-131.5)=-7.5
+   - Squared deviations: 812.25, 1122.25, 552.25, 132.25, 20.25, 2352.25, 1406.25, 56.25
+   - Sum of squared deviations: 6454
+   - Variance: 6454 / 8 = 806.75
+   - Population standard deviation: sqrt(806.75) ≈ 28.40334487
+3. **Threshold:** 131.5 + 28.40334487 = 159.90334487
+4. **Outliers (Runtime > 159.90334487):**
+   - The Wolf of Wall Street (180)
+   - Interstellar (169)
+
+The Wolf of Wall Street, Interstellar",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F43,"Among movies released in or after 2010, use the rule runtime > subset mean runtime + 1 population standard deviation. Which movies are runtime outliers?","answer_text
+The Wolf of Wall Street; Interstellar","The movies released in or after 2010 are:
+- Toy Story 3: 103 minutes
+- How to Train Your Dragon: 98 minutes
+- Black Swan: 108 minutes
+- The Avengers: 143 minutes
+- Life of Pi: 127 minutes
+- The Wolf of Wall Street: 180 minutes
+- Interstellar: 169 minutes
+- Jurassic World: 124 minutes
+
+1. **Subset Mean Runtime:** (103 + 98 + 108 + 143 + 127 + 180 + 169 + 124) / 8 = 1052 / 8 = 131.5
+2. **Population Standard Deviation:**
+   - Deviations from mean: (103-131.5)=-28.5, (98-131.5)=-33.5, (108-131.5)=-23.5, (143-131.5)=11.5, (127-131.5)=-4.5, (180-131.5)=48.5, (169-131.5)=37.5, (124-131.5)=-7.5
+   - Squared deviations: 812.25, 1122.25, 552.25, 132.25, 20.25, 2352.25, 1406.25, 56.25
+   - Sum of squared deviations: 6454
+   - Variance: 6454 / 8 = 806.75
+   - Population standard deviation: sqrt(806.75) ≈ 28.40334487
+3. **Threshold:** 131.5 + 28.40334487 = 159.90334487
+4. **Outliers (Runtime > 159.90334487):**
+   - The Wolf of Wall Street (180)
+   - Interstellar (169)
+
+The Wolf of Wall Street, Interstellar",0,,,,evaluated_incorrect,7.087,5658,535,1,Correct: the response returns exactly The Wolf of Wall Street and Interstellar.,1
+google/gemini-3.1-flash-lite,True,statistical_outlier_detection,0,evaluated_incorrect,"To identify the runtime outliers among movies released in or after 2010, we first list the runtimes of all movies released in 2010 or later:
+
+1.  **Toy Story 3 (2010):** 103 minutes
+2.  **How to Train Your Dragon (2010):** 98 minutes
+3.  **Black Swan (2010):** 108 minutes
+4.  **The Avengers (2012):** 143 minutes
+5.  **Life of Pi (2012):** 127 minutes
+6.  **The Wolf of Wall Street (2013):** 180 minutes
+7.  **Interstellar (2014):** 169 minutes
+8.  **Jurassic World (2015):** 124 minutes
+
+**Calculations:**
+*   **Subset:** {103, 98, 108, 143, 127, 180, 169, 124}
+*   **Count (N):** 8
+*   **Sum:** 103 + 98 + 108 + 143 + 127 + 180 + 169 + 124 = 1052
+*   **Mean:** 1052 / 8 = 131.5
+*   **Variance (Population):**
+    *   (103 - 131.5)² = (-28.5)² = 812.25
+    *   (98 - 131.5)² = (-33.5)² = 1122.25
+    *   (108 - 131.5)² = (-23.5)² = 552.25
+    *   (143 - 131.5)² = (11.5)² = 132.25
+    *   (127 - 131.5)² = (-4.5)² = 20.25
+    *   (180 - 131.5)² = (48.5)² = 2352.25
+    *   (169 - 131.5)² = (37.5)² = 1406.25
+    *   (124 - 131.5)² = (-7.5)² = 56.25
+    *   Sum of squares = 6454
+    *   Variance = 6454 / 8 = 806.75
+*   **Population Standard Deviation (σ):** √806.75 ≈ 28.40334487
+*   **Threshold:** Mean - σ = 131.5 - 28.40334487 = 103.09665513
+
+**Outlier Check (Runtime < 103.09665513):**
+*   Toy Story 3: 103 < 103.09665513 (Yes)
+*   How to Train Your Dragon: 98 < 103.09665513 (Yes)
+*   Black Swan: 108 (No)
+*   The Avengers: 143 (No)
+*   Life of Pi: 127 (No)
+*   The Wolf of Wall Street: 180 (No)
+*   Interstellar: 169 (No)
+*   Jurassic World: 124 (No)
+
+Toy Story 3, How to Train Your Dragon",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F44,"Among movies released in or after 2010, use the rule runtime < subset mean runtime - 1 population standard deviation. Which movies are runtime outliers?","answer_text
+Toy Story 3; How to Train Your Dragon","To identify the runtime outliers among movies released in or after 2010, we first list the runtimes of all movies released in 2010 or later:
+
+1.  **Toy Story 3 (2010):** 103 minutes
+2.  **How to Train Your Dragon (2010):** 98 minutes
+3.  **Black Swan (2010):** 108 minutes
+4.  **The Avengers (2012):** 143 minutes
+5.  **Life of Pi (2012):** 127 minutes
+6.  **The Wolf of Wall Street (2013):** 180 minutes
+7.  **Interstellar (2014):** 169 minutes
+8.  **Jurassic World (2015):** 124 minutes
+
+**Calculations:**
+*   **Subset:** {103, 98, 108, 143, 127, 180, 169, 124}
+*   **Count (N):** 8
+*   **Sum:** 103 + 98 + 108 + 143 + 127 + 180 + 169 + 124 = 1052
+*   **Mean:** 1052 / 8 = 131.5
+*   **Variance (Population):**
+    *   (103 - 131.5)² = (-28.5)² = 812.25
+    *   (98 - 131.5)² = (-33.5)² = 1122.25
+    *   (108 - 131.5)² = (-23.5)² = 552.25
+    *   (143 - 131.5)² = (11.5)² = 132.25
+    *   (127 - 131.5)² = (-4.5)² = 20.25
+    *   (180 - 131.5)² = (48.5)² = 2352.25
+    *   (169 - 131.5)² = (37.5)² = 1406.25
+    *   (124 - 131.5)² = (-7.5)² = 56.25
+    *   Sum of squares = 6454
+    *   Variance = 6454 / 8 = 806.75
+*   **Population Standard Deviation (σ):** √806.75 ≈ 28.40334487
+*   **Threshold:** Mean - σ = 131.5 - 28.40334487 = 103.09665513
+
+**Outlier Check (Runtime < 103.09665513):**
+*   Toy Story 3: 103 < 103.09665513 (Yes)
+*   How to Train Your Dragon: 98 < 103.09665513 (Yes)
+*   Black Swan: 108 (No)
+*   The Avengers: 143 (No)
+*   Life of Pi: 127 (No)
+*   The Wolf of Wall Street: 180 (No)
+*   Interstellar: 169 (No)
+*   Jurassic World: 124 (No)
+
+Toy Story 3, How to Train Your Dragon",0,,,,evaluated_incorrect,9.792,5658,866,1,Correct: the response returns exactly Toy Story 3 and How to Train Your Dragon.,1
+google/gemini-3.1-flash-lite,True,statistical_outlier_detection,0,evaluated_incorrect,"The Matrix, The Dark Knight",5,1,0,,,stop,results/gemini_flash/imdb_20_final45/20260915T120134225611Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,gemini_flash,llm_only,imdb_20_final45_llm_only_zero_shot,F45,"Among Action movies only, use the rule IMDb rating > Action-movie mean rating + 1 population standard deviation. Which movies are rating outliers?","answer_text
+The Dark Knight","The Matrix, The Dark Knight",0,,,,evaluated_incorrect,2.114,5654,6,0,Incorrect: The Matrix is an extra incorrect outlier; only The Dark Knight qualifies.,0
+mistralai/mistral-small-2603,True,arithmetic_aggregation,0,evaluated_incorrect,8.19,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F1,"Among movies released in or after 2010, what is the average IMDb rating? Round the answer to two decimal places.","answer_text
+8.01",8.19,0,,,,evaluated_incorrect,4.936,11917,5,0,Incorrect: reported 8.19 instead of 8.01.,0
+mistralai/mistral-small-2603,True,genre_level_aggregation,0,evaluated_incorrect,Comedy 8.10,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F2,"Among genres appearing in at least 4 movies, which genre has the lowest average IMDb rating? Round the average to two decimal places.","answer_text
+Sci-Fi - 8.08",Comedy 8.10,0,,,,evaluated_incorrect,3.629,11917,8,0,"Incorrect: selected Comedy at 8.10, but the correct genre is Sci-Fi at 8.08.",0
+mistralai/mistral-small-2603,True,statistical_outlier_detection,0,evaluated_incorrect,"Saving Private Ryan, The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, The Wolf of Wall Street",5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F3,"Among movies released in or after 2000, use the rule runtime > subset mean runtime + 1 population standard deviation. Which movies are runtime outliers?","answer_text
+The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; The Wolf of Wall Street; Interstellar","Saving Private Ryan, The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, The Wolf of Wall Street",0,,,,evaluated_incorrect,3.578,11922,32,0,Incorrect: the list wrongly includes Saving Private Ryan and omits Interstellar.,0
+mistralai/mistral-small-2603,True,arithmetic_aggregation,0,evaluated_incorrect,103,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F4,What is the total runtime of all Adventure movies released in or after 2010?,"answer_text
+621 minutes",103,0,,,,evaluated_incorrect,3.193,11908,4,0,Incorrect: reported 103 instead of the required total runtime of 621 minutes.,0
+mistralai/mistral-small-2603,True,genre_level_aggregation,0,evaluated_incorrect,Drama,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F5,"Among genres appearing in at least 3 movies, which genre has the largest IMDb rating range, calculated as maximum rating minus minimum rating?","answer_text
+Action - 2.2 rating points",Drama,0,,,,evaluated_incorrect,3.027,11917,3,0,"Incorrect: identified Drama, but Action has the largest rating range.",0
+mistralai/mistral-small-2603,True,arithmetic_aggregation,0,evaluated_incorrect,140.00,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F6,Consider only directors who directed more than one movie in the dataset. What is the average runtime of all movies directed by those repeated directors? Round to two decimal places.,"answer_text
+157.29 minutes",140.00,0,,,,evaluated_incorrect,2.967,11922,7,0,Incorrect: reported 140.00 minutes instead of 157.29 minutes.,0
+mistralai/mistral-small-2603,True,statistical_outlier_detection,0,evaluated_incorrect,The Dark Knight,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F7,"Using the 1.5 × IQR rule for IMDb ratings, with Q1 and Q3 calculated as the medians of the lower and upper halves, which movie is a rating outlier?","answer_text
+Jurassic World - 6.9",The Dark Knight,0,,,,evaluated_incorrect,2.929,11930,4,0,"Incorrect: identified The Dark Knight, but the IQR rating outlier is Jurassic World.",0
+mistralai/mistral-small-2603,True,arithmetic_aggregation,0,evaluated_incorrect,8.38 8.07 0.31,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F8,What is the difference between the average IMDb rating of movies released before 2000 and movies released in or after 2000? Report both averages and the difference.,"answer_text
+Before 2000: 8.44; 2000 or after: 8.26; Difference: 0.18",8.38 8.07 0.31,0,,,,evaluated_incorrect,3.225,11927,15,0,"Incorrect: all three reported values (8.38, 8.07, 0.31) differ from 8.44, 8.26, and 0.18.",0
+mistralai/mistral-small-2603,True,genre_level_aggregation,0,evaluated_incorrect,Drama,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F9,"Among genres appearing in at least 3 movies, which genre has the highest total runtime across all its movies?","answer_text
+Drama - 1608 minutes",Drama,0,,,,evaluated_incorrect,2.747,11911,3,1,Correct: Drama is the requested genre with the highest total runtime.,1
+mistralai/mistral-small-2603,True,arithmetic_aggregation,0,evaluated_incorrect,143.5,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F10,First calculate the overall mean runtime of all 20 movies. Then calculate the average IMDb rating of movies whose runtime is above that mean. Round the final rating to two decimal places.,"answer_text
+8.53",143.5,0,,,,evaluated_incorrect,3.177,11927,6,0,Incorrect: 143.5 is not the requested average IMDb rating of 8.53.,0
+mistralai/mistral-small-2603,True,arithmetic_aggregation,0,evaluated_incorrect,674,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F11,What is the total runtime of all movies released before 2000?,"answer_text
+674 minutes",674,0,,,,evaluated_incorrect,2.947,11905,4,1,Correct: 674 is equivalent to the required total of 674 minutes.,1
+mistralai/mistral-small-2603,True,arithmetic_aggregation,0,evaluated_incorrect,130.33,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F12,What is the average runtime of movies released in or after 2010? Round the answer to two decimal places.,"answer_text
+131.50 minutes",130.33,0,,,,evaluated_incorrect,3.125,11914,7,0,Incorrect: reported 130.33 minutes instead of 131.50 minutes.,0
+mistralai/mistral-small-2603,True,arithmetic_aggregation,0,evaluated_incorrect,8.80,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F13,What is the average IMDb rating of all movies directed by Christopher Nolan? Round the answer to two decimal places.,"answer_text
+8.73",8.80,0,,,,evaluated_incorrect,3.267,11912,5,0,Incorrect: reported 8.80 instead of 8.73.,0
+mistralai/mistral-small-2603,True,arithmetic_aggregation,0,evaluated_incorrect,8.68,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F14,"Among movies with runtime of at least 150 minutes, what is the average IMDb rating? Round the answer to two decimal places.","answer_text
+8.67",8.68,0,,,,evaluated_incorrect,3.932,11918,5,0,Incorrect: reported 8.68 instead of 8.67.,0
+mistralai/mistral-small-2603,True,arithmetic_aggregation,0,evaluated_incorrect,143.50,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F15,"Among movies with an IMDb rating of at least 8.5, what is the average runtime? Round the answer to two decimal places.","answer_text
+157.43 minutes",143.50,0,,,,evaluated_incorrect,2.863,11918,7,0,Incorrect: reported 143.50 minutes instead of 157.43 minutes.,0
+mistralai/mistral-small-2603,True,genre_level_aggregation,0,evaluated_incorrect,Drama 8.52,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F16,"Among genres appearing in at least 4 movies, which genre has the highest average IMDb rating? Round the average to two decimal places.","answer_text
+Drama - 8.49",Drama 8.52,0,,,,evaluated_incorrect,2.887,11917,8,0,"Incorrect: Drama is the right genre, but the requested average is 8.49, not 8.52.",0
+mistralai/mistral-small-2603,True,genre_level_aggregation,0,evaluated_incorrect,Animation 342,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F17,"Among genres appearing in at least 4 movies, which genre has the lowest total runtime across all its movies? Report the genre and its total runtime in minutes.","answer_text
+Animation - 426 minutes",Animation 342,0,,,,evaluated_incorrect,2.532,11921,6,0,"Incorrect: Animation is the right genre, but the total is 426 minutes, not 342.",0
+mistralai/mistral-small-2603,True,genre_level_aggregation,0,evaluated_incorrect,Drama; 10,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F18,Which genre appears in the greatest number of movies in the dataset? Report the genre and the number of movies.,"answer_text
+Drama - 11 movies",Drama; 10,0,,,,evaluated_incorrect,3.308,11911,7,0,"Incorrect: Drama is the right genre, but it appears in 11 movies, not 10.",0
+mistralai/mistral-small-2603,True,genre_level_aggregation,0,evaluated_incorrect,Drama; 143.00,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F19,"Among genres appearing in at least 4 movies, which genre has the highest average runtime? Round the answer to two decimal places.","answer_text
+Fantasy - 154.25 minutes",Drama; 143.00,0,,,,evaluated_incorrect,3.237,11915,11,0,"Incorrect: selected Drama at 143.00, but Fantasy is correct at 154.25 minutes.",0
+mistralai/mistral-small-2603,True,genre_level_aggregation,0,evaluated_incorrect,Animation: 109.25,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F20,"Among genres appearing in at least 4 movies, which genre has the lowest average runtime? Round the answer to two decimal places.","answer_text
+Animation - 106.50 minutes",Animation: 109.25,0,,,,evaluated_incorrect,3.169,11915,10,0,"Incorrect: Animation is the right genre, but the average is 106.50 minutes, not 109.25.",0
+mistralai/mistral-small-2603,True,genre_level_aggregation,0,evaluated_incorrect,Adventure; 100.00%,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F21,"Among genres appearing in at least 4 movies, which genre has the highest proportion of its movies released in or after 2010? Report the genre and the percentage, rounded to two decimal places.","answer_text
+Sci-Fi - 75.00%",Adventure; 100.00%,0,,,,evaluated_incorrect,3.872,11931,12,0,"Incorrect: selected Adventure at 100.00%, but Sci-Fi is correct at 75.00%.",0
+mistralai/mistral-small-2603,True,genre_level_aggregation,0,evaluated_incorrect,Drama 3,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F22,"Among genres appearing in at least 4 movies, which genre contains the greatest number of movies with an IMDb rating of at least 8.5? Report the genre and the number of qualifying movies.","answer_text
+Drama - 6 movies",Drama 3,0,,,,evaluated_incorrect,2.961,11930,5,0,"Incorrect: Drama is the right genre, but the qualifying count is 6, not 3.",0
+mistralai/mistral-small-2603,True,statistical_outlier_detection,0,evaluated_incorrect,"Saving Private Ryan, The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, The Wolf of Wall Street, Life of Pi",5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F23,"Using all 20 movies, identify the movies whose runtime is greater than the mean runtime plus 1 population standard deviation. Calculate the mean and population standard deviation as intermediate steps. Return only the movie titles.","answer_text
+Saving Private Ryan; The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; The Wolf of Wall Street; Interstellar","Saving Private Ryan, The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, The Wolf of Wall Street, Life of Pi",0,,,,evaluated_incorrect,2.953,11931,36,0,"Incorrect: the list substitutes Life of Pi for Interstellar, so the requested outlier set is wrong.",0
+mistralai/mistral-small-2603,True,statistical_outlier_detection,0,evaluated_incorrect,"Memento
+Monsters Inc.
+Toy Story 3
+Black Swan
+Jurassic World",5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F24,"Using all 20 movies, identify the movies whose runtime is less than the mean runtime minus 1 population standard deviation. Calculate the mean and population standard deviation as intermediate steps. Return only the movie titles.","answer_text
+Monsters Inc.; Toy Story 3; How to Train Your Dragon; Black Swan","Memento
+Monsters Inc.
+Toy Story 3
+Black Swan
+Jurassic World",0,,,,evaluated_incorrect,3.217,11931,20,0,Incorrect: the returned list has multiple wrong items and omits How to Train Your Dragon; it does not match the required four titles.,0
+mistralai/mistral-small-2603,True,statistical_outlier_detection,0,evaluated_incorrect,"American History X, The Dark Knight, The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, Saving Private Ryan, The Matrix",5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F25,"Using all 20 movies, identify the movies whose IMDb rating is greater than the mean IMDb rating plus 1 population standard deviation. Calculate the mean and population standard deviation as intermediate steps. Return only the movie titles.","answer_text
+The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; The Dark Knight","American History X, The Dark Knight, The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, Saving Private Ryan, The Matrix",0,,,,evaluated_incorrect,2.961,11935,38,0,"Incorrect: the response adds American History X, Saving Private Ryan, and The Matrix; only the three ground-truth titles qualify.",0
+mistralai/mistral-small-2603,True,statistical_outlier_detection,0,evaluated_incorrect,"The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, The Wolf of Wall Street, Life of Pi, Interstellar",5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F26,"Among Adventure movies only, which movies have runtime greater than the Adventure-movie mean runtime + 1 population standard deviation?","answer_text
+The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; Interstellar","The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, The Wolf of Wall Street, Life of Pi, Interstellar",0,,,,evaluated_incorrect,2.812,11913,36,0,"Incorrect: the response includes The Wolf of Wall Street and Life of Pi as extras; only Fellowship, Two Towers, and Interstellar qualify.",0
+mistralai/mistral-small-2603,True,statistical_outlier_detection,0,evaluated_incorrect,Monsters Inc.; Toy Story 3,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F27,"Among Adventure movies only, which movies have runtime less than the Adventure-movie mean runtime - 1 population standard deviation?","answer_text
+Monsters Inc.; Toy Story 3; How to Train Your Dragon",Monsters Inc.; Toy Story 3,0,,,,evaluated_incorrect,3.134,11913,9,0,Incorrect: How to Train Your Dragon is missing from the required three-title list.,0
+mistralai/mistral-small-2603,True,statistical_outlier_detection,0,evaluated_incorrect,Saving Private Ryan,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F28,"Among Drama movies only, which movies have runtime greater than the Drama-movie mean runtime + 1 population standard deviation?","answer_text
+The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers",Saving Private Ryan,0,,,,evaluated_incorrect,3.13,11913,4,0,"Incorrect: returned Saving Private Ryan, but the two qualifying Drama outliers are Fellowship and Two Towers.",0
+mistralai/mistral-small-2603,True,statistical_outlier_detection,0,evaluated_incorrect,"The Matrix, The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, The Dark Knight, The Wolf of Wall Street, Life of Pi",5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F29,"Among Action movies only, which movies have runtime greater than the Action-movie mean runtime + 1 population standard deviation?","answer_text
+The Dark Knight","The Matrix, The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, The Dark Knight, The Wolf of Wall Street, Life of Pi",0,,,,evaluated_incorrect,2.966,11913,39,0,Incorrect: returned several extra movies; The Dark Knight is the only qualifying Action runtime outlier.,0
+mistralai/mistral-small-2603,True,statistical_outlier_detection,0,evaluated_incorrect,The Matrix; Monsters Inc.; Toy Story 3,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F30,"Among Action movies only, which movies have runtime less than the Action-movie mean runtime - 1 population standard deviation?","answer_text
+How to Train Your Dragon",The Matrix; Monsters Inc.; Toy Story 3,0,,,,evaluated_incorrect,2.874,11913,11,0,"Incorrect: returned The Matrix, Monsters Inc., and Toy Story 3, but the correct answer is How to Train Your Dragon.",0
+mistralai/mistral-small-2603,True,arithmetic_aggregation,0,evaluated_incorrect,497,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F31,What is the total runtime of all movies with an IMDb rating of at least 8.5?,"answer_text
+1102 minutes",497,0,,,,evaluated_incorrect,3.273,11910,4,0,Incorrect: reported 497 minutes instead of 1102 minutes.,0
+mistralai/mistral-small-2603,True,arithmetic_aggregation,0,evaluated_incorrect,"Before 2010 average runtime: 143.89
+After 2010 average runtime: 136.88
+Difference: 7.01",5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F32,"What is the difference between the average runtime of movies released before 2010 and movies released in or after 2010? Report both averages and the difference, rounded to two decimal places.","answer_text
+Before 2010: 140.17 minutes; 2010 or after: 131.50 minutes; Difference: 8.67 minutes","Before 2010 average runtime: 143.89
+After 2010 average runtime: 136.88
+Difference: 7.01",0,,,,evaluated_incorrect,3.228,11931,42,0,"Incorrect: the reported averages and 7.01-minute difference do not match 140.17, 131.50, and 8.67.",0
+mistralai/mistral-small-2603,True,arithmetic_aggregation,0,evaluated_incorrect,8.16,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F33,"Among movies with runtime less than 120 minutes, what is the average IMDb rating? Round the answer to two decimal places.","answer_text
+8.21",8.16,0,,,,evaluated_incorrect,2.79,11917,5,0,Incorrect: reported 8.16 instead of 8.21.,0
+mistralai/mistral-small-2603,True,arithmetic_aggregation,0,evaluated_incorrect,117.00,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F34,"Among movies with IMDb ratings from 8.0 through 8.4 inclusive, what is the average runtime? Round the answer to two decimal places.","answer_text
+125.55 minutes",117.00,0,,,,evaluated_incorrect,2.791,11921,7,0,Incorrect: reported 117.00 minutes instead of 125.55 minutes.,0
+mistralai/mistral-small-2603,True,arithmetic_aggregation,0,evaluated_incorrect,285,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F35,What is the total runtime of all movies directed by Christopher Nolan?,"answer_text
+434 minutes",285,0,,,,evaluated_incorrect,2.705,11902,4,0,Incorrect: reported 285 minutes instead of 434 minutes.,0
+mistralai/mistral-small-2603,True,genre_level_aggregation,0,evaluated_incorrect,Drama 71,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F36,"Among genres appearing in at least 4 movies, which genre has the largest runtime range, calculated as maximum runtime minus minimum runtime? Report the genre and its runtime range in minutes.","answer_text
+Comedy - 88 minutes",Drama 71,0,,,,evaluated_incorrect,3.293,11925,6,0,"Incorrect: reported Drama with a 71-minute range, but Comedy is correct with 88 minutes.",0
+mistralai/mistral-small-2603,True,genre_level_aggregation,0,evaluated_incorrect,Drama; 1998.00,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F37,"Among genres appearing in at least 4 movies, which genre has the highest average release year? Round the average year to two decimal places.","answer_text
+Sci-Fi - 2010.00",Drama; 1998.00,0,,,,evaluated_incorrect,2.663,11917,12,0,"Incorrect: reported Drama at 1998.00, but Sci-Fi is correct at 2010.00.",0
+mistralai/mistral-small-2603,True,genre_level_aggregation,0,evaluated_incorrect,Drama 6,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F38,"Among genres appearing in at least 4 movies, which genre contains the greatest number of movies released in or after 2010? Report the genre and the number of qualifying movies.","answer_text
+Adventure - 5 movies",Drama 6,0,,,,evaluated_incorrect,3.202,11927,5,0,"Incorrect: reported Drama with 6, but Adventure has the greatest count with 5 qualifying movies.",0
+mistralai/mistral-small-2603,True,genre_level_aggregation,0,evaluated_incorrect,Drama; 709,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F39,"Among genres appearing in exactly 4 movies, which genre has the highest total runtime? Report the genre and its total runtime in minutes.","answer_text
+Fantasy - 617 minutes",Drama; 709,0,,,,evaluated_incorrect,4.987,11916,8,0,"Incorrect: reported Drama with 709 minutes, but among genres appearing exactly four times the answer is Fantasy with 617 minutes.",0
+mistralai/mistral-small-2603,True,genre_level_aggregation,0,evaluated_incorrect,"Drama: 8.45
+Adventure: 8.53
+Difference: 0.08",5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F40,"Compare Drama and Adventure movies. Which genre has the higher average IMDb rating, and what is the difference between their averages? Round averages and the difference to two decimal places.","answer_text
+Drama - 8.49; Adventure - 8.24; Difference: 0.25","Drama: 8.45
+Adventure: 8.53
+Difference: 0.08",0,,,,evaluated_incorrect,4.54,11924,26,0,Incorrect: the response reverses which genre has the higher average and gives incorrect averages and difference; the correct difference is 0.25 in favor of Drama.,0
+mistralai/mistral-small-2603,True,statistical_outlier_detection,0,evaluated_incorrect,Saving Private Ryan; The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; The Wolf of Wall Street,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F41,"Among movies released before 2010, use the rule runtime > subset mean runtime + 1 population standard deviation. Which movies are runtime outliers?","answer_text
+Saving Private Ryan; The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers",Saving Private Ryan; The Lord of the Rings: The Fellowship of the Ring; The Lord of the Rings: The Two Towers; The Wolf of Wall Street,0,,,,evaluated_incorrect,3.32,11920,32,0,Incorrect: The Wolf of Wall Street is an extra invalid item for the pre-2010 subset.,0
+mistralai/mistral-small-2603,True,statistical_outlier_detection,0,evaluated_incorrect,Saving Private Ryan,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F42,"Among movies released before 2010, use the rule runtime < subset mean runtime - 1 population standard deviation. Which movies are runtime outliers?","answer_text
+Memento; Monsters Inc.",Saving Private Ryan,0,,,,evaluated_incorrect,2.881,11920,4,0,"Incorrect: returned Saving Private Ryan, but the low-runtime outliers are Memento and Monsters Inc.",0
+mistralai/mistral-small-2603,True,statistical_outlier_detection,0,evaluated_incorrect,"Saving Private Ryan, The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, The Wolf of Wall Street",5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F43,"Among movies released in or after 2010, use the rule runtime > subset mean runtime + 1 population standard deviation. Which movies are runtime outliers?","answer_text
+The Wolf of Wall Street; Interstellar","Saving Private Ryan, The Lord of the Rings: The Fellowship of the Ring, The Lord of the Rings: The Two Towers, The Wolf of Wall Street",0,,,,evaluated_incorrect,3.411,11922,32,0,Incorrect: the response includes three pre-2010 movies and omits Interstellar; the correct set is Wolf of Wall Street and Interstellar.,0
+mistralai/mistral-small-2603,True,statistical_outlier_detection,0,evaluated_incorrect,Monsters Inc.,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F44,"Among movies released in or after 2010, use the rule runtime < subset mean runtime - 1 population standard deviation. Which movies are runtime outliers?","answer_text
+Toy Story 3; How to Train Your Dragon",Monsters Inc.,0,,,,evaluated_incorrect,3.83,11922,5,0,"Incorrect: returned Monsters Inc., but the correct low-runtime outliers are Toy Story 3 and How to Train Your Dragon.",0
+mistralai/mistral-small-2603,True,statistical_outlier_detection,1,evaluated_exact,The Dark Knight,5,1,0,,,stop,results/mistral_small/imdb_20_final45/20260915T115734862118Z/imdb_20_final45_llm_only_zero_shot_raw.jsonl,imdb_20_final45,mistral_small,llm_only,imdb_20_final45_llm_only_zero_shot,F45,"Among Action movies only, use the rule IMDb rating > Action-movie mean rating + 1 population standard deviation. Which movies are rating outliers?","answer_text
+The Dark Knight",The Dark Knight,1,,,,evaluated_exact,2.623,11919,4,1,Correct: The Dark Knight exactly matches the sole required Action rating outlier.,0

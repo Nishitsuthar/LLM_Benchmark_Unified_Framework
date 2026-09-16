@@ -1,0 +1,15 @@
+name: hotpot_sql
+description: "HotpotQA SQL-detour benchmark — 93 multi-hop questions answered via structured fact DB (Sushma Sprint 3/4)"
+
+evidence_type: hotpot_sql
+eval_strategy: hotpot_f1
+
+# Pre-built SQLite fact database.
+# Built from hotpot_validation_distractor.json using:
+#   python ../hotpot-structured-benchmark/scripts/build_fact_database.py
+# Copy the resulting file here:
+#   cp ../hotpot-structured-benchmark/data/hotpot_facts.db data/hotpot_facts.db
+hotpot_facts_db: data/hotpot_facts.db
+
+questions_file: evidence/hotpot/questions.json
+ground_truth_dir: ground_truth/hotpot/

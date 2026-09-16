@@ -1,0 +1,32 @@
+dataset,model,mode,prompt_style,question_id,question,ground_truth,model_response,exact_match,row_f1,precision,recall,eval_status,latency_seconds,input_tokens,output_tokens
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0001,"during the 2012 year , did the equity awards in which the prescribed performance milestones were achieved exceed the equity award compensation expense for equity granted during the year?",yes,No,0,0.0,0.0,0.0,evaluated,239.975,7774,6825
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0002,"for equity awards where the performance criteria has been met in 2012 , what is the average compensation expense per year over which the cost will be expensed?",1719526,,0,0.0,0.0,0.0,evaluated,117.389,,
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0003,did abiomed outperform the nasdaq medical equipment index?,yes,,0,0.0,0.0,0.0,evaluated,113.166,,
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0004,did abiomed outperform the nasdaq composite index?,yes,,0,0.0,0.0,0.0,evaluated,111.837,,
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0005,how much of total future minimum lease payments are due currently?,35%,"$1,473 thousand",0,0.0,0.0,0.0,evaluated,116.976,7983,500
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0006,what is the roi of an investment in abiomed inc from march 2007 to march 2010?,-24.5%,-24.45%,0,0.0,0.0,0.0,evaluated,112.735,10305,612
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0007,what is the roi of an investment in nasdaq composite index from march 2007 to march 2010?,-1.0%,-0.98%,0,0.0,0.0,0.0,evaluated,114.218,10671,498
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0008,what is the the interest expense in 2009?,380,"$2,502",0,0.0,0.0,0.0,evaluated,126.895,7387,502
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0009,what is the expected growth rate in amortization expense in 2010?,-27.0%,NA,0,0.0,0.0,0.0,evaluated,102.716,6903,274
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0010,what is the percentage increase in interest expanse and penalties in 2009?,30.8%,,0,0.0,0.0,0.0,evaluated,89.315,,
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0011,"what is the lobor rate as of october 31 , 2009?",29.0%,NA,0,0.0,0.0,0.0,evaluated,99.483,7769,715
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0012,what percentage did the balance increase from 2007 to 2009?,83.6%,83.65%,0,0.0,0.0,0.0,evaluated,138.47,7562,920
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0013,what would be the balance if the company suffered the potential total tax liability of the 2006 and 2007 irs examination?,$ 17966 million,,0,0.0,0.0,0.0,evaluated,106.581,,
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0014,"in millions , for 2016 , 2015 , and 2014 what was the total amount of common share repurchases?",90.1,,0,0.0,0.0,0.0,evaluated,95.058,,
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0015,of the total aus net inflows/ ( outflows ) for 2014 were fixed income asset inflows in connection with our acquisition of deutsche asset & wealth management 2019s stable value business greater than the liquidity products inflows in connection with our acquisition of rbs asset management 2019s money market funds?,yes,yes,1,1.0,1.0,1.0,evaluated,97.923,9701,423
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0016,"in billions , for 2016 , 2015 , and 2014 , what are total alternative investments?",439,"149, 145, 145",0,0.0,0.0,0.0,evaluated,93.804,8761,330
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0017,what was the difference in millions between the total cost of common shares repurchases from 2015 to 2016?,1874,1870,0,0.0,0.0,0.0,evaluated,103.615,9323,741
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0018,what were total investment commitments in billions for 2016 and 2015 related to commitments to invest in funds managed by the firm?,4.96,,0,0.0,0.0,0.0,evaluated,87.511,,
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0019,what was the difference in millions between the total cost of common shares repurchases from 2015 to 2016?,-1274,,0,0.0,0.0,0.0,evaluated,88.507,,
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0020,"what was total shareholders 2019 equity common equity dividends declared per common share in 2016 , 2015 and 2014?",7.40,,0,0.0,0.0,0.0,evaluated,99.202,,
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0021,what is the debt-to-total asset ratio in 2015?,2.7%,,0,0.0,0.0,0.0,evaluated,107.334,,
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0022,"for december 2016 and december 2015 , what was total fair value of loans receivable in billions?",94.99,,0,0.0,0.0,0.0,evaluated,142.769,,
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0023,"what was total rent charged to operating expense in millions for 2016 , 2015 and 2014?",802,,0,0.0,0.0,0.0,evaluated,165.138,,
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0024,what is the debt-to-total asset ratio in 2016?,2.5%,89.9%,0,0.0,0.0,0.0,evaluated,242.309,9603,5225
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0025,what is the net change in the number of staff in 2016?,-2400,,0,0.0,0.0,0.0,evaluated,103.791,,
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0026,what is the net change in the number of staff in 2015?,2800,"2,800 increase",0,0.0,0.0,0.0,evaluated,109.714,9611,306
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0027,"in millions for 2016 2015 , and 2014 , what are total equity securities?",10933,NA,0,0.0,0.0,0.0,evaluated,139.515,10420,681
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0028,operating expenses were what multiple of pre-tax earnings in 2015?,11.52,2.85,0,0.0,0.0,0.0,evaluated,193.28,8607,400
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0029,what was the percentage change in the 5 year annual performance of the peer group stock from 2010 to 2011,8.3%,,0,0.0,0.0,0.0,evaluated,222.151,,
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0030,"in 2010 , what was the cumulative total return of the s&p 500?",30.69,100.00,0,0.0,0.0,0.0,evaluated,192.438,11525,464
+finhybrid,nemotron,llm_only,llm_only_zero_shot,Q0031,"for the 2010 , what was the cumulative total return on jkhy?",27.44,100.00,0,0.0,0.0,0.0,evaluated,159.462,10113,243
