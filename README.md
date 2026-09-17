@@ -77,8 +77,8 @@ The following files are too large for git and must be placed locally before runn
 | File | Dataset | Size |
 |------|---------|------|
 | `evidence/hotpot/hotpot_validation_distractor.json` | `hotpot` | ~50 MB |
-| [`evidence/imdb_20/imdb_20_movies_screenshot_evidence.pdf`] (https://drive.google.com/file/d/15DM5U_7ybKmPLPG9SlltWWxSDqUWNbhH/view?usp=sharing) | `imdb_20` | ~250 MB |
-| [`evidence/imdb_20/imdb_20_final_v2_metadata_cards.pdf`] (https://drive.google.com/file/d/15KwbuL1brU3DqEFGL3xFxoc4soxy0mBT/view?usp=sharing) | `imdb_20_final45` | ~250 MB |
+| [`evidence/imdb_20/imdb_20_movies_screenshot_evidence.pdf`](https://drive.google.com/file/d/15DM5U_7ybKmPLPG9SlltWWxSDqUWNbhH/view?usp=sharing) | `imdb_20` | ~250 MB |
+| [`evidence/imdb_20/imdb_20_final_v2_metadata_cards.pdf`](https://drive.google.com/file/d/15KwbuL1brU3DqEFGL3xFxoc4soxy0mBT/view?usp=sharing) | `imdb_20_final45` | ~250 MB |
 
 ---
 
